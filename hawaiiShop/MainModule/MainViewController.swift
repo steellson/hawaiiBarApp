@@ -21,6 +21,16 @@ class MainViewController: UIViewController {
         return label
     }()
     
+    private let authView: UIView = {
+       let view = UIView()
+        view.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
+        view.layer.cornerRadius = 16
+//        view.layer.shadowOffset = CGSize(width: 5, height: 10)
+//        view.layer.shadowRadius = .infinity
+//        view.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +44,9 @@ class MainViewController: UIViewController {
         
         view.addSubview(authorizationLabel)
         authorizationLabelLayout()
+        
+        view.addSubview(authView)
+        authViewLayout()
     }
 
 //MARK: - Setup Layout
@@ -44,6 +57,17 @@ class MainViewController: UIViewController {
         NSLayoutConstraint.activate([
             authorizationLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
             authorizationLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        ])
+    }
+    
+    private func authViewLayout() {
+        authView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            authView.topAnchor.constraint(equalTo: authorizationLabel.bottomAnchor, constant: 120),
+            authView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            authView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            authView.widthAnchor.constraint(equalToConstant: 375)
         ])
     }
     
