@@ -8,7 +8,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
     var presenter: MainPresenterProtocol!
     
     private let authorizationLabel: UILabel = {
@@ -22,22 +22,31 @@ class MainViewController: UIViewController {
     }()
     
     private let authView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
         view.layer.cornerRadius = 16
-//        view.layer.shadowOffset = CGSize(width: 5, height: 10)
-//        view.layer.shadowRadius = .infinity
-//        view.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
+        //        view.layer.shadowOffset = CGSize(width: 5, height: 10)
+        //        view.layer.shadowRadius = .infinity
+        //        view.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
         return view
+    }()
+    
+    private let authorizationModeSegment: UISegmentedControl = {
+        let items = ["Sign Up", "Login"]
+        let segment = UISegmentedControl(items: items)
+        segment.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Arial", size: 18)!], for: .normal)
+        segment.backgroundColor = .white
+        segment.isMomentary = false
+        return segment
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupController()
     }
     
-//MARK: - Setup Controller
+    //MARK: - Setup Controller
     
     private func setupController() {
         view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
@@ -47,16 +56,19 @@ class MainViewController: UIViewController {
         
         view.addSubview(authView)
         authViewLayout()
+        
+        view.addSubview(authorizationModeSegment)
+        authorizationModeSegmentLayout()
     }
-
-//MARK: - Setup Layout
+    
+    //MARK: - Setup Layout
     
     private func authorizationLabelLayout() {
         authorizationLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             authorizationLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
-            authorizationLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            authorizationLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
@@ -68,6 +80,17 @@ class MainViewController: UIViewController {
             authView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             authView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             authView.widthAnchor.constraint(equalToConstant: 375)
+        ])
+    }
+    
+    private func authorizationModeSegmentLayout() {
+        authorizationModeSegment.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            authorizationModeSegment.topAnchor.constraint(equalTo: authView.topAnchor, constant: 40),
+            authorizationModeSegment.centerXAnchor.constraint(equalTo: authView.centerXAnchor),
+            authorizationModeSegment.leftAnchor.constraint(equalTo: authView.leftAnchor, constant: 20),
+            authorizationModeSegment.rightAnchor.constraint(equalTo: authView.rightAnchor, constant: -20)
         ])
     }
     
