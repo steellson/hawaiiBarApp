@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE68292E46D3005EEAFD /* AppDelegate.swift */; };
 		3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6A292E46D3005EEAFD /* SceneDelegate.swift */; };
-		3DFBDE6D292E46D3005EEAFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6C292E46D3005EEAFD /* ViewController.swift */; };
+		3DFBDE6D292E46D3005EEAFD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6C292E46D3005EEAFD /* MainViewController.swift */; };
 		3DFBDE70292E46D3005EEAFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6E292E46D3005EEAFD /* Main.storyboard */; };
 		3DFBDE72292E46DD005EEAFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBDE71292E46DD005EEAFD /* Assets.xcassets */; };
 		3DFBDE75292E46DD005EEAFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBDE73292E46DD005EEAFD /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		3DFBDE65292E46D3005EEAFD /* hawaiiShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hawaiiShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFBDE68292E46D3005EEAFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DFBDE6A292E46D3005EEAFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3DFBDE6C292E46D3005EEAFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3DFBDE6C292E46D3005EEAFD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3DFBDE6F292E46D3005EEAFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DFBDE71292E46DD005EEAFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DFBDE74292E46DD005EEAFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			children = (
 				3DFBDE68292E46D3005EEAFD /* AppDelegate.swift */,
 				3DFBDE6A292E46D3005EEAFD /* SceneDelegate.swift */,
-				3DFBDE6C292E46D3005EEAFD /* ViewController.swift */,
+				3DFBDE6C292E46D3005EEAFD /* MainViewController.swift */,
 				3DFBDE6E292E46D3005EEAFD /* Main.storyboard */,
 				3DFBDE71292E46DD005EEAFD /* Assets.xcassets */,
 				3DFBDE73292E46DD005EEAFD /* LaunchScreen.storyboard */,
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DFBDE6D292E46D3005EEAFD /* ViewController.swift in Sources */,
+				3DFBDE6D292E46D3005EEAFD /* MainViewController.swift in Sources */,
 				3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */,
 				3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */,
 			);
@@ -291,7 +291,7 @@
 				INFOPLIST_FILE = hawaiiShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,7 +318,7 @@
 				INFOPLIST_FILE = hawaiiShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
