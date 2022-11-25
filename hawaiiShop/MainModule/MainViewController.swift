@@ -10,6 +10,9 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,9 +21,18 @@ class MainViewController: UIViewController {
     
     private func setupController() {
         view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
-
         
-        setupLayout
+        setupNavigationBar()
+        setupLayout()
+    }
+    
+    private func setupNavigationBar() {
+        navigationItem.title = "Hawaii Bar"
+ 
+        
     }
 
+//    @objc private func leftBarButtonDidTapped() {
+//        print("Left Bar Button Did Tapped")
+//    }
 }
