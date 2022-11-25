@@ -27,6 +27,19 @@ final class HWTextField: UITextField {
         field.layer.borderWidth = 0.5
         field.layer.borderColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
         field.contentMode = .left
+        
+        let button = HWButton().buildHWFieldButton()
+        
+        field.addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            button.rightAnchor.constraint(equalTo: field.rightAnchor, constant: -8),
+            button.centerYAnchor.constraint(equalTo: field.centerYAnchor),
+            button.widthAnchor.constraint(equalToConstant: 120),
+            button.heightAnchor.constraint(equalToConstant: 35)
+        ])
         return field
     }
+
 }

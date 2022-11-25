@@ -11,6 +11,8 @@ class MainViewController: UIViewController {
     
     var presenter: MainPresenterProtocol!
     
+    //MARK: - UI Elements
+    
     let authorizationLabel = HWLabel().buildHWAuthorizationLabel()
     let authView = HWView().buildHWAuthView()
     
@@ -29,13 +31,17 @@ class MainViewController: UIViewController {
     let helpButton = HWButton().buildHWHelpButton()
     let bottomOrangeView = HWView().buildHWOrangeView()
     
+    
+//MARK: - Life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupController()
     }
     
-    //MARK: - Setup Controller
+    
+//MARK: - Setup Controller
     
     private func setupController() {
         view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
@@ -53,6 +59,7 @@ class MainViewController: UIViewController {
     }
     
 }
+
 
 //MARK: Protocol Extension
 

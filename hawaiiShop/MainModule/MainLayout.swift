@@ -21,6 +21,9 @@ extension MainViewController {
         bottomOrangeViewLayout()
     }
     
+    
+//MARK: - Methods
+    
     private func authorizationLabelLayout() {
         authorizationLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -103,7 +106,7 @@ extension MainViewController {
             bottomOrangeView.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 2),
             bottomOrangeView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             bottomOrangeView.widthAnchor.constraint(equalToConstant: 90),
-            bottomOrangeView.heightAnchor.constraint(equalToConstant: 1)
+            bottomOrangeView.heightAnchor.constraint(equalToConstant: 1.5)
         ])
     }
 }

@@ -27,4 +27,13 @@ final class HWButton: UIButton {
         button.setTitleColor(UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), for: .normal)
         return button
     }
+    
+    public func buildHWFieldButton() -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        button.setTitle("Send code", for: .normal)
+        button.layer.cornerRadius = 14
+        return button
+    }
+
 }
