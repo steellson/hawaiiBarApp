@@ -1,5 +1,5 @@
 //
-//  MainLayout.swift
+//  AuthorizationScreenLayout.swift
 //  hawaiiShop
 //
 //  Created by Andrey Pochepaev on 25.11.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension MainViewController {
+extension AuthorizationViewController {
     
     func setupLayout() {
         authorizationLabelLayout()

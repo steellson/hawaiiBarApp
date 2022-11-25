@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  AuthorizationViewController.swift
 //  hawaiiShop
 //
 //  Created by Andrey Pochepaev on 23.11.2022.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class AuthorizationViewController: UIViewController {
     
-    var presenter: MainPresenterProtocol!
+    var presenter: AuthorizationPresenterProtocol!
     
     //MARK: - UI Elements
     
@@ -63,7 +63,7 @@ class MainViewController: UIViewController {
 
 //MARK: Protocol Extension
 
-extension MainViewController: MainViewProtocol {
+extension AuthorizationViewController: AuthorizationViewProtocol {
     func showCurrent() {
         //
     }

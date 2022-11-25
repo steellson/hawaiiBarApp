@@ -9,31 +9,31 @@
 /* Begin PBXBuildFile section */
 		3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE68292E46D3005EEAFD /* AppDelegate.swift */; };
 		3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6A292E46D3005EEAFD /* SceneDelegate.swift */; };
-		3DFBDE6D292E46D3005EEAFD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6C292E46D3005EEAFD /* MainViewController.swift */; };
+		3DFBDE6D292E46D3005EEAFD /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6C292E46D3005EEAFD /* AuthorizationViewController.swift */; };
 		3DFBDE72292E46DD005EEAFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBDE71292E46DD005EEAFD /* Assets.xcassets */; };
 		3DFBDE75292E46DD005EEAFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBDE73292E46DD005EEAFD /* LaunchScreen.storyboard */; };
-		3DFBDE7F292EAAB2005EEAFD /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE7E292EAAB2005EEAFD /* MainPresenter.swift */; };
+		3DFBDE7F292EAAB2005EEAFD /* AuthorizationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE7E292EAAB2005EEAFD /* AuthorizationPresenter.swift */; };
 		3DFBDE842930EA55005EEAFD /* HWLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE832930EA55005EEAFD /* HWLabel.swift */; };
 		3DFBDE882930ED6D005EEAFD /* HWTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE872930ED6D005EEAFD /* HWTextField.swift */; };
 		3DFBDE8A2930EE0B005EEAFD /* HWButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE892930EE0B005EEAFD /* HWButton.swift */; };
 		3DFBDE8E2930EF9E005EEAFD /* HWView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE8D2930EF9E005EEAFD /* HWView.swift */; };
-		3DFBDE902930F15D005EEAFD /* MainLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE8F2930F15D005EEAFD /* MainLayout.swift */; };
+		3DFBDE902930F15D005EEAFD /* AuthScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE8F2930F15D005EEAFD /* AuthScreenLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3DFBDE65292E46D3005EEAFD /* hawaiiShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hawaiiShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFBDE68292E46D3005EEAFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DFBDE6A292E46D3005EEAFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3DFBDE6C292E46D3005EEAFD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3DFBDE6C292E46D3005EEAFD /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		3DFBDE71292E46DD005EEAFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DFBDE74292E46DD005EEAFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DFBDE76292E46DD005EEAFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3DFBDE7E292EAAB2005EEAFD /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		3DFBDE7E292EAAB2005EEAFD /* AuthorizationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPresenter.swift; sourceTree = "<group>"; };
 		3DFBDE832930EA55005EEAFD /* HWLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWLabel.swift; sourceTree = "<group>"; };
 		3DFBDE872930ED6D005EEAFD /* HWTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWTextField.swift; sourceTree = "<group>"; };
 		3DFBDE892930EE0B005EEAFD /* HWButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWButton.swift; sourceTree = "<group>"; };
 		3DFBDE8D2930EF9E005EEAFD /* HWView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWView.swift; sourceTree = "<group>"; };
-		3DFBDE8F2930F15D005EEAFD /* MainLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLayout.swift; sourceTree = "<group>"; };
+		3DFBDE8F2930F15D005EEAFD /* AuthScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,23 +67,24 @@
 			isa = PBXGroup;
 			children = (
 				3DFBDE7D292EAA80005EEAFD /* App */,
-				3DFBDE7C292EAA48005EEAFD /* MainModule */,
+				3DFBDE7C292EAA48005EEAFD /* AuthorizationModule */,
+				3DFBDE912931237D005EEAFD /* MainModule */,
 				3DFBDE822930E9E1005EEAFD /* HWCustomElements */,
+				3DFBDE76292E46DD005EEAFD /* Info.plist */,
 				3DFBDE73292E46DD005EEAFD /* LaunchScreen.storyboard */,
 				3DFBDE71292E46DD005EEAFD /* Assets.xcassets */,
-				3DFBDE76292E46DD005EEAFD /* Info.plist */,
 			);
 			path = hawaiiShop;
 			sourceTree = "<group>";
 		};
-		3DFBDE7C292EAA48005EEAFD /* MainModule */ = {
+		3DFBDE7C292EAA48005EEAFD /* AuthorizationModule */ = {
 			isa = PBXGroup;
 			children = (
-				3DFBDE6C292E46D3005EEAFD /* MainViewController.swift */,
-				3DFBDE7E292EAAB2005EEAFD /* MainPresenter.swift */,
-				3DFBDE8F2930F15D005EEAFD /* MainLayout.swift */,
+				3DFBDE6C292E46D3005EEAFD /* AuthorizationViewController.swift */,
+				3DFBDE7E292EAAB2005EEAFD /* AuthorizationPresenter.swift */,
+				3DFBDE8F2930F15D005EEAFD /* AuthScreenLayout.swift */,
 			);
-			path = MainModule;
+			path = AuthorizationModule;
 			sourceTree = "<group>";
 		};
 		3DFBDE7D292EAA80005EEAFD /* App */ = {
@@ -104,6 +105,13 @@
 				3DFBDE8D2930EF9E005EEAFD /* HWView.swift */,
 			);
 			path = HWCustomElements;
+			sourceTree = "<group>";
+		};
+		3DFBDE912931237D005EEAFD /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,13 +186,13 @@
 			files = (
 				3DFBDE842930EA55005EEAFD /* HWLabel.swift in Sources */,
 				3DFBDE8E2930EF9E005EEAFD /* HWView.swift in Sources */,
-				3DFBDE6D292E46D3005EEAFD /* MainViewController.swift in Sources */,
+				3DFBDE6D292E46D3005EEAFD /* AuthorizationViewController.swift in Sources */,
 				3DFBDE882930ED6D005EEAFD /* HWTextField.swift in Sources */,
 				3DFBDE8A2930EE0B005EEAFD /* HWButton.swift in Sources */,
 				3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */,
 				3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */,
-				3DFBDE7F292EAAB2005EEAFD /* MainPresenter.swift in Sources */,
-				3DFBDE902930F15D005EEAFD /* MainLayout.swift in Sources */,
+				3DFBDE7F292EAAB2005EEAFD /* AuthorizationPresenter.swift in Sources */,
+				3DFBDE902930F15D005EEAFD /* AuthScreenLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
