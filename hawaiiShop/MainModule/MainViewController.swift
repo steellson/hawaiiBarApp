@@ -69,6 +69,21 @@ class MainViewController: UIViewController {
         return button
     }()
     
+    private lazy var helpButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .white
+        button.setTitle("I need a help", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        button.setTitleColor(UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), for: .normal)
+        return button
+    }()
+    
+    private let bottomOrangeView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,6 +112,12 @@ class MainViewController: UIViewController {
         
         view.addSubview(loginButton)
         loginButtonLayout()
+        
+        view.addSubview(helpButton)
+        helpButtonLayout()
+        
+        view.addSubview(bottomOrangeView)
+        bottomOrangeViewLayout()
     }
     
     //MARK: - Setup Layout
@@ -105,7 +126,7 @@ class MainViewController: UIViewController {
         authorizationLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            authorizationLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            authorizationLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
             authorizationLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
@@ -165,6 +186,27 @@ class MainViewController: UIViewController {
         ])
     }
     
+    private func helpButtonLayout() {
+        helpButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            helpButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 50),
+            helpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            helpButton.widthAnchor.constraint(equalToConstant: 300),
+            helpButton.heightAnchor.constraint(equalToConstant: 20)
+        ])
+    }
+    
+    private func bottomOrangeViewLayout() {
+        bottomOrangeView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            bottomOrangeView.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 2),
+            bottomOrangeView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            bottomOrangeView.widthAnchor.constraint(equalToConstant: 90),
+            bottomOrangeView.heightAnchor.constraint(equalToConstant: 1)
+        ])
+    }
 }
 
 //MARK: Extension
