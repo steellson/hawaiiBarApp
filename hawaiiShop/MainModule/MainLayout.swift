@@ -28,7 +28,7 @@ extension MainViewController {
         authorizationLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            authorizationLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
+            authorizationLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
             authorizationLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
@@ -48,10 +48,10 @@ extension MainViewController {
         authorizationModeSegment.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            authorizationModeSegment.topAnchor.constraint(equalTo: authView.topAnchor, constant: 40),
+            authorizationModeSegment.topAnchor.constraint(equalTo: authView.topAnchor, constant: 20),
             authorizationModeSegment.centerXAnchor.constraint(equalTo: authView.centerXAnchor),
-            authorizationModeSegment.leftAnchor.constraint(equalTo: authView.leftAnchor, constant: 20),
-            authorizationModeSegment.rightAnchor.constraint(equalTo: authView.rightAnchor, constant: -20)
+            authorizationModeSegment.leftAnchor.constraint(equalTo: authView.leftAnchor, constant: 18),
+            authorizationModeSegment.rightAnchor.constraint(equalTo: authView.rightAnchor, constant: -18)
         ])
     }
     
@@ -81,7 +81,7 @@ extension MainViewController {
         enterButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            enterButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 120),
+            enterButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 135),
             enterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             enterButton.widthAnchor.constraint(equalToConstant: 345),
             enterButton.heightAnchor.constraint(equalToConstant: 50)
