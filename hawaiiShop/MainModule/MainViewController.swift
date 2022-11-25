@@ -11,25 +11,8 @@ class MainViewController: UIViewController {
     
     var presenter: MainPresenterProtocol!
     
-    private let authorizationLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 28)
-        label.textAlignment = .center
-        label.contentMode = .center
-        label.numberOfLines = 0
-        label.text = "Authorization"
-        return label
-    }()
-    
-    private let authView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 255, green: 255, blue: 255, alpha: 1)
-        view.layer.cornerRadius = 16
-        //        view.layer.shadowOffset = CGSize(width: 5, height: 10)
-        //        view.layer.shadowRadius = .infinity
-        //        view.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
-        return view
-    }()
+    private let authorizationLabel = HWLabel().buildHWAuthorizationLabel()
+    private let authView = HWView().buildHWAuthView()
     
     private lazy var authorizationModeSegment: UISegmentedControl = {
         let items = ["Sign Up", "Login"]
@@ -40,49 +23,11 @@ class MainViewController: UIViewController {
         return segment
     }()
     
-    private lazy var loginField: UITextField = {
-        let field = UITextField()
-        field.placeholder = "   Phone number"
-        field.layer.cornerRadius = 20
-        field.layer.borderWidth = 0.5
-        field.layer.borderColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
-        field.contentMode = .scaleAspectFit
-        return field
-    }()
-    
-    private lazy var passwordField: UITextField = {
-        let field = UITextField()
-        field.placeholder = "   SMS code"
-        field.layer.cornerRadius = 20
-        field.layer.borderWidth = 0.5
-        field.layer.borderColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
-        field.contentMode = .left
-        return field
-    }()
-    
-    private lazy var loginButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
-        button.setTitle("Log in", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        button.layer.cornerRadius = 16
-        return button
-    }()
-    
-    private lazy var helpButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .white
-        button.setTitle("I need a help", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        button.setTitleColor(UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), for: .normal)
-        return button
-    }()
-    
-    private let bottomOrangeView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
-        return view
-    }()
+    private let loginField = HWTextField().buildHWLoginField()
+    private let passwordField = HWTextField().buildHWPasswordSMSField()
+    private let enterButton = HWButton().buildHWEnterButton()
+    private let helpButton = HWButton().buildHWHelpButton()
+    private let bottomOrangeView = HWView().buildHWOrangeView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,8 +55,8 @@ class MainViewController: UIViewController {
         view.addSubview(passwordField)
         passwordFieldLayout()
         
-        view.addSubview(loginButton)
-        loginButtonLayout()
+        view.addSubview(enterButton)
+        enterButtonLayout()
         
         view.addSubview(helpButton)
         helpButtonLayout()
@@ -175,14 +120,14 @@ class MainViewController: UIViewController {
         ])
     }
     
-    private func loginButtonLayout() {
-        loginButton.translatesAutoresizingMaskIntoConstraints = false
+    private func enterButtonLayout() {
+        enterButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            loginButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 120),
-            loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loginButton.widthAnchor.constraint(equalToConstant: 345),
-            loginButton.heightAnchor.constraint(equalToConstant: 50)
+            enterButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 120),
+            enterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            enterButton.widthAnchor.constraint(equalToConstant: 345),
+            enterButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
@@ -190,7 +135,7 @@ class MainViewController: UIViewController {
         helpButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            helpButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 50),
+            helpButton.topAnchor.constraint(equalTo: enterButton.bottomAnchor, constant: 50),
             helpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             helpButton.widthAnchor.constraint(equalToConstant: 300),
             helpButton.heightAnchor.constraint(equalToConstant: 20)
