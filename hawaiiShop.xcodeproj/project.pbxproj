@@ -17,6 +17,7 @@
 		3DFBDE882930ED6D005EEAFD /* HWTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE872930ED6D005EEAFD /* HWTextField.swift */; };
 		3DFBDE8A2930EE0B005EEAFD /* HWButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE892930EE0B005EEAFD /* HWButton.swift */; };
 		3DFBDE8E2930EF9E005EEAFD /* HWView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE8D2930EF9E005EEAFD /* HWView.swift */; };
+		3DFBDE902930F15D005EEAFD /* MainLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE8F2930F15D005EEAFD /* MainLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3DFBDE872930ED6D005EEAFD /* HWTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWTextField.swift; sourceTree = "<group>"; };
 		3DFBDE892930EE0B005EEAFD /* HWButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWButton.swift; sourceTree = "<group>"; };
 		3DFBDE8D2930EF9E005EEAFD /* HWView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWView.swift; sourceTree = "<group>"; };
+		3DFBDE8F2930F15D005EEAFD /* MainLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				3DFBDE6C292E46D3005EEAFD /* MainViewController.swift */,
 				3DFBDE7E292EAAB2005EEAFD /* MainPresenter.swift */,
+				3DFBDE8F2930F15D005EEAFD /* MainLayout.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */,
 				3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */,
 				3DFBDE7F292EAAB2005EEAFD /* MainPresenter.swift in Sources */,
+				3DFBDE902930F15D005EEAFD /* MainLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
