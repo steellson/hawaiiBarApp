@@ -13,11 +13,17 @@ class MainViewController: UIViewController {
     
     
     
+    
+//MARK: - Life cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupController()
     }
+    
+    
+//MARK: - Setup Controller
     
     private func setupController() {
         view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
@@ -27,12 +33,21 @@ class MainViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        navigationItem.title = "Hawaii Bar"
- 
+        let leftBarItem = UIBarButtonItem(image: UIImage(systemName: "person"), style: .plain, target: self, action: #selector(barButtonDidTapped))
+        navigationItem.leftBarButtonItem = leftBarItem
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
-    }
+        let rightBarItem = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(barButtonDidTapped))
+        navigationItem.rightBarButtonItem = rightBarItem
+        navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
 
-//    @objc private func leftBarButtonDidTapped() {
-//        print("Left Bar Button Did Tapped")
-//    }
+        navigationItem.title = "Hawaii Bar"
+    }
+    
+    
+//MARK: - Buttons Action
+    
+    @objc private func barButtonDidTapped() {
+        print("Bar Button Did Tapped")
+    }
 }
