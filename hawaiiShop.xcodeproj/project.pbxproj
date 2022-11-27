@@ -20,6 +20,7 @@
 		3DFBDE902930F15D005EEAFD /* AuthScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE8F2930F15D005EEAFD /* AuthScreenLayout.swift */; };
 		3DFBDE9329312462005EEAFD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE9229312462005EEAFD /* MainViewController.swift */; };
 		3DFBDE9529312510005EEAFD /* MainScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE9429312510005EEAFD /* MainScreenLayout.swift */; };
+		3DFBDE992933A023005EEAFD /* MenuCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE982933A023005EEAFD /* MenuCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3DFBDE8F2930F15D005EEAFD /* AuthScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreenLayout.swift; sourceTree = "<group>"; };
 		3DFBDE9229312462005EEAFD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3DFBDE9429312510005EEAFD /* MainScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenLayout.swift; sourceTree = "<group>"; };
+		3DFBDE982933A023005EEAFD /* MenuCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				3DFBDE9229312462005EEAFD /* MainViewController.swift */,
 				3DFBDE9429312510005EEAFD /* MainScreenLayout.swift */,
+				3DFBDE982933A023005EEAFD /* MenuCard.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				3DFBDE8E2930EF9E005EEAFD /* HWView.swift in Sources */,
 				3DFBDE6D292E46D3005EEAFD /* AuthorizationViewController.swift in Sources */,
 				3DFBDE882930ED6D005EEAFD /* HWTextField.swift in Sources */,
+				3DFBDE992933A023005EEAFD /* MenuCard.swift in Sources */,
 				3DFBDE8A2930EE0B005EEAFD /* HWButton.swift in Sources */,
 				3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */,
 				3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */,
