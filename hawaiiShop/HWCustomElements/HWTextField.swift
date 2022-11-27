@@ -41,5 +41,27 @@ final class HWTextField: UITextField {
         ])
         return field
     }
+    
+    public func buildHWSearchField() -> UITextField {
+        let field = UITextField()
+        field.backgroundColor = UIColor(red: 239/255, green: 238/255, blue: 238/255, alpha: 1)
+        field.placeholder = "       Search"
+        field.layer.cornerRadius = 20
+        field.contentMode = .left
+
+        let iconView = UIImageView(image: UIImage(systemName: "magnifyingglass"))
+
+        field.addSubview(iconView)
+        iconView.tintColor = .black
+        iconView.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            iconView.leftAnchor.constraint(equalTo: field.leftAnchor, constant: 5),
+            iconView.centerYAnchor.constraint(equalTo: field.centerYAnchor),
+            iconView.widthAnchor.constraint(equalToConstant: 25),
+            iconView.heightAnchor.constraint(equalToConstant: 25)
+        ])
+        return field
+    }
 
 }
