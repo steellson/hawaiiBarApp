@@ -10,9 +10,10 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    let searchField = HWTextField().buildHWSearchField()
+    //MARK: - UI Elements
     
-    
+    let searchField  = HWTextField().buildHWSearchField()
+    let menuLabel    = HWLabel().buildHWMenuLabel()
     
     
 //MARK: - Life cycle
@@ -30,6 +31,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         
         view.addSubview(searchField)
+        view.addSubview(menuLabel)
         
         setupNavigationBar()
         setupLayout()
@@ -45,6 +47,7 @@ class MainViewController: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
 
         navigationItem.title = "Hawaii Bar"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20 , weight: .medium)]
     }
     
     

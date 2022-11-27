@@ -14,21 +14,21 @@ class AuthorizationViewController: UIViewController {
     //MARK: - UI Elements
     
     let authorizationLabel = HWLabel().buildHWAuthorizationLabel()
-    let authView = HWView().buildHWAuthView()
+    let authView           = HWView().buildHWAuthView()
     
     lazy var authorizationModeSegment: UISegmentedControl = {
         let items = ["Sign Up", "Login"]
         let segment = UISegmentedControl(items: items)
-        segment.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Arial", size: 18)!, NSAttributedString.Key.foregroundColor: UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)], for: .normal)
         segment.backgroundColor = .white
         segment.isMomentary = false
+        segment.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Arial", size: 18)!, NSAttributedString.Key.foregroundColor: UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)], for: .normal)
         return segment
     }()
     
-    let loginField = HWTextField().buildHWLoginField()
-    let passwordField = HWTextField().buildHWPasswordSMSField()
-    let enterButton = HWButton().buildHWEnterButton()
-    let helpButton = HWButton().buildHWHelpButton()
+    let loginField       = HWTextField().buildHWLoginField()
+    let passwordField    = HWTextField().buildHWPasswordSMSField()
+    let enterButton      = HWButton().buildHWEnterButton()
+    let helpButton       = HWButton().buildHWHelpButton()
     let bottomOrangeView = HWView().buildHWOrangeView()
     
     

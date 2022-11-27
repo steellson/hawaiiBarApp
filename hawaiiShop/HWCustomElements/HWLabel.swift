@@ -19,4 +19,13 @@ final class HWLabel: UILabel {
         label.text = "Authorization"
         return label
     }
+    
+    public func buildHWMenuLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.text = "Menu"
+        return label
+    }
 }

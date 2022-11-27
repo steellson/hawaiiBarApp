@@ -12,6 +12,7 @@ extension MainViewController {
     
     func setupLayout() {
         searchFieldLayout()
+        menuLabelLayout()
     }
     
     
@@ -25,6 +26,17 @@ extension MainViewController {
             searchField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             searchField.widthAnchor.constraint(equalToConstant: 345),
             searchField.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
+    private func menuLabelLayout() {
+        menuLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            menuLabel.topAnchor.constraint(equalTo: searchField.bottomAnchor, constant: 35),
+            menuLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
+            menuLabel.rightAnchor.constraint(equalTo: view.leftAnchor, constant: 250),
+            menuLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     
