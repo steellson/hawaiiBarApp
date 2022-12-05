@@ -65,7 +65,7 @@ class HWMenuCardCell: UICollectionViewCell {
     private func setupLabel() {
         self.contentView.addSubview(label)
         label.contentMode = .center
-        label.font = .systemFont(ofSize: 22, weight: .semibold)
+        label.font = UIFont(name: "Quicksand-Bold", size: 20)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         

@@ -12,7 +12,7 @@ final class HWLabel: UILabel {
     
     public func buildHWAuthorizationLabel() -> UILabel {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 28)
+        label.font = UIFont(name: "Quicksand-Bold", size: 24)
         label.textAlignment = .center
         label.contentMode = .center
         label.numberOfLines = 0
@@ -22,7 +22,7 @@ final class HWLabel: UILabel {
     
     public func buildHWMenuLabel() -> UILabel {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.font = UIFont(name: "Quicksand-Bold", size: 20)
         label.textAlignment = .left
         label.numberOfLines = 0
         label.text = "Menu"

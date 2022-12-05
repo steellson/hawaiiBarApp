@@ -103,9 +103,9 @@ extension AuthorizationViewController {
         bottomOrangeView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            bottomOrangeView.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 2),
+            bottomOrangeView.topAnchor.constraint(equalTo: helpButton.bottomAnchor, constant: 3),
             bottomOrangeView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            bottomOrangeView.widthAnchor.constraint(equalToConstant: 90),
+            bottomOrangeView.widthAnchor.constraint(equalToConstant: 110),
             bottomOrangeView.heightAnchor.constraint(equalToConstant: 1.5)
         ])
     }

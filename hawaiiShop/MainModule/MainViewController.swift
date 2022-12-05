@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
 
         navigationItem.title = "Hawaii Bar"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22 , weight: .semibold)]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Quicksand-Bold", size: 20)!]
     }
     
     private func setupCollectionView() {

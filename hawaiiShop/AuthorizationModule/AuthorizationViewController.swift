@@ -21,7 +21,7 @@ class AuthorizationViewController: UIViewController {
         let segment = UISegmentedControl(items: items)
         segment.backgroundColor = .white
         segment.isMomentary = false
-        segment.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Arial", size: 18)!, NSAttributedString.Key.foregroundColor: UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)], for: .normal)
+        segment.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Quicksand-SemiBold", size: 18)!, NSAttributedString.Key.foregroundColor: UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)], for: .normal)
         return segment
     }()
     
