@@ -10,7 +10,7 @@ import UIKit
 
 struct MenuCard {
     
-    let image: UIImage?
+    let image: UIImageView?
     let label: String
     
 }
@@ -20,12 +20,12 @@ struct MenuCard {
 
 struct MenuCardData {
     
-    var cards: [MenuCard] = [
-        MenuCard(image: UIImage(named: "salads")!, label: "Salads"),
-        MenuCard(image: UIImage(named: "bowls")!, label: "Bowls"),
-        MenuCard(image: UIImage(named: "sandwiches")!, label: "Sandwiches"),
-        MenuCard(image: UIImage(named: "pizza")!, label: "Pizza"),
-        MenuCard(image: UIImage(named: "drinks")!, label: "Drinks"),
-        MenuCard(image: UIImage(named: "other")!, label: "Other")
+    static var cards: [MenuCard] = [
+        MenuCard(image: UIImageView(image: UIImage(named: "salads")!), label: "Salads"),
+        MenuCard(image: UIImageView(image: UIImage(named: "bowls")!), label: "Bowls"),
+        MenuCard(image: UIImageView(image: UIImage(named: "sandwiches")!), label: "Sandwiches"),
+        MenuCard(image: UIImageView(image: UIImage(named: "pizza")!), label: "Pizza"),
+        MenuCard(image: UIImageView(image: UIImage(named: "drinks")!), label: "Drinks"),
+        MenuCard(image: UIImageView(image: UIImage(named: "other")!), label: "Other")
     ]
 }

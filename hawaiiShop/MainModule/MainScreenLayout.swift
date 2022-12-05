@@ -13,6 +13,7 @@ extension MainViewController {
     func setupLayout() {
         searchFieldLayout()
         menuLabelLayout()
+        cardsCollectionViewLayout()
     }
     
     
@@ -33,11 +34,22 @@ extension MainViewController {
         menuLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            menuLabel.topAnchor.constraint(equalTo: searchField.bottomAnchor, constant: 35),
+            menuLabel.topAnchor.constraint(equalTo: searchField.bottomAnchor, constant: 50),
             menuLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
             menuLabel.rightAnchor.constraint(equalTo: view.leftAnchor, constant: 250),
             menuLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
     
+    private func cardsCollectionViewLayout() {
+        cardsCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            cardsCollectionView.topAnchor.constraint(equalTo: menuLabel.bottomAnchor, constant: 35),
+            cardsCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            cardsCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            cardsCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ])
+    }
+
 }

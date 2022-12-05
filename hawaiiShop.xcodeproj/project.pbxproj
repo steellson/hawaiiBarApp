@@ -21,6 +21,7 @@
 		3DFBDE9329312462005EEAFD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE9229312462005EEAFD /* MainViewController.swift */; };
 		3DFBDE9529312510005EEAFD /* MainScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE9429312510005EEAFD /* MainScreenLayout.swift */; };
 		3DFBDE992933A023005EEAFD /* MenuCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE982933A023005EEAFD /* MenuCard.swift */; };
+		3DFBDE9B2933B3E2005EEAFD /* HWMenuCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE9A2933B3E2005EEAFD /* HWMenuCardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		3DFBDE9229312462005EEAFD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3DFBDE9429312510005EEAFD /* MainScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenLayout.swift; sourceTree = "<group>"; };
 		3DFBDE982933A023005EEAFD /* MenuCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCard.swift; sourceTree = "<group>"; };
+		3DFBDE9A2933B3E2005EEAFD /* HWMenuCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWMenuCardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				3DFBDE872930ED6D005EEAFD /* HWTextField.swift */,
 				3DFBDE892930EE0B005EEAFD /* HWButton.swift */,
 				3DFBDE8D2930EF9E005EEAFD /* HWView.swift */,
+				3DFBDE9A2933B3E2005EEAFD /* HWMenuCardCell.swift */,
 			);
 			path = HWCustomElements;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				3DFBDE8A2930EE0B005EEAFD /* HWButton.swift in Sources */,
 				3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */,
 				3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */,
+				3DFBDE9B2933B3E2005EEAFD /* HWMenuCardCell.swift in Sources */,
 				3DFBDE9529312510005EEAFD /* MainScreenLayout.swift in Sources */,
 				3DFBDE7F292EAAB2005EEAFD /* AuthorizationPresenter.swift in Sources */,
 				3DFBDE902930F15D005EEAFD /* AuthScreenLayout.swift in Sources */,
