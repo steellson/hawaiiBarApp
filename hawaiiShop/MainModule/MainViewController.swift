@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     
     let searchField               = HWTextField().buildHWSearchField()
     let menuLabel                 = HWLabel().buildHWMenuLabel()
-    var menuCards: [MainMenuCard]     = MainMenuCardData.cards
+    var mainMenuCards: [MainMenuCard]     = MainMenuCardData.cards
     var cardsCollectionView       : UICollectionView!
     
     
@@ -41,11 +41,11 @@ class MainViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        let leftBarItem = UIBarButtonItem(image: UIImage(systemName: "person"), style: .plain, target: self, action: #selector(barButtonDidTapped))
+        let leftBarItem = UIBarButtonItem(image: UIImage(systemName: "person"), style: .plain, target: self, action: #selector(mainMenuBarButtonDidTapped))
         navigationItem.leftBarButtonItem = leftBarItem
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
-        let rightBarItem = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(barButtonDidTapped))
+        let rightBarItem = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(mainMenuBarButtonDidTapped))
         navigationItem.rightBarButtonItem = rightBarItem
         navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
 
@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
         
         cardsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         cardsCollectionView.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
-        cardsCollectionView.register(HWMenuCardCell.self, forCellWithReuseIdentifier: "cardCell")
+        cardsCollectionView.register(HWMainMenuCardCell.self, forCellWithReuseIdentifier: "cardCell")
         cardsCollectionView.dataSource = self
         cardsCollectionView.delegate = self
         
@@ -70,7 +70,7 @@ class MainViewController: UIViewController {
     
 //MARK: - Buttons Action
     
-    @objc private func barButtonDidTapped() {
+    @objc private func mainMenuBarButtonDidTapped() {
         print("Bar Button Did Tapped")
     }
 }
@@ -79,7 +79,7 @@ class MainViewController: UIViewController {
 //MARK: - Protocol Extension
 
 
-//MARK: - Menu CV Data Source Extension
+//MARK: - Main Menu CV Data Source Extension
 
 extension MainViewController: UICollectionViewDataSource {
     
@@ -88,15 +88,14 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menuCards.count
+        return mainMenuCards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! HWMenuCardCell
-        let image = menuCards[indexPath.item].image
-        let label = menuCards[indexPath.item].label
-        cell.imageView.image = image?.image
-        cell.label.text = label
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! HWMainMenuCardCell
+        guard let image = mainMenuCards[indexPath.item].image?.image else { return HWMainMenuCardCell() }
+        let label = mainMenuCards[indexPath.item].label
+        cell.configureCell(with: image, and: label)
         return cell
     }
 }

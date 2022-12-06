@@ -11,7 +11,17 @@ import UIKit
 extension MenuViewController {
     
     func setupLayout() {
-       
+       setupMenuCollectionViewLayout()
     }
     
+    private func setupMenuCollectionViewLayout() {
+        menuCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            menuCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            menuCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            menuCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            menuCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ])
+    }
 }

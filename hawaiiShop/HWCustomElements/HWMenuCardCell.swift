@@ -2,7 +2,7 @@
 //  HWMenuCardCell.swift
 //  hawaiiShop
 //
-//  Created by Andrey Pochepaev on 27.11.2022.
+//  Created by Andrey Pochepaev on 06.12.2022.
 //
 
 import Foundation
@@ -10,14 +10,22 @@ import UIKit
 
 class HWMenuCardCell: UICollectionViewCell {
     
-    let imageView = UIImageView()
-    let label = UILabel()
-    
+    private let imageView = UIImageView()
+    private let nameLabel = UILabel()
+    private let weightLabel = UILabel()
+    private let priceLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
        setupCell()
+    }
+    
+    func configureCell(with image: UIImage, nameLabel: String, weightLabel: String, priceLabel: String) {
+        self.imageView.image = image
+        self.nameLabel.text = nameLabel
+        self.weightLabel.text = weightLabel
+        self.priceLabel.text = priceLabel
     }
     
     
@@ -29,7 +37,9 @@ class HWMenuCardCell: UICollectionViewCell {
     
         setupBackgroundLayerOfCell()
         setupImageView()
-        setupLabel()
+        setupNameLabel()
+        setupWeightLabel()
+        setupPriceLabel()
     }
     
     private func setupBackgroundLayerOfCell() {
@@ -62,17 +72,47 @@ class HWMenuCardCell: UICollectionViewCell {
         ])
     }
     
-    private func setupLabel() {
-        self.contentView.addSubview(label)
-        label.contentMode = .center
-        label.font = UIFont(name: "Quicksand-Bold", size: 20)
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private func setupNameLabel() {
+        self.contentView.addSubview(nameLabel)
+        nameLabel.contentMode = .center
+        nameLabel.font = UIFont(name: "Quicksand-Bold", size: 20)
+        nameLabel.textAlignment = .center
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 15),
-            label.widthAnchor.constraint(equalToConstant: contentView.bounds.width),
-            label.centerXAnchor.constraint(equalTo: centerXAnchor)
+            nameLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 15),
+            nameLabel.widthAnchor.constraint(equalToConstant: contentView.bounds.width),
+            nameLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
+    }
+    
+    private func setupWeightLabel() { //
+        self.contentView.addSubview(weightLabel)
+        weightLabel.contentMode = .center
+        weightLabel.font = UIFont(name: "Quicksand-Regular", size: 16)
+        weightLabel.textColor = UIColor(red: 159/255, green: 159/255, blue: 159/255, alpha: 1)
+        weightLabel.textAlignment = .center
+        weightLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            weightLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
+            weightLabel.widthAnchor.constraint(equalToConstant: contentView.bounds.width),
+            weightLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+        ])
+    }
+    
+    private func setupPriceLabel() { //
+        self.contentView.addSubview(priceLabel)
+        priceLabel.contentMode = .center
+        priceLabel.font = UIFont(name: "Quicksand-Bold", size: 24)
+        priceLabel.textColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        priceLabel.textAlignment = .center
+        priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            priceLabel.topAnchor.constraint(equalTo: weightLabel.bottomAnchor, constant: 10),
+            priceLabel.widthAnchor.constraint(equalToConstant: contentView.bounds.width),
+            priceLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
     

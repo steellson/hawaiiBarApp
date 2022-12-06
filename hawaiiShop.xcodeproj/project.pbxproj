@@ -16,6 +16,7 @@
 		3D3983C6293F76C8008B01BE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3983C5293F76C8008B01BE /* MenuViewController.swift */; };
 		3D3983C8293F76F1008B01BE /* MenuViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3983C7293F76F1008B01BE /* MenuViewControllerLayout.swift */; };
 		3D3983CA293F77E8008B01BE /* MenuCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3983C9293F77E8008B01BE /* MenuCard.swift */; };
+		3D3983CC293F85B9008B01BE /* HWMenuCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3983CB293F85B9008B01BE /* HWMenuCardCell.swift */; };
 		3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE68292E46D3005EEAFD /* AppDelegate.swift */; };
 		3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6A292E46D3005EEAFD /* SceneDelegate.swift */; };
 		3DFBDE6D292E46D3005EEAFD /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6C292E46D3005EEAFD /* AuthorizationViewController.swift */; };
@@ -30,7 +31,7 @@
 		3DFBDE9329312462005EEAFD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE9229312462005EEAFD /* MainViewController.swift */; };
 		3DFBDE9529312510005EEAFD /* MainScreenLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE9429312510005EEAFD /* MainScreenLayout.swift */; };
 		3DFBDE992933A023005EEAFD /* MainMenuCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE982933A023005EEAFD /* MainMenuCard.swift */; };
-		3DFBDE9B2933B3E2005EEAFD /* HWMenuCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE9A2933B3E2005EEAFD /* HWMenuCardCell.swift */; };
+		3DFBDE9B2933B3E2005EEAFD /* HWMainMenuCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE9A2933B3E2005EEAFD /* HWMainMenuCardCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		3D3983C5293F76C8008B01BE /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3D3983C7293F76F1008B01BE /* MenuViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewControllerLayout.swift; sourceTree = "<group>"; };
 		3D3983C9293F77E8008B01BE /* MenuCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCard.swift; sourceTree = "<group>"; };
+		3D3983CB293F85B9008B01BE /* HWMenuCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWMenuCardCell.swift; sourceTree = "<group>"; };
 		3DFBDE65292E46D3005EEAFD /* hawaiiShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hawaiiShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFBDE68292E46D3005EEAFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DFBDE6A292E46D3005EEAFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		3DFBDE9229312462005EEAFD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3DFBDE9429312510005EEAFD /* MainScreenLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenLayout.swift; sourceTree = "<group>"; };
 		3DFBDE982933A023005EEAFD /* MainMenuCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuCard.swift; sourceTree = "<group>"; };
-		3DFBDE9A2933B3E2005EEAFD /* HWMenuCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWMenuCardCell.swift; sourceTree = "<group>"; };
+		3DFBDE9A2933B3E2005EEAFD /* HWMainMenuCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWMainMenuCardCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +156,8 @@
 				3DFBDE872930ED6D005EEAFD /* HWTextField.swift */,
 				3DFBDE892930EE0B005EEAFD /* HWButton.swift */,
 				3DFBDE8D2930EF9E005EEAFD /* HWView.swift */,
-				3DFBDE9A2933B3E2005EEAFD /* HWMenuCardCell.swift */,
+				3DFBDE9A2933B3E2005EEAFD /* HWMainMenuCardCell.swift */,
+				3D3983CB293F85B9008B01BE /* HWMenuCardCell.swift */,
 			);
 			path = HWCustomElements;
 			sourceTree = "<group>";
@@ -252,11 +255,12 @@
 				3D3983C6293F76C8008B01BE /* MenuViewController.swift in Sources */,
 				3DFBDE882930ED6D005EEAFD /* HWTextField.swift in Sources */,
 				3DFBDE992933A023005EEAFD /* MainMenuCard.swift in Sources */,
+				3D3983CC293F85B9008B01BE /* HWMenuCardCell.swift in Sources */,
 				3DFBDE8A2930EE0B005EEAFD /* HWButton.swift in Sources */,
 				3D3983CA293F77E8008B01BE /* MenuCard.swift in Sources */,
 				3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */,
 				3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */,
-				3DFBDE9B2933B3E2005EEAFD /* HWMenuCardCell.swift in Sources */,
+				3DFBDE9B2933B3E2005EEAFD /* HWMainMenuCardCell.swift in Sources */,
 				3DFBDE9529312510005EEAFD /* MainScreenLayout.swift in Sources */,
 				3DFBDE7F292EAAB2005EEAFD /* AuthorizationPresenter.swift in Sources */,
 				3DFBDE902930F15D005EEAFD /* AuthScreenLayout.swift in Sources */,
