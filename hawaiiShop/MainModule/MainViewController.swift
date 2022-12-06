@@ -14,7 +14,7 @@ class MainViewController: UIViewController {
     
     let searchField               = HWTextField().buildHWSearchField()
     let menuLabel                 = HWLabel().buildHWMenuLabel()
-    var menuCards: [MenuCard]     = MenuCardData.cards
+    var menuCards: [MainMenuCard]     = MainMenuCardData.cards
     var cardsCollectionView       : UICollectionView!
     
     
