@@ -11,7 +11,7 @@ import UIKit
 class MenuDetailViewController: UIViewController {
     
     //MARK: UI Elements
-    
+    let titleLabel = HWLabel().buildHWMenuDetailTitleLabel()
     
     
 //MARK: - Lifecycle
@@ -26,7 +26,9 @@ class MenuDetailViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
+        view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         
+        view.addSubview(titleLabel)
         
         setupLayout()
     }

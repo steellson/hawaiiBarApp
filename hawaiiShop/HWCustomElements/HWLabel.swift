@@ -28,4 +28,13 @@ final class HWLabel: UILabel {
         label.text = "Menu"
         return label
     }
+    
+    public func buildHWMenuDetailTitleLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-Bold", size: 20)
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.text = "Cherry pizza"
+        return label
+    }
 }
