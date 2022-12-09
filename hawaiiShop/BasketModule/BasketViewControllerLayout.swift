@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 
+//MARK: - BASKET VC LAYOUT
+
 extension BasketViewController {
     
     func setupLayout() {
@@ -21,3 +23,25 @@ extension BasketViewController {
     }
     
 }
+
+
+
+///////////////////////////////////////////////////////////////////MARK: - EMPTY BASKET VC LAYOUT
+/////////////////////////////////////////////////////
+////////////////////////////////////////////
+
+
+extension BasketEmptyViewController {
+    
+    func setupLayout() {
+        
+    }
+    
+//MARK: - Methods
+    
+    private func lllayout() {
+        
+    }
+    
+}
+
