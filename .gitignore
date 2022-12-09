@@ -1,6 +1,7 @@
 xcuserdata/
 *.xcscmblueprint
 *.xccheckout
+.DS_Store
 build/
 DerivedData/
 *.moved-aside

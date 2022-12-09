@@ -21,6 +21,9 @@
 		3DE94C6729426CA80068D2DD /* MenuDetailViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */; };
 		3DE9A00D29434DBF00F8793C /* HWImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9A00C29434DBF00F8793C /* HWImageView.swift */; };
 		3DE9A00F29435D7B00F8793C /* MenuDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9A00E29435D7B00F8793C /* MenuDetailCard.swift */; };
+		3DFA9548294387AF004D16B1 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA9547294387AF004D16B1 /* Basket.swift */; };
+		3DFA954A294387BD004D16B1 /* BasketViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA9549294387BD004D16B1 /* BasketViewControllerLayout.swift */; };
+		3DFA954C294387CB004D16B1 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA954B294387CB004D16B1 /* BasketViewController.swift */; };
 		3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE68292E46D3005EEAFD /* AppDelegate.swift */; };
 		3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6A292E46D3005EEAFD /* SceneDelegate.swift */; };
 		3DFBDE6D292E46D3005EEAFD /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6C292E46D3005EEAFD /* AuthorizationViewController.swift */; };
@@ -53,6 +56,9 @@
 		3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DE9A00C29434DBF00F8793C /* HWImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWImageView.swift; sourceTree = "<group>"; };
 		3DE9A00E29435D7B00F8793C /* MenuDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailCard.swift; sourceTree = "<group>"; };
+		3DFA9547294387AF004D16B1 /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
+		3DFA9549294387BD004D16B1 /* BasketViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewControllerLayout.swift; sourceTree = "<group>"; };
+		3DFA954B294387CB004D16B1 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		3DFBDE65292E46D3005EEAFD /* hawaiiShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hawaiiShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFBDE68292E46D3005EEAFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DFBDE6A292E46D3005EEAFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +122,16 @@
 			path = MenuDetailModule;
 			sourceTree = "<group>";
 		};
+		3DFA954629438780004D16B1 /* BasketModule */ = {
+			isa = PBXGroup;
+			children = (
+				3DFA954B294387CB004D16B1 /* BasketViewController.swift */,
+				3DFA9549294387BD004D16B1 /* BasketViewControllerLayout.swift */,
+				3DFA9547294387AF004D16B1 /* Basket.swift */,
+			);
+			path = BasketModule;
+			sourceTree = "<group>";
+		};
 		3DFBDE5C292E46D3005EEAFD = {
 			isa = PBXGroup;
 			children = (
@@ -140,10 +156,11 @@
 				3DFBDE912931237D005EEAFD /* MainModule */,
 				3D3983C4293F75C8008B01BE /* MenuModule */,
 				3DE94C6329426ADB0068D2DD /* MenuDetailModule */,
+				3DFA954629438780004D16B1 /* BasketModule */,
 				3DFBDE822930E9E1005EEAFD /* HWCustomElements */,
 				3D3983B7293E5813008B01BE /* Fonts */,
-				3DFBDE76292E46DD005EEAFD /* Info.plist */,
 				3DFBDE71292E46DD005EEAFD /* Assets.xcassets */,
+				3DFBDE76292E46DD005EEAFD /* Info.plist */,
 				3DFBDE73292E46DD005EEAFD /* LaunchScreen.storyboard */,
 			);
 			path = hawaiiShop;
@@ -274,7 +291,9 @@
 				3DFBDE6D292E46D3005EEAFD /* AuthorizationViewController.swift in Sources */,
 				3D3983C8293F76F1008B01BE /* MenuViewControllerLayout.swift in Sources */,
 				3D3983C6293F76C8008B01BE /* MenuViewController.swift in Sources */,
+				3DFA954C294387CB004D16B1 /* BasketViewController.swift in Sources */,
 				3DFBDE882930ED6D005EEAFD /* HWTextField.swift in Sources */,
+				3DFA954A294387BD004D16B1 /* BasketViewControllerLayout.swift in Sources */,
 				3DFBDE992933A023005EEAFD /* MainMenuCard.swift in Sources */,
 				3DE94C6729426CA80068D2DD /* MenuDetailViewControllerLayout.swift in Sources */,
 				3D3983CC293F85B9008B01BE /* HWMenuCardCell.swift in Sources */,
@@ -285,6 +304,7 @@
 				3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */,
 				3DE94C6529426B630068D2DD /* MenuDetailViewController.swift in Sources */,
 				3DFBDE9B2933B3E2005EEAFD /* HWMainMenuCardCell.swift in Sources */,
+				3DFA9548294387AF004D16B1 /* Basket.swift in Sources */,
 				3DFBDE9529312510005EEAFD /* MainScreenLayout.swift in Sources */,
 				3DFBDE7F292EAAB2005EEAFD /* AuthorizationPresenter.swift in Sources */,
 				3DFBDE902930F15D005EEAFD /* AuthScreenLayout.swift in Sources */,
