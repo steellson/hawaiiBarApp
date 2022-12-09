@@ -14,6 +14,7 @@ final class HWImageView: UIImageView {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "pizza")
         return imageView
     }
     

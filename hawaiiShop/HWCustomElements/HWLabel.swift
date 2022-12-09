@@ -66,4 +66,14 @@ final class HWLabel: UILabel {
         label.text = "17 $"
         return label
     }
+    
+    public func buildHWMenuDetailItemsLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-SemiBold", size: 24)
+        label.textColor = .black
+        label.textAlignment = .center
+        label.numberOfLines = 1
+        label.text = "1"
+        return label
+    }
 }

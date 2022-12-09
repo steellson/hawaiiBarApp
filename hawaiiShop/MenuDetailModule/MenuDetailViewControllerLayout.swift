@@ -17,6 +17,7 @@ extension MenuDetailViewController {
         menuDetailWeightLabelLayout()
         menuDetailPriceLabelLayout()
         menuDetailPlusButtonLayout()
+        menuDetailItemsLabelLayout()
     }
     
 //MARK: - Methods
@@ -82,6 +83,17 @@ extension MenuDetailViewController {
             menuDetailPlusButton.heightAnchor.constraint(equalToConstant: 30),
             menuDetailPlusButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             menuDetailPlusButton.centerYAnchor.constraint(equalTo: menuDetailPriceLabel.centerYAnchor)
+        ])
+    }
+    
+    private func menuDetailItemsLabelLayout() {
+        menuDetailItemsLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            menuDetailItemsLabel.widthAnchor.constraint(equalToConstant: 30),
+            menuDetailItemsLabel.heightAnchor.constraint(equalToConstant: 30),
+            menuDetailItemsLabel.rightAnchor.constraint(equalTo: menuDetailPlusButton.leftAnchor, constant: -5),
+            menuDetailItemsLabel.centerYAnchor.constraint(equalTo: menuDetailPriceLabel.centerYAnchor)
         ])
     }
 }
