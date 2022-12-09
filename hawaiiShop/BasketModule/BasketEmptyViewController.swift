@@ -12,7 +12,10 @@ class BasketEmptyViewController: UIViewController {
     
     
     //MARK: UI Elements
-    
+    let basketEmptyImageView           = HWImageView().buildHWBasketEmptyImageView()
+    let basketEmptyTitle               = HWLabel().buildHWBasketEmptyTitle()
+    let basketEmptySubtitle            = HWLabel().buildHWBasketEmptySubtitle()
+    let basketEmptyCreateAnOrderButton = HWButton().buildHWCreateAnOrderButton()
     
     
     
@@ -28,6 +31,11 @@ class BasketEmptyViewController: UIViewController {
     
     private func setupController() {
         view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        
+        view.addSubview(basketEmptyImageView)
+        view.addSubview(basketEmptyTitle)
+        view.addSubview(basketEmptySubtitle)
+        view.addSubview(basketEmptyCreateAnOrderButton)
         
         setupNavigationBar()
         setupLayout()

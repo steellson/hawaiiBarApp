@@ -18,4 +18,11 @@ final class HWImageView: UIImageView {
         return imageView
     }
     
+    public func buildHWBasketEmptyImageView() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "basket")
+        return imageView
+    }
 }
