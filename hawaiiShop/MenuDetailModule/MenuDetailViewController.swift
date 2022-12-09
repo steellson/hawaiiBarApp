@@ -19,6 +19,7 @@ class MenuDetailViewController: UIViewController {
     let menuDetailPlusButton         = HWButton().buildHWMenuDetailItemsButton(with: "plus")
     let menuDetailItemsLabel         = HWLabel().buildHWMenuDetailItemsLabel()
     let menuDetailMinusButton        = HWButton().buildHWMenuDetailItemsButton(with: "minus")
+    let menuDetailAddButton          = HWButton().buildHWMenuDetailAddButton()
     
     
     
@@ -44,6 +45,7 @@ class MenuDetailViewController: UIViewController {
         view.addSubview(menuDetailPlusButton)
         view.addSubview(menuDetailItemsLabel)
         view.addSubview(menuDetailMinusButton)
+        view.addSubview(menuDetailAddButton)
         
         menuDetailPlusButton.backgroundColor = UIColor(red: 253/255, green: 201/255, blue: 9/255, alpha: 1)
         

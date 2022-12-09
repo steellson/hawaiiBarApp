@@ -45,5 +45,14 @@ final class HWButton: UIButton {
                                              UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
         return button
     }
+    
+    public func buildHWMenuDetailAddButton() -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        button.layer.cornerRadius = 16
+        button.setTitle("Add", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        return button
+    }
 
 }
