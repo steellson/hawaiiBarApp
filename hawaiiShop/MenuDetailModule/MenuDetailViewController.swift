@@ -16,6 +16,7 @@ class MenuDetailViewController: UIViewController {
     let menuDetailDescriptionLabel   = HWLabel().buildHWMenuDetailDescriptionLabel()
     let menuDetailWeightLabel        = HWLabel().buildHWMenuDetailWeightLabel()
     let menuDetailPriceLabel         = HWLabel().buildHWMenuDetailPriceLabel()
+    let menuDetailPlusButton         = HWButton().buildHWMenuDetailItemsButton(with: "+")
     
     
 //MARK: - Lifecycle
@@ -37,6 +38,7 @@ class MenuDetailViewController: UIViewController {
         view.addSubview(menuDetailDescriptionLabel)
         view.addSubview(menuDetailWeightLabel)
         view.addSubview(menuDetailPriceLabel)
+        view.addSubview(menuDetailPlusButton)
         
         setupLayout()
     }

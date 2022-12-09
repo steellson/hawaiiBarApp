@@ -12,10 +12,10 @@ class MainViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    let searchField               = HWTextField().buildHWSearchField()
-    let menuLabel                 = HWLabel().buildHWMenuLabel()
+    let searchField                       = HWTextField().buildHWSearchField()
+    let menuLabel                         = HWLabel().buildHWMenuLabel()
     var mainMenuCards: [MainMenuCard]     = MainMenuCardData.cards
-    var cardsCollectionView       : UICollectionView!
+    var cardsCollectionView               : UICollectionView!
     
     
 //MARK: - Lifecycle

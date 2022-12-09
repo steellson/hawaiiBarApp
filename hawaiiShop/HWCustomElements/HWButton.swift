@@ -36,5 +36,14 @@ final class HWButton: UIButton {
         button.titleLabel?.font = UIFont(name: "Quicksand-Medium", size: 16)
         return button
     }
+    
+    public func buildHWMenuDetailItemsButton(with title: String) -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.contentMode = .center
+        return button
+    }
 
 }
