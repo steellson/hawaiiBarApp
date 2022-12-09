@@ -37,4 +37,13 @@ final class HWLabel: UILabel {
         label.text = "Cherry pizza"
         return label
     }
+    
+    public func buildHWMenuDetailDescriptionLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand", size: 18)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.text = "Crunchy dough, cherry tomato, \nProsciutto, spinat and mozarella cheese"
+        return label
+    }
 }

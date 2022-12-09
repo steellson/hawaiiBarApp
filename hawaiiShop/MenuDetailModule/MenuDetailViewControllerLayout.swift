@@ -11,13 +11,14 @@ import UIKit
 extension MenuDetailViewController {
     
     func setupLayout() {
-        titleLabelLayout()
+        menuDetailTitleLabelLayout()
         menuDetailImageViewLayout()
+        menuDetailDescriptionLabelLayout()
     }
     
 //MARK: - Methods
     
-    private func titleLabelLayout() {
+    private func menuDetailTitleLabelLayout() {
         menuDetailTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -34,6 +35,17 @@ extension MenuDetailViewController {
             menuDetailImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             menuDetailImageView.widthAnchor.constraint(equalToConstant: 160),
             menuDetailImageView.heightAnchor.constraint(equalToConstant: 150)
+        ])
+    }
+    
+    private func menuDetailDescriptionLabelLayout() {
+        menuDetailDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            menuDetailDescriptionLabel.topAnchor.constraint(equalTo: menuDetailImageView.bottomAnchor, constant: 20),
+            menuDetailDescriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            menuDetailDescriptionLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            menuDetailDescriptionLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         ])
     }
 }
