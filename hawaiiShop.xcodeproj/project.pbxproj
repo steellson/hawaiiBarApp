@@ -19,6 +19,7 @@
 		3D3983CC293F85B9008B01BE /* HWMenuCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3983CB293F85B9008B01BE /* HWMenuCardCell.swift */; };
 		3DE94C6529426B630068D2DD /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */; };
 		3DE94C6729426CA80068D2DD /* MenuDetailViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */; };
+		3DE9A00D29434DBF00F8793C /* HWImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9A00C29434DBF00F8793C /* HWImageView.swift */; };
 		3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE68292E46D3005EEAFD /* AppDelegate.swift */; };
 		3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6A292E46D3005EEAFD /* SceneDelegate.swift */; };
 		3DFBDE6D292E46D3005EEAFD /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6C292E46D3005EEAFD /* AuthorizationViewController.swift */; };
@@ -49,6 +50,7 @@
 		3D3983CB293F85B9008B01BE /* HWMenuCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWMenuCardCell.swift; sourceTree = "<group>"; };
 		3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewControllerLayout.swift; sourceTree = "<group>"; };
+		3DE9A00C29434DBF00F8793C /* HWImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWImageView.swift; sourceTree = "<group>"; };
 		3DFBDE65292E46D3005EEAFD /* hawaiiShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hawaiiShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFBDE68292E46D3005EEAFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DFBDE6A292E46D3005EEAFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				3DFBDE872930ED6D005EEAFD /* HWTextField.swift */,
 				3DFBDE892930EE0B005EEAFD /* HWButton.swift */,
 				3DFBDE8D2930EF9E005EEAFD /* HWView.swift */,
+				3DE9A00C29434DBF00F8793C /* HWImageView.swift */,
 				3DFBDE9A2933B3E2005EEAFD /* HWMainMenuCardCell.swift */,
 				3D3983CB293F85B9008B01BE /* HWMenuCardCell.swift */,
 			);
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DFBDE842930EA55005EEAFD /* HWLabel.swift in Sources */,
+				3DE9A00D29434DBF00F8793C /* HWImageView.swift in Sources */,
 				3DFBDE8E2930EF9E005EEAFD /* HWView.swift in Sources */,
 				3DFBDE6D292E46D3005EEAFD /* AuthorizationViewController.swift in Sources */,
 				3D3983C8293F76F1008B01BE /* MenuViewControllerLayout.swift in Sources */,
