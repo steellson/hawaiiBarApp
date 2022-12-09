@@ -16,8 +16,10 @@ class MenuDetailViewController: UIViewController {
     let menuDetailDescriptionLabel   = HWLabel().buildHWMenuDetailDescriptionLabel()
     let menuDetailWeightLabel        = HWLabel().buildHWMenuDetailWeightLabel()
     let menuDetailPriceLabel         = HWLabel().buildHWMenuDetailPriceLabel()
-    let menuDetailPlusButton         = HWButton().buildHWMenuDetailItemsButton(with: "+")
+    let menuDetailPlusButton         = HWButton().buildHWMenuDetailItemsButton(with: "plus")
     let menuDetailItemsLabel         = HWLabel().buildHWMenuDetailItemsLabel()
+    let menuDetailMinusButton        = HWButton().buildHWMenuDetailItemsButton(with: "minus")
+    
     
     
 //MARK: - Lifecycle
@@ -41,6 +43,9 @@ class MenuDetailViewController: UIViewController {
         view.addSubview(menuDetailPriceLabel)
         view.addSubview(menuDetailPlusButton)
         view.addSubview(menuDetailItemsLabel)
+        view.addSubview(menuDetailMinusButton)
+        
+        menuDetailPlusButton.backgroundColor = UIColor(red: 253/255, green: 201/255, blue: 9/255, alpha: 1)
         
         setupLayout()
     }

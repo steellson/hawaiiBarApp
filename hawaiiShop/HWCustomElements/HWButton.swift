@@ -37,12 +37,12 @@ final class HWButton: UIButton {
         return button
     }
     
-    public func buildHWMenuDetailItemsButton(with title: String) -> UIButton {
+    public func buildHWMenuDetailItemsButton(with systemImageName: String) -> UIButton {
         let button = UIButton()
-        button.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        button.setTitle(title, for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.contentMode = .center
+        button.setImage(UIImage(systemName: systemImageName), for: .normal)
+        button.tintColor = .black
+        button.backgroundColor = isSelected ? UIColor(red: 253/255, green: 201/255, blue: 9/255, alpha: 1) :
+                                             UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
         return button
     }
 
