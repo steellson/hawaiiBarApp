@@ -14,6 +14,8 @@ extension MenuDetailViewController {
         menuDetailTitleLabelLayout()
         menuDetailImageViewLayout()
         menuDetailDescriptionLabelLayout()
+        menuDetailWeightLabelLayout()
+        menuDetailPriceLabelLayout()
     }
     
 //MARK: - Methods
@@ -46,6 +48,28 @@ extension MenuDetailViewController {
             menuDetailDescriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             menuDetailDescriptionLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
             menuDetailDescriptionLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
+        ])
+    }
+    
+    private func menuDetailWeightLabelLayout() {
+        menuDetailWeightLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            menuDetailWeightLabel.topAnchor.constraint(equalTo: menuDetailDescriptionLabel.bottomAnchor, constant: 20),
+            menuDetailWeightLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            menuDetailWeightLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            menuDetailWeightLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
+        ])
+    }
+    
+    private func menuDetailPriceLabelLayout() {
+        menuDetailPriceLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            menuDetailPriceLabel.topAnchor.constraint(equalTo: menuDetailWeightLabel.bottomAnchor, constant: 40),
+            menuDetailPriceLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            menuDetailPriceLabel.widthAnchor.constraint(equalToConstant: 150),
+            menuDetailPriceLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }

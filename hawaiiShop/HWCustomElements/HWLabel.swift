@@ -46,4 +46,24 @@ final class HWLabel: UILabel {
         label.text = "Crunchy dough, cherry tomato, \nProsciutto, spinat and mozarella cheese"
         return label
     }
+    
+    public func buildHWMenuDetailWeightLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-SemiBold", size: 18)
+        label.textColor = UIColor(red: 0.325, green: 0.325, blue: 0.325, alpha: 1)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.text = "630 g"
+        return label
+    }
+    
+    public func buildHWMenuDetailPriceLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-SemiBold", size: 28)
+        label.textColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.text = "17 $"
+        return label
+    }
 }
