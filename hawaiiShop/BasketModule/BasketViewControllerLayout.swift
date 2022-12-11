@@ -50,8 +50,8 @@ extension BasketEmptyViewController {
         NSLayoutConstraint.activate([
             basketEmptyImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 220),
             basketEmptyImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            basketEmptyImageView.widthAnchor.constraint(equalToConstant: 180),
-            basketEmptyImageView.heightAnchor.constraint(equalToConstant: 165)
+            basketEmptyImageView.widthAnchor.constraint(equalToConstant: 170),
+            basketEmptyImageView.heightAnchor.constraint(equalToConstant: 155)
         ])
     }
     
@@ -81,10 +81,10 @@ extension BasketEmptyViewController {
         basketEmptyCreateAnOrderButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            basketEmptyCreateAnOrderButton.topAnchor.constraint(equalTo: basketEmptySubtitle.bottomAnchor, constant: 180),
             basketEmptyCreateAnOrderButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             basketEmptyCreateAnOrderButton.widthAnchor.constraint(equalToConstant: 350),
-            basketEmptyCreateAnOrderButton.heightAnchor.constraint(equalToConstant: 55)
+            basketEmptyCreateAnOrderButton.heightAnchor.constraint(equalToConstant: 55),
+            basketEmptyCreateAnOrderButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80)
         ])
     }
 }
