@@ -11,6 +11,7 @@ import UIKit
 class MenuDetailViewController: UIViewController {
     
     //MARK: UI Elements
+    
     let menuDetailTitleLabel         = HWLabel().buildHWMenuDetailTitleLabel()
     let menuDetailImageView          = HWImageView().buildHWMenuDetailImageView()
     let menuDetailDescriptionLabel   = HWLabel().buildHWMenuDetailDescriptionLabel()

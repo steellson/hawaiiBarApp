@@ -10,10 +10,10 @@ import UIKit
 
 class HWMenuCardCell: UICollectionViewCell {
     
-    private let imageView = UIImageView()
-    private let nameLabel = UILabel()
+    private let imageView   = UIImageView()
+    private let nameLabel   = UILabel()
     private let weightLabel = UILabel()
-    private let priceLabel = UILabel()
+    private let priceLabel  = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,10 +22,10 @@ class HWMenuCardCell: UICollectionViewCell {
     }
     
     func configureCell(with image: UIImage, nameLabel: String, weightLabel: String, priceLabel: String) {
-        self.imageView.image = image
-        self.nameLabel.text = nameLabel
-        self.weightLabel.text = weightLabel
-        self.priceLabel.text = priceLabel
+        self.imageView.image    = image
+        self.nameLabel.text     = nameLabel
+        self.weightLabel.text   = weightLabel
+        self.priceLabel.text    = priceLabel
     }
     
     

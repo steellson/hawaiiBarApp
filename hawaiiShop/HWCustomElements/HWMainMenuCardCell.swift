@@ -11,7 +11,7 @@ import UIKit
 class HWMainMenuCardCell: UICollectionViewCell {
     
     private let imageView = UIImageView()
-    private let label = UILabel()
+    private let label     = UILabel()
     
     
     override init(frame: CGRect) {
@@ -22,15 +22,15 @@ class HWMainMenuCardCell: UICollectionViewCell {
     
     func configureCell(with image: UIImage, and label: String) {
         self.imageView.image = image
-        self.label.text = label
+        self.label.text      = label
     }
     
     
     private func setupCell() {
         self.layer.shadowOpacity = 0.2
-        self.layer.shadowOffset = .init(width: 10, height: 10)
-        self.layer.shadowRadius = 15
-        self.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 0.4)
+        self.layer.shadowOffset  = .init(width: 10, height: 10)
+        self.layer.shadowRadius  = 15
+        self.layer.shadowColor   = .init(red: 0, green: 0, blue: 0, alpha: 0.4)
     
         setupBackgroundLayerOfCell()
         setupImageView()

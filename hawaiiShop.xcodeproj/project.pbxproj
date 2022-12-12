@@ -21,6 +21,7 @@
 		3DE94C6729426CA80068D2DD /* MenuDetailViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */; };
 		3DE9A00D29434DBF00F8793C /* HWImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9A00C29434DBF00F8793C /* HWImageView.swift */; };
 		3DE9A00F29435D7B00F8793C /* MenuDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9A00E29435D7B00F8793C /* MenuDetailCard.swift */; };
+		3DEF0A2C2947852D00AAC9C8 /* HWBasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEF0A2B2947852D00AAC9C8 /* HWBasketCell.swift */; };
 		3DFA9548294387AF004D16B1 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA9547294387AF004D16B1 /* Basket.swift */; };
 		3DFA954A294387BD004D16B1 /* BasketViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA9549294387BD004D16B1 /* BasketViewControllerLayout.swift */; };
 		3DFA954C294387CB004D16B1 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFA954B294387CB004D16B1 /* BasketViewController.swift */; };
@@ -57,6 +58,7 @@
 		3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DE9A00C29434DBF00F8793C /* HWImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWImageView.swift; sourceTree = "<group>"; };
 		3DE9A00E29435D7B00F8793C /* MenuDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailCard.swift; sourceTree = "<group>"; };
+		3DEF0A2B2947852D00AAC9C8 /* HWBasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWBasketCell.swift; sourceTree = "<group>"; };
 		3DFA9547294387AF004D16B1 /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		3DFA9549294387BD004D16B1 /* BasketViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DFA954B294387CB004D16B1 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				3DE9A00C29434DBF00F8793C /* HWImageView.swift */,
 				3DFBDE9A2933B3E2005EEAFD /* HWMainMenuCardCell.swift */,
 				3D3983CB293F85B9008B01BE /* HWMenuCardCell.swift */,
+				3DEF0A2B2947852D00AAC9C8 /* HWBasketCell.swift */,
 			);
 			path = HWCustomElements;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				3DFA954A294387BD004D16B1 /* BasketViewControllerLayout.swift in Sources */,
 				3DFBDE992933A023005EEAFD /* MainMenuCard.swift in Sources */,
 				3DE94C6729426CA80068D2DD /* MenuDetailViewControllerLayout.swift in Sources */,
+				3DEF0A2C2947852D00AAC9C8 /* HWBasketCell.swift in Sources */,
 				3D3983CC293F85B9008B01BE /* HWMenuCardCell.swift in Sources */,
 				3DE9A00F29435D7B00F8793C /* MenuDetailCard.swift in Sources */,
 				3DFBDE8A2930EE0B005EEAFD /* HWButton.swift in Sources */,

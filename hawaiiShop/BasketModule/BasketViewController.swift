@@ -11,8 +11,10 @@ import UIKit
 class BasketViewController: UIViewController {
     
     
-    //MARK: UI Elements
+    //MARK: - UI Elements
     
+    var basketCollectionView: UICollectionView!
+    var basketItems: [BasketItem]?
     
     
     
@@ -44,6 +46,16 @@ class BasketViewController: UIViewController {
     }
     
     private func setupCollectionView() {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .vertical
+        
+        basketCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        basketCollectionView.backgroundColor = .none
+        basketCollectionView.register(HWBasketCell.self, forCellWithReuseIdentifier: "HWBasketCell")
+        basketCollectionView.delegate = self
+        basketCollectionView.dataSource = self
+        
+        view.addSubview(basketCollectionView)
         
     }
     
@@ -63,15 +75,39 @@ class BasketViewController: UIViewController {
 
 //MARK: - Basket CV Data Source Extension
 
-extension BasketViewController {
+extension BasketViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let basketCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HWBasketCell", for: indexPath) as! HWBasketCell
+        guard let itemImage = BasketData.basketItems[indexPath.item].imageView.image else { return HWBasketCell() }
+        let nameLabel = BasketData.basketItems[indexPath.item].nameLabel
+        let priceLabel = BasketData.basketItems[indexPath.item].priceLabel
+        basketCell.configureCell(itemImage, nameLabel: nameLabel, priceLabel: priceLabel)
+        return basketCell
+    }
+    
     
 }
 
 
 //MARK: - FlowLayout Delegate Exetnsion
 
-extension BasketViewController {
+extension BasketViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width - 30, height: 100)
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 20.0
+    }
 }
 
 
