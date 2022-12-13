@@ -10,6 +10,7 @@
 		3D17A0C62948A1F000FDDC94 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D17A0C52948A1F000FDDC94 /* Cart.swift */; };
 		3D17A0C82948A47400FDDC94 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D17A0C72948A47400FDDC94 /* CartViewController.swift */; };
 		3D17A0CA2948AE8D00FDDC94 /* CartViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D17A0C92948AE8D00FDDC94 /* CartViewControllerLayout.swift */; };
+		3D17A0CC2948B14300FDDC94 /* HWCartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D17A0CB2948B14300FDDC94 /* HWCartCell.swift */; };
 		3D3983BD293E5847008B01BE /* Quicksand-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D3983B8293E5846008B01BE /* Quicksand-Regular.ttf */; };
 		3D3983BE293E5847008B01BE /* Quicksand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D3983B9293E5846008B01BE /* Quicksand.ttf */; };
 		3D3983BF293E5847008B01BE /* Quicksand-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D3983BA293E5846008B01BE /* Quicksand-Light.ttf */; };
@@ -45,6 +46,7 @@
 		3D17A0C52948A1F000FDDC94 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		3D17A0C72948A47400FDDC94 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		3D17A0C92948AE8D00FDDC94 /* CartViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewControllerLayout.swift; sourceTree = "<group>"; };
+		3D17A0CB2948B14300FDDC94 /* HWCartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWCartCell.swift; sourceTree = "<group>"; };
 		3D3983B8293E5846008B01BE /* Quicksand-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.ttf"; sourceTree = "<group>"; };
 		3D3983B9293E5846008B01BE /* Quicksand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Quicksand.ttf; sourceTree = "<group>"; };
 		3D3983BA293E5846008B01BE /* Quicksand-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Light.ttf"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				3DE9A00C29434DBF00F8793C /* HWImageView.swift */,
 				3DFBDE9A2933B3E2005EEAFD /* HWMainMenuCardCell.swift */,
 				3D3983CB293F85B9008B01BE /* HWMenuCardCell.swift */,
+				3D17A0CB2948B14300FDDC94 /* HWCartCell.swift */,
 			);
 			path = HWCustomElements;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				3DFBDE7F292EAAB2005EEAFD /* AuthorizationPresenter.swift in Sources */,
 				3DFBDE902930F15D005EEAFD /* AuthScreenLayout.swift in Sources */,
 				3DFBDE9329312462005EEAFD /* MainViewController.swift in Sources */,
+				3D17A0CC2948B14300FDDC94 /* HWCartCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

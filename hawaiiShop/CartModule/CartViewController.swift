@@ -53,7 +53,10 @@ class CartViewController: UIViewController {
         flowLayout.scrollDirection = .vertical
         
         cartCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        cartCollectionView.backgroundColor = .systemFill
+        cartCollectionView.backgroundColor = .none
+        cartCollectionView.register(HWCartCell.self, forCellWithReuseIdentifier: "cartCell")
+        cartCollectionView.dataSource = self
+        cartCollectionView.delegate = self
         
         view.addSubview(cartCollectionView)
     }
@@ -68,3 +71,35 @@ class CartViewController: UIViewController {
 
 
 //MARK: - Protocol Extension
+
+
+
+//MARK: - Data Source Extension
+
+extension CartViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cartCell", for: indexPath) as! HWCartCell
+        return cell
+    }
+    
+    
+}
+
+
+//MARK: - FlowLayout Delegate Extension
+
+extension CartViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width - 30, height: 90)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+    }
+}
