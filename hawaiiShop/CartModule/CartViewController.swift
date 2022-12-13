@@ -13,7 +13,11 @@ class CartViewController: UIViewController {
     //MARK: - UI Elements
     
     var cartCollectionView: UICollectionView!
-    var items: [CartItem] = CartData.items
+    var totalPriceTextLabel   = HWLabel().buildCartTotalPriceTextLabel()
+    var priceMoneyLabel       = HWLabel().buildCartPriceMoneyLabel()
+    var commentTextView       = HWTextView().buildHWCartCommentTextView()
+    var completeOrderButton   = HWButton().buildHWCompleteOrderButton()
+    var items: [CartItem]     = CartData.items
     
     
 //MARK: - Lifecycle
@@ -29,6 +33,11 @@ class CartViewController: UIViewController {
     
     private func setupController() {
         view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        
+        view.addSubview(totalPriceTextLabel)
+        view.addSubview(priceMoneyLabel)
+        view.addSubview(commentTextView)
+        view.addSubview(completeOrderButton)
 
         setupNavigationBar()
         setupCollectionView()
@@ -44,7 +53,7 @@ class CartViewController: UIViewController {
         navigationItem.rightBarButtonItem = rightBarItem
         navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
-        navigationItem.title = "Salads"
+        navigationItem.title = "Basket"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Quicksand-Bold", size: 20)!]
     }
     

@@ -96,4 +96,24 @@ final class HWLabel: UILabel {
         label.text = "Hit the orange button down\nbelow to Create an order"
         return label
     }
+    
+    public func buildCartTotalPriceTextLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-Bold", size: 24)
+        label.textColor = .black
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        label.text = "Total price"
+        return label
+    }
+    
+    public func buildCartPriceMoneyLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-Bold", size: 24)
+        label.textColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        label.textAlignment = .right
+        label.numberOfLines = 1
+        label.text = "52 $"
+        return label
+    }
 }
