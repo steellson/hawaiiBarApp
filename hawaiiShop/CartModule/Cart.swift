@@ -24,4 +24,5 @@ struct CartData {
         CartItem(imageView: UIImageView(image: UIImage(named: "bowls")), nameLabel: "Tuna Bowl", priceLabel: "12 $"),
         CartItem(imageView: UIImageView(image: UIImage(named: "pizza")), nameLabel: "Shrimps Pizza", priceLabel: "24 $")
     ]
+    
 }
