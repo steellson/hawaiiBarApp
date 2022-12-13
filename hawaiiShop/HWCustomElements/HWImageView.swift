@@ -18,7 +18,7 @@ final class HWImageView: UIImageView {
         return imageView
     }
     
-    public func buildHWBasketEmptyImageView() -> UIImageView {
+    public func buildHWCartEmptyImageView() -> UIImageView {
         let imageView = UIImageView()
         imageView.clipsToBounds = false
         imageView.contentMode = .scaleAspectFit

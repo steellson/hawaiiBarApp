@@ -13,10 +13,10 @@ class CartViewController: UIViewController {
     //MARK: - UI Elements
     
     var cartCollectionView: UICollectionView!
-    var totalPriceTextLabel   = HWLabel().buildCartTotalPriceTextLabel()
-    var priceMoneyLabel       = HWLabel().buildCartPriceMoneyLabel()
-    var commentTextView       = HWTextView().buildHWCartCommentTextView()
-    var completeOrderButton   = HWButton().buildHWCompleteOrderButton()
+    let totalPriceTextLabel   = HWLabel().buildCartTotalPriceTextLabel()
+    let priceMoneyLabel       = HWLabel().buildCartPriceMoneyLabel()
+    let commentTextView       = HWTextView().buildHWCartCommentTextView()
+    let completeOrderButton   = HWButton().buildHWCompleteOrderButton()
     var items: [CartItem]     = CartData.items
     
     

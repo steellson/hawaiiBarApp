@@ -1,6 +1,6 @@
 xcuserdata/
 xcshareddata/
-project.pbxproj
+/pbxproj
 *.xcscmblueprint
 *.xccheckout
 .DS_Store

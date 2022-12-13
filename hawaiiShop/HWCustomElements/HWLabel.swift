@@ -77,7 +77,7 @@ final class HWLabel: UILabel {
         return label
     }
     
-    public func buildHWBasketEmptyTitle() -> UILabel {
+    public func buildHWCartEmptyTitle() -> UILabel {
         let label = UILabel()
         label.font = UIFont(name: "Quicksand-Bold", size: 24)
         label.textAlignment = .center
@@ -87,11 +87,12 @@ final class HWLabel: UILabel {
         return label
     }
     
-    public func buildHWBasketEmptySubtitle() -> UILabel {
+    public func buildHWCartEmptySubtitle() -> UILabel {
         let label = UILabel()
         label.font = UIFont(name: "Quicksand-SemiBold", size: 18)
         label.textColor = UIColor(red: 0.325, green: 0.325, blue: 0.325, alpha: 1)
         label.textAlignment = .center
+        label.contentMode = .scaleAspectFit
         label.numberOfLines = 0
         label.text = "Hit the orange button down\nbelow to Create an order"
         return label
