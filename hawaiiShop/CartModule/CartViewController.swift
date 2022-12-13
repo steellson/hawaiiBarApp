@@ -12,7 +12,7 @@ class CartViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    
+    var cartCollectionView: UICollectionView!
     var items: [CartItem] = CartData.items
     
     
@@ -31,6 +31,8 @@ class CartViewController: UIViewController {
         view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
 
         setupNavigationBar()
+        setupCollectionView()
+        setupLayout()
     }
     
     private func setupNavigationBar() {
@@ -45,6 +47,17 @@ class CartViewController: UIViewController {
         navigationItem.title = "Salads"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Quicksand-Bold", size: 20)!]
     }
+    
+    private func setupCollectionView() {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .vertical
+        
+        cartCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        cartCollectionView.backgroundColor = .systemFill
+        
+        view.addSubview(cartCollectionView)
+    }
+    
     
     //MARK: - Buttons Action
     
