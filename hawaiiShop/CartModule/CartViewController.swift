@@ -84,6 +84,10 @@ extension CartViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cartCell", for: indexPath) as! HWCartCell
+        guard let image = items[indexPath.item].imageView?.image else { return UICollectionViewCell() }
+        let nameLabel = items[indexPath.item].nameLabel
+        let priceLabel = items[indexPath.item].priceLabel
+        cell.configureCell(image, nameLabel, priceLabel: priceLabel)
         return cell
     }
     
