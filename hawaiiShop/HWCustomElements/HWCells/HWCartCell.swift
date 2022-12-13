@@ -11,9 +11,12 @@ import UIKit
 final class HWCartCell: UICollectionViewCell {
     
     //MARK: - UI Elements
-    var imageView:  UIImageView!
-    var nameLabel:  UILabel!
-    var priceLabel: UILabel!
+    var imageView:        UIImageView!
+    var nameLabel:        UILabel!
+    var priceLabel:       UILabel!
+    var plusItemButton:   UIButton!
+    var counter:          UILabel!
+    var minusItemButton:  UIButton!
     
     
 //MARK: - Init
@@ -36,10 +39,13 @@ final class HWCartCell: UICollectionViewCell {
     private func setupCell() {
         contentView.backgroundColor = .white
         contentView.layer.cornerRadius = 18
+        contentView.contentMode = .scaleAspectFill
         
         setupImageView()
         setupNameLabel()
         setupPriceLabel()
+        setupItemChangeButtons()
+        setupCounterLabel()
         setupCellLayout()
     }
     
@@ -62,10 +68,27 @@ final class HWCartCell: UICollectionViewCell {
     private func setupPriceLabel() {
         priceLabel = UILabel()
         priceLabel.contentMode = .center
-        priceLabel.font = UIFont(name: "Quicksand-SemiBold", size: 18)
+        priceLabel.font = UIFont(name: "Quicksand-SemiBold", size: 22)
         priceLabel.textColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
 
         contentView.addSubview(priceLabel)
+    }
+    
+    private func setupItemChangeButtons() {
+        plusItemButton  = HWButton().buildHWMenuDetailItemsButton(with: "plus")
+        minusItemButton = HWButton().buildHWMenuDetailItemsButton(with: "minus")
+        
+        plusItemButton.backgroundColor = UIColor(red: 253/255, green: 201/255, blue: 9/255, alpha: 1)
+
+        
+        contentView.addSubview(plusItemButton)
+        contentView.addSubview(minusItemButton)
+    }
+    
+    private func setupCounterLabel() {
+        counter = HWLabel().buildHWMenuDetailItemsLabel()
+        
+        contentView.addSubview(counter)
     }
     
     required init?(coder: NSCoder) {
@@ -82,6 +105,9 @@ extension HWCartCell {
         imageViewLayout()
         nameLabelLayout()
         priceLabelLayout()
+        plusButtonLayout()
+        counterLabelLayout()
+        minusButtonLayout()
     }
     
     
@@ -90,7 +116,7 @@ extension HWCartCell {
         
         NSLayoutConstraint.activate([
             imageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10),
+            imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 15),
             imageView.widthAnchor.constraint(equalToConstant: 70),
             imageView.heightAnchor.constraint(equalToConstant: 70)
         ])
@@ -101,7 +127,7 @@ extension HWCartCell {
         
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
-            nameLabel.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 10),
+            nameLabel.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 15),
             nameLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -15),
         ])
     }
@@ -110,9 +136,42 @@ extension HWCartCell {
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            priceLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 15),
+            priceLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
             priceLabel.leftAnchor.constraint(equalTo: imageView.rightAnchor, constant: 20),
             priceLabel.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    
+    private func plusButtonLayout() {
+        plusItemButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            plusItemButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -30),
+            plusItemButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            plusItemButton.heightAnchor.constraint(equalToConstant: 20),
+            plusItemButton.widthAnchor.constraint(equalToConstant: 20)
+        ])
+    }
+    
+    private func counterLabelLayout() {
+        counter.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            counter.rightAnchor.constraint(equalTo: plusItemButton.leftAnchor, constant: -7),
+            counter.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            counter.heightAnchor.constraint(equalToConstant: 20),
+            counter.widthAnchor.constraint(equalToConstant: 20)
+        ])
+    }
+    
+    private func minusButtonLayout() {
+        minusItemButton.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            minusItemButton.rightAnchor.constraint(equalTo: counter.leftAnchor, constant: -7),
+            minusItemButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            minusItemButton.heightAnchor.constraint(equalToConstant: 20),
+            minusItemButton.widthAnchor.constraint(equalToConstant: 20)
         ])
     }
 }
