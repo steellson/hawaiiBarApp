@@ -11,9 +11,15 @@ import UIKit
 class DeliveryViewController: UIViewController {
     
     //MARK: - UI Elements
-    let addressDetailTextLabel = HWLabel().buildHWDeliveryAdressDetailsTextLabel()
-    let changeButton          = HWButton().buildHWDeliveryChangeButton()
-    let addressView           = HWDeliveryAddressView()
+    
+    let addressDetailTextLabel       = HWLabel().buildHWDeliveryAdressDetailsTextLabel()
+    let changeButton                 = HWButton().buildHWDeliveryChangeButton()
+    let addressView                  = HWDeliveryAddressView()
+    let deliveryMethodLabel          = HWLabel().buildHWDeliveryMethodLabel()
+    var deliveryMethodPickerTable    : UITableView?
+    
+    var deliveryTypes                 = DeliveryType.allCases
+    
     
 //MARK: - Lifecycle
     
@@ -32,8 +38,10 @@ class DeliveryViewController: UIViewController {
         view.addSubview(addressDetailTextLabel)
         view.addSubview(changeButton)
         view.addSubview(addressView)
+        view.addSubview(deliveryMethodLabel)
         
         setupNavigationBar()
+        setupDeliveryMethodPickerTable()
         setupLayout()
     }
     
@@ -46,6 +54,22 @@ class DeliveryViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Quicksand-Bold", size: 20)!]
     }
     
+    private func setupDeliveryMethodPickerTable() {
+        deliveryMethodPickerTable = UITableView(frame: .zero, style: .plain)
+        
+        guard let deliveryMethodPickerTable = deliveryMethodPickerTable else { return }
+        deliveryMethodPickerTable.backgroundColor = .white
+        deliveryMethodPickerTable.isScrollEnabled = false
+        deliveryMethodPickerTable.separatorInset.right = deliveryMethodPickerTable.separatorInset.left
+        deliveryMethodPickerTable.layer.cornerRadius = 18
+        deliveryMethodPickerTable.register(DeliveryMethodCell.self, forCellReuseIdentifier: "deliveryMethodCell")
+        deliveryMethodPickerTable.delegate = self
+        deliveryMethodPickerTable.dataSource = self
+        
+        view.addSubview(deliveryMethodPickerTable)
+    }
+    
+   
     
     //MARK: - Buttons Action
     
@@ -58,3 +82,38 @@ class DeliveryViewController: UIViewController {
 //MARK: - Protocol Extension
 
 
+
+//MARK: - DeliveryMethodPickerTable DS Extension
+
+extension DeliveryViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return DeliveryType.allCases.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let methodCell = tableView.dequeueReusableCell(withIdentifier: "deliveryMethodCell", for: indexPath) as! DeliveryMethodCell
+        let nameOfMethod = deliveryTypes[indexPath.row].rawValue
+        methodCell.configureCell(text: nameOfMethod)
+        return methodCell
+    }
+    
+    
+}
+
+
+//MARK: - DeliveryMethodPickerTable Delegate Extension
+
+extension DeliveryViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let methodCell = tableView.cellForRow(at: indexPath) else { return }
+        var config = methodCell.defaultContentConfiguration()
+        config.image = UIImage(systemName: "record.circle")
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.frame.height / 2
+    }
+    
+}

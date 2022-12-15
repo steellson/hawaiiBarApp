@@ -7,12 +7,16 @@
 
 import Foundation
 
-struct Delivery {
+enum DeliveryType: String, CaseIterable {
+    case doorDelivery = "Door delivery"
+    case pickUp       = "Pick up"
+}
+
+struct Order {
     
-    var name: String
-    var adress: String
-    var phone: String
+    var name: String?
+    var adress: String?
+    var phone: String?
     
-    var isDoorDelivery: Bool
-    
+    var type: DeliveryType
 }

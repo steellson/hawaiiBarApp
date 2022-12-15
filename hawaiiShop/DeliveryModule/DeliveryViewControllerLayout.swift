@@ -14,6 +14,8 @@ extension DeliveryViewController {
         adressDetailTextLabelLayout()
         changeButtonLayout()
         addressViewLayout()
+        deliveryMethodLabelLayout()
+        deliveryMethodPickerTableLayout()
     }
     
     
@@ -47,6 +49,28 @@ extension DeliveryViewController {
             addressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             addressView.widthAnchor.constraint(equalToConstant: view.frame.width - 30),
             addressView.heightAnchor.constraint(equalToConstant: 120)
+        ])
+    }
+    
+    private func deliveryMethodLabelLayout() {
+        deliveryMethodLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            deliveryMethodLabel.topAnchor.constraint(equalTo: addressView.bottomAnchor, constant: 25),
+            deliveryMethodLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
+            deliveryMethodLabel.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    
+    private func deliveryMethodPickerTableLayout() {
+        guard let deliveryMethodPickerTable = deliveryMethodPickerTable else { return }
+        deliveryMethodPickerTable.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            deliveryMethodPickerTable.topAnchor.constraint(equalTo: deliveryMethodLabel.bottomAnchor, constant: 10),
+            deliveryMethodPickerTable.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            deliveryMethodPickerTable.widthAnchor.constraint(equalToConstant: view.frame.width - 30),
+            deliveryMethodPickerTable.heightAnchor.constraint(equalToConstant: 130)
         ])
     }
 }
