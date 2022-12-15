@@ -16,6 +16,9 @@ extension DeliveryViewController {
         addressViewLayout()
         deliveryMethodLabelLayout()
         deliveryMethodPickerTableLayout()
+        totalPriceTextLabelLayout()
+        moneyPriceLabelLayout()
+        proceedToPaymentButtonLayout()
     }
     
     
@@ -71,6 +74,37 @@ extension DeliveryViewController {
             deliveryMethodPickerTable.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             deliveryMethodPickerTable.widthAnchor.constraint(equalToConstant: view.frame.width - 30),
             deliveryMethodPickerTable.heightAnchor.constraint(equalToConstant: 130)
+        ])
+    }
+    
+    private func totalPriceTextLabelLayout() {
+        totalPriceTextLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            totalPriceTextLabel.topAnchor.constraint(equalTo: deliveryMethodPickerTable!.bottomAnchor, constant: 30),
+            totalPriceTextLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+            totalPriceTextLabel.heightAnchor.constraint(equalToConstant: 60)
+        ])
+    }
+    
+    private func moneyPriceLabelLayout() {
+        moneyPriceLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            moneyPriceLabel.topAnchor.constraint(equalTo: deliveryMethodPickerTable!.bottomAnchor, constant: 30),
+            moneyPriceLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
+            moneyPriceLabel.heightAnchor.constraint(equalToConstant: 60)
+        ])
+    }
+    
+    private func proceedToPaymentButtonLayout() {
+        proceedToPaymentButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            proceedToPaymentButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -55),
+            proceedToPaymentButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            proceedToPaymentButton.widthAnchor.constraint(equalToConstant: view.frame.width - 40),
+            proceedToPaymentButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }

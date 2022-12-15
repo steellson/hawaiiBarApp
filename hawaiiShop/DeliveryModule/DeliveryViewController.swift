@@ -17,6 +17,9 @@ class DeliveryViewController: UIViewController {
     let addressView                  = HWDeliveryAddressView()
     let deliveryMethodLabel          = HWLabel().buildHWDeliveryMethodLabel()
     var deliveryMethodPickerTable    : UITableView?
+    let totalPriceTextLabel          = HWLabel().buildCartTotalPriceTextLabel()
+    let moneyPriceLabel              = HWLabel().buildCartPriceMoneyLabel()
+    let proceedToPaymentButton       = HWButton().buildHWDeliveryProceedToPaymentButton()
     
     var deliveryTypes                 = DeliveryType.allCases
     
@@ -39,6 +42,9 @@ class DeliveryViewController: UIViewController {
         view.addSubview(changeButton)
         view.addSubview(addressView)
         view.addSubview(deliveryMethodLabel)
+        view.addSubview(totalPriceTextLabel)
+        view.addSubview(moneyPriceLabel)
+        view.addSubview(proceedToPaymentButton)
         
         setupNavigationBar()
         setupDeliveryMethodPickerTable()
