@@ -13,18 +13,19 @@ extension DeliveryViewController {
     func setupLayout() {
         adressDetailTextLabelLayout()
         changeButtonLayout()
+        addressViewLayout()
     }
     
     
 //MARK: - Layout Methods
     
     private func adressDetailTextLabelLayout() {
-        adressDetailTextLabel.translatesAutoresizingMaskIntoConstraints = false
+        addressDetailTextLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            adressDetailTextLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-            adressDetailTextLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
-            adressDetailTextLabel.heightAnchor.constraint(equalToConstant: 30)
+            addressDetailTextLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            addressDetailTextLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
+            addressDetailTextLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
@@ -36,6 +37,16 @@ extension DeliveryViewController {
             changeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
             changeButton.heightAnchor.constraint(equalToConstant: 30)
         ])
+    }
+    
+    private func addressViewLayout() {
+        addressView.translatesAutoresizingMaskIntoConstraints = false
         
+        NSLayoutConstraint.activate([
+            addressView.topAnchor.constraint(equalTo: addressDetailTextLabel.bottomAnchor, constant: 10),
+            addressView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            addressView.widthAnchor.constraint(equalToConstant: view.frame.width - 30),
+            addressView.heightAnchor.constraint(equalToConstant: 120)
+        ])
     }
 }

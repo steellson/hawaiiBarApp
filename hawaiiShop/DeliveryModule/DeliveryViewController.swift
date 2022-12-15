@@ -11,9 +11,9 @@ import UIKit
 class DeliveryViewController: UIViewController {
     
     //MARK: - UI Elements
-    let adressDetailTextLabel = HWLabel().buildHWDeliveryAdressDetailsTextLabel()
+    let addressDetailTextLabel = HWLabel().buildHWDeliveryAdressDetailsTextLabel()
     let changeButton          = HWButton().buildHWDeliveryChangeButton()
-    
+    let addressView           = HWDeliveryAddressView()
     
 //MARK: - Lifecycle
     
@@ -29,8 +29,9 @@ class DeliveryViewController: UIViewController {
     private func setupController() {
         view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         
-        view.addSubview(adressDetailTextLabel)
+        view.addSubview(addressDetailTextLabel)
         view.addSubview(changeButton)
+        view.addSubview(addressView)
         
         setupNavigationBar()
         setupLayout()
