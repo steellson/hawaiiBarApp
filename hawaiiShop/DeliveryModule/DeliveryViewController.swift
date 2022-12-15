@@ -12,7 +12,7 @@ class DeliveryViewController: UIViewController {
     
     //MARK: - UI Elements
     let adressDetailTextLabel = HWLabel().buildHWDeliveryAdressDetailsTextLabel()
-    
+    let changeButton          = HWButton().buildHWDeliveryChangeButton()
     
     
 //MARK: - Lifecycle
@@ -30,6 +30,7 @@ class DeliveryViewController: UIViewController {
         view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         
         view.addSubview(adressDetailTextLabel)
+        view.addSubview(changeButton)
         
         setupNavigationBar()
         setupLayout()

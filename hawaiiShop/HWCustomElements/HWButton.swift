@@ -73,5 +73,13 @@ final class HWButton: UIButton {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         return button
     }
+    
+    public func buildHWDeliveryChangeButton() -> UIButton {
+        let button = UIButton()
+        button.setTitle("change", for: .normal)
+        button.setTitleColor(UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), for: .normal)
+        button.titleLabel?.font = UIFont(name: "Quicksand-Medium", size: 16)
+        return button
+    }
 
 }

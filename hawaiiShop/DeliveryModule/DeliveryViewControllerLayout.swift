@@ -12,6 +12,7 @@ extension DeliveryViewController {
     
     func setupLayout() {
         adressDetailTextLabelLayout()
+        changeButtonLayout()
     }
     
     
@@ -25,5 +26,16 @@ extension DeliveryViewController {
             adressDetailTextLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
             adressDetailTextLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
+    }
+    
+    private func changeButtonLayout() {
+        changeButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            changeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            changeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
+            changeButton.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
     }
 }
