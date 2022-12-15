@@ -117,4 +117,12 @@ final class HWLabel: UILabel {
         label.text = "52 $"
         return label
     }
+    
+    public func buildHWDeliveryAdressDetailsTextLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-Bold", size: 20)
+        label.textAlignment = .left
+        label.text = "Address details"
+        return label
+    }
 }
