@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 final class DeliveryMethodCell: UITableViewCell {
+
     
     
     
@@ -26,6 +27,9 @@ final class DeliveryMethodCell: UITableViewCell {
     func configureCell(text: String) {
         var configuration    = defaultContentConfiguration()
         configuration.text   = text
+        
+        self.contentView.tintColor = .blue
+        
     }
     
 
@@ -36,6 +40,8 @@ final class DeliveryMethodCell: UITableViewCell {
         configuration.text   = "Payment Method"
         
         configuration.imageProperties.tintColor = .red
+        
+        setupLayout()
     }
     
     
@@ -44,4 +50,14 @@ final class DeliveryMethodCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+//MARK: - Layout Extesion
+
+extension DeliveryMethodCell {
+    
+    func setupLayout() {
+        
+    }
+    
 }
