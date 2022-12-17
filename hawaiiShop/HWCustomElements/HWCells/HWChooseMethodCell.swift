@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class DeliveryMethodCell: UITableViewCell {
+final class HWChooseMethodCell: UITableViewCell {
 
     
     
@@ -54,7 +54,7 @@ final class DeliveryMethodCell: UITableViewCell {
 
 //MARK: - Layout Extesion
 
-extension DeliveryMethodCell {
+extension HWChooseMethodCell {
     
     func setupLayout() {
         

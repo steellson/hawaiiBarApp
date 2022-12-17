@@ -68,7 +68,7 @@ class DeliveryViewController: UIViewController {
         deliveryMethodPickerTable.isScrollEnabled = false
         deliveryMethodPickerTable.separatorInset.right = deliveryMethodPickerTable.separatorInset.left
         deliveryMethodPickerTable.layer.cornerRadius = 18
-        deliveryMethodPickerTable.register(DeliveryMethodCell.self, forCellReuseIdentifier: "deliveryMethodCell")
+        deliveryMethodPickerTable.register(HWChooseMethodCell.self, forCellReuseIdentifier: "deliveryMethodCell")
         deliveryMethodPickerTable.delegate = self
         deliveryMethodPickerTable.dataSource = self
         
@@ -98,7 +98,7 @@ extension DeliveryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let methodCell = tableView.dequeueReusableCell(withIdentifier: "deliveryMethodCell", for: indexPath) as! DeliveryMethodCell
+        let methodCell = tableView.dequeueReusableCell(withIdentifier: "deliveryMethodCell", for: indexPath) as! HWChooseMethodCell
         let nameOfMethod = deliveryTypes[indexPath.row].rawValue
         methodCell.configureCell(text: nameOfMethod)
         return methodCell
