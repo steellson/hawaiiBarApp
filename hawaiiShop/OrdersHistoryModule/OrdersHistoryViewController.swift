@@ -13,7 +13,7 @@ class OrdersHistoryViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    
+    var ordersCollectionView: UICollectionView!
     
     
     
@@ -30,7 +30,7 @@ class OrdersHistoryViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
-        
+        view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         
         
         setupNavigationBar()
@@ -48,7 +48,16 @@ class OrdersHistoryViewController: UIViewController {
     }
     
     private func setupOrdersCollectionView() {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .vertical
         
+        ordersCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        ordersCollectionView.backgroundColor = .none
+        ordersCollectionView.register(HWOrdersHistoryCell.self, forCellWithReuseIdentifier: "historyCell")
+        ordersCollectionView.dataSource = self
+        ordersCollectionView.delegate = self
+        
+        view.addSubview(ordersCollectionView)
     }
     
    
@@ -70,12 +79,34 @@ class OrdersHistoryViewController: UIViewController {
 
 //MARK: - OrdersCollectionView DataSource Extension
 
-
+extension OrdersHistoryViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let orderCell = collectionView.dequeueReusableCell(withReuseIdentifier: "historyCell", for: indexPath) as! HWOrdersHistoryCell
+        
+        return orderCell
+    }
+    
+}
 
 
 
 //MARK: - OrdersCollectionView FlowLayoutDelegate Extension
 
-
+extension OrdersHistoryViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width - 30, height: 85)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+    }
+    
+}
 
 

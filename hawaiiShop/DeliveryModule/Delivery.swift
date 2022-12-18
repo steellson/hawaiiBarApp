@@ -12,11 +12,3 @@ enum DeliveryType: String, CaseIterable {
     case pickUp       = "Pick up"
 }
 
-struct Order {
-    
-    var name: String?
-    var adress: String?
-    var phone: String?
-    
-    var type: DeliveryType
-}
