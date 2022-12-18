@@ -68,7 +68,7 @@ final class HWButton: UIButton {
     public func buildHWCompleteOrderButton() -> UIButton {
         let button = UIButton()
         button.backgroundColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
-        button.layer.cornerRadius = 20
+        button.layer.cornerRadius = 22
         button.setTitle("Complete order", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         return button
@@ -87,6 +87,15 @@ final class HWButton: UIButton {
         button.backgroundColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
         button.layer.cornerRadius = 22
         button.setTitle("Proceed to payment", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        return button
+    }
+    
+    public func buildHWCompletePaymentButton() -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        button.layer.cornerRadius = 22
+        button.setTitle("Complete", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         return button
     }

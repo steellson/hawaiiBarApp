@@ -99,8 +99,9 @@ extension DeliveryViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let methodCell = tableView.dequeueReusableCell(withIdentifier: "deliveryMethodCell", for: indexPath) as! HWChooseMethodCell
-        let nameOfMethod = deliveryTypes[indexPath.row].rawValue
-        methodCell.configureCell(text: nameOfMethod)
+        guard let pickerImage = UIImage(systemName: "circle") else { return HWChooseMethodCell() }
+        let text = deliveryTypes[indexPath.row].rawValue
+        methodCell.configureCell(image: pickerImage, text: text)
         return methodCell
     }
     
@@ -113,9 +114,8 @@ extension DeliveryViewController: UITableViewDataSource {
 extension DeliveryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let methodCell = tableView.cellForRow(at: indexPath) else { return }
-        var config = methodCell.defaultContentConfiguration()
-        config.image = UIImage(systemName: "record.circle")
+        guard let methodCell = tableView.cellForRow(at: indexPath) as? HWChooseMethodCell else { return }
+        methodCell.pickerView.image = UIImage(systemName: "recording.circle")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -133,4 +133,12 @@ final class HWLabel: UILabel {
         label.text = "Delivery method"
         return label
     }
+    
+    public func buildHWPaymentMethodTextLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-Bold", size: 20)
+        label.textAlignment = .left
+        label.text = "Payment method"
+        return label
+    }
 }
