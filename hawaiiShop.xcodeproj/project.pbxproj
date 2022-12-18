@@ -24,6 +24,8 @@
 		3D5C95FE2949110000342B4F /* HWTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5C95FD2949110000342B4F /* HWTextView.swift */; };
 		3D9F41B6294E76F900CC748E /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F41B5294E76F900CC748E /* PaymentViewController.swift */; };
 		3D9F41BA294E78EF00CC748E /* PaymentViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F41B9294E78EF00CC748E /* PaymentViewControllerLayout.swift */; };
+		3D9F41BD294F8FDF00CC748E /* OrdersHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F41BC294F8FDF00CC748E /* OrdersHistoryViewController.swift */; };
+		3D9F41BF294F90A300CC748E /* OrdersHistoryViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F41BE294F90A300CC748E /* OrdersHistoryViewControllerLayout.swift */; };
 		3DD10C49294B16E40075233E /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10C48294B16E40075233E /* DeliveryViewController.swift */; };
 		3DD10C4B294B19810075233E /* DeliveryViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10C4A294B19810075233E /* DeliveryViewControllerLayout.swift */; };
 		3DD10C4D294B1AF30075233E /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10C4C294B1AF30075233E /* Delivery.swift */; };
@@ -69,6 +71,8 @@
 		3D5C95FD2949110000342B4F /* HWTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWTextView.swift; sourceTree = "<group>"; };
 		3D9F41B5294E76F900CC748E /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		3D9F41B9294E78EF00CC748E /* PaymentViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewControllerLayout.swift; sourceTree = "<group>"; };
+		3D9F41BC294F8FDF00CC748E /* OrdersHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHistoryViewController.swift; sourceTree = "<group>"; };
+		3D9F41BE294F90A300CC748E /* OrdersHistoryViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHistoryViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DD10C48294B16E40075233E /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 		3DD10C4A294B19810075233E /* DeliveryViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DD10C4C294B1AF30075233E /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
@@ -163,6 +167,15 @@
 			path = PaymentModule;
 			sourceTree = "<group>";
 		};
+		3D9F41BB294F8F9000CC748E /* OrdersHistoryModule */ = {
+			isa = PBXGroup;
+			children = (
+				3D9F41BC294F8FDF00CC748E /* OrdersHistoryViewController.swift */,
+				3D9F41BE294F90A300CC748E /* OrdersHistoryViewControllerLayout.swift */,
+			);
+			path = OrdersHistoryModule;
+			sourceTree = "<group>";
+		};
 		3DD10C47294B167D0075233E /* DeliveryModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,10 +223,11 @@
 				3D17A0C42948A16500FDDC94 /* CartModule */,
 				3DD10C47294B167D0075233E /* DeliveryModule */,
 				3D9F41B4294E769A00CC748E /* PaymentModule */,
+				3D9F41BB294F8F9000CC748E /* OrdersHistoryModule */,
 				3DFBDE822930E9E1005EEAFD /* HWCustomElements */,
 				3D3983B7293E5813008B01BE /* Fonts */,
-				3DFBDE76292E46DD005EEAFD /* Info.plist */,
 				3DFBDE73292E46DD005EEAFD /* LaunchScreen.storyboard */,
+				3DFBDE76292E46DD005EEAFD /* Info.plist */,
 				3DFBDE71292E46DD005EEAFD /* Assets.xcassets */,
 			);
 			path = hawaiiShop;
@@ -355,6 +369,7 @@
 				3D3983CC293F85B9008B01BE /* HWMenuCardCell.swift in Sources */,
 				3DE9A00F29435D7B00F8793C /* MenuDetailCard.swift in Sources */,
 				3DD10C4B294B19810075233E /* DeliveryViewControllerLayout.swift in Sources */,
+				3D9F41BF294F90A300CC748E /* OrdersHistoryViewControllerLayout.swift in Sources */,
 				3DFBDE8A2930EE0B005EEAFD /* HWButton.swift in Sources */,
 				3D3983CA293F77E8008B01BE /* MenuCard.swift in Sources */,
 				3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */,
@@ -363,6 +378,7 @@
 				3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */,
 				3D17A0C62948A1F000FDDC94 /* Cart.swift in Sources */,
 				3DE94C6529426B630068D2DD /* MenuDetailViewController.swift in Sources */,
+				3D9F41BD294F8FDF00CC748E /* OrdersHistoryViewController.swift in Sources */,
 				3DD10C53294B39BC0075233E /* HWChooseMethodCell.swift in Sources */,
 				3DD4E13A29491A43002599A6 /* CartEmptyViewController.swift in Sources */,
 				3DFBDE9B2933B3E2005EEAFD /* HWMainMenuCardCell.swift in Sources */,
