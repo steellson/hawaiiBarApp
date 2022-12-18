@@ -12,11 +12,50 @@ final class HWOrdersHistoryCell: UICollectionViewCell {
     
     //MARK: UI Elements
     
+    var idLabel: UILabel = {
+        let label             = UILabel()
+        label.font           = UIFont(name: "Quicksand-SemiBold", size: 18)
+        label.textAlignment  = .left
+        return label
+    }()
+    
+    var statusLabel: UILabel = {
+        let label                 = UILabel()
+        label.font               = UIFont(name: "Quicksand-Regular", size: 12)
+        label.textAlignment      = .center
+        label.textColor          = .white
+        label.contentMode        = .center
+        label.clipsToBounds      = true
+        label.layer.cornerRadius = 5
+        label.backgroundColor    = UIColor(red: 0.992, green: 0.79, blue: 0.074, alpha: 1)
+        return label
+    }()
+    
+    var orderTimeLabel: UILabel = {
+        let label             = UILabel()
+        label.font           = UIFont(name: "Quicksand-Regular", size: 16)
+        label.textAlignment  = .left
+        return label
+    }()
+    
+    var imagesStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.contentMode = .scaleAspectFit
+        stack.clipsToBounds = true
+        return stack
+    }()
+    
+    let forwardView: UIImageView = {
+        let image        = UIImage(systemName: "chevron.forward")
+        let view         = UIImageView(image: image!)
+        view.contentMode = .scaleAspectFit
+        view.tintColor   = .black
+        return view
+    }()
     
     
-    
-    
-//MARK: - Init
+    //MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,12 +68,29 @@ final class HWOrdersHistoryCell: UICollectionViewCell {
     }
     
     
-//MARK: - Setup Cell
+    //MARK: - Setup Cell
     
+    func configureCell(idLabel: String, statusLabel: String, timeLabel: String) {
+        self.idLabel.text          = idLabel
+        self.statusLabel.text      = statusLabel
+        self.orderTimeLabel.text   = timeLabel
+    }
+    
+    func configureCelImageStackView(image: UIImage?) {
+        let imageView = UIImageView()
+        imageView.image = image
+        imagesStackView.addArrangedSubview(imageView)
+    }
     
     private func setupCell() {
         backgroundColor      = .white
         layer.cornerRadius   = 20
+        
+        contentView.addSubview(idLabel)
+        contentView.addSubview(statusLabel)
+        contentView.addSubview(orderTimeLabel)
+        contentView.addSubview(imagesStackView)
+        contentView.addSubview(forwardView)
         
         setupShadowCell()
         setupLayout()
@@ -55,6 +111,63 @@ final class HWOrdersHistoryCell: UICollectionViewCell {
 extension HWOrdersHistoryCell {
     
     private func setupLayout() {
+        idLabelLayout()
+        statusLabelLayout()
+        orderTimeLabelLayout()
+        imageScrollViewLayout()
+        continueButtonLayout()
+    }
+    
+    //MARK: - Methods
+    
+    private func idLabelLayout() {
+        idLabel.translatesAutoresizingMaskIntoConstraints = false
         
+        NSLayoutConstraint.activate([
+            idLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            idLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20)
+        ])
+    }
+    
+    private func statusLabelLayout() {
+        statusLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            statusLabel.centerYAnchor.constraint(equalTo: idLabel.centerYAnchor),
+            statusLabel.leftAnchor.constraint(equalTo: idLabel.rightAnchor, constant: 10),
+            statusLabel.heightAnchor.constraint(equalToConstant: 15),
+            statusLabel.widthAnchor.constraint(equalToConstant: 70)
+        ])
+    }
+    
+    private func orderTimeLabelLayout() {
+        orderTimeLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            orderTimeLabel.topAnchor.constraint(equalTo: idLabel.bottomAnchor, constant: 5),
+            orderTimeLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
+        ])
+    }
+    
+    private func imageScrollViewLayout() {
+        imagesStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            imagesStackView.topAnchor.constraint(equalTo: orderTimeLabel.bottomAnchor, constant: 8),
+            imagesStackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
+            imagesStackView.heightAnchor.constraint(equalToConstant: 40),
+            imagesStackView.widthAnchor.constraint(equalToConstant: contentView.frame.width / 2 + 20)
+        ])
+    }
+    
+    private func continueButtonLayout() {
+        forwardView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            forwardView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20),
+            forwardView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -5),
+            forwardView.widthAnchor.constraint(equalToConstant: 10),
+            forwardView.heightAnchor.constraint(equalToConstant: 20)
+        ])
     }
 }

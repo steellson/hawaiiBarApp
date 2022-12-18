@@ -10,11 +10,11 @@ import UIKit
 
 class OrdersHistoryViewController: UIViewController {
     
-    
     //MARK: - UI Elements
     
     var ordersCollectionView: UICollectionView!
     
+    var ordersData          = OrdersHistoryData.items
     
     
 //MARK: - Lifecycle
@@ -82,12 +82,17 @@ class OrdersHistoryViewController: UIViewController {
 extension OrdersHistoryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return ordersData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let orderCell = collectionView.dequeueReusableCell(withReuseIdentifier: "historyCell", for: indexPath) as! HWOrdersHistoryCell
-        
+        let orderCell       = collectionView.dequeueReusableCell(withReuseIdentifier: "historyCell", for: indexPath) as! HWOrdersHistoryCell
+        let idLabelText     = ordersData[indexPath.item].id
+        let statusLabelText = ordersData[indexPath.item].status
+        let timeLabelText   = ordersData[indexPath.item].time
+        let image           = ordersData[indexPath.item].image
+        orderCell.configureCell(idLabel: idLabelText, statusLabel: statusLabelText.rawValue, timeLabel: timeLabelText)
+        orderCell.configureCelImageStackView(image: image)
         return orderCell
     }
     
@@ -100,7 +105,7 @@ extension OrdersHistoryViewController: UICollectionViewDataSource {
 extension OrdersHistoryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 30, height: 85)
+        return CGSize(width: collectionView.frame.width - 30, height: 125)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

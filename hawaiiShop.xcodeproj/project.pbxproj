@@ -27,6 +27,7 @@
 		3D9F41BD294F8FDF00CC748E /* OrdersHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F41BC294F8FDF00CC748E /* OrdersHistoryViewController.swift */; };
 		3D9F41BF294F90A300CC748E /* OrdersHistoryViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F41BE294F90A300CC748E /* OrdersHistoryViewControllerLayout.swift */; };
 		3D9F41C1294F948200CC748E /* HWOrdersHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F41C0294F948200CC748E /* HWOrdersHistoryCell.swift */; };
+		3D9F41C5294F9C3F00CC748E /* OrdersHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9F41C4294F9C3F00CC748E /* OrdersHistoryItem.swift */; };
 		3DD10C49294B16E40075233E /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10C48294B16E40075233E /* DeliveryViewController.swift */; };
 		3DD10C4B294B19810075233E /* DeliveryViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10C4A294B19810075233E /* DeliveryViewControllerLayout.swift */; };
 		3DD10C4D294B1AF30075233E /* Delivery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10C4C294B1AF30075233E /* Delivery.swift */; };
@@ -75,6 +76,7 @@
 		3D9F41BC294F8FDF00CC748E /* OrdersHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHistoryViewController.swift; sourceTree = "<group>"; };
 		3D9F41BE294F90A300CC748E /* OrdersHistoryViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHistoryViewControllerLayout.swift; sourceTree = "<group>"; };
 		3D9F41C0294F948200CC748E /* HWOrdersHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWOrdersHistoryCell.swift; sourceTree = "<group>"; };
+		3D9F41C4294F9C3F00CC748E /* OrdersHistoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHistoryItem.swift; sourceTree = "<group>"; };
 		3DD10C48294B16E40075233E /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 		3DD10C4A294B19810075233E /* DeliveryViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DD10C4C294B1AF30075233E /* Delivery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delivery.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				3D9F41BC294F8FDF00CC748E /* OrdersHistoryViewController.swift */,
 				3D9F41BE294F90A300CC748E /* OrdersHistoryViewControllerLayout.swift */,
+				3D9F41C4294F9C3F00CC748E /* OrdersHistoryItem.swift */,
 			);
 			path = OrdersHistoryModule;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */,
 				3D17A0C82948A47400FDDC94 /* CartViewController.swift in Sources */,
 				3DD10C4D294B1AF30075233E /* Delivery.swift in Sources */,
+				3D9F41C5294F9C3F00CC748E /* OrdersHistoryItem.swift in Sources */,
 				3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */,
 				3D9F41C1294F948200CC748E /* HWOrdersHistoryCell.swift in Sources */,
 				3D17A0C62948A1F000FDDC94 /* Cart.swift in Sources */,

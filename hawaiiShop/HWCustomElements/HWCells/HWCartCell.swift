@@ -11,12 +11,32 @@ import UIKit
 final class HWCartCell: UICollectionViewCell {
     
     //MARK: - UI Elements
-    var imageView:        UIImageView!
-    var nameLabel:        UILabel!
-    var priceLabel:       UILabel!
-    var plusItemButton:   UIButton!
-    var counter:          UILabel!
-    var minusItemButton:  UIButton!
+    
+    var imageView: UIImageView = {
+       let imageView            = UIImageView()
+        imageView.contentMode   = .scaleAspectFit
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
+    var nameLabel: UILabel = {
+        let nameLabel            = UILabel()
+         nameLabel.contentMode   = .left
+         nameLabel.font          = UIFont(name: "Quicksand-SemiBold", size: 18)
+         return nameLabel
+    }()
+    
+    var priceLabel: UILabel = {
+       let priceLabel            = UILabel()
+        priceLabel.contentMode   = .center
+        priceLabel.font          = UIFont(name: "Quicksand-SemiBold", size: 22)
+        priceLabel.textColor     = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        return priceLabel
+    }()
+    
+    var plusItemButton  : UIButton!
+    var counter         = HWLabel().buildHWMenuDetailItemsLabel()
+    var minusItemButton : UIButton!
     
     
 //MARK: - Init
@@ -41,38 +61,15 @@ final class HWCartCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 18
         contentView.contentMode = .scaleAspectFill
         
-        setupImageView()
-        setupNameLabel()
-        setupPriceLabel()
+        contentView.addSubview(imageView)
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(priceLabel)
+        contentView.addSubview(counter)
+
+        
         setupItemChangeButtons()
-        setupCounterLabel()
         setupShadowCell()
         setupCellLayout()
-    }
-    
-    private func setupImageView() {
-        imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
-        
-        contentView.addSubview(imageView)
-    }
-    
-    private func setupNameLabel() {
-        nameLabel = UILabel()
-        nameLabel.contentMode = .left
-        nameLabel.font = UIFont(name: "Quicksand-SemiBold", size: 18)
-        
-        contentView.addSubview(nameLabel)
-    }
-    
-    private func setupPriceLabel() {
-        priceLabel = UILabel()
-        priceLabel.contentMode = .center
-        priceLabel.font = UIFont(name: "Quicksand-SemiBold", size: 22)
-        priceLabel.textColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
-
-        contentView.addSubview(priceLabel)
     }
     
     private func setupItemChangeButtons() {
@@ -85,13 +82,7 @@ final class HWCartCell: UICollectionViewCell {
         contentView.addSubview(plusItemButton)
         contentView.addSubview(minusItemButton)
     }
-    
-    private func setupCounterLabel() {
-        counter = HWLabel().buildHWMenuDetailItemsLabel()
-        
-        contentView.addSubview(counter)
-    }
-    
+
     private func setupShadowCell() {
         layer.shadowOpacity  = 1
         layer.shadowRadius   = 40

@@ -12,8 +12,19 @@ final class HWChooseMethodCell: UITableViewCell {
 
     //MARK: UI Elements
     
-    var pickerView: UIImageView!
-    var label:      UILabel!
+    var pickerView: UIImageView = {
+       let pickerView = UIImageView()
+        pickerView.contentMode = .scaleAspectFit
+        pickerView.tintColor = .systemOrange
+        return pickerView
+    }()
+    
+    var label: UILabel = {
+       let label = UILabel()
+        label.font = UIFont(name: "Quicksand-Medium", size: 16)
+        label.textAlignment = .left
+        return label
+    }()
     
     
 //MARK: - Init
@@ -38,14 +49,8 @@ final class HWChooseMethodCell: UITableViewCell {
     }
     
     private func setupCell() {
-        pickerView             = UIImageView()
-        pickerView.contentMode = .scaleAspectFit
-        pickerView.tintColor   = .orange
-        
-        label                  = UILabel()
-        label.font             = UIFont(name: "Quicksand-Medium", size: 16)
-        label.textAlignment    = .left
-        
+        backgroundColor = .white
+
         contentView.addSubview(pickerView)
         contentView.addSubview(label)
         
