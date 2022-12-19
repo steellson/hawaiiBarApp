@@ -13,14 +13,14 @@ final class HWOrdersHistoryCell: UICollectionViewCell {
     //MARK: UI Elements
     
     var idLabel: UILabel = {
-        let label             = UILabel()
+        let label            = UILabel()
         label.font           = UIFont(name: "Quicksand-SemiBold", size: 18)
         label.textAlignment  = .left
         return label
     }()
     
     var statusLabel: UILabel = {
-        let label                 = UILabel()
+        let label                = UILabel()
         label.font               = UIFont(name: "Quicksand-Regular", size: 12)
         label.textAlignment      = .center
         label.textColor          = .white
@@ -32,19 +32,21 @@ final class HWOrdersHistoryCell: UICollectionViewCell {
     }()
     
     var orderTimeLabel: UILabel = {
-        let label             = UILabel()
+        let label            = UILabel()
         label.font           = UIFont(name: "Quicksand-Regular", size: 16)
         label.textAlignment  = .left
         return label
     }()
     
     var imagesStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.contentMode = .scaleAspectFit
-        stack.clipsToBounds = true
+        let stack            = UIStackView()
+        stack.axis           = .horizontal
+        stack.contentMode    = .scaleAspectFit
+        stack.clipsToBounds  = true
         return stack
     }()
+    
+    var moneyPriceLabel = HWLabel().buildOrdersHistoryPriceMoneyLabel()
     
     let forwardView: UIImageView = {
         let image        = UIImage(systemName: "chevron.forward")
@@ -90,6 +92,7 @@ final class HWOrdersHistoryCell: UICollectionViewCell {
         contentView.addSubview(statusLabel)
         contentView.addSubview(orderTimeLabel)
         contentView.addSubview(imagesStackView)
+        contentView.addSubview(moneyPriceLabel)
         contentView.addSubview(forwardView)
         
         setupShadowCell()
@@ -115,6 +118,7 @@ extension HWOrdersHistoryCell {
         statusLabelLayout()
         orderTimeLabelLayout()
         imageScrollViewLayout()
+        moneyPriceLabelLayout()
         continueButtonLayout()
     }
     
@@ -160,12 +164,21 @@ extension HWOrdersHistoryCell {
         ])
     }
     
+    private func moneyPriceLabelLayout() {
+        moneyPriceLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            moneyPriceLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
+            moneyPriceLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20),
+        ])
+    }
+    
     private func continueButtonLayout() {
         forwardView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            forwardView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -20),
-            forwardView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -5),
+            forwardView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12),
+            forwardView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -10),
             forwardView.widthAnchor.constraint(equalToConstant: 10),
             forwardView.heightAnchor.constraint(equalToConstant: 20)
         ])

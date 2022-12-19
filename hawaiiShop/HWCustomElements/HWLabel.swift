@@ -141,4 +141,14 @@ final class HWLabel: UILabel {
         label.text = "Payment method"
         return label
     }
+    
+    public func buildOrdersHistoryPriceMoneyLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-SemiBold", size: 20)
+        label.textColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        label.textAlignment = .right
+        label.numberOfLines = 1
+        label.text = "52 $"
+        return label
+    }
 }
