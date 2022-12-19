@@ -25,4 +25,12 @@ final class HWImageView: UIImageView {
         imageView.image = UIImage(named: "basket")
         return imageView
     }
+    
+    public func buildHWOrdersHistoryEmptyImageView() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "search")
+        return imageView
+    }
 }

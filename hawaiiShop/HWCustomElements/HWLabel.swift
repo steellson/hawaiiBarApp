@@ -151,4 +151,14 @@ final class HWLabel: UILabel {
         label.text = "52 $"
         return label
     }
+    
+    public func buildHWOrdersHistoryEmptyTitle() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-Bold", size: 24)
+        label.textAlignment = .center
+        label.contentMode = .center
+        label.numberOfLines = 0
+        label.text = "No history yet"
+        return label
+    }
 }
