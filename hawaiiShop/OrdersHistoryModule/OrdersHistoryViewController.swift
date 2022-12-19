@@ -92,7 +92,9 @@ extension OrdersHistoryViewController: UICollectionViewDataSource {
         let timeLabelText   = ordersData[indexPath.item].time
         let image           = ordersData[indexPath.item].image
         orderCell.configureCell(idLabel: idLabelText, statusLabel: statusLabelText.rawValue, timeLabel: timeLabelText)
-        orderCell.configureCelImageStackView(image: image)
+        for _ in 0..<ordersData.count {
+            orderCell.configureCelImageStackView(image: image)
+        }
         return orderCell
     }
     

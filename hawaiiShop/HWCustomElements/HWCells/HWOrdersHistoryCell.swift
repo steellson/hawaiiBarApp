@@ -42,7 +42,8 @@ final class HWOrdersHistoryCell: UICollectionViewCell {
         let stack            = UIStackView()
         stack.axis           = .horizontal
         stack.contentMode    = .scaleAspectFit
-        stack.clipsToBounds  = true
+        stack.distribution   = .fillEqually
+        stack.clipsToBounds  = false
         return stack
     }()
     
@@ -79,8 +80,10 @@ final class HWOrdersHistoryCell: UICollectionViewCell {
     }
     
     func configureCelImageStackView(image: UIImage?) {
-        let imageView = UIImageView()
-        imageView.image = image
+        let imageView         = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.tintColor   = .systemOrange
+        imageView.image       = image
         imagesStackView.addArrangedSubview(imageView)
     }
     
