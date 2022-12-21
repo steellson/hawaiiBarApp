@@ -198,17 +198,6 @@
 			path = OrdersHistoryModule;
 			sourceTree = "<group>";
 		};
-		3D9F41CA29519AA700CC748E /* OrderModule */ = {
-			isa = PBXGroup;
-			children = (
-				3DF0CB07295376420093D5C4 /* OrderViewController.swift */,
-				3DF0CAFF2953372C0093D5C4 /* OrderViewControllerLayout.swift */,
-				3DF0CB03295341660093D5C4 /* Order.swift */,
-			);
-			name = OrderModule;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		3DD10C47294B167D0075233E /* DeliveryModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +225,16 @@
 				3DF0CB0C295381EE0093D5C4 /* ProfileViewControllerLayout.swift */,
 			);
 			path = ProfileModule;
+			sourceTree = "<group>";
+		};
+		3DF0CB0E29538E2C0093D5C4 /* OrderModule */ = {
+			isa = PBXGroup;
+			children = (
+				3DF0CB07295376420093D5C4 /* OrderViewController.swift */,
+				3DF0CAFF2953372C0093D5C4 /* OrderViewControllerLayout.swift */,
+				3DF0CB03295341660093D5C4 /* Order.swift */,
+			);
+			path = OrderModule;
 			sourceTree = "<group>";
 		};
 		3DFBDE5C292E46D3005EEAFD = {
@@ -266,7 +265,7 @@
 				3DD10C47294B167D0075233E /* DeliveryModule */,
 				3D9F41B4294E769A00CC748E /* PaymentModule */,
 				3D9F41BB294F8F9000CC748E /* OrdersHistoryModule */,
-				3D9F41CA29519AA700CC748E /* OrderModule */,
+				3DF0CB0E29538E2C0093D5C4 /* OrderModule */,
 				3DF0CB092953811A0093D5C4 /* ProfileModule */,
 				3DFBDE822930E9E1005EEAFD /* HWCustomElements */,
 				3D3983B7293E5813008B01BE /* Fonts */,
