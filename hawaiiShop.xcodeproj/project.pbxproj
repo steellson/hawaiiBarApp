@@ -43,6 +43,8 @@
 		3DF0CB0229533DD40093D5C4 /* HWOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF0CB0129533DD40093D5C4 /* HWOrderCell.swift */; };
 		3DF0CB04295341660093D5C4 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF0CB03295341660093D5C4 /* Order.swift */; };
 		3DF0CB08295376420093D5C4 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF0CB07295376420093D5C4 /* OrderViewController.swift */; };
+		3DF0CB0B295381630093D5C4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF0CB0A295381630093D5C4 /* ProfileViewController.swift */; };
+		3DF0CB0D295381EE0093D5C4 /* ProfileViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF0CB0C295381EE0093D5C4 /* ProfileViewControllerLayout.swift */; };
 		3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE68292E46D3005EEAFD /* AppDelegate.swift */; };
 		3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6A292E46D3005EEAFD /* SceneDelegate.swift */; };
 		3DFBDE6D292E46D3005EEAFD /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBDE6C292E46D3005EEAFD /* AuthorizationViewController.swift */; };
@@ -97,6 +99,8 @@
 		3DF0CB0129533DD40093D5C4 /* HWOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HWOrderCell.swift; sourceTree = "<group>"; };
 		3DF0CB03295341660093D5C4 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		3DF0CB07295376420093D5C4 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		3DF0CB0A295381630093D5C4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3DF0CB0C295381EE0093D5C4 /* ProfileViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DFBDE65292E46D3005EEAFD /* hawaiiShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hawaiiShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFBDE68292E46D3005EEAFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DFBDE6A292E46D3005EEAFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -225,6 +229,15 @@
 			path = MenuDetailModule;
 			sourceTree = "<group>";
 		};
+		3DF0CB092953811A0093D5C4 /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				3DF0CB0A295381630093D5C4 /* ProfileViewController.swift */,
+				3DF0CB0C295381EE0093D5C4 /* ProfileViewControllerLayout.swift */,
+			);
+			path = ProfileModule;
+			sourceTree = "<group>";
+		};
 		3DFBDE5C292E46D3005EEAFD = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +267,7 @@
 				3D9F41B4294E769A00CC748E /* PaymentModule */,
 				3D9F41BB294F8F9000CC748E /* OrdersHistoryModule */,
 				3D9F41CA29519AA700CC748E /* OrderModule */,
+				3DF0CB092953811A0093D5C4 /* ProfileModule */,
 				3DFBDE822930E9E1005EEAFD /* HWCustomElements */,
 				3D3983B7293E5813008B01BE /* Fonts */,
 				3DFBDE73292E46DD005EEAFD /* LaunchScreen.storyboard */,
@@ -386,9 +400,11 @@
 				3DFBDE842930EA55005EEAFD /* HWLabel.swift in Sources */,
 				3DE9A00D29434DBF00F8793C /* HWImageView.swift in Sources */,
 				3DFBDE8E2930EF9E005EEAFD /* HWView.swift in Sources */,
+				3DF0CB0D295381EE0093D5C4 /* ProfileViewControllerLayout.swift in Sources */,
 				3DFBDE6D292E46D3005EEAFD /* AuthorizationViewController.swift in Sources */,
 				3D3983C8293F76F1008B01BE /* MenuViewControllerLayout.swift in Sources */,
 				3D3983C6293F76C8008B01BE /* MenuViewController.swift in Sources */,
+				3DF0CB0B295381630093D5C4 /* ProfileViewController.swift in Sources */,
 				3DFBDE882930ED6D005EEAFD /* HWTextField.swift in Sources */,
 				3DD10C51294B253A0075233E /* HWDeliveryAddressView.swift in Sources */,
 				3DFBDE992933A023005EEAFD /* MainMenuCard.swift in Sources */,
