@@ -8,12 +8,6 @@
 import Foundation
 import UIKit
 
-//MARK: - Order Status Enum / Need relocate to Order
-
-enum OrderStatus: String, CaseIterable {
-    case Active
-    case Completed
-}
 
 //MARK: - OrdersHistoryItem
 

@@ -99,4 +99,13 @@ final class HWButton: UIButton {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         return button
     }
+    
+    public func buildHWRepeatOrderButton() -> UIButton {
+        let button = UIButton()
+        button.backgroundColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        button.layer.cornerRadius = 22
+        button.setTitle("Repeat order", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        return button
+    }
 }

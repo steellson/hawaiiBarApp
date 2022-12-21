@@ -161,4 +161,46 @@ final class HWLabel: UILabel {
         label.text = "No history yet"
         return label
     }
+    
+    public func buildHWOrderPriceMoneyLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-Bold", size: 28)
+        label.textColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        label.textAlignment = .right
+        label.numberOfLines = 1
+        label.text = "52 $"
+        return label
+    }
+    
+    public func buildHWOrderTimeLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-Regular", size: 16)
+        label.textAlignment = .left
+        label.text = "Order time: 2022.03.16 12:00"
+        return label
+    }
+    
+    public func buildHWOrderAddressLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-Regular", size: 16)
+        label.textAlignment = .left
+        label.text = "Address: Berlin, Hauptbahnhof, Europaplatz 1."
+        return label
+    }
+    
+    public func buildHWOrderPaymentLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-Regular", size: 16)
+        label.textAlignment = .left
+        label.text = "Payment:" + " " + PaymentMethods.Card.rawValue
+        return label
+    }
+    
+    public func buildHWOrderStatusLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-Regular", size: 16)
+        label.textAlignment = .left
+        label.text = "Status:" + " " + OrderStatus.Completed.rawValue
+        return label
+    }
 }
