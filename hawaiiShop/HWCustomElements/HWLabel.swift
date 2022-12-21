@@ -203,4 +203,12 @@ final class HWLabel: UILabel {
         label.text = "Status:" + " " + OrderStatus.Completed.rawValue
         return label
     }
+    
+    public func buildHWPersonalDetailsTextLabel() -> UILabel {
+        let label = UILabel()
+        label.font = UIFont(name: "Quicksand-Bold", size: 20)
+        label.textAlignment = .left
+        label.text = "Personal details"
+        return label
+    }
 }

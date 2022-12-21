@@ -12,6 +12,10 @@ class ProfileViewController: UIViewController {
     
     //MARK: - UI ELements
     
+    let personalDetailsTextLabel = HWLabel().buildHWPersonalDetailsTextLabel()
+    let changeButton             = HWButton().buildHWDeliveryChangeButton()
+    var profileCollectionView    : UICollectionView!
+    let logoutButton             = HWButton().buildHWProfileLogoutButton()
     
     
     
@@ -28,9 +32,13 @@ class ProfileViewController: UIViewController {
     
     private func setupController() {
         view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
-
+        
+        view.addSubview(personalDetailsTextLabel)
+        view.addSubview(changeButton)
+        view.addSubview(logoutButton)
         
         setupNavigationBar()
+        setupCollectionView()
         setupLayout()
     }
     
@@ -43,6 +51,14 @@ class ProfileViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Quicksand-Bold", size: 20)!]
     }
     
+    private func setupCollectionView() {
+        let flowLayout             = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .vertical
+        
+        profileCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        
+        view.addSubview(profileCollectionView)
+    }
     
     
     //MARK: - Buttons Action
