@@ -12,14 +12,13 @@ class DeliveryViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    let addressDetailTextLabel       = UILabel(UIFont(name: "Quicksand-Bold", size: 20)!, .black, .left, "Address details")
+    let addressDetailTextLabel       = UILabel(.quickBold20, .black, .left, "Address details")
     let changeButton                 = UIButton().buildChangeButton()
     let addressView                  = DeliveryAddressView()
-    let deliveryMethodLabel          = UILabel(UIFont(name: "Quicksand-Bold", size: 20)!, .black, .left, "Delivery method")
+    let deliveryMethodLabel          = UILabel(.quickBold20, .black, .left, "Delivery method")
     var deliveryMethodPickerTable    : UITableView?
-    let totalPriceTextLabel          = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!, .black, .left, "Total price")
-    let moneyPriceLabel              = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!,
-                                               UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), .right, "52 $")
+    let totalPriceTextLabel          = UILabel(.quickBold24, .black, .left, "Total price")
+    let moneyPriceLabel              = UILabel(.quickBold24, UIColor.specialOrange, .right, "52 $")
     let proceedToPaymentButton       = UIButton("Proceed to payment")
     
     var deliveryTypes                 = DeliveryType.allCases
@@ -37,7 +36,7 @@ class DeliveryViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        view.backgroundColor = .specialWhite
         
         view.addSubview(addressDetailTextLabel)
         view.addSubview(changeButton)
@@ -58,21 +57,21 @@ class DeliveryViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
         navigationItem.title = "Delivery"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Quicksand-Bold", size: 20)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.quickBold20]
     }
     
     private func setupDeliveryMethodPickerTable() {
-        deliveryMethodPickerTable = UITableView(frame: .zero, style: .plain)
+        deliveryMethodPickerTable                      = UITableView(frame: .zero, style: .plain)
         
-        guard let deliveryMethodPickerTable = deliveryMethodPickerTable else { return }
-        deliveryMethodPickerTable.backgroundColor = .white
-        deliveryMethodPickerTable.isScrollEnabled = false
+        guard let deliveryMethodPickerTable            = deliveryMethodPickerTable else { return }
+        deliveryMethodPickerTable.backgroundColor      = .white
+        deliveryMethodPickerTable.isScrollEnabled      = false
         deliveryMethodPickerTable.separatorInset.right = deliveryMethodPickerTable.separatorInset.left
-        deliveryMethodPickerTable.layer.cornerRadius = 18
+        deliveryMethodPickerTable.layer.cornerRadius   = 18
+        deliveryMethodPickerTable.delegate             = self
+        deliveryMethodPickerTable.dataSource           = self
         deliveryMethodPickerTable.register(ChooseMethodCell.self, forCellReuseIdentifier: "deliveryMethodCell")
-        deliveryMethodPickerTable.delegate = self
-        deliveryMethodPickerTable.dataSource = self
-        
+
         view.addSubview(deliveryMethodPickerTable)
     }
     
@@ -99,9 +98,9 @@ extension DeliveryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let methodCell = tableView.dequeueReusableCell(withIdentifier: "deliveryMethodCell", for: indexPath) as! ChooseMethodCell
+        let methodCell        = tableView.dequeueReusableCell(withIdentifier: "deliveryMethodCell", for: indexPath) as! ChooseMethodCell
         guard let pickerImage = UIImage(systemName: "circle") else { return ChooseMethodCell() }
-        let text = deliveryTypes[indexPath.row].rawValue
+        let text              = deliveryTypes[indexPath.row].rawValue
         methodCell.configureCell(image: pickerImage, text: text)
         return methodCell
     }

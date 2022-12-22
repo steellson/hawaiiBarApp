@@ -35,6 +35,8 @@
 		3DD10C51294B253A0075233E /* DeliveryAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10C50294B253A0075233E /* DeliveryAddressView.swift */; };
 		3DD10C53294B39BC0075233E /* ChooseMethodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD10C52294B39BC0075233E /* ChooseMethodCell.swift */; };
 		3DD4E13A29491A43002599A6 /* CartEmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4E13929491A43002599A6 /* CartEmptyViewController.swift */; };
+		3DE905632954D86B0013BEA6 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905622954D86B0013BEA6 /* Extension+UIColor.swift */; };
+		3DE905652954E2870013BEA6 /* Extension+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905642954E2870013BEA6 /* Extension+UIFont.swift */; };
 		3DE94C6529426B630068D2DD /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */; };
 		3DE94C6729426CA80068D2DD /* MenuDetailViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */; };
 		3DE9A00D29434DBF00F8793C /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9A00C29434DBF00F8793C /* Extension+UIImageView.swift */; };
@@ -93,6 +95,8 @@
 		3DD10C50294B253A0075233E /* DeliveryAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryAddressView.swift; sourceTree = "<group>"; };
 		3DD10C52294B39BC0075233E /* ChooseMethodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMethodCell.swift; sourceTree = "<group>"; };
 		3DD4E13929491A43002599A6 /* CartEmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEmptyViewController.swift; sourceTree = "<group>"; };
+		3DE905622954D86B0013BEA6 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		3DE905642954E2870013BEA6 /* Extension+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIFont.swift"; sourceTree = "<group>"; };
 		3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DE9A00C29434DBF00F8793C /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
@@ -206,12 +210,14 @@
 		3DE905612954D38F0013BEA6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3DFBDE8D2930EF9E005EEAFD /* Extension+UIView.swift */,
-				3DFBDE832930EA55005EEAFD /* Extension+UILabel.swift */,
 				3DFBDE892930EE0B005EEAFD /* Extension+UIButton.swift */,
+				3DE905622954D86B0013BEA6 /* Extension+UIColor.swift */,
+				3DE905642954E2870013BEA6 /* Extension+UIFont.swift */,
+				3DE9A00C29434DBF00F8793C /* Extension+UIImageView.swift */,
+				3DFBDE832930EA55005EEAFD /* Extension+UILabel.swift */,
 				3DFBDE872930ED6D005EEAFD /* Extension+UITextField.swift */,
 				3D5C95FD2949110000342B4F /* Extension+UITextView.swift */,
-				3DE9A00C29434DBF00F8793C /* Extension+UIImageView.swift */,
+				3DFBDE8D2930EF9E005EEAFD /* Extension+UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -279,7 +285,6 @@
 				3DF0CB0E29538E2C0093D5C4 /* OrderModule */,
 				3DF0CB092953811A0093D5C4 /* ProfileModule */,
 				3DFBDE822930E9E1005EEAFD /* UI+Extensions */,
-				3D3983B7293E5813008B01BE /* Fonts */,
 				3DFBDE73292E46DD005EEAFD /* LaunchScreen.storyboard */,
 				3DFBDE71292E46DD005EEAFD /* Assets.xcassets */,
 				3DFBDE76292E46DD005EEAFD /* Info.plist */,
@@ -311,6 +316,7 @@
 			children = (
 				3DD10C50294B253A0075233E /* DeliveryAddressView.swift */,
 				3DE905612954D38F0013BEA6 /* Extensions */,
+				3D3983B7293E5813008B01BE /* Fonts */,
 			);
 			path = "UI+Extensions";
 			sourceTree = "<group>";
@@ -425,6 +431,7 @@
 				3D9F41BF294F90A300CC748E /* OrdersHistoryViewControllerLayout.swift in Sources */,
 				3D9F41C72950C70100CC748E /* OrdersHistoryEmptyViewController.swift in Sources */,
 				3DFBDE8A2930EE0B005EEAFD /* Extension+UIButton.swift in Sources */,
+				3DE905632954D86B0013BEA6 /* Extension+UIColor.swift in Sources */,
 				3D3983CA293F77E8008B01BE /* MenuCard.swift in Sources */,
 				3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */,
 				3D17A0C82948A47400FDDC94 /* CartViewController.swift in Sources */,
@@ -436,6 +443,7 @@
 				3D17A0C62948A1F000FDDC94 /* Cart.swift in Sources */,
 				3DE94C6529426B630068D2DD /* MenuDetailViewController.swift in Sources */,
 				3D9F41BD294F8FDF00CC748E /* OrdersHistoryViewController.swift in Sources */,
+				3DE905652954E2870013BEA6 /* Extension+UIFont.swift in Sources */,
 				3DD10C53294B39BC0075233E /* ChooseMethodCell.swift in Sources */,
 				3DF0CB08295376420093D5C4 /* OrderViewController.swift in Sources */,
 				3DD4E13A29491A43002599A6 /* CartEmptyViewController.swift in Sources */,

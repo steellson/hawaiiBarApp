@@ -14,9 +14,8 @@ class OrderViewController: UIViewController {
     
     var infoStack             : UIStackView!
     var orderCollectionView   : UICollectionView!
-    let totalPriceTextLabel   = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!, .black, .left, "Total price")
-    let moneyPriceleLabel     = UILabel(UIFont(name: "Quicksand-Bold", size: 28)!,
-                                        UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), .right, "52 $")
+    let totalPriceTextLabel   = UILabel(.quickBold24, .black, .left, "Total price")
+    let moneyPriceleLabel     = UILabel(.quickBold28, UIColor.specialOrange, .right, "52 $")
     let repeatOrderButton     = UIButton("Repeat order")
     var items                 = OrderData.items
     
@@ -32,7 +31,7 @@ class OrderViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        view.backgroundColor = .specialWhite
 
         view.addSubview(totalPriceTextLabel)
         view.addSubview(moneyPriceleLabel)
@@ -51,7 +50,7 @@ class OrderViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
         navigationItem.title = "Order #227165"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Quicksand-Bold", size: 20)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.quickBold20]
     }
     
     private func setupInfoStack() {
@@ -60,14 +59,10 @@ class OrderViewController: UIViewController {
         infoStack.spacing      = 10
         infoStack.distribution = .fillEqually
         
-        let timeLabel     = UILabel(UIFont(name: "Quicksand-Regular", size: 16)!,
-                                    .black, .left, "Order time: 2022.03.16 12:00")
-        let addressLabel  = UILabel(UIFont(name: "Quicksand-Regular", size: 16)!,
-                                    .black, .left, "Address: Berlin, Hauptbahnhof, Europaplatz 1.")
-        let paymentLabel  = UILabel(UIFont(name: "Quicksand-Regular", size: 16)!,
-                                    .black, .left, "Payment:" + " " + PaymentMethods.Card.rawValue)
-        let statusLabel   = UILabel(UIFont(name: "Quicksand-Regular", size: 16)!,
-                                    .black, .left, "Status:" + " " + OrderStatus.Completed.rawValue)
+        let timeLabel     = UILabel(.quickReg16, .black, .left, "Order time: 2022.03.16 12:00")
+        let addressLabel  = UILabel(.quickReg16, .black, .left, "Address: Berlin, Hauptbahnhof, Europaplatz 1.")
+        let paymentLabel  = UILabel(.quickReg16, .black, .left, "Payment:" + " " + PaymentMethods.Card.rawValue)
+        let statusLabel   = UILabel(.quickReg16, .black, .left, "Status:" + " " + OrderStatus.Completed.rawValue)
         
         infoStack.addArrangedSubview(timeLabel)
         infoStack.addArrangedSubview(addressLabel)

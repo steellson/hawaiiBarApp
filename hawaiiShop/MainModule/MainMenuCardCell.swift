@@ -38,11 +38,11 @@ final class MainMenuCardCell: UICollectionViewCell {
     }
     
     private func setupBackgroundLayerOfCell() {
-        let gradientLayer = CAGradientLayer()
-        let startColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
-        let endColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
-        gradientLayer.frame = CGRect(x: 0, y: 0, width: contentView.bounds.width, height: contentView.bounds.height)
+        let gradientLayer    = CAGradientLayer()
+        let startColor       = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+        let endColor         = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        gradientLayer.colors       = [startColor.cgColor, endColor.cgColor]
+        gradientLayer.frame        = CGRect(x: 0, y: 0, width: contentView.bounds.width, height: contentView.bounds.height)
         gradientLayer.cornerRadius = 16
         contentView.layer.addSublayer(gradientLayer)
         
@@ -52,11 +52,11 @@ final class MainMenuCardCell: UICollectionViewCell {
     
     private func setupImageView() {
         self.contentView.addSubview(imageView)
-        imageView.backgroundColor = .none
-        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor     = .none
+        imageView.contentMode         = .scaleAspectFit
         imageView.layer.shadowOpacity = 0.2
-        imageView.layer.shadowRadius = 3
-        imageView.layer.shadowOffset = .init(width: 10, height: 5)
+        imageView.layer.shadowRadius  = 3
+        imageView.layer.shadowOffset  = .init(width: 10, height: 5)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -69,8 +69,8 @@ final class MainMenuCardCell: UICollectionViewCell {
     
     private func setupLabel() {
         self.contentView.addSubview(label)
-        label.contentMode = .center
-        label.font = UIFont(name: "Quicksand-Bold", size: 20)
+        label.contentMode   = .center
+        label.font          = .quickBold20
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         

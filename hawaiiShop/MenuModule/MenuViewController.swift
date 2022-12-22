@@ -12,7 +12,7 @@ class MenuViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    var menuCollectionView: UICollectionView!
+    var menuCollectionView    : UICollectionView!
     var menuCards: [MenuCard] = MenuCardData.cards
     
     
@@ -28,7 +28,7 @@ class MenuViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        view.backgroundColor = UIColor.specialWhite
 
         setupNavigationBar()
         setupCollectionView()
@@ -45,20 +45,20 @@ class MenuViewController: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
         navigationItem.title = "Salads"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Quicksand-Bold", size: 20)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.quickBold20]
     }
     
     private func setupCollectionView() {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .vertical
+        let flowLayout                = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection    = .vertical
         flowLayout.minimumLineSpacing = 3
         
-        menuCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        menuCollectionView.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        menuCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        menuCollectionView.backgroundColor = .specialWhite
+        menuCollectionView.dataSource      = self
+        menuCollectionView.delegate        = self
         menuCollectionView.register(MenuCardCell.self, forCellWithReuseIdentifier: "menuCell")
-        menuCollectionView.dataSource = self
-        menuCollectionView.delegate = self
-        
+
         view.addSubview(menuCollectionView)
     }
     
@@ -89,11 +89,11 @@ extension MenuViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! MenuCardCell
+        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! MenuCardCell
         guard let image = menuCards[indexPath.item].image?.image else { return MenuCardCell() }
-        let nameLabel = menuCards[indexPath.item].label
+        let nameLabel   = menuCards[indexPath.item].label
         let weightLabel = menuCards[indexPath.item].weight
-        let priceLabel = menuCards[indexPath.item].price
+        let priceLabel  = menuCards[indexPath.item].price
         cell.configureCell(with: image, nameLabel: nameLabel, weightLabel: weightLabel, priceLabel: priceLabel)
         return cell
     }

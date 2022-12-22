@@ -13,9 +13,9 @@ class OrdersHistoryEmptyViewController: UIViewController {
     //MARK: - UI Elements
     
     let imageView             = UIImageView(UIImage(named: "search"), .scaleAspectFit, false)
-    let titleLabel            = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!, .black, .center, "No history yet")
-    let subtitleLabel         = UILabel(UIFont(name: "Quicksand-SemiBold", size: 18)!,
-                                        UIColor(red: 0.325, green: 0.325, blue: 0.325, alpha: 1), .center, "Hit the orange button down\nbelow to Create an order")
+    let titleLabel            = UILabel(.quickBold24, .black, .center, "No history yet")
+    let subtitleLabel         = UILabel(.quickSBold18, UIColor.specialGray,
+                                .center, "Hit the orange button down\nbelow to Create an order")
     let createAnOrderButton   = UIButton("Create an order")
     
     
@@ -32,7 +32,7 @@ class OrdersHistoryEmptyViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        view.backgroundColor = .specialWhite
         
         view.addSubview(imageView)
         view.addSubview(titleLabel)
@@ -49,7 +49,7 @@ class OrdersHistoryEmptyViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
         navigationItem.title = "Orders History"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Quicksand-Bold", size: 20)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.quickBold20]
     }
        
     

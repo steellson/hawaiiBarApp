@@ -13,15 +13,15 @@ final class ChooseMethodCell: UITableViewCell {
     //MARK: UI Elements
     
     var pickerView: UIImageView = {
-       let pickerView = UIImageView()
+       let pickerView          = UIImageView()
         pickerView.contentMode = .scaleAspectFit
-        pickerView.tintColor = .systemOrange
+        pickerView.tintColor   = .systemOrange
         return pickerView
     }()
     
     var label: UILabel = {
-       let label = UILabel()
-        label.font = UIFont(name: "Quicksand-Medium", size: 16)
+       let label            = UILabel()
+        label.font          = .quickMed18
         label.textAlignment = .left
         return label
     }()

@@ -10,10 +10,10 @@ import UIKit
 
 struct MenuDetailCard {
     
-    var titleLabel: String
-    var imageView: UIImageView?
+    var titleLabel      : String
+    var imageView       : UIImageView?
     var descriptionLabel: String
-    var weightLabel: String
-    var priceLabel: String
+    var weightLabel     : String
+    var priceLabel      : String
     
 }

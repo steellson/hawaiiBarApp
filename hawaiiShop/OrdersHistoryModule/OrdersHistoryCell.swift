@@ -47,8 +47,7 @@ final class OrdersHistoryCell: UICollectionViewCell {
         return stack
     }()
     
-    var moneyPriceLabel = UILabel(UIFont(name: "Quicksand-Bold", size: 28)!,
-                                  UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), .right, "52 $")
+    var moneyPriceLabel = UILabel(.quickBold28, UIColor.specialOrange, .right, "52 $")
     
     let forwardView: UIImageView = {
         let image        = UIImage(systemName: "chevron.forward")

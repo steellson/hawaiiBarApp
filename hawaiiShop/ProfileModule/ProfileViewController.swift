@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController {
     
     //MARK: - UI ELements
     
-    let personalDetailsTextLabel = UILabel(UIFont(name: "Quicksand-Bold", size: 20)!, .black, .left, "Personal details")
+    let personalDetailsTextLabel = UILabel(.quickBold20, .black, .left, "Personal details")
     let changeButton             = UIButton().buildChangeButton()
     let profileView              = DeliveryAddressView()
     var profileCollectionView    : UICollectionView!
@@ -32,7 +32,7 @@ class ProfileViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        view.backgroundColor = .specialWhite
         
         view.addSubview(personalDetailsTextLabel)
         view.addSubview(changeButton)
@@ -50,7 +50,7 @@ class ProfileViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
         navigationItem.title = "My profile"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Quicksand-Bold", size: 20)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.quickBold20]
     }
     
     private func setupCollectionView() {

@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     //MARK: - UI Elements
     
     let searchField                       = UITextField().buildSearchField()
-    let menuLabel                         = UILabel(UIFont(name: "Quicksand-Bold", size: 20)!, .black, .left, "Menu")
+    let menuLabel                         = UILabel(.quickBold20, .black, .left, "Menu")
     var mainMenuCards: [MainMenuCard]     = MainMenuCardData.cards
     var cardsCollectionView               : UICollectionView!
     
@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        view.backgroundColor = UIColor.specialWhite
         
         view.addSubview(searchField)
         view.addSubview(menuLabel)
@@ -50,19 +50,20 @@ class MainViewController: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
 
         navigationItem.title = "Hawaii Bar"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Quicksand-Bold", size: 20)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.quickBold20]
     }
     
     private func setupCollectionView() {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .vertical
+        let flowLayout                = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection    = .vertical
         flowLayout.minimumLineSpacing = 3
         
-        cardsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        cardsCollectionView.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        cardsCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        cardsCollectionView.backgroundColor = UIColor.specialWhite
+        cardsCollectionView.dataSource      = self
+        cardsCollectionView.delegate        = self
         cardsCollectionView.register(MainMenuCardCell.self, forCellWithReuseIdentifier: "cardCell")
-        cardsCollectionView.dataSource = self
-        cardsCollectionView.delegate = self
+        
         
         view.addSubview(cardsCollectionView)
     }
@@ -92,9 +93,9 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! MainMenuCardCell
+        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! MainMenuCardCell
         guard let image = mainMenuCards[indexPath.item].image?.image else { return MainMenuCardCell() }
-        let label = mainMenuCards[indexPath.item].label
+        let label       = mainMenuCards[indexPath.item].label
         cell.configureCell(with: image, and: label)
         return cell
     }

@@ -13,10 +13,8 @@ class CartViewController: UIViewController {
     //MARK: - UI Elements
     
     var cartCollectionView    : UICollectionView!
-    let totalPriceTextLabel   = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!, .black, .left, "Total price")
-    let priceMoneyLabel       = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!,
-                                        UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), .right, "52 $")
-    
+    let totalPriceTextLabel   = UILabel(.quickBold24, .black, .left, "Total price")
+    let priceMoneyLabel       = UILabel(.quickBold24, UIColor.specialOrange, .right, "52 $")
     let commentTextView       = UITextView().buildCartCommentTextView()
     let completeOrderButton   = UIButton("Complete order")
     var items: [CartItem]     = CartData.items
@@ -34,7 +32,7 @@ class CartViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        view.backgroundColor = .specialWhite
         
         view.addSubview(totalPriceTextLabel)
         view.addSubview(priceMoneyLabel)
@@ -56,19 +54,19 @@ class CartViewController: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
         navigationItem.title = "Basket"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Quicksand-Bold", size: 20)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.quickBold20]
     }
     
     private func setupCollectionView() {
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .vertical
+        let flowLayout                    = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection        = .vertical
         
-        cartCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        cartCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         cartCollectionView.backgroundColor = .none
+        cartCollectionView.dataSource      = self
+        cartCollectionView.delegate        = self
         cartCollectionView.register(CartCell.self, forCellWithReuseIdentifier: "cartCell")
-        cartCollectionView.dataSource = self
-        cartCollectionView.delegate = self
-        
+
         view.addSubview(cartCollectionView)
     }
     
@@ -94,10 +92,10 @@ extension CartViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cartCell", for: indexPath) as! CartCell
+        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: "cartCell", for: indexPath) as! CartCell
         guard let image = items[indexPath.item].imageView?.image else { return UICollectionViewCell() }
-        let nameLabel = items[indexPath.item].nameLabel
-        let priceLabel = items[indexPath.item].priceLabel
+        let nameLabel   = items[indexPath.item].nameLabel
+        let priceLabel  = items[indexPath.item].priceLabel
         cell.configureCell(image, nameLabel, priceLabel: priceLabel)
         return cell
     }

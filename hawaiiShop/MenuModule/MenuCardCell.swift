@@ -31,9 +31,9 @@ final class MenuCardCell: UICollectionViewCell {
     
     private func setupCell() {
         self.layer.shadowOpacity = 0.2
-        self.layer.shadowOffset = .init(width: 10, height: 10)
-        self.layer.shadowRadius = 15
-        self.layer.shadowColor = .init(red: 0, green: 0, blue: 0, alpha: 0.4)
+        self.layer.shadowOffset  = .init(width: 10, height: 10)
+        self.layer.shadowRadius  = 15
+        self.layer.shadowColor   = .init(red: 0, green: 0, blue: 0, alpha: 0.4)
     
         setupBackgroundLayerOfCell()
         setupImageView()
@@ -43,11 +43,11 @@ final class MenuCardCell: UICollectionViewCell {
     }
     
     private func setupBackgroundLayerOfCell() {
-        let gradientLayer = CAGradientLayer()
-        let startColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
-        let endColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-        gradientLayer.colors = [startColor.cgColor, endColor.cgColor]
-        gradientLayer.frame = CGRect(x: 0, y: 0, width: contentView.bounds.width, height: contentView.bounds.height)
+        let gradientLayer          = CAGradientLayer()
+        let startColor             = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+        let endColor               = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        gradientLayer.colors       = [startColor.cgColor, endColor.cgColor]
+        gradientLayer.frame        = CGRect(x: 0, y: 0, width: contentView.bounds.width, height: contentView.bounds.height)
         gradientLayer.cornerRadius = 16
         contentView.layer.addSublayer(gradientLayer)
         
@@ -57,11 +57,11 @@ final class MenuCardCell: UICollectionViewCell {
     
     private func setupImageView() {
         self.contentView.addSubview(imageView)
-        imageView.backgroundColor = .none
-        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor     = .none
+        imageView.contentMode         = .scaleAspectFit
         imageView.layer.shadowOpacity = 0.2
-        imageView.layer.shadowRadius = 3
-        imageView.layer.shadowOffset = .init(width: 10, height: 5)
+        imageView.layer.shadowRadius  = 3
+        imageView.layer.shadowOffset  = .init(width: 10, height: 5)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -74,8 +74,8 @@ final class MenuCardCell: UICollectionViewCell {
     
     private func setupNameLabel() {
         self.contentView.addSubview(nameLabel)
-        nameLabel.contentMode = .center
-        nameLabel.font = UIFont(name: "Quicksand-Bold", size: 20)
+        nameLabel.contentMode   = .center
+        nameLabel.font          = .quickBold20
         nameLabel.textAlignment = .center
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -88,9 +88,9 @@ final class MenuCardCell: UICollectionViewCell {
     
     private func setupWeightLabel() { //
         self.contentView.addSubview(weightLabel)
-        weightLabel.contentMode = .center
-        weightLabel.font = UIFont(name: "Quicksand-Regular", size: 16)
-        weightLabel.textColor = UIColor(red: 159/255, green: 159/255, blue: 159/255, alpha: 1)
+        weightLabel.contentMode   = .center
+        weightLabel.font          = .quickReg16
+        weightLabel.textColor     = .specialGray
         weightLabel.textAlignment = .center
         weightLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -103,9 +103,9 @@ final class MenuCardCell: UICollectionViewCell {
     
     private func setupPriceLabel() { //
         self.contentView.addSubview(priceLabel)
-        priceLabel.contentMode = .center
-        priceLabel.font = UIFont(name: "Quicksand-Bold", size: 24)
-        priceLabel.textColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        priceLabel.contentMode   = .center
+        priceLabel.font          = .quickBold24
+        priceLabel.textColor     = .specialOrange
         priceLabel.textAlignment = .center
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         

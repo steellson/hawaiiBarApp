@@ -10,8 +10,8 @@ import UIKit
 
 struct CartItem {
     
-    var imageView: UIImageView?
-    var nameLabel: String
+    var imageView : UIImageView?
+    var nameLabel : String
     var priceLabel: String
     
 }

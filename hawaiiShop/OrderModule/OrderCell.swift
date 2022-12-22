@@ -22,23 +22,23 @@ final class OrderCell: UICollectionViewCell {
     var nameLabel: UILabel = {
         let nameLabel            = UILabel()
          nameLabel.contentMode   = .left
-         nameLabel.font          = UIFont(name: "Quicksand-SemiBold", size: 18)
+         nameLabel.font          = .quickSBold18
          return nameLabel
     }()
     
     var counter: UILabel = {
         let nameLabel            = UILabel()
          nameLabel.contentMode   = .left
-         nameLabel.font          = UIFont(name: "Quicksand-Regular", size: 16)
-         nameLabel.textColor     = UIColor(red: 0.325, green: 0.325, blue: 0.325, alpha: 1)
+         nameLabel.font          = .quickReg16
+         nameLabel.textColor     = .specialGray
          return nameLabel
     }()
     
     var priceLabel: UILabel = {
        let priceLabel            = UILabel()
         priceLabel.contentMode   = .center
-        priceLabel.font          = UIFont(name: "Quicksand-SemiBold", size: 22)
-        priceLabel.textColor     = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        priceLabel.font          = .quickSBold22
+        priceLabel.textColor     = UIColor.specialOrange
         return priceLabel
     }()
    
@@ -63,9 +63,9 @@ final class OrderCell: UICollectionViewCell {
     }
     
     private func setupCell() {
-        contentView.backgroundColor = .white
+        contentView.backgroundColor    = .white
         contentView.layer.cornerRadius = 18
-        contentView.contentMode = .scaleAspectFill
+        contentView.contentMode        = .scaleAspectFill
         
         contentView.addSubview(imageView)
         contentView.addSubview(nameLabel)

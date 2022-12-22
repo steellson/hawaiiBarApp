@@ -22,11 +22,10 @@ class PaymentViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    let paymentMethodTextLabel    = UILabel(UIFont(name: "Quicksand-Bold", size: 20)!, .black, .left, "Payment method")
+    let paymentMethodTextLabel    = UILabel(.quickBold20, .black, .left, "Payment method")
     var paymentMethodPickerTable  : UITableView!
-    let totalPriceTextLabel       = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!, .black, .left, "Total price")
-    let moneyPriceLabel           = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!,
-                                            UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), .right, "52 $")
+    let totalPriceTextLabel       = UILabel(.quickBold24, .black, .left, "Total price")
+    let moneyPriceLabel           = UILabel(.quickBold24, UIColor.specialOrange, .right, "52 $")
     let completeButton            = UIButton("Complete payment")
     
     
@@ -42,7 +41,7 @@ class PaymentViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        view.backgroundColor = .specialWhite
         
         view.addSubview(paymentMethodTextLabel)
         view.addSubview(totalPriceTextLabel)
@@ -60,21 +59,21 @@ class PaymentViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
         navigationItem.title = "Payment"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Quicksand-Bold", size: 20)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.quickBold20]
     }
     
     private func setupPaymentMethodPickerTable() {
-        paymentMethodPickerTable = UITableView(frame: .zero, style: .plain)
+        paymentMethodPickerTable                      = UITableView(frame: .zero, style: .plain)
         
-        guard let paymentMethodPickerTable = paymentMethodPickerTable else { return }
-        paymentMethodPickerTable.backgroundColor = .white
-        paymentMethodPickerTable.isScrollEnabled = false
+        guard let paymentMethodPickerTable            = paymentMethodPickerTable else { return }
+        paymentMethodPickerTable.backgroundColor      = .white
+        paymentMethodPickerTable.isScrollEnabled      = false
         paymentMethodPickerTable.separatorInset.right = paymentMethodPickerTable.separatorInset.left
-        paymentMethodPickerTable.layer.cornerRadius = 18
+        paymentMethodPickerTable.layer.cornerRadius   = 18
+        paymentMethodPickerTable.delegate             = self
+        paymentMethodPickerTable.dataSource           = self
         paymentMethodPickerTable.register(ChooseMethodCell.self, forCellReuseIdentifier: "paymentMethodCell")
-        paymentMethodPickerTable.delegate = self
-        paymentMethodPickerTable.dataSource = self
-        
+
         view.addSubview(paymentMethodPickerTable)
     }
     
@@ -101,9 +100,9 @@ extension PaymentViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let methodCell = tableView.dequeueReusableCell(withIdentifier: "paymentMethodCell", for: indexPath) as! ChooseMethodCell
+        let methodCell        = tableView.dequeueReusableCell(withIdentifier: "paymentMethodCell", for: indexPath) as! ChooseMethodCell
         guard let pickerImage = UIImage(systemName: "circle") else { return methodCell }
-        let text = PaymentMethods.allCases[indexPath.row].rawValue
+        let text              = PaymentMethods.allCases[indexPath.row].rawValue
         methodCell.configureCell(image: pickerImage, text: text)
         return methodCell
     }

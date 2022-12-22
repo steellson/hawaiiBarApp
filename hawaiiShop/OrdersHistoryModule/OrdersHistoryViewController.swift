@@ -30,7 +30,7 @@ class OrdersHistoryViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        view.backgroundColor = .specialWhite
         
         
         setupNavigationBar()
@@ -44,19 +44,19 @@ class OrdersHistoryViewController: UIViewController {
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
         navigationItem.title = "Orders History"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Quicksand-Bold", size: 20)!]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.quickBold20]
     }
     
     private func setupOrdersCollectionView() {
-        let flowLayout = UICollectionViewFlowLayout()
+        let flowLayout             = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
         
-        ordersCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        ordersCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         ordersCollectionView.backgroundColor = .none
+        ordersCollectionView.dataSource      = self
+        ordersCollectionView.delegate        = self
         ordersCollectionView.register(OrdersHistoryCell.self, forCellWithReuseIdentifier: "historyCell")
-        ordersCollectionView.dataSource = self
-        ordersCollectionView.delegate = self
-        
+
         view.addSubview(ordersCollectionView)
     }
     

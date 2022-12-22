@@ -29,13 +29,13 @@ final class CartCell: UICollectionViewCell {
     var priceLabel: UILabel = {
        let priceLabel            = UILabel()
         priceLabel.contentMode   = .center
-        priceLabel.font          = UIFont(name: "Quicksand-SemiBold", size: 22)
-        priceLabel.textColor     = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        priceLabel.font          = .quickSBold22
+        priceLabel.textColor     = UIColor.specialOrange
         return priceLabel
     }()
     
     var plusItemButton  : UIButton!
-    var counter         = UILabel(UIFont(name: "Quicksand-SemiBold", size: 18)!, .black, .center, "1")
+    var counter         = UILabel(.quickSBold18, .black, .center, "1")
     var minusItemButton : UIButton!
     
     
@@ -57,9 +57,9 @@ final class CartCell: UICollectionViewCell {
     }
     
     private func setupCell() {
-        contentView.backgroundColor = .white
+        contentView.backgroundColor    = .white
         contentView.layer.cornerRadius = 18
-        contentView.contentMode = .scaleAspectFill
+        contentView.contentMode        = .scaleAspectFill
         
         contentView.addSubview(imageView)
         contentView.addSubview(nameLabel)
@@ -76,7 +76,7 @@ final class CartCell: UICollectionViewCell {
         plusItemButton  = UIButton().buildMenuDetailItemsButton(with: "plus")
         minusItemButton = UIButton().buildMenuDetailItemsButton(with: "minus")
         
-        plusItemButton.backgroundColor = UIColor(red: 253/255, green: 201/255, blue: 9/255, alpha: 1)
+        plusItemButton.backgroundColor = .specialOrange
 
         
         contentView.addSubview(plusItemButton)

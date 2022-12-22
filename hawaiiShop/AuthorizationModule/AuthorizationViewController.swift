@@ -13,15 +13,16 @@ class AuthorizationViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    let authorizationLabel = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!, .black, .center, "Authorization")
+    let authorizationLabel = UILabel(.quickBold24, .black, .center, "Authorization")
     let authView           = UIView(.white)
     
     lazy var authorizationModeSegment: UISegmentedControl = {
-        let items = ["Sign Up", "Login"]
-        let segment = UISegmentedControl(items: items)
+        let items               = ["Sign Up", "Login"]
+        let segment             = UISegmentedControl(items: items)
         segment.backgroundColor = .white
-        segment.isMomentary = false
-        segment.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Quicksand-SemiBold", size: 18)!, NSAttributedString.Key.foregroundColor: UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)], for: .normal)
+        segment.isMomentary     = false
+        segment.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.quickSBold18,
+                                        NSAttributedString.Key.foregroundColor: UIColor.specialOrange], for: .normal)
         return segment
     }()
     
@@ -29,10 +30,10 @@ class AuthorizationViewController: UIViewController {
     let passwordField    = UITextField().buildPasswordSMSField()
     let enterButton      = UIButton("Log in")
     let helpButton       = UIButton().buildHelpButton()
-    let bottomOrangeView = UIView(UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1))
+    let bottomOrangeView = UIView(.specialOrange)
     
     
-//MARK: - Life cycle
+//MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +45,7 @@ class AuthorizationViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        view.backgroundColor = UIColor.specialWhite
         
         view.addSubview(authorizationLabel)
         view.addSubview(authView)
