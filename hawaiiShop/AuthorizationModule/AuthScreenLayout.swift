@@ -59,7 +59,7 @@ extension AuthorizationViewController {
         loginField.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            loginField.topAnchor.constraint(equalTo: authorizationModeSegment.bottomAnchor, constant: 105),
+            loginField.topAnchor.constraint(equalTo: authorizationModeSegment.bottomAnchor, constant: 95),
             loginField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             loginField.widthAnchor.constraint(equalToConstant: 340),
             loginField.heightAnchor.constraint(equalToConstant: 50)
@@ -81,7 +81,7 @@ extension AuthorizationViewController {
         enterButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            enterButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 135),
+            enterButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 115),
             enterButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             enterButton.widthAnchor.constraint(equalToConstant: 345),
             enterButton.heightAnchor.constraint(equalToConstant: 50)
@@ -92,7 +92,7 @@ extension AuthorizationViewController {
         helpButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            helpButton.topAnchor.constraint(equalTo: enterButton.bottomAnchor, constant: 50),
+            helpButton.topAnchor.constraint(equalTo: enterButton.bottomAnchor, constant: 35),
             helpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             helpButton.widthAnchor.constraint(equalToConstant: 300),
             helpButton.heightAnchor.constraint(equalToConstant: 20)

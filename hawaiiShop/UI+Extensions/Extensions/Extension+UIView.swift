@@ -11,6 +11,8 @@ extension UIView {
         self.init()
         
         setupShadow()
+        backgroundColor    = .white
+        layer.cornerRadius = 30
     }
     
     

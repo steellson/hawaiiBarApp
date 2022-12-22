@@ -14,7 +14,7 @@ class AuthorizationViewController: UIViewController {
     //MARK: - UI Elements
     
     let authorizationLabel = UILabel(.quickBold24, .black, .center, "Authorization")
-    let authView           = UIView(.white)
+    let authView           = UIView(.specialOrange)
     
     lazy var authorizationModeSegment: UISegmentedControl = {
         let items               = ["Sign Up", "Login"]

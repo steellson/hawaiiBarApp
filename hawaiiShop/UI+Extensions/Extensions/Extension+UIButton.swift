@@ -19,21 +19,21 @@ extension UIButton {
     
 //MARK: - Convenience methods
     
+    public func buildFieldButton() -> UIButton {
+        let button = UIButton()
+        button.layer.cornerRadius = 16
+        button.backgroundColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
+        button.setTitle("Send code", for: .normal)
+        button.titleLabel?.font = .quickMed18
+        return button
+    }
+    
     public func buildHelpButton() -> UIButton {
         let button = UIButton()
         button.backgroundColor = .white
         button.setTitle("I need a help", for: .normal)
         button.setTitleColor(UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), for: .normal)
         button.titleLabel?.font = UIFont(name: "Quicksand-SemiBold", size: 18)
-        return button
-    }
-    
-    public func buildFieldButton() -> UIButton {
-        let button = UIButton()
-        button.layer.cornerRadius = 14
-        button.backgroundColor = UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1)
-        button.setTitle("Send code", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Quicksand-Medium", size: 16)
         return button
     }
     

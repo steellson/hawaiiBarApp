@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = UIColor.specialWhite
+        view.backgroundColor = .specialWhite
         
         view.addSubview(searchField)
         view.addSubview(menuLabel)
