@@ -14,9 +14,10 @@ class ProfileViewController: UIViewController {
     
     let personalDetailsTextLabel = HWLabel().buildHWPersonalDetailsTextLabel()
     let changeButton             = HWButton().buildHWDeliveryChangeButton()
+    let profileView              = HWDeliveryAddressView()
     var profileCollectionView    : UICollectionView!
     let logoutButton             = HWButton().buildHWProfileLogoutButton()
-    
+    var menuItems                = ProfileMenu.profileMenuItems
     
     
 //MARK: - Lifecycle
@@ -35,6 +36,7 @@ class ProfileViewController: UIViewController {
         
         view.addSubview(personalDetailsTextLabel)
         view.addSubview(changeButton)
+        view.addSubview(profileView)
         view.addSubview(logoutButton)
         
         setupNavigationBar()
@@ -52,10 +54,14 @@ class ProfileViewController: UIViewController {
     }
     
     private func setupCollectionView() {
-        let flowLayout             = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .vertical
+        let flowLayout              = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection  = .vertical
         
-        profileCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        profileCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        profileCollectionView.backgroundColor = .none
+        profileCollectionView.dataSource      = self
+        profileCollectionView.delegate        = self
+        profileCollectionView.register(HWProfileMenuCell.self, forCellWithReuseIdentifier: "profileMenuCell")
         
         view.addSubview(profileCollectionView)
     }
@@ -74,5 +80,37 @@ class ProfileViewController: UIViewController {
 
 
 
+//MARK: - ProfileCollectionView DS Extension
 
+extension ProfileViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return menuItems.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell         = collectionView.dequeueReusableCell(withReuseIdentifier: "profileMenuCell", for: indexPath) as! HWProfileMenuCell
+        let sectionLabel = menuItems[indexPath.item]
+        cell.configureCell(sectionLabel: sectionLabel)
+        return cell
+    }
+    
+    
+    
+}
+
+
+//MARK: - ProfileCollectionViewFlowLayoutDelegte Extension
+
+extension ProfileViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width - 30, height: collectionView.frame.height / 4 - 25)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 10, bottom: 10, right: 10)
+    }
+    
+}
 

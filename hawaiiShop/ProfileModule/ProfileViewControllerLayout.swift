@@ -11,10 +11,10 @@ import UIKit
 
 extension ProfileViewController {
     
-    
     func setupLayout() {
         personalDetailsTextLabelLayout()
         changeButtonLayout()
+        profileViewLayout()
         profileCollectionViewLayout()
         logoutButtonLayout()
     }
@@ -40,13 +40,25 @@ extension ProfileViewController {
         ])
     }
     
+    private func profileViewLayout() {
+        profileView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            profileView.topAnchor.constraint(equalTo: personalDetailsTextLabel.bottomAnchor, constant: 20),
+            profileView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            profileView.heightAnchor.constraint(equalToConstant: 120),
+            profileView.widthAnchor.constraint(equalToConstant: view.frame.width - 30)
+        ])
+    }
+    
     private func profileCollectionViewLayout() {
         profileCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            profileCollectionView.topAnchor.constraint(equalTo: personalDetailsTextLabel.bottomAnchor, constant: 20),
+            profileCollectionView.topAnchor.constraint(equalTo: profileView.bottomAnchor, constant: 10),
             profileCollectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            profileCollectionView.bottomAnchor.constraint(equalTo: logoutButton.topAnchor, constant: -20)
+            profileCollectionView.bottomAnchor.constraint(equalTo: logoutButton.topAnchor, constant: -20),
+            profileCollectionView.widthAnchor.constraint(equalToConstant: view.frame.width)
         ])
     }
     
