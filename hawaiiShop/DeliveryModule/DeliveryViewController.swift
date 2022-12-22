@@ -12,14 +12,15 @@ class DeliveryViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    let addressDetailTextLabel       = HWLabel().buildHWDeliveryAdressDetailsTextLabel()
-    let changeButton                 = HWButton().buildHWDeliveryChangeButton()
-    let addressView                  = HWDeliveryAddressView()
-    let deliveryMethodLabel          = HWLabel().buildHWDeliveryMethodLabel()
+    let addressDetailTextLabel       = UILabel(UIFont(name: "Quicksand-Bold", size: 20)!, .black, .left, "Address details")
+    let changeButton                 = UIButton().buildChangeButton()
+    let addressView                  = DeliveryAddressView()
+    let deliveryMethodLabel          = UILabel(UIFont(name: "Quicksand-Bold", size: 20)!, .black, .left, "Delivery method")
     var deliveryMethodPickerTable    : UITableView?
-    let totalPriceTextLabel          = HWLabel().buildCartTotalPriceTextLabel()
-    let moneyPriceLabel              = HWLabel().buildCartPriceMoneyLabel()
-    let proceedToPaymentButton       = HWButton().buildHWDeliveryProceedToPaymentButton()
+    let totalPriceTextLabel          = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!, .black, .left, "Total price")
+    let moneyPriceLabel              = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!,
+                                               UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), .right, "52 $")
+    let proceedToPaymentButton       = UIButton("Proceed to payment")
     
     var deliveryTypes                 = DeliveryType.allCases
     
@@ -68,7 +69,7 @@ class DeliveryViewController: UIViewController {
         deliveryMethodPickerTable.isScrollEnabled = false
         deliveryMethodPickerTable.separatorInset.right = deliveryMethodPickerTable.separatorInset.left
         deliveryMethodPickerTable.layer.cornerRadius = 18
-        deliveryMethodPickerTable.register(HWChooseMethodCell.self, forCellReuseIdentifier: "deliveryMethodCell")
+        deliveryMethodPickerTable.register(ChooseMethodCell.self, forCellReuseIdentifier: "deliveryMethodCell")
         deliveryMethodPickerTable.delegate = self
         deliveryMethodPickerTable.dataSource = self
         
@@ -98,8 +99,8 @@ extension DeliveryViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let methodCell = tableView.dequeueReusableCell(withIdentifier: "deliveryMethodCell", for: indexPath) as! HWChooseMethodCell
-        guard let pickerImage = UIImage(systemName: "circle") else { return HWChooseMethodCell() }
+        let methodCell = tableView.dequeueReusableCell(withIdentifier: "deliveryMethodCell", for: indexPath) as! ChooseMethodCell
+        guard let pickerImage = UIImage(systemName: "circle") else { return ChooseMethodCell() }
         let text = deliveryTypes[indexPath.row].rawValue
         methodCell.configureCell(image: pickerImage, text: text)
         return methodCell
@@ -114,7 +115,7 @@ extension DeliveryViewController: UITableViewDataSource {
 extension DeliveryViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let methodCell = tableView.cellForRow(at: indexPath) as? HWChooseMethodCell else { return }
+        guard let methodCell = tableView.cellForRow(at: indexPath) as? ChooseMethodCell else { return }
         methodCell.pickerView.image = UIImage(systemName: "recording.circle")
     }
     

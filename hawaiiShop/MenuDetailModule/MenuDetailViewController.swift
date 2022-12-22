@@ -12,15 +12,21 @@ class MenuDetailViewController: UIViewController {
     
     //MARK: UI Elements
     
-    let menuDetailTitleLabel         = HWLabel().buildHWMenuDetailTitleLabel()
-    let menuDetailImageView          = HWImageView().buildHWMenuDetailImageView()
-    let menuDetailDescriptionLabel   = HWLabel().buildHWMenuDetailDescriptionLabel()
-    let menuDetailWeightLabel        = HWLabel().buildHWMenuDetailWeightLabel()
-    let menuDetailPriceLabel         = HWLabel().buildHWMenuDetailPriceLabel()
-    let menuDetailPlusButton         = HWButton().buildHWMenuDetailItemsButton(with: "plus")
-    let menuDetailItemsLabel         = HWLabel().buildHWMenuDetailItemsLabel()
-    let menuDetailMinusButton        = HWButton().buildHWMenuDetailItemsButton(with: "minus")
-    let menuDetailAddButton          = HWButton().buildHWMenuDetailAddButton()
+    let menuDetailTitleLabel         = UILabel(UIFont(name: "Quicksand-Bold", size: 20)!, .black, .center, "Cherry pizza")
+    let menuDetailImageView          = UIImageView(UIImage(named: "pizza"), .scaleAspectFit, true)
+    let menuDetailDescriptionLabel   = UILabel(UIFont(name: "Quicksand", size: 18)!,
+                                               .black, .left, "Crunchy dough, cherry tomato, \nProsciutto, spinat and mozarella cheese")
+    
+    let menuDetailWeightLabel        = UILabel(UIFont(name: "Quicksand-SemiBold", size: 18)!,
+                                               UIColor(red: 0.325, green: 0.325, blue: 0.325, alpha: 1), .left, "630 g")
+    
+    let menuDetailPriceLabel         = UILabel(UIFont(name: "Quicksand-SemiBold", size: 28)!,
+                                               UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), .left, "17 $")
+    
+    let menuDetailPlusButton         = UIButton().buildMenuDetailItemsButton(with: "plus")
+    let menuDetailItemsLabel         = UILabel(UIFont(name: "Quicksand-SemiBold", size: 24)!, .black, .center, "1")
+    let menuDetailMinusButton        = UIButton().buildMenuDetailItemsButton(with: "minus")
+    let menuDetailAddButton          = UIButton("Add")
     
     
     

@@ -12,10 +12,11 @@ class OrdersHistoryEmptyViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    let imageView             = HWImageView().buildHWOrdersHistoryEmptyImageView()
-    let titleLabel            = HWLabel().buildHWOrdersHistoryEmptyTitle()
-    let subtitleLabel         = HWLabel().buildHWCartEmptySubtitle()
-    let createAnOrderButton   = HWButton().buildHWCreateAnOrderButton()
+    let imageView             = UIImageView(UIImage(named: "search"), .scaleAspectFit, false)
+    let titleLabel            = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!, .black, .center, "No history yet")
+    let subtitleLabel         = UILabel(UIFont(name: "Quicksand-SemiBold", size: 18)!,
+                                        UIColor(red: 0.325, green: 0.325, blue: 0.325, alpha: 1), .center, "Hit the orange button down\nbelow to Create an order")
+    let createAnOrderButton   = UIButton("Create an order")
     
     
 //MARK: - Lifecycle

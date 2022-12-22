@@ -13,8 +13,8 @@ class AuthorizationViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    let authorizationLabel = HWLabel().buildHWAuthorizationLabel()
-    let authView           = HWView().buildHWAuthView()
+    let authorizationLabel = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!, .black, .center, "Authorization")
+    let authView           = UIView(.white)
     
     lazy var authorizationModeSegment: UISegmentedControl = {
         let items = ["Sign Up", "Login"]
@@ -25,11 +25,11 @@ class AuthorizationViewController: UIViewController {
         return segment
     }()
     
-    let loginField       = HWTextField().buildHWLoginField()
-    let passwordField    = HWTextField().buildHWPasswordSMSField()
-    let enterButton      = HWButton().buildHWEnterButton()
-    let helpButton       = HWButton().buildHWHelpButton()
-    let bottomOrangeView = HWView().buildHWOrangeView()
+    let loginField       = UITextField().buildLoginField()
+    let passwordField    = UITextField().buildPasswordSMSField()
+    let enterButton      = UIButton("Log in")
+    let helpButton       = UIButton().buildHelpButton()
+    let bottomOrangeView = UIView(UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1))
     
     
 //MARK: - Life cycle

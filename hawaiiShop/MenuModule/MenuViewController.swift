@@ -55,7 +55,7 @@ class MenuViewController: UIViewController {
         
         menuCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         menuCollectionView.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
-        menuCollectionView.register(HWMenuCardCell.self, forCellWithReuseIdentifier: "menuCell")
+        menuCollectionView.register(MenuCardCell.self, forCellWithReuseIdentifier: "menuCell")
         menuCollectionView.dataSource = self
         menuCollectionView.delegate = self
         
@@ -89,8 +89,8 @@ extension MenuViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! HWMenuCardCell
-        guard let image = menuCards[indexPath.item].image?.image else { return HWMenuCardCell() }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! MenuCardCell
+        guard let image = menuCards[indexPath.item].image?.image else { return MenuCardCell() }
         let nameLabel = menuCards[indexPath.item].label
         let weightLabel = menuCards[indexPath.item].weight
         let priceLabel = menuCards[indexPath.item].price

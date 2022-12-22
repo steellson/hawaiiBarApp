@@ -12,11 +12,13 @@ class CartViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    var cartCollectionView: UICollectionView!
-    let totalPriceTextLabel   = HWLabel().buildCartTotalPriceTextLabel()
-    let priceMoneyLabel       = HWLabel().buildCartPriceMoneyLabel()
-    let commentTextView       = HWTextView().buildHWCartCommentTextView()
-    let completeOrderButton   = HWButton().buildHWCompleteOrderButton()
+    var cartCollectionView    : UICollectionView!
+    let totalPriceTextLabel   = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!, .black, .left, "Total price")
+    let priceMoneyLabel       = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!,
+                                        UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), .right, "52 $")
+    
+    let commentTextView       = UITextView().buildCartCommentTextView()
+    let completeOrderButton   = UIButton("Complete order")
     var items: [CartItem]     = CartData.items
     
     
@@ -63,7 +65,7 @@ class CartViewController: UIViewController {
         
         cartCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         cartCollectionView.backgroundColor = .none
-        cartCollectionView.register(HWCartCell.self, forCellWithReuseIdentifier: "cartCell")
+        cartCollectionView.register(CartCell.self, forCellWithReuseIdentifier: "cartCell")
         cartCollectionView.dataSource = self
         cartCollectionView.delegate = self
         
@@ -92,7 +94,7 @@ extension CartViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cartCell", for: indexPath) as! HWCartCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cartCell", for: indexPath) as! CartCell
         guard let image = items[indexPath.item].imageView?.image else { return UICollectionViewCell() }
         let nameLabel = items[indexPath.item].nameLabel
         let priceLabel = items[indexPath.item].priceLabel

@@ -1,5 +1,5 @@
 //
-//  HWOrderCell.swift
+//  OrderCell.swift
 //  hawaiiShop
 //
 //  Created by Andrey Pochepaev on 21.12.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class HWOrderCell: UICollectionViewCell {
+final class OrderCell: UICollectionViewCell {
     
     //MARK: - UI Elements
     
@@ -92,7 +92,7 @@ final class HWOrderCell: UICollectionViewCell {
 
 //MARK: - Layout Extension
 
-extension HWOrderCell {
+extension OrderCell {
     
     private func setupCellLayout() {
         imageViewLayout()

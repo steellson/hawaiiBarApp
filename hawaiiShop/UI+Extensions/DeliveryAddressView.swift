@@ -1,14 +1,12 @@
 //
-//  HWDeliveryAddressView.swift
-//  hawaiiShop
+//  DeliveryAddressView.swift
 //
-//  Created by Andrey Pochepaev on 15.12.2022.
-//
+
 
 import Foundation
 import UIKit
 
-final class HWDeliveryAddressView: UIView {
+final class DeliveryAddressView: UIView {
     
     //MARK - UI Elements
     
@@ -61,7 +59,7 @@ final class HWDeliveryAddressView: UIView {
 
 //MARK: Layout Extension
 
-extension HWDeliveryAddressView {
+extension DeliveryAddressView {
     
     private func setupLayout() {
         nameLabelLayout()

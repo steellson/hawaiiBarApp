@@ -1,5 +1,5 @@
 //
-//  HWDeliveryMethodCell.swift
+//  ChooseMethodCell.swift
 //  hawaiiShop
 //
 //  Created by Andrey Pochepaev on 15.12.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class HWChooseMethodCell: UITableViewCell {
+final class ChooseMethodCell: UITableViewCell {
 
     //MARK: UI Elements
     
@@ -70,7 +70,7 @@ final class HWChooseMethodCell: UITableViewCell {
 
 //MARK: - Layout Extesion
 
-extension HWChooseMethodCell {
+extension ChooseMethodCell {
     
     private func setupLayout() {
         pickerViewLayout()

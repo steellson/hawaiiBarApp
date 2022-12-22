@@ -1,16 +1,14 @@
 //
-//  HWTextField.swift
-//  hawaiiShop
+//  Extension+UITextField.swift
 //
-//  Created by Andrey Pochepaev on 25.11.2022.
-//
+
 
 import Foundation
 import UIKit
 
-final class HWTextField: UITextField {
+extension UITextField {
     
-    public func buildHWLoginField() -> UITextField {
+    public func buildLoginField() -> UITextField {
         let field = UITextField()
         field.placeholder = "   Phone number"
         field.layer.cornerRadius = 20
@@ -20,7 +18,7 @@ final class HWTextField: UITextField {
         return field
     }
     
-    public func buildHWPasswordSMSField() -> UITextField {
+    public func buildPasswordSMSField() -> UITextField {
         let field = UITextField()
         field.placeholder = "   SMS code"
         field.layer.cornerRadius = 20
@@ -28,7 +26,7 @@ final class HWTextField: UITextField {
         field.layer.borderColor = .init(red: 0, green: 0, blue: 0, alpha: 1)
         field.contentMode = .left
         
-        let button = HWButton().buildHWFieldButton()
+        let button = UIButton().buildFieldButton()
         
         field.addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -42,7 +40,7 @@ final class HWTextField: UITextField {
         return field
     }
     
-    public func buildHWSearchField() -> UITextField {
+    public func buildSearchField() -> UITextField {
         let field = UITextField()
         field.backgroundColor = UIColor(red: 239/255, green: 238/255, blue: 238/255, alpha: 1)
         field.placeholder = "       Search"

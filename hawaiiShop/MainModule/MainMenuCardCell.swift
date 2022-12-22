@@ -1,5 +1,5 @@
 //
-//  HWMainMenuCardCell.swift
+//  MainMenuCardCell.swift
 //  hawaiiShop
 //
 //  Created by Andrey Pochepaev on 27.11.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class HWMainMenuCardCell: UICollectionViewCell {
+final class MainMenuCardCell: UICollectionViewCell {
     
     private let imageView = UIImageView()
     private let label     = UILabel()

@@ -12,11 +12,11 @@ class ProfileViewController: UIViewController {
     
     //MARK: - UI ELements
     
-    let personalDetailsTextLabel = HWLabel().buildHWPersonalDetailsTextLabel()
-    let changeButton             = HWButton().buildHWDeliveryChangeButton()
-    let profileView              = HWDeliveryAddressView()
+    let personalDetailsTextLabel = UILabel(UIFont(name: "Quicksand-Bold", size: 20)!, .black, .left, "Personal details")
+    let changeButton             = UIButton().buildChangeButton()
+    let profileView              = DeliveryAddressView()
     var profileCollectionView    : UICollectionView!
-    let logoutButton             = HWButton().buildHWProfileLogoutButton()
+    let logoutButton             = UIButton("Log out")
     var menuItems                = ProfileMenu.profileMenuItems
     
     
@@ -61,7 +61,7 @@ class ProfileViewController: UIViewController {
         profileCollectionView.backgroundColor = .none
         profileCollectionView.dataSource      = self
         profileCollectionView.delegate        = self
-        profileCollectionView.register(HWProfileMenuCell.self, forCellWithReuseIdentifier: "profileMenuCell")
+        profileCollectionView.register(ProfileMenuCell.self, forCellWithReuseIdentifier: "profileMenuCell")
         
         view.addSubview(profileCollectionView)
     }
@@ -89,7 +89,7 @@ extension ProfileViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell         = collectionView.dequeueReusableCell(withReuseIdentifier: "profileMenuCell", for: indexPath) as! HWProfileMenuCell
+        let cell         = collectionView.dequeueReusableCell(withReuseIdentifier: "profileMenuCell", for: indexPath) as! ProfileMenuCell
         let sectionLabel = menuItems[indexPath.item]
         cell.configureCell(sectionLabel: sectionLabel)
         return cell

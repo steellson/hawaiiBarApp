@@ -22,11 +22,12 @@ class PaymentViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    let paymentMethodTextLabel    = HWLabel().buildHWPaymentMethodTextLabel()
+    let paymentMethodTextLabel    = UILabel(UIFont(name: "Quicksand-Bold", size: 20)!, .black, .left, "Payment method")
     var paymentMethodPickerTable  : UITableView!
-    let totalPriceTextLabel       = HWLabel().buildCartTotalPriceTextLabel()
-    let moneyPriceLabel           = HWLabel().buildCartPriceMoneyLabel()
-    let completeButton            = HWButton().buildHWCompletePaymentButton()
+    let totalPriceTextLabel       = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!, .black, .left, "Total price")
+    let moneyPriceLabel           = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!,
+                                            UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), .right, "52 $")
+    let completeButton            = UIButton("Complete payment")
     
     
 //MARK: - Lifecycle
@@ -70,7 +71,7 @@ class PaymentViewController: UIViewController {
         paymentMethodPickerTable.isScrollEnabled = false
         paymentMethodPickerTable.separatorInset.right = paymentMethodPickerTable.separatorInset.left
         paymentMethodPickerTable.layer.cornerRadius = 18
-        paymentMethodPickerTable.register(HWChooseMethodCell.self, forCellReuseIdentifier: "paymentMethodCell")
+        paymentMethodPickerTable.register(ChooseMethodCell.self, forCellReuseIdentifier: "paymentMethodCell")
         paymentMethodPickerTable.delegate = self
         paymentMethodPickerTable.dataSource = self
         
@@ -100,7 +101,7 @@ extension PaymentViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let methodCell = tableView.dequeueReusableCell(withIdentifier: "paymentMethodCell", for: indexPath) as! HWChooseMethodCell
+        let methodCell = tableView.dequeueReusableCell(withIdentifier: "paymentMethodCell", for: indexPath) as! ChooseMethodCell
         guard let pickerImage = UIImage(systemName: "circle") else { return methodCell }
         let text = PaymentMethods.allCases[indexPath.row].rawValue
         methodCell.configureCell(image: pickerImage, text: text)
@@ -116,7 +117,7 @@ extension PaymentViewController: UITableViewDataSource {
 extension PaymentViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let methodCell = tableView.cellForRow(at: indexPath) as? HWChooseMethodCell else { return }
+        guard let methodCell = tableView.cellForRow(at: indexPath) as? ChooseMethodCell else { return }
         methodCell.pickerView.image = UIImage(systemName: "record.circle")
     }
     

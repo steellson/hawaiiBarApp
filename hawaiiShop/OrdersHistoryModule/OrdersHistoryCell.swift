@@ -1,5 +1,5 @@
 //
-//  HWOrdersHistoryCell.swift
+//  OrdersHistoryCell.swift
 //  hawaiiShop
 //
 //  Created by Andrey Pochepaev on 18.12.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class HWOrdersHistoryCell: UICollectionViewCell {
+final class OrdersHistoryCell: UICollectionViewCell {
     
     //MARK: UI Elements
     
@@ -47,7 +47,8 @@ final class HWOrdersHistoryCell: UICollectionViewCell {
         return stack
     }()
     
-    var moneyPriceLabel = HWLabel().buildOrdersHistoryPriceMoneyLabel()
+    var moneyPriceLabel = UILabel(UIFont(name: "Quicksand-Bold", size: 28)!,
+                                  UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), .right, "52 $")
     
     let forwardView: UIImageView = {
         let image        = UIImage(systemName: "chevron.forward")
@@ -114,7 +115,7 @@ final class HWOrdersHistoryCell: UICollectionViewCell {
 
 //MARK: - Layout Extension
 
-extension HWOrdersHistoryCell {
+extension OrdersHistoryCell {
     
     private func setupLayout() {
         idLabelLayout()

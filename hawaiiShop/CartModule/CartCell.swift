@@ -1,5 +1,5 @@
 //
-//  HWCartCell.swift
+//  CartCell.swift
 //  hawaiiShop
 //
 //  Created by Andrey Pochepaev on 13.12.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class HWCartCell: UICollectionViewCell {
+final class CartCell: UICollectionViewCell {
     
     //MARK: - UI Elements
     
@@ -35,7 +35,7 @@ final class HWCartCell: UICollectionViewCell {
     }()
     
     var plusItemButton  : UIButton!
-    var counter         = HWLabel().buildHWMenuDetailItemsLabel()
+    var counter         = UILabel(UIFont(name: "Quicksand-SemiBold", size: 18)!, .black, .center, "1")
     var minusItemButton : UIButton!
     
     
@@ -73,8 +73,8 @@ final class HWCartCell: UICollectionViewCell {
     }
     
     private func setupItemChangeButtons() {
-        plusItemButton  = HWButton().buildHWMenuDetailItemsButton(with: "plus")
-        minusItemButton = HWButton().buildHWMenuDetailItemsButton(with: "minus")
+        plusItemButton  = UIButton().buildMenuDetailItemsButton(with: "plus")
+        minusItemButton = UIButton().buildMenuDetailItemsButton(with: "minus")
         
         plusItemButton.backgroundColor = UIColor(red: 253/255, green: 201/255, blue: 9/255, alpha: 1)
 
@@ -98,7 +98,7 @@ final class HWCartCell: UICollectionViewCell {
 
 //MARK: - Layout Extension
 
-extension HWCartCell {
+extension CartCell {
     
     private func setupCellLayout() {
         imageViewLayout()

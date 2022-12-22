@@ -1,16 +1,13 @@
 //
 //  HWTextView.swift
-//  hawaiiShop
-//
-//  Created by Andrey Pochepaev on 13.12.2022.
 //
 
 import Foundation
 import UIKit
 
-final class HWTextView: UITextView {
+extension UITextView {
     
-    public func buildHWCartCommentTextView() -> UITextView {
+    public func buildCartCommentTextView() -> UITextView {
         let textView                 = UITextView()
         textView.layer.cornerRadius  = 18
         textView.backgroundColor     = .white

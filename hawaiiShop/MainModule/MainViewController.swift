@@ -12,8 +12,8 @@ class MainViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    let searchField                       = HWTextField().buildHWSearchField()
-    let menuLabel                         = HWLabel().buildHWMenuLabel()
+    let searchField                       = UITextField().buildSearchField()
+    let menuLabel                         = UILabel(UIFont(name: "Quicksand-Bold", size: 20)!, .black, .left, "Menu")
     var mainMenuCards: [MainMenuCard]     = MainMenuCardData.cards
     var cardsCollectionView               : UICollectionView!
     
@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
         
         cardsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         cardsCollectionView.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
-        cardsCollectionView.register(HWMainMenuCardCell.self, forCellWithReuseIdentifier: "cardCell")
+        cardsCollectionView.register(MainMenuCardCell.self, forCellWithReuseIdentifier: "cardCell")
         cardsCollectionView.dataSource = self
         cardsCollectionView.delegate = self
         
@@ -92,8 +92,8 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! HWMainMenuCardCell
-        guard let image = mainMenuCards[indexPath.item].image?.image else { return HWMainMenuCardCell() }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! MainMenuCardCell
+        guard let image = mainMenuCards[indexPath.item].image?.image else { return MainMenuCardCell() }
         let label = mainMenuCards[indexPath.item].label
         cell.configureCell(with: image, and: label)
         return cell

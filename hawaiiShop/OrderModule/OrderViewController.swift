@@ -14,9 +14,10 @@ class OrderViewController: UIViewController {
     
     var infoStack             : UIStackView!
     var orderCollectionView   : UICollectionView!
-    let totalPriceTextLabel   = HWLabel().buildCartTotalPriceTextLabel()
-    let moneyPriceleLabel     = HWLabel().buildHWOrderPriceMoneyLabel()
-    let repeatOrderButton     = HWButton().buildHWRepeatOrderButton()
+    let totalPriceTextLabel   = UILabel(UIFont(name: "Quicksand-Bold", size: 24)!, .black, .left, "Total price")
+    let moneyPriceleLabel     = UILabel(UIFont(name: "Quicksand-Bold", size: 28)!,
+                                        UIColor(red: 255/255, green: 82/255, blue: 9/255, alpha: 1), .right, "52 $")
+    let repeatOrderButton     = UIButton("Repeat order")
     var items                 = OrderData.items
     
 //MARK: - Lifecycle
@@ -59,17 +60,20 @@ class OrderViewController: UIViewController {
         infoStack.spacing      = 10
         infoStack.distribution = .fillEqually
         
-        let timeLabel     = HWLabel().buildHWOrderTimeLabel()
-        let addressLabel  = HWLabel().buildHWOrderAddressLabel()
-        let paymentLabel  = HWLabel().buildHWOrderPaymentLabel()
-        let statusLabel   = HWLabel().buildHWOrderStatusLabel()
-
+        let timeLabel     = UILabel(UIFont(name: "Quicksand-Regular", size: 16)!,
+                                    .black, .left, "Order time: 2022.03.16 12:00")
+        let addressLabel  = UILabel(UIFont(name: "Quicksand-Regular", size: 16)!,
+                                    .black, .left, "Address: Berlin, Hauptbahnhof, Europaplatz 1.")
+        let paymentLabel  = UILabel(UIFont(name: "Quicksand-Regular", size: 16)!,
+                                    .black, .left, "Payment:" + " " + PaymentMethods.Card.rawValue)
+        let statusLabel   = UILabel(UIFont(name: "Quicksand-Regular", size: 16)!,
+                                    .black, .left, "Status:" + " " + OrderStatus.Completed.rawValue)
+        
         infoStack.addArrangedSubview(timeLabel)
         infoStack.addArrangedSubview(addressLabel)
         infoStack.addArrangedSubview(paymentLabel)
         infoStack.addArrangedSubview(statusLabel)
 
-        
         view.addSubview(infoStack)
     }
     
@@ -81,7 +85,7 @@ class OrderViewController: UIViewController {
         orderCollectionView.backgroundColor = .none
         orderCollectionView.delegate        = self
         orderCollectionView.dataSource      = self
-        orderCollectionView.register(HWOrderCell.self, forCellWithReuseIdentifier: "cellOrder")
+        orderCollectionView.register(OrderCell.self, forCellWithReuseIdentifier: "cellOrder")
         
         
         view.addSubview(orderCollectionView)
@@ -112,7 +116,7 @@ extension OrderViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: "cellOrder", for: indexPath) as! HWOrderCell
+        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: "cellOrder", for: indexPath) as! OrderCell
         guard let image = items[indexPath.item].image else { return cell }
         let title       = items[indexPath.item].title
         let counter     = items[indexPath.item].count

@@ -1,5 +1,5 @@
 //
-//  HWProfileMenuCell.swift
+//  ProfileMenuCell.swift
 //  hawaiiShop
 //
 //  Created by Andrey Pochepaev on 22.12.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class HWProfileMenuCell: UICollectionViewCell {
+final class ProfileMenuCell: UICollectionViewCell {
     
     //MARK: UI Elements
     
@@ -70,7 +70,7 @@ final class HWProfileMenuCell: UICollectionViewCell {
 
 //MARK: - Layout Extension
 
-extension HWProfileMenuCell {
+extension ProfileMenuCell {
     
     private func setupLayout() {
         sectionLabelLayout()
