@@ -38,6 +38,12 @@
 		3DE905632954D86B0013BEA6 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905622954D86B0013BEA6 /* Extension+UIColor.swift */; };
 		3DE905652954E2870013BEA6 /* Extension+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905642954E2870013BEA6 /* Extension+UIFont.swift */; };
 		3DE9056729559E9A0013BEA6 /* Extension+UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9056629559E9A0013BEA6 /* Extension+UINavigationBar.swift */; };
+		3DE90569295600F90013BEA6 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE90568295600F90013BEA6 /* MainPresenter.swift */; };
+		3DE9056C29561C570013BEA6 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9056B29561C570013BEA6 /* RouterProtocol.swift */; };
+		3DE9056E29561D070013BEA6 /* ModuleBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9056D29561D070013BEA6 /* ModuleBuilderProtocol.swift */; };
+		3DE9057029561E560013BEA6 /* MainModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9056F29561E560013BEA6 /* MainModuleBuilder.swift */; };
+		3DE9057229561EB20013BEA6 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9057129561EB20013BEA6 /* MainRouter.swift */; };
+		3DE9057629562CAB0013BEA6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9057529562CAB0013BEA6 /* DataManager.swift */; };
 		3DE94C6529426B630068D2DD /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */; };
 		3DE94C6729426CA80068D2DD /* MenuDetailViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */; };
 		3DE9A00D29434DBF00F8793C /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9A00C29434DBF00F8793C /* Extension+UIImageView.swift */; };
@@ -99,6 +105,12 @@
 		3DE905622954D86B0013BEA6 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		3DE905642954E2870013BEA6 /* Extension+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIFont.swift"; sourceTree = "<group>"; };
 		3DE9056629559E9A0013BEA6 /* Extension+UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UINavigationBar.swift"; sourceTree = "<group>"; };
+		3DE90568295600F90013BEA6 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		3DE9056B29561C570013BEA6 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		3DE9056D29561D070013BEA6 /* ModuleBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilderProtocol.swift; sourceTree = "<group>"; };
+		3DE9056F29561E560013BEA6 /* MainModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilder.swift; sourceTree = "<group>"; };
+		3DE9057129561EB20013BEA6 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		3DE9057529562CAB0013BEA6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DE9A00C29434DBF00F8793C /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
@@ -227,6 +239,35 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3DE9056A29561A740013BEA6 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3DFBDE7C292EAA48005EEAFD /* AuthorizationModule */,
+				3DFBDE912931237D005EEAFD /* MainModule */,
+				3D17A0C42948A16500FDDC94 /* CartModule */,
+				3DF0CB0E29538E2C0093D5C4 /* OrderModule */,
+				3DF0CB092953811A0093D5C4 /* ProfileModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3DE9057329562C030013BEA6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3DE9056B29561C570013BEA6 /* RouterProtocol.swift */,
+				3DE9056D29561D070013BEA6 /* ModuleBuilderProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3DE9057429562C320013BEA6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3DE9057529562CAB0013BEA6 /* DataManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		3DE94C6329426ADB0068D2DD /* MenuDetailModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,15 +323,13 @@
 			isa = PBXGroup;
 			children = (
 				3DFBDE7D292EAA80005EEAFD /* App */,
-				3DFBDE7C292EAA48005EEAFD /* AuthorizationModule */,
-				3DFBDE912931237D005EEAFD /* MainModule */,
-				3D17A0C42948A16500FDDC94 /* CartModule */,
-				3DF0CB0E29538E2C0093D5C4 /* OrderModule */,
-				3DF0CB092953811A0093D5C4 /* ProfileModule */,
+				3DE9056A29561A740013BEA6 /* Modules */,
+				3DE9057429562C320013BEA6 /* Services */,
+				3DE9057329562C030013BEA6 /* Protocols */,
 				3DFBDE822930E9E1005EEAFD /* UISupport */,
+				3DFBDE76292E46DD005EEAFD /* Info.plist */,
 				3DFBDE73292E46DD005EEAFD /* LaunchScreen.storyboard */,
 				3DFBDE71292E46DD005EEAFD /* Assets.xcassets */,
-				3DFBDE76292E46DD005EEAFD /* Info.plist */,
 			);
 			path = hawaiiShop;
 			sourceTree = "<group>";
@@ -326,8 +365,11 @@
 		3DFBDE912931237D005EEAFD /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				3DE9056F29561E560013BEA6 /* MainModuleBuilder.swift */,
+				3DE9057129561EB20013BEA6 /* MainRouter.swift */,
 				3DFBDE9229312462005EEAFD /* MainViewController.swift */,
 				3DFBDE9429312510005EEAFD /* MainScreenLayout.swift */,
+				3DE90568295600F90013BEA6 /* MainPresenter.swift */,
 				3DFBDE982933A023005EEAFD /* MainMenuCard.swift */,
 				3DFBDE9A2933B3E2005EEAFD /* MainMenuCardCell.swift */,
 				3D3983C4293F75C8008B01BE /* MenuModule */,
@@ -428,8 +470,12 @@
 				3DD10C49294B16E40075233E /* DeliveryViewController.swift in Sources */,
 				3D5C95FE2949110000342B4F /* Extension+UITextView.swift in Sources */,
 				3D3983CC293F85B9008B01BE /* MenuCardCell.swift in Sources */,
+				3DE9057629562CAB0013BEA6 /* DataManager.swift in Sources */,
+				3DE9056E29561D070013BEA6 /* ModuleBuilderProtocol.swift in Sources */,
 				3DE9A00F29435D7B00F8793C /* MenuDetailCard.swift in Sources */,
 				3DF0CB1029547F510093D5C4 /* ProfileMenuCell.swift in Sources */,
+				3DE9057229561EB20013BEA6 /* MainRouter.swift in Sources */,
+				3DE90569295600F90013BEA6 /* MainPresenter.swift in Sources */,
 				3DD10C4B294B19810075233E /* DeliveryViewControllerLayout.swift in Sources */,
 				3D9F41BF294F90A300CC748E /* OrdersHistoryViewControllerLayout.swift in Sources */,
 				3D9F41C72950C70100CC748E /* OrdersHistoryEmptyViewController.swift in Sources */,
@@ -443,7 +489,9 @@
 				3D9F41C5294F9C3F00CC748E /* OrdersHistoryItem.swift in Sources */,
 				3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */,
 				3D9F41C1294F948200CC748E /* OrdersHistoryCell.swift in Sources */,
+				3DE9057029561E560013BEA6 /* MainModuleBuilder.swift in Sources */,
 				3D17A0C62948A1F000FDDC94 /* Cart.swift in Sources */,
+				3DE9056C29561C570013BEA6 /* RouterProtocol.swift in Sources */,
 				3DE94C6529426B630068D2DD /* MenuDetailViewController.swift in Sources */,
 				3D9F41BD294F8FDF00CC748E /* OrdersHistoryViewController.swift in Sources */,
 				3DE905652954E2870013BEA6 /* Extension+UIFont.swift in Sources */,

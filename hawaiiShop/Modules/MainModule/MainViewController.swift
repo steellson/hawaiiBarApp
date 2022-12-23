@@ -10,11 +10,12 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    var presenter: MainPresenterProtocol!
+    
     //MARK: - UI Elements
     
     let searchField                       = UITextField().buildSearchField()
     let menuLabel                         = UILabel(.quickBold20, .black, .left, "Menu")
-    var mainMenuCards: [MainMenuCard]     = MainMenuCardData.cards
     var cardsCollectionView               : UICollectionView!
     
     
@@ -62,8 +63,8 @@ class MainViewController: UIViewController {
         cardsCollectionView.backgroundColor = UIColor.specialWhite
         cardsCollectionView.dataSource      = self
         cardsCollectionView.delegate        = self
+        cardsCollectionView.showsVerticalScrollIndicator = false
         cardsCollectionView.register(MainMenuCardCell.self, forCellWithReuseIdentifier: "cardCell")
-        
         
         view.addSubview(cardsCollectionView)
     }
@@ -79,6 +80,18 @@ class MainViewController: UIViewController {
 
 //MARK: - Protocol Extension
 
+extension MainViewController: MainViewProtocol {
+    
+    func success() {
+        cardsCollectionView.reloadData()
+    }
+    
+    func failure(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+}
+
 
 //MARK: - Main Menu CV Data Source Extension
 
@@ -89,13 +102,13 @@ extension MainViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mainMenuCards.count
+        return presenter.mainMenuCards?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! MainMenuCardCell
-        guard let image = mainMenuCards[indexPath.item].image?.image else { return MainMenuCardCell() }
-        let label       = mainMenuCards[indexPath.item].label
+        guard let image = presenter.mainMenuCards?[indexPath.item].image?.image else { return MainMenuCardCell() }
+        guard let label = presenter.mainMenuCards?[indexPath.item].label else { return  MainMenuCardCell() }
         cell.configureCell(with: image, and: label)
         return cell
     }

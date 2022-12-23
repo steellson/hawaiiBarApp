@@ -40,7 +40,7 @@ final class MainMenuCardCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     
 //MARK: - Setup Cell
     
@@ -50,10 +50,11 @@ final class MainMenuCardCell: UICollectionViewCell {
     }
     
     private func setupCell() {
+        setupBackgroundLayerOfCell()
+        
         contentView.addSubview(imageView)
         contentView.addSubview(label)
 
-        setupBackgroundLayerOfCell()
         setupShadow()
         setupLayout()
     }
