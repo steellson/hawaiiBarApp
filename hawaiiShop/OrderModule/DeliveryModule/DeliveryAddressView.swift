@@ -14,7 +14,6 @@ final class DeliveryAddressView: UIView {
     var addressLabel = UILabel()
     var phoneLabel   = UILabel()
     
-
     
 //MARK: - Init
     

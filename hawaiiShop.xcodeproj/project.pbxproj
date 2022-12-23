@@ -37,6 +37,7 @@
 		3DD4E13A29491A43002599A6 /* CartEmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD4E13929491A43002599A6 /* CartEmptyViewController.swift */; };
 		3DE905632954D86B0013BEA6 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905622954D86B0013BEA6 /* Extension+UIColor.swift */; };
 		3DE905652954E2870013BEA6 /* Extension+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905642954E2870013BEA6 /* Extension+UIFont.swift */; };
+		3DE9056729559E9A0013BEA6 /* Extension+UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9056629559E9A0013BEA6 /* Extension+UINavigationBar.swift */; };
 		3DE94C6529426B630068D2DD /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */; };
 		3DE94C6729426CA80068D2DD /* MenuDetailViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */; };
 		3DE9A00D29434DBF00F8793C /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9A00C29434DBF00F8793C /* Extension+UIImageView.swift */; };
@@ -97,6 +98,7 @@
 		3DD4E13929491A43002599A6 /* CartEmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartEmptyViewController.swift; sourceTree = "<group>"; };
 		3DE905622954D86B0013BEA6 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		3DE905642954E2870013BEA6 /* Extension+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIFont.swift"; sourceTree = "<group>"; };
+		3DE9056629559E9A0013BEA6 /* Extension+UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UINavigationBar.swift"; sourceTree = "<group>"; };
 		3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DE9A00C29434DBF00F8793C /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				3D3983BB293E5846008B01BE /* Quicksand-Medium.ttf */,
 				3D3983B8293E5846008B01BE /* Quicksand-Regular.ttf */,
 				3D3983B9293E5846008B01BE /* Quicksand.ttf */,
+				3DE905642954E2870013BEA6 /* Extension+UIFont.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				3D3983C7293F76F1008B01BE /* MenuViewControllerLayout.swift */,
 				3D3983C9293F77E8008B01BE /* MenuCard.swift */,
 				3D3983CB293F85B9008B01BE /* MenuCardCell.swift */,
+				3DE94C6329426ADB0068D2DD /* MenuDetailModule */,
 			);
 			path = MenuModule;
 			sourceTree = "<group>";
@@ -202,6 +206,7 @@
 				3DD10C48294B16E40075233E /* DeliveryViewController.swift */,
 				3DD10C4A294B19810075233E /* DeliveryViewControllerLayout.swift */,
 				3DD10C4C294B1AF30075233E /* Delivery.swift */,
+				3DD10C50294B253A0075233E /* DeliveryAddressView.swift */,
 				3DD10C52294B39BC0075233E /* ChooseMethodCell.swift */,
 			);
 			path = DeliveryModule;
@@ -212,9 +217,9 @@
 			children = (
 				3DFBDE892930EE0B005EEAFD /* Extension+UIButton.swift */,
 				3DE905622954D86B0013BEA6 /* Extension+UIColor.swift */,
-				3DE905642954E2870013BEA6 /* Extension+UIFont.swift */,
 				3DE9A00C29434DBF00F8793C /* Extension+UIImageView.swift */,
 				3DFBDE832930EA55005EEAFD /* Extension+UILabel.swift */,
+				3DE9056629559E9A0013BEA6 /* Extension+UINavigationBar.swift */,
 				3DFBDE872930ED6D005EEAFD /* Extension+UITextField.swift */,
 				3D5C95FD2949110000342B4F /* Extension+UITextView.swift */,
 				3DFBDE8D2930EF9E005EEAFD /* Extension+UIView.swift */,
@@ -250,6 +255,9 @@
 				3DF0CAFF2953372C0093D5C4 /* OrderViewControllerLayout.swift */,
 				3DF0CB03295341660093D5C4 /* Order.swift */,
 				3DF0CB0129533DD40093D5C4 /* OrderCell.swift */,
+				3D9F41BB294F8F9000CC748E /* OrdersHistoryModule */,
+				3DD10C47294B167D0075233E /* DeliveryModule */,
+				3D9F41B4294E769A00CC748E /* PaymentModule */,
 			);
 			path = OrderModule;
 			sourceTree = "<group>";
@@ -276,15 +284,10 @@
 				3DFBDE7D292EAA80005EEAFD /* App */,
 				3DFBDE7C292EAA48005EEAFD /* AuthorizationModule */,
 				3DFBDE912931237D005EEAFD /* MainModule */,
-				3D3983C4293F75C8008B01BE /* MenuModule */,
-				3DE94C6329426ADB0068D2DD /* MenuDetailModule */,
 				3D17A0C42948A16500FDDC94 /* CartModule */,
-				3DD10C47294B167D0075233E /* DeliveryModule */,
-				3D9F41B4294E769A00CC748E /* PaymentModule */,
-				3D9F41BB294F8F9000CC748E /* OrdersHistoryModule */,
 				3DF0CB0E29538E2C0093D5C4 /* OrderModule */,
 				3DF0CB092953811A0093D5C4 /* ProfileModule */,
-				3DFBDE822930E9E1005EEAFD /* UI+Extensions */,
+				3DFBDE822930E9E1005EEAFD /* UISupport */,
 				3DFBDE73292E46DD005EEAFD /* LaunchScreen.storyboard */,
 				3DFBDE71292E46DD005EEAFD /* Assets.xcassets */,
 				3DFBDE76292E46DD005EEAFD /* Info.plist */,
@@ -311,14 +314,13 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		3DFBDE822930E9E1005EEAFD /* UI+Extensions */ = {
+		3DFBDE822930E9E1005EEAFD /* UISupport */ = {
 			isa = PBXGroup;
 			children = (
-				3DD10C50294B253A0075233E /* DeliveryAddressView.swift */,
 				3DE905612954D38F0013BEA6 /* Extensions */,
 				3D3983B7293E5813008B01BE /* Fonts */,
 			);
-			path = "UI+Extensions";
+			path = UISupport;
 			sourceTree = "<group>";
 		};
 		3DFBDE912931237D005EEAFD /* MainModule */ = {
@@ -328,6 +330,7 @@
 				3DFBDE9429312510005EEAFD /* MainScreenLayout.swift */,
 				3DFBDE982933A023005EEAFD /* MainMenuCard.swift */,
 				3DFBDE9A2933B3E2005EEAFD /* MainMenuCardCell.swift */,
+				3D3983C4293F75C8008B01BE /* MenuModule */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				3DF0CB04295341660093D5C4 /* Order.swift in Sources */,
 				3DFBDE902930F15D005EEAFD /* AuthScreenLayout.swift in Sources */,
 				3DFBDE9329312462005EEAFD /* MainViewController.swift in Sources */,
+				3DE9056729559E9A0013BEA6 /* Extension+UINavigationBar.swift in Sources */,
 				3D17A0CC2948B14300FDDC94 /* CartCell.swift in Sources */,
 				3DF0CB002953372C0093D5C4 /* OrderViewControllerLayout.swift in Sources */,
 			);
