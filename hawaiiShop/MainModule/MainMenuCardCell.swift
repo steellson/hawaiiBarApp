@@ -10,9 +10,26 @@ import UIKit
 
 final class MainMenuCardCell: UICollectionViewCell {
     
-    private let imageView = UIImageView()
-    private let label     = UILabel()
+    //MARK: UI Elements
     
+    private let imageView: UIImageView = {
+        let imageView                  = UIImageView()
+        imageView.backgroundColor      = .none
+        imageView.contentMode          = .scaleAspectFit
+        imageView.setupShadow()
+        return imageView
+    }()
+    
+    private let label: UILabel = {
+        let label = UILabel()
+        label.font          = .quickBold20
+        label.contentMode   = .center
+        label.textAlignment = .center
+        return label
+    }()
+    
+    
+//MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,21 +37,25 @@ final class MainMenuCardCell: UICollectionViewCell {
        setupCell()
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+//MARK: - Setup Cell
+    
     func configureCell(with image: UIImage, and label: String) {
         self.imageView.image = image
         self.label.text      = label
     }
     
-    
     private func setupCell() {
-        self.layer.shadowOpacity = 0.2
-        self.layer.shadowOffset  = .init(width: 10, height: 10)
-        self.layer.shadowRadius  = 15
-        self.layer.shadowColor   = .init(red: 0, green: 0, blue: 0, alpha: 0.4)
-    
+        contentView.addSubview(imageView)
+        contentView.addSubview(label)
+
         setupBackgroundLayerOfCell()
-        setupImageView()
-        setupLabel()
+        setupShadow()
+        setupLayout()
     }
     
     private func setupBackgroundLayerOfCell() {
@@ -49,14 +70,18 @@ final class MainMenuCardCell: UICollectionViewCell {
         contentView.backgroundColor = .none
         contentView.layer.cornerRadius = 16
     }
+}
+
+//MARK: - Layout Extension
+
+extension MainMenuCardCell {
     
-    private func setupImageView() {
-        self.contentView.addSubview(imageView)
-        imageView.backgroundColor     = .none
-        imageView.contentMode         = .scaleAspectFit
-        imageView.layer.shadowOpacity = 0.2
-        imageView.layer.shadowRadius  = 3
-        imageView.layer.shadowOffset  = .init(width: 10, height: 5)
+    private func setupLayout() {
+        setupImageViewLayout()
+        setupLabelLayout()
+    }
+    
+    private func setupImageViewLayout() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -67,11 +92,7 @@ final class MainMenuCardCell: UICollectionViewCell {
         ])
     }
     
-    private func setupLabel() {
-        self.contentView.addSubview(label)
-        label.contentMode   = .center
-        label.font          = .quickBold20
-        label.textAlignment = .center
+    private func setupLabelLayout() {
         label.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -79,9 +100,5 @@ final class MainMenuCardCell: UICollectionViewCell {
             label.widthAnchor.constraint(equalToConstant: contentView.bounds.width),
             label.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

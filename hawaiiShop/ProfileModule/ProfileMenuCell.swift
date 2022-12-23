@@ -54,17 +54,10 @@ final class ProfileMenuCell: UICollectionViewCell {
         contentView.addSubview(sectionLabel)
         contentView.addSubview(forwardView)
         
-        setupShadowCell()
+        setupShadow()
         setupLayout()
     }
-    
-    private func setupShadowCell() {
-        layer.shadowOpacity  = 1
-        layer.shadowRadius   = 40
-        layer.shadowColor    = .init(red: 0, green: 0, blue: 0, alpha: 0.03)
-        layer.shadowOffset   = .init(width: 0, height: 10)
-    }
-    
+
 }
 
 

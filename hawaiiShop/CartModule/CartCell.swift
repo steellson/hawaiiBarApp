@@ -68,7 +68,7 @@ final class CartCell: UICollectionViewCell {
 
         
         setupItemChangeButtons()
-        setupShadowCell()
+        setupShadow()
         setupCellLayout()
     }
     
@@ -78,17 +78,10 @@ final class CartCell: UICollectionViewCell {
         
         plusItemButton.backgroundColor = .specialOrange
 
-        
         contentView.addSubview(plusItemButton)
         contentView.addSubview(minusItemButton)
     }
 
-    private func setupShadowCell() {
-        layer.shadowOpacity  = 1
-        layer.shadowRadius   = 40
-        layer.shadowColor    = .init(red: 0, green: 0, blue: 0, alpha: 0.03)
-        layer.shadowOffset   = .init(width: 0, height: 10)
-    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

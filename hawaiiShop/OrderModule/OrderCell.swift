@@ -43,7 +43,6 @@ final class OrderCell: UICollectionViewCell {
     }()
    
     
-    
 //MARK: - Init
     
     override init(frame: CGRect) {
@@ -52,7 +51,11 @@ final class OrderCell: UICollectionViewCell {
         setupCell()
     }
     
-
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
 //MARK: - Setup Cell
     
     public func configureCell(image: UIImage?, nameLabel: String, counter: String, priceLabel: String) {
@@ -72,22 +75,10 @@ final class OrderCell: UICollectionViewCell {
         contentView.addSubview(counter)
         contentView.addSubview(priceLabel)
         
-        setupShadowCell()
+        setupShadow()
         setupCellLayout()
     }
-    
 
-    private func setupShadowCell() {
-        layer.shadowOpacity  = 1
-        layer.shadowRadius   = 40
-        layer.shadowColor    = .init(red: 0, green: 0, blue: 0, alpha: 0.03)
-        layer.shadowOffset   = .init(width: 0, height: 10)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
 }
 
 //MARK: - Layout Extension

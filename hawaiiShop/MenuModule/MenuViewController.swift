@@ -28,7 +28,7 @@ class MenuViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = UIColor.specialWhite
+        view.backgroundColor = .specialWhite
 
         setupNavigationBar()
         setupCollectionView()

@@ -10,16 +10,57 @@ import UIKit
 
 final class MenuCardCell: UICollectionViewCell {
     
-    private let imageView   = UIImageView()
-    private let nameLabel   = UILabel()
-    private let weightLabel = UILabel()
-    private let priceLabel  = UILabel()
+    //MARK: - UIElements
+    
+    private let imageView: UIImageView = {
+        let imageView                  = UIImageView()
+        imageView.backgroundColor      = .none
+        imageView.contentMode          = .scaleAspectFit
+        imageView.setupShadow()
+        return imageView
+    }()
+    
+    private let nameLabel: UILabel = {
+        let nameLabel              = UILabel()
+        nameLabel.contentMode      = .center
+        nameLabel.textAlignment    = .center
+        nameLabel.font             = .quickBold20
+        return nameLabel
+    }()
+    
+    private let weightLabel: UILabel = {
+        let weightLabel              = UILabel()
+        weightLabel.contentMode      = .center
+        weightLabel.textAlignment    = .center
+        weightLabel.font             = .quickReg16
+        weightLabel.textColor        = .specialGray
+        return weightLabel
+    }()
+    
+    private let priceLabel: UILabel = {
+        let priceLabel              = UILabel()
+        priceLabel.contentMode      = .center
+        priceLabel.textAlignment    = .center
+        priceLabel.font             = .quickBold24
+        priceLabel.textColor        = .specialOrange
+        return priceLabel
+    }()
+    
+    
+//MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
        setupCell()
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+//MARK: - Setup Cell
     
     func configureCell(with image: UIImage, nameLabel: String, weightLabel: String, priceLabel: String) {
         self.imageView.image    = image
@@ -28,18 +69,15 @@ final class MenuCardCell: UICollectionViewCell {
         self.priceLabel.text    = priceLabel
     }
     
-    
     private func setupCell() {
-        self.layer.shadowOpacity = 0.2
-        self.layer.shadowOffset  = .init(width: 10, height: 10)
-        self.layer.shadowRadius  = 15
-        self.layer.shadowColor   = .init(red: 0, green: 0, blue: 0, alpha: 0.4)
-    
+        contentView.addSubview(imageView)
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(weightLabel)
+        contentView.addSubview(priceLabel)
+        
         setupBackgroundLayerOfCell()
-        setupImageView()
-        setupNameLabel()
-        setupWeightLabel()
-        setupPriceLabel()
+        setupShadow()
+        setupLayout()
     }
     
     private func setupBackgroundLayerOfCell() {
@@ -54,14 +92,23 @@ final class MenuCardCell: UICollectionViewCell {
         contentView.backgroundColor = .none
         contentView.layer.cornerRadius = 16
     }
+}
+
+
+//MARK: - Layout Extension
+
+extension MenuCardCell {
     
-    private func setupImageView() {
-        self.contentView.addSubview(imageView)
-        imageView.backgroundColor     = .none
-        imageView.contentMode         = .scaleAspectFit
-        imageView.layer.shadowOpacity = 0.2
-        imageView.layer.shadowRadius  = 3
-        imageView.layer.shadowOffset  = .init(width: 10, height: 5)
+    private func setupLayout() {
+        imageViewLayout()
+        nameLabelLayout()
+        weightLabelLayout()
+        priceLabelLayout()
+    }
+    
+//MARK: - Methods
+    
+    private func imageViewLayout() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -72,11 +119,7 @@ final class MenuCardCell: UICollectionViewCell {
         ])
     }
     
-    private func setupNameLabel() {
-        self.contentView.addSubview(nameLabel)
-        nameLabel.contentMode   = .center
-        nameLabel.font          = .quickBold20
-        nameLabel.textAlignment = .center
+    private func nameLabelLayout() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -86,12 +129,7 @@ final class MenuCardCell: UICollectionViewCell {
         ])
     }
     
-    private func setupWeightLabel() { //
-        self.contentView.addSubview(weightLabel)
-        weightLabel.contentMode   = .center
-        weightLabel.font          = .quickReg16
-        weightLabel.textColor     = .specialGray
-        weightLabel.textAlignment = .center
+    private func weightLabelLayout() { 
         weightLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -101,12 +139,7 @@ final class MenuCardCell: UICollectionViewCell {
         ])
     }
     
-    private func setupPriceLabel() { //
-        self.contentView.addSubview(priceLabel)
-        priceLabel.contentMode   = .center
-        priceLabel.font          = .quickBold24
-        priceLabel.textColor     = .specialOrange
-        priceLabel.textAlignment = .center
+    private func priceLabelLayout() {
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -115,8 +148,5 @@ final class MenuCardCell: UICollectionViewCell {
             priceLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
 }

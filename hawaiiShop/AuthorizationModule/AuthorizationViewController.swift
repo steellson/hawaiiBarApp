@@ -45,7 +45,7 @@ class AuthorizationViewController: UIViewController {
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = UIColor.specialWhite
+        view.backgroundColor = .specialWhite
         
         view.addSubview(authorizationLabel)
         view.addSubview(authView)
