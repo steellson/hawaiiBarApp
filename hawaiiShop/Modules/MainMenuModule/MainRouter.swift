@@ -25,12 +25,12 @@ class MainRouter: MainRouterProtocol {
     //MARK: - Variables
     
     var navigationController: UINavigationController?
-    var moduleBuilder       : MainModuleBuilderProtocol?
+    var moduleBuilder       : MainMenuModuleBuilderProtocol?
     
     
 //MARK: - Init
     
-    required init(navigationController: UINavigationController?, moduleBuilder: MainModuleBuilderProtocol?) {
+    required init(navigationController: UINavigationController?, moduleBuilder: MainMenuModuleBuilderProtocol?) {
         self.navigationController = navigationController
         self.moduleBuilder = moduleBuilder
     }

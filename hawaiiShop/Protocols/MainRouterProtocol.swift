@@ -12,6 +12,6 @@ import UIKit
 
 protocol Router {
     var navigationController: UINavigationController? { get set }
-    var moduleBuilder       : MainModuleBuilderProtocol? { get set }
-    init(navigationController: UINavigationController?, moduleBuilder: MainModuleBuilderProtocol?)
+    var moduleBuilder       : MainMenuModuleBuilderProtocol? { get set }
+    init(navigationController: UINavigationController?, moduleBuilder: MainMenuModuleBuilderProtocol?)
 }

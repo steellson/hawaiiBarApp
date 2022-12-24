@@ -9,18 +9,18 @@ import Foundation
 import UIKit
 
 
-//MARK: - MainModuleBuilder Protocol
+//MARK: - MainMenuModuleBuilder Protocol
 
-protocol MainModuleBuilderProtocol: ModuleBuilder {
+protocol MainMenuModuleBuilderProtocol: ModuleBuilder {
     func buildMainViewController(router: MainRouterProtocol) -> UIViewController
     func buildMenuViewController(router: MainRouterProtocol) -> UIViewController
     func buildMenuDetailViewController(router: MainRouterProtocol) -> UIViewController
 }
 
 
-//MARK: MainModuleBuilderImpl
+//MARK: MainMenuModuleBuilderImpl
 
-class MainModuleBuilder: MainModuleBuilderProtocol {
+class MainMenuModuleBuilder: MainMenuModuleBuilderProtocol {
     
     var typeOfCurrentModule: ModulesType = .main
     
