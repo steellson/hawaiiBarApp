@@ -19,7 +19,7 @@ struct MenuCard {
 
 struct MenuCardData {
     
-    static var cards: [MenuCard] = [
+    static var saladCards: [MenuCard] = [
         MenuCard(image: UIImageView(image: UIImage(named: "s_shrimps")), label: "Shrimps salad", weight: "270 g", price: "21 $"),
         MenuCard(image: UIImageView(image: UIImage(named: "s_chicken")), label: "Chicken salad", weight: "340 g", price: "10 $"),
         MenuCard(image: UIImageView(image: UIImage(named: "s_veg")), label: "Veg salad", weight: "300 g", price: "8 $"),

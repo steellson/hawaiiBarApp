@@ -11,5 +11,6 @@ import UIKit
 
 protocol ModuleBuilderProtocol {
     func buildMainViewController(router: RouterProtocol) -> UIViewController
-    func buildMenuViewController(router: RouterProtocol, menuCardItem: MenuCard) -> UIViewController
+    func buildMenuViewController(router: RouterProtocol, menuCardItems: [MenuCard]?) -> UIViewController
+    func buildMenuDetailViewController(router: RouterProtocol, menuDetailCard: MenuDetailCard) -> UIViewController
 }

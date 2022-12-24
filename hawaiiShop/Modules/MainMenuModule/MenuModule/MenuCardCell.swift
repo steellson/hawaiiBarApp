@@ -70,12 +70,13 @@ final class MenuCardCell: UICollectionViewCell {
     }
     
     private func setupCell() {
+        setupBackgroundLayerOfCell()
+
         contentView.addSubview(imageView)
         contentView.addSubview(nameLabel)
         contentView.addSubview(weightLabel)
         contentView.addSubview(priceLabel)
         
-        setupBackgroundLayerOfCell()
         setupShadow()
         setupLayout()
     }

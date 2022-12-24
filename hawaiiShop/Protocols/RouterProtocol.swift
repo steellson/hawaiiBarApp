@@ -16,6 +16,7 @@ protocol Router {
 
 protocol RouterProtocol: Router {
     func initialView()
-    func showMenuViewController(_ menuCardItem: MenuCard?)
+    func showMenuViewController(_ menuCardItems: [MenuCard]?)
+    func showMenuDetailViewController(_ menuDetailCard: MenuDetailCard?)
     func goBack()
 }

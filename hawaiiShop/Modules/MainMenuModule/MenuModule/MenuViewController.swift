@@ -10,10 +10,11 @@ import UIKit
 
 class MenuViewController: UIViewController {
     
+    var presenter: MenuPresenterProtocol!
+    
     //MARK: - UI Elements
     
     var menuCollectionView    : UICollectionView!
-    var menuCards: [MenuCard] = MenuCardData.cards
     
     
 //MARK: - Lifecycle
@@ -73,7 +74,17 @@ class MenuViewController: UIViewController {
 
 //MARK: - Protocol Extension
 
-
+extension MenuViewController: MenuViewProtocol {
+    
+    func success() {
+        //
+    }
+    
+    func error(error: Error) {
+        //
+    }
+        
+}
 
 
 //MARK: - Menu CV Data Source Extension
@@ -85,15 +96,16 @@ extension MenuViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menuCards.count
+        return presenter.menuCardItems?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! MenuCardCell
-        guard let image = menuCards[indexPath.item].image?.image else { return MenuCardCell() }
-        let nameLabel   = menuCards[indexPath.item].label
-        let weightLabel = menuCards[indexPath.item].weight
-        let priceLabel  = menuCards[indexPath.item].price
+        guard let menuCardItems = presenter.menuCardItems else { return MenuCardCell() }
+        guard let image = menuCardItems[indexPath.item].image?.image else { return MenuCardCell() }
+        let nameLabel   = menuCardItems[indexPath.item].label
+        let weightLabel = menuCardItems[indexPath.item].weight
+        let priceLabel  = menuCardItems[indexPath.item].price
         cell.configureCell(with: image, nameLabel: nameLabel, weightLabel: weightLabel, priceLabel: priceLabel)
         return cell
     }

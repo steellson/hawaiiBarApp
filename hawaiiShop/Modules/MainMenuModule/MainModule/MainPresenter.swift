@@ -19,7 +19,7 @@ protocol MainViewProtocol: AnyObject {
 //MARK: - MainPresenterProtocol
 
 protocol MainPresenterProtocol: AnyObject {
-    init(view: MainViewProtocol, router: RouterProtocol, dataManager: DataManagerProtocol)
+    init(view: MainViewProtocol, dataManager: DataManagerProtocol, router: RouterProtocol)
     var mainMenuCards: [MainMenuCard]? { get set }
     func getMenuCardsData()
 }
@@ -39,11 +39,11 @@ class MainPresenter: MainPresenterProtocol {
     
     //MARK: - Init
     
-    required init(view: MainViewProtocol, router: RouterProtocol, dataManager: DataManagerProtocol) {
+    required init(view: MainViewProtocol, dataManager: DataManagerProtocol, router: RouterProtocol) {
         self.view        = view
-        self.router      = router
         self.dataManager = dataManager
-        
+        self.router     = router
+    
         getMenuCardsData()
     }
     

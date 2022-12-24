@@ -25,9 +25,18 @@ class MainRouter: RouterProtocol {
         }
     }
     
-    func showMenuViewController(_ menuCardItem: MenuCard?) {
-        if let navigationController = navigationController {
-            let menuViewController  = MenuViewController()
+    func showMenuViewController(_ menuCardItems: [MenuCard]?) {
+        if let navigationController = navigationController, let moduleBuilder = moduleBuilder {
+            guard let menuCardItems = menuCardItems else { return }
+            let menuViewController  = moduleBuilder.buildMenuViewController(router: self, menuCardItems: menuCardItems)
+            navigationController.pushViewController(menuViewController, animated: true)
+        }
+    }
+    
+    func showMenuDetailViewController(_ menuDetailCard: MenuDetailCard?) {
+        if let navigationController = navigationController, let moduleBuilder = moduleBuilder {
+            guard let menuDetailCard = menuDetailCard else { return }
+            let menuViewController  = moduleBuilder.buildMenuDetailViewController(router: self, menuDetailCard: menuDetailCard)
             navigationController.pushViewController(menuViewController, animated: true)
         }
     }
