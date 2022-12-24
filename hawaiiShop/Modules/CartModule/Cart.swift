@@ -15,14 +15,3 @@ struct CartItem {
     var priceLabel: String
     
 }
-
-
-struct CartData {
-    
-    static var items: [CartItem] = [
-        CartItem(imageView: UIImageView(image: UIImage(named: "bowls")), nameLabel: "Chicken Breast Bowl", priceLabel: "16 $"),
-        CartItem(imageView: UIImageView(image: UIImage(named: "bowls")), nameLabel: "Tuna Bowl", priceLabel: "12 $"),
-        CartItem(imageView: UIImageView(image: UIImage(named: "pizza")), nameLabel: "Shrimps Pizza", priceLabel: "24 $")
-    ]
-    
-}

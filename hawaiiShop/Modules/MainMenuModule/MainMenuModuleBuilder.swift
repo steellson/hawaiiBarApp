@@ -11,10 +11,10 @@ import UIKit
 
 //MARK: - MainMenuModuleBuilder Protocol
 
-protocol MainMenuModuleBuilderProtocol: ModuleBuilder {
-    func buildMainViewController(router: MainRouterProtocol) -> UIViewController
-    func buildMenuViewController(router: MainRouterProtocol) -> UIViewController
-    func buildMenuDetailViewController(router: MainRouterProtocol) -> UIViewController
+protocol MainMenuModuleBuilderProtocol: ModuleBuilder {    
+    func buildMainViewController(router: MainMenuRouterProtocol) -> UIViewController
+    func buildMenuViewController(router: MainMenuRouterProtocol) -> UIViewController
+    func buildMenuDetailViewController(router: MainMenuRouterProtocol) -> UIViewController
 }
 
 
@@ -24,7 +24,7 @@ class MainMenuModuleBuilder: MainMenuModuleBuilderProtocol {
     
     var typeOfCurrentModule: ModulesType = .main
     
-   public func buildMainViewController(router: MainRouterProtocol) -> UIViewController {
+   public func buildMainViewController(router: MainMenuRouterProtocol) -> UIViewController {
         let view        = MainViewController()
         let dataManager = DataManager()
         let presenter   = MainPresenter(view: view, dataManager: dataManager, router: router)
@@ -32,7 +32,7 @@ class MainMenuModuleBuilder: MainMenuModuleBuilderProtocol {
         return view
     }
     
-    public func buildMenuViewController(router: MainRouterProtocol) -> UIViewController {
+    public func buildMenuViewController(router: MainMenuRouterProtocol) -> UIViewController {
         let view        = MenuViewController()
         let dataManager = DataManager()
         let presenter   = MenuPresenter(view: view, dataManager: dataManager, router: router)
@@ -40,7 +40,7 @@ class MainMenuModuleBuilder: MainMenuModuleBuilderProtocol {
         return view
     }
     
-    func buildMenuDetailViewController(router: MainRouterProtocol) -> UIViewController {
+    func buildMenuDetailViewController(router: MainMenuRouterProtocol) -> UIViewController {
         let view        = MenuDetailViewController()
         let dataManager = DataManager()
         let presenter   = MenuDetailPresenter(view: view, dataManager: dataManager, router: router)

@@ -11,8 +11,9 @@ import Foundation
 //MARK: - MenuPresenterProtocol
 
 protocol MenuPresenterProtocol: AnyObject {
-    init(view: MenuViewProtocol, dataManager: DataManagerProtocol, router: MainRouterProtocol)
+    init(view: MenuViewProtocol, dataManager: DataManagerProtocol, router: MainMenuRouterProtocol)
     var menuCardItems: [MenuCard]? { get set }
+    
     func getAllPositions(_ : [MenuCard]?)
     func cardDidTapped()
     func backButtonDidTapped()
@@ -26,14 +27,14 @@ class MenuPresenter: MenuPresenterProtocol {
     //MARK: Variables
     
     weak var view     : MenuViewProtocol?
-    let router        : MainRouterProtocol?
+    let router        : MainMenuRouterProtocol?
     let dataManager   : DataManagerProtocol?
     var menuCardItems : [MenuCard]?
     
     
     //MARK: - Init
     
-    required init(view: MenuViewProtocol, dataManager: DataManagerProtocol, router: MainRouterProtocol) {
+    required init(view: MenuViewProtocol, dataManager: DataManagerProtocol, router: MainMenuRouterProtocol) {
         self.view          = view
         self.dataManager   = dataManager
         self.router        = router

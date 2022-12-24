@@ -8,7 +8,19 @@
 import Foundation
 import UIKit
 
+//MARK: - CartView Protocol
+
+protocol CartViewProtocol: AnyObject {
+    func success()
+    func failure(error: Error)
+}
+
+
+//MARK: CartViewImpl
+
 class CartViewController: UIViewController {
+    
+    var presenter: CartPresenterProtocol!
     
     //MARK: - UI Elements
     
@@ -17,7 +29,6 @@ class CartViewController: UIViewController {
     let priceMoneyLabel       = UILabel(.quickBold24, UIColor.specialOrange, .right, "52 $")
     let commentTextView       = UITextView().buildCartCommentTextView()
     let completeOrderButton   = UIButton("Complete order")
-    var items: [CartItem]     = CartData.items
     
     
 //MARK: - Lifecycle
@@ -72,6 +83,20 @@ class CartViewController: UIViewController {
 
 //MARK: - Protocol Extension
 
+extension CartViewController: CartViewProtocol {
+    
+    func success() {
+        if let cartCollectionView = cartCollectionView {
+            cartCollectionView.reloadData()
+        }
+    }
+    
+    func failure(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    
+}
 
 
 //MARK: - Data Source Extension
@@ -79,14 +104,16 @@ class CartViewController: UIViewController {
 extension CartViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return presenter.cartItems?.count ?? 0
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: "cartCell", for: indexPath) as! CartCell
-        guard let image = items[indexPath.item].imageView?.image else { return UICollectionViewCell() }
-        let nameLabel   = items[indexPath.item].nameLabel
-        let priceLabel  = items[indexPath.item].priceLabel
+        guard let cartItems = presenter.cartItems else { return CartCell() }
+        let cell            = collectionView.dequeueReusableCell(withReuseIdentifier: "cartCell", for: indexPath) as! CartCell
+        guard let image     = cartItems[indexPath.item].imageView?.image else { return CartCell() }
+        let nameLabel       = cartItems[indexPath.item].nameLabel
+        let priceLabel      = cartItems[indexPath.item].priceLabel
         cell.configureCell(image, nameLabel, priceLabel: priceLabel)
         return cell
     }

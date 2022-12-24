@@ -57,7 +57,7 @@ final class MainViewController: UIViewController {
         navigationItem.leftBarButtonItem = leftBarItem
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
-        let rightBarItem = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(mainMenuBarButtonDidTapped))
+        let rightBarItem = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(cartBarButtonDidTapped))
         navigationItem.rightBarButtonItem = rightBarItem
         navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
 
@@ -85,6 +85,10 @@ final class MainViewController: UIViewController {
     
     @objc private func mainMenuBarButtonDidTapped() {
         print("Bar Button Did Tapped")
+    }
+    
+    @objc private func cartBarButtonDidTapped() {
+        presenter.cartDidTapped()
     }
 }
 

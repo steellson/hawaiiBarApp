@@ -10,6 +10,8 @@ import UIKit
 
 class CartEmptyViewController: UIViewController {
     
+    var presenter: CartPresenterProtocol!
+    
     //MARK: - UI Elements
     
     let imageView             = UIImageView(UIImage(named: "basket"), .scaleAspectFit, false)
@@ -57,4 +59,15 @@ class CartEmptyViewController: UIViewController {
 
 //MARK: - Protocol Extension
 
-
+extension CartEmptyViewController: CartViewProtocol {
+    
+    func success() {
+        //
+    }
+    
+    func failure(error: Error) {
+        //
+    }
+    
+    
+}

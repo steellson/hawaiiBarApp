@@ -10,7 +10,10 @@ import UIKit
 
 //MARK: - MainRouter Protocol
 
-protocol MainRouterProtocol: Router {
+protocol MainMenuRouterProtocol: Router {
+    var moduleBuilder        : MainMenuModuleBuilderProtocol? { get set }
+    init(navigationController: UINavigationController?, moduleBuilder: MainMenuModuleBuilderProtocol?)
+    
     func initialView()
     func showMenuViewController()
     func showMenuDetailViewController()
@@ -18,9 +21,10 @@ protocol MainRouterProtocol: Router {
 }
 
 
+
 //MARK: - MainRouterImpl
 
-class MainRouter: MainRouterProtocol {
+class MainMenuRouter: MainMenuRouterProtocol {
     
     //MARK: - Variables
     

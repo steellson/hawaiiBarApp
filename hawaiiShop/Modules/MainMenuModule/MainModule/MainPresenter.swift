@@ -11,10 +11,12 @@ import Foundation
 //MARK: - MainPresenterProtocol
 
 protocol MainPresenterProtocol: AnyObject {
-    init(view: MainViewProtocol, dataManager: DataManagerProtocol, router: MainRouterProtocol)
+    init(view: MainViewProtocol, dataManager: DataManagerProtocol, router: MainMenuRouterProtocol)
     var mainMenuCards: [MainMenuCard]? { get set }
+    
     func getMenuCardsData()
     func cardDidTapped()
+    func cartDidTapped()
 }
 
 
@@ -25,18 +27,18 @@ class MainPresenter: MainPresenterProtocol {
     //MARK: Variables
     
     weak var view     : MainViewProtocol?
-    let router        : MainRouterProtocol?
+    let router        : MainMenuRouterProtocol?
     let dataManager   : DataManagerProtocol?
     var mainMenuCards : [MainMenuCard]?
     
     
     //MARK: - Init
     
-    required init(view: MainViewProtocol, dataManager: DataManagerProtocol, router: MainRouterProtocol) {
+    required init(view: MainViewProtocol, dataManager: DataManagerProtocol, router: MainMenuRouterProtocol) {
         self.view        = view
         self.dataManager = dataManager
-        self.router     = router
-    
+        self.router      = router
+        
         getMenuCardsData()
     }
     
@@ -57,5 +59,9 @@ class MainPresenter: MainPresenterProtocol {
         if let router = router {
             router.showMenuViewController()
         }
+    }
+    
+    func cartDidTapped() {
+        //
     }
 }

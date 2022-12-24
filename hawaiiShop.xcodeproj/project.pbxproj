@@ -42,10 +42,13 @@
 		3DE9056C29561C570013BEA6 /* MainRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9056B29561C570013BEA6 /* MainRouterProtocol.swift */; };
 		3DE9056E29561D070013BEA6 /* MainModuleBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9056D29561D070013BEA6 /* MainModuleBuilderProtocol.swift */; };
 		3DE9057029561E560013BEA6 /* MainMenuModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9056F29561E560013BEA6 /* MainMenuModuleBuilder.swift */; };
-		3DE9057229561EB20013BEA6 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9057129561EB20013BEA6 /* MainRouter.swift */; };
+		3DE9057229561EB20013BEA6 /* MainMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9057129561EB20013BEA6 /* MainMenuRouter.swift */; };
 		3DE9057629562CAB0013BEA6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9057529562CAB0013BEA6 /* DataManager.swift */; };
 		3DE9057B295703B80013BEA6 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9057A295703B80013BEA6 /* MenuPresenter.swift */; };
 		3DE9057D29574E140013BEA6 /* MenuDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9057C29574E140013BEA6 /* MenuDetailPresenter.swift */; };
+		3DE90581295788970013BEA6 /* CartModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE90580295788970013BEA6 /* CartModuleBuilder.swift */; };
+		3DE90583295789CB0013BEA6 /* CartRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE90582295789CB0013BEA6 /* CartRouter.swift */; };
+		3DE9058529578ABF0013BEA6 /* CartPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9058429578ABF0013BEA6 /* CartPresenter.swift */; };
 		3DE94C6529426B630068D2DD /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */; };
 		3DE94C6729426CA80068D2DD /* MenuDetailViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */; };
 		3DE9A00D29434DBF00F8793C /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9A00C29434DBF00F8793C /* Extension+UIImageView.swift */; };
@@ -111,10 +114,13 @@
 		3DE9056B29561C570013BEA6 /* MainRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterProtocol.swift; sourceTree = "<group>"; };
 		3DE9056D29561D070013BEA6 /* MainModuleBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilderProtocol.swift; sourceTree = "<group>"; };
 		3DE9056F29561E560013BEA6 /* MainMenuModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuModuleBuilder.swift; sourceTree = "<group>"; };
-		3DE9057129561EB20013BEA6 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		3DE9057129561EB20013BEA6 /* MainMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuRouter.swift; sourceTree = "<group>"; };
 		3DE9057529562CAB0013BEA6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3DE9057A295703B80013BEA6 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
 		3DE9057C29574E140013BEA6 /* MenuDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailPresenter.swift; sourceTree = "<group>"; };
+		3DE90580295788970013BEA6 /* CartModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModuleBuilder.swift; sourceTree = "<group>"; };
+		3DE90582295789CB0013BEA6 /* CartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartRouter.swift; sourceTree = "<group>"; };
+		3DE9058429578ABF0013BEA6 /* CartPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPresenter.swift; sourceTree = "<group>"; };
 		3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DE9A00C29434DBF00F8793C /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
@@ -160,11 +166,11 @@
 		3D17A0C42948A16500FDDC94 /* CartModule */ = {
 			isa = PBXGroup;
 			children = (
-				3D17A0C72948A47400FDDC94 /* CartViewController.swift */,
-				3DD4E13929491A43002599A6 /* CartEmptyViewController.swift */,
-				3D17A0C92948AE8D00FDDC94 /* CartViewControllerLayout.swift */,
+				3DE90580295788970013BEA6 /* CartModuleBuilder.swift */,
+				3DE90582295789CB0013BEA6 /* CartRouter.swift */,
+				3DE9058429578ABF0013BEA6 /* CartPresenter.swift */,
 				3D17A0C52948A1F000FDDC94 /* Cart.swift */,
-				3D17A0CB2948B14300FDDC94 /* CartCell.swift */,
+				3DE90586295793910013BEA6 /* CartView */,
 			);
 			path = CartModule;
 			sourceTree = "<group>";
@@ -186,11 +192,9 @@
 		3D3983C4293F75C8008B01BE /* MenuModule */ = {
 			isa = PBXGroup;
 			children = (
-				3D3983C5293F76C8008B01BE /* MenuViewController.swift */,
-				3D3983C7293F76F1008B01BE /* MenuViewControllerLayout.swift */,
 				3DE9057A295703B80013BEA6 /* MenuPresenter.swift */,
 				3D3983C9293F77E8008B01BE /* MenuCard.swift */,
-				3D3983CB293F85B9008B01BE /* MenuCardCell.swift */,
+				3DE90588295793D40013BEA6 /* MenuView */,
 				3DE94C6329426ADB0068D2DD /* MenuDetailModule */,
 			);
 			path = MenuModule;
@@ -199,8 +203,7 @@
 		3D9F41B4294E769A00CC748E /* PaymentModule */ = {
 			isa = PBXGroup;
 			children = (
-				3D9F41B5294E76F900CC748E /* PaymentViewController.swift */,
-				3D9F41B9294E78EF00CC748E /* PaymentViewControllerLayout.swift */,
+				3DE9058E295795100013BEA6 /* PaymentView */,
 			);
 			path = PaymentModule;
 			sourceTree = "<group>";
@@ -208,25 +211,19 @@
 		3D9F41BB294F8F9000CC748E /* OrdersHistoryModule */ = {
 			isa = PBXGroup;
 			children = (
-				3D9F41BC294F8FDF00CC748E /* OrdersHistoryViewController.swift */,
-				3D9F41C62950C70100CC748E /* OrdersHistoryEmptyViewController.swift */,
-				3D9F41BE294F90A300CC748E /* OrdersHistoryViewControllerLayout.swift */,
 				3D9F41C4294F9C3F00CC748E /* OrdersHistoryItem.swift */,
-				3D9F41C0294F948200CC748E /* OrdersHistoryCell.swift */,
+				3DE9058B295794910013BEA6 /* OrdersHistoryView */,
 			);
 			path = OrdersHistoryModule;
 			sourceTree = "<group>";
 		};
-		3DD10C47294B167D0075233E /* DeliveryModule */ = {
+		3DD10C47294B167D0075233E /* Delivery */ = {
 			isa = PBXGroup;
 			children = (
-				3DD10C48294B16E40075233E /* DeliveryViewController.swift */,
-				3DD10C4A294B19810075233E /* DeliveryViewControllerLayout.swift */,
 				3DD10C4C294B1AF30075233E /* Delivery.swift */,
-				3DD10C50294B253A0075233E /* DeliveryAddressView.swift */,
-				3DD10C52294B39BC0075233E /* ChooseMethodCell.swift */,
+				3DE9058D295794F70013BEA6 /* DeliveryView */,
 			);
-			path = DeliveryModule;
+			path = Delivery;
 			sourceTree = "<group>";
 		};
 		3DE905612954D38F0013BEA6 /* Extensions */ = {
@@ -276,22 +273,119 @@
 		3DE905792956FD230013BEA6 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
-				3DFBDE9229312462005EEAFD /* MainViewController.swift */,
-				3DFBDE9429312510005EEAFD /* MainScreenLayout.swift */,
 				3DE90568295600F90013BEA6 /* MainPresenter.swift */,
 				3DFBDE982933A023005EEAFD /* MainMenuCard.swift */,
-				3DFBDE9A2933B3E2005EEAFD /* MainMenuCardCell.swift */,
+				3DE90587295793B70013BEA6 /* MainView */,
 			);
 			path = MainModule;
+			sourceTree = "<group>";
+		};
+		3DE90586295793910013BEA6 /* CartView */ = {
+			isa = PBXGroup;
+			children = (
+				3D17A0C72948A47400FDDC94 /* CartViewController.swift */,
+				3DD4E13929491A43002599A6 /* CartEmptyViewController.swift */,
+				3D17A0C92948AE8D00FDDC94 /* CartViewControllerLayout.swift */,
+				3D17A0CB2948B14300FDDC94 /* CartCell.swift */,
+			);
+			path = CartView;
+			sourceTree = "<group>";
+		};
+		3DE90587295793B70013BEA6 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				3DFBDE9229312462005EEAFD /* MainViewController.swift */,
+				3DFBDE9429312510005EEAFD /* MainScreenLayout.swift */,
+				3DFBDE9A2933B3E2005EEAFD /* MainMenuCardCell.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		3DE90588295793D40013BEA6 /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				3D3983C5293F76C8008B01BE /* MenuViewController.swift */,
+				3D3983C7293F76F1008B01BE /* MenuViewControllerLayout.swift */,
+				3D3983CB293F85B9008B01BE /* MenuCardCell.swift */,
+			);
+			path = MenuView;
+			sourceTree = "<group>";
+		};
+		3DE90589295793FA0013BEA6 /* MenuDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */,
+				3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */,
+			);
+			path = MenuDetailView;
+			sourceTree = "<group>";
+		};
+		3DE9058A295794240013BEA6 /* OrderView */ = {
+			isa = PBXGroup;
+			children = (
+				3DF0CB07295376420093D5C4 /* OrderViewController.swift */,
+				3DF0CAFF2953372C0093D5C4 /* OrderViewControllerLayout.swift */,
+				3DF0CB0129533DD40093D5C4 /* OrderCell.swift */,
+			);
+			path = OrderView;
+			sourceTree = "<group>";
+		};
+		3DE9058B295794910013BEA6 /* OrdersHistoryView */ = {
+			isa = PBXGroup;
+			children = (
+				3D9F41BC294F8FDF00CC748E /* OrdersHistoryViewController.swift */,
+				3D9F41C62950C70100CC748E /* OrdersHistoryEmptyViewController.swift */,
+				3D9F41BE294F90A300CC748E /* OrdersHistoryViewControllerLayout.swift */,
+				3D9F41C0294F948200CC748E /* OrdersHistoryCell.swift */,
+			);
+			path = OrdersHistoryView;
+			sourceTree = "<group>";
+		};
+		3DE9058C295794BB0013BEA6 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				3DF0CB03295341660093D5C4 /* Order.swift */,
+				3DE9058A295794240013BEA6 /* OrderView */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
+		3DE9058D295794F70013BEA6 /* DeliveryView */ = {
+			isa = PBXGroup;
+			children = (
+				3DD10C48294B16E40075233E /* DeliveryViewController.swift */,
+				3DD10C4A294B19810075233E /* DeliveryViewControllerLayout.swift */,
+				3DD10C50294B253A0075233E /* DeliveryAddressView.swift */,
+				3DD10C52294B39BC0075233E /* ChooseMethodCell.swift */,
+			);
+			path = DeliveryView;
+			sourceTree = "<group>";
+		};
+		3DE9058E295795100013BEA6 /* PaymentView */ = {
+			isa = PBXGroup;
+			children = (
+				3D9F41B5294E76F900CC748E /* PaymentViewController.swift */,
+				3D9F41B9294E78EF00CC748E /* PaymentViewControllerLayout.swift */,
+			);
+			path = PaymentView;
+			sourceTree = "<group>";
+		};
+		3DE9058F295795290013BEA6 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				3DF0CB0A295381630093D5C4 /* ProfileViewController.swift */,
+				3DF0CB0C295381EE0093D5C4 /* ProfileViewControllerLayout.swift */,
+				3DF0CB0F29547F510093D5C4 /* ProfileMenuCell.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		3DE94C6329426ADB0068D2DD /* MenuDetailModule */ = {
 			isa = PBXGroup;
 			children = (
-				3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */,
-				3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */,
 				3DE9057C29574E140013BEA6 /* MenuDetailPresenter.swift */,
 				3DE9A00E29435D7B00F8793C /* MenuDetailCard.swift */,
+				3DE90589295793FA0013BEA6 /* MenuDetailView */,
 			);
 			path = MenuDetailModule;
 			sourceTree = "<group>";
@@ -299,10 +393,8 @@
 		3DF0CB092953811A0093D5C4 /* ProfileModule */ = {
 			isa = PBXGroup;
 			children = (
-				3DF0CB0A295381630093D5C4 /* ProfileViewController.swift */,
-				3DF0CB0C295381EE0093D5C4 /* ProfileViewControllerLayout.swift */,
 				3DF0CB11295484C10093D5C4 /* ProfileMenu.swift */,
-				3DF0CB0F29547F510093D5C4 /* ProfileMenuCell.swift */,
+				3DE9058F295795290013BEA6 /* ProfileView */,
 			);
 			path = ProfileModule;
 			sourceTree = "<group>";
@@ -310,12 +402,9 @@
 		3DF0CB0E29538E2C0093D5C4 /* OrderModule */ = {
 			isa = PBXGroup;
 			children = (
-				3DF0CB07295376420093D5C4 /* OrderViewController.swift */,
-				3DF0CAFF2953372C0093D5C4 /* OrderViewControllerLayout.swift */,
-				3DF0CB03295341660093D5C4 /* Order.swift */,
-				3DF0CB0129533DD40093D5C4 /* OrderCell.swift */,
+				3DE9058C295794BB0013BEA6 /* Order */,
 				3D9F41BB294F8F9000CC748E /* OrdersHistoryModule */,
-				3DD10C47294B167D0075233E /* DeliveryModule */,
+				3DD10C47294B167D0075233E /* Delivery */,
 				3D9F41B4294E769A00CC748E /* PaymentModule */,
 			);
 			path = OrderModule;
@@ -384,7 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				3DE9056F29561E560013BEA6 /* MainMenuModuleBuilder.swift */,
-				3DE9057129561EB20013BEA6 /* MainRouter.swift */,
+				3DE9057129561EB20013BEA6 /* MainMenuRouter.swift */,
 				3DE905792956FD230013BEA6 /* MainModule */,
 				3D3983C4293F75C8008B01BE /* MenuModule */,
 			);
@@ -488,7 +577,7 @@
 				3DE9056E29561D070013BEA6 /* MainModuleBuilderProtocol.swift in Sources */,
 				3DE9A00F29435D7B00F8793C /* MenuDetailCard.swift in Sources */,
 				3DF0CB1029547F510093D5C4 /* ProfileMenuCell.swift in Sources */,
-				3DE9057229561EB20013BEA6 /* MainRouter.swift in Sources */,
+				3DE9057229561EB20013BEA6 /* MainMenuRouter.swift in Sources */,
 				3DE90569295600F90013BEA6 /* MainPresenter.swift in Sources */,
 				3DD10C4B294B19810075233E /* DeliveryViewControllerLayout.swift in Sources */,
 				3D9F41BF294F90A300CC748E /* OrdersHistoryViewControllerLayout.swift in Sources */,
@@ -512,17 +601,20 @@
 				3DE905652954E2870013BEA6 /* Extension+UIFont.swift in Sources */,
 				3DD10C53294B39BC0075233E /* ChooseMethodCell.swift in Sources */,
 				3DE9057B295703B80013BEA6 /* MenuPresenter.swift in Sources */,
+				3DE9058529578ABF0013BEA6 /* CartPresenter.swift in Sources */,
 				3DF0CB08295376420093D5C4 /* OrderViewController.swift in Sources */,
 				3DD4E13A29491A43002599A6 /* CartEmptyViewController.swift in Sources */,
 				3DFBDE9B2933B3E2005EEAFD /* MainMenuCardCell.swift in Sources */,
 				3DFBDE9529312510005EEAFD /* MainScreenLayout.swift in Sources */,
 				3D9F41B6294E76F900CC748E /* PaymentViewController.swift in Sources */,
+				3DE90583295789CB0013BEA6 /* CartRouter.swift in Sources */,
 				3D9F41BA294E78EF00CC748E /* PaymentViewControllerLayout.swift in Sources */,
 				3DFBDE7F292EAAB2005EEAFD /* AuthorizationPresenter.swift in Sources */,
 				3DF0CB04295341660093D5C4 /* Order.swift in Sources */,
 				3DFBDE902930F15D005EEAFD /* AuthScreenLayout.swift in Sources */,
 				3DFBDE9329312462005EEAFD /* MainViewController.swift in Sources */,
 				3DE9056729559E9A0013BEA6 /* Extension+UINavigationBar.swift in Sources */,
+				3DE90581295788970013BEA6 /* CartModuleBuilder.swift in Sources */,
 				3D17A0CC2948B14300FDDC94 /* CartCell.swift in Sources */,
 				3DF0CB002953372C0093D5C4 /* OrderViewControllerLayout.swift in Sources */,
 			);
