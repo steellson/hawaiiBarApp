@@ -8,7 +8,20 @@
 import Foundation
 import UIKit
 
+
+//MARK: - MenuViewProtocol
+
+protocol MenuDetailViewProtocol: AnyObject {
+    func success()
+    func failure(error: Error)
+}
+
+
+//MARK: MenuDetailViewImpl
+
 class MenuDetailViewController: UIViewController {
+    
+    var presenter            : MenuDetailPresenterProtocol!
     
     //MARK: UI Elements
     
@@ -24,7 +37,6 @@ class MenuDetailViewController: UIViewController {
     let menuDetailAddButton          = UIButton("Add")
     
     
-    
 //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -33,11 +45,20 @@ class MenuDetailViewController: UIViewController {
         setupController()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        view.frame = CGRect(x: 0, y: UIScreen.main.bounds.height / 6 * 1.5,
+                            width: self.view.bounds.width, height: UIScreen.main.bounds.height / 5 * 5)
+        view.layer.cornerRadius  = 40
+        view.layer.masksToBounds = true
+    }
+    
     
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = .specialWhite
+        view.backgroundColor    = .specialWhite
         
         view.addSubview(menuDetailTitleLabel)
         view.addSubview(menuDetailImageView)
@@ -58,6 +79,14 @@ class MenuDetailViewController: UIViewController {
 
 //MARK: - Protocol Extension
 
-
-
-
+extension MenuDetailViewController: MenuDetailViewProtocol {
+    
+    func success() {
+        //
+    }
+    
+    func failure(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+}

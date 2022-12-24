@@ -45,6 +45,7 @@
 		3DE9057229561EB20013BEA6 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9057129561EB20013BEA6 /* MainRouter.swift */; };
 		3DE9057629562CAB0013BEA6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9057529562CAB0013BEA6 /* DataManager.swift */; };
 		3DE9057B295703B80013BEA6 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9057A295703B80013BEA6 /* MenuPresenter.swift */; };
+		3DE9057D29574E140013BEA6 /* MenuDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9057C29574E140013BEA6 /* MenuDetailPresenter.swift */; };
 		3DE94C6529426B630068D2DD /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */; };
 		3DE94C6729426CA80068D2DD /* MenuDetailViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */; };
 		3DE9A00D29434DBF00F8793C /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9A00C29434DBF00F8793C /* Extension+UIImageView.swift */; };
@@ -113,6 +114,7 @@
 		3DE9057129561EB20013BEA6 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		3DE9057529562CAB0013BEA6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		3DE9057A295703B80013BEA6 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
+		3DE9057C29574E140013BEA6 /* MenuDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailPresenter.swift; sourceTree = "<group>"; };
 		3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
 		3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DE9A00C29434DBF00F8793C /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			children = (
 				3DE94C6429426B630068D2DD /* MenuDetailViewController.swift */,
 				3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */,
+				3DE9057C29574E140013BEA6 /* MenuDetailPresenter.swift */,
 				3DE9A00E29435D7B00F8793C /* MenuDetailCard.swift */,
 			);
 			path = MenuDetailModule;
@@ -496,6 +499,7 @@
 				3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */,
 				3D17A0C82948A47400FDDC94 /* CartViewController.swift in Sources */,
 				3DD10C4D294B1AF30075233E /* Delivery.swift in Sources */,
+				3DE9057D29574E140013BEA6 /* MenuDetailPresenter.swift in Sources */,
 				3DF0CB0229533DD40093D5C4 /* OrderCell.swift in Sources */,
 				3D9F41C5294F9C3F00CC748E /* OrdersHistoryItem.swift in Sources */,
 				3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */,

@@ -13,7 +13,7 @@ import UIKit
 protocol MainRouterProtocol: Router {
     func initialView()
     func showMenuViewController()
-    func showMenuDetailViewController(_ menuDetailCard: MenuDetailCard?)
+    func showMenuDetailViewController()
     func goBack()
 }
 
@@ -52,10 +52,10 @@ class MainRouter: MainRouterProtocol {
         }
     }
     
-    func showMenuDetailViewController(_ menuDetailCard: MenuDetailCard?) {
+    func showMenuDetailViewController() {
         if let navigationController  = navigationController, let moduleBuilder = moduleBuilder {
-            guard let menuDetailCard = menuDetailCard else { return }
-            let menuViewController   = moduleBuilder.buildMenuDetailViewController(router: self, menuDetailCard: menuDetailCard)
+            let menuViewController   = moduleBuilder.buildMenuDetailViewController(router: self)
+        
             navigationController.present(menuViewController, animated: true)
         }
     }

@@ -14,11 +14,12 @@ protocol MenuPresenterProtocol: AnyObject {
     init(view: MenuViewProtocol, dataManager: DataManagerProtocol, router: MainRouterProtocol)
     var menuCardItems: [MenuCard]? { get set }
     func getAllPositions(_ : [MenuCard]?)
+    func cardDidTapped()
     func backButtonDidTapped()
 }
 
 
-//MARK: - MainPresenter
+//MARK: - MenuPresenter
 
 class MenuPresenter: MenuPresenterProtocol {
     
@@ -51,6 +52,12 @@ class MenuPresenter: MenuPresenterProtocol {
                 self.menuCardItems = data
                 self.view?.success()
             }
+        }
+    }
+    
+    func cardDidTapped() {
+        if let router = router {
+            router.showMenuDetailViewController()
         }
     }
     

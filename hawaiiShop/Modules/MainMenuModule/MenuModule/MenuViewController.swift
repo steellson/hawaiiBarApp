@@ -124,6 +124,15 @@ extension MenuViewController: UICollectionViewDataSource {
     
 }
 
+//MARK: - Menu CV Delegate Extension
+
+extension MenuViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.cardDidTapped()
+    }
+}
+
 
 //MARK: - FlowLayout Delegate Exetnsion
 

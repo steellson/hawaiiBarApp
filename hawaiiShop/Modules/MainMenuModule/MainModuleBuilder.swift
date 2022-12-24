@@ -14,7 +14,7 @@ import UIKit
 protocol MainModuleBuilderProtocol: ModuleBuilder {
     func buildMainViewController(router: MainRouterProtocol) -> UIViewController
     func buildMenuViewController(router: MainRouterProtocol) -> UIViewController
-    func buildMenuDetailViewController(router: MainRouterProtocol, menuDetailCard: MenuDetailCard) -> UIViewController
+    func buildMenuDetailViewController(router: MainRouterProtocol) -> UIViewController
 }
 
 
@@ -40,10 +40,11 @@ class MainModuleBuilder: MainModuleBuilderProtocol {
         return view
     }
     
-    func buildMenuDetailViewController(router: MainRouterProtocol, menuDetailCard: MenuDetailCard) -> UIViewController {
-        let view       = MenuDetailViewController()
-//        let presenter  = MenuPresenter(view: view, menuCardItem: menuCardItem)
-//        view.presenter = presenter
+    func buildMenuDetailViewController(router: MainRouterProtocol) -> UIViewController {
+        let view        = MenuDetailViewController()
+        let dataManager = DataManager()
+        let presenter   = MenuDetailPresenter(view: view, dataManager: dataManager, router: router)
+        view.presenter  = presenter
         return view
     }
 
