@@ -47,11 +47,11 @@ class MenuViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        let leftBarItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(menuBarButtonDidTapped))
+        let leftBarItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(menuBackBarButtonDidTapped))
         navigationItem.leftBarButtonItem = leftBarItem
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
-        let rightBarItem = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(menuBarButtonDidTapped))
+        let rightBarItem = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(menuBackBarButtonDidTapped))
         navigationItem.rightBarButtonItem = rightBarItem
         navigationItem.rightBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
@@ -76,8 +76,8 @@ class MenuViewController: UIViewController {
     
 //MARK: - Buttons Action
     
-    @objc private func menuBarButtonDidTapped() {
-        print("Bar Button Did Tapped")
+    @objc private func menuBackBarButtonDidTapped() {
+        presenter.backButtonDidTapped()
     }
 }
 
@@ -87,7 +87,9 @@ class MenuViewController: UIViewController {
 extension MenuViewController: MenuViewProtocol {
     
     func success() {
-        menuCollectionView.reloadData()
+        if let menuCollectionView = menuCollectionView {
+            menuCollectionView.reloadData()
+        }
     }
     
     func failure(error: Error) {

@@ -19,7 +19,7 @@ protocol MainViewProtocol: AnyObject {
 
 //MARK: - MainViewImpl
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     var presenter: MainPresenterProtocol!
     

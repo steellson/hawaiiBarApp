@@ -62,7 +62,7 @@ class MainRouter: MainRouterProtocol {
     
     func goBack() {
         if let navigationController = navigationController {
-            navigationController.dismiss(animated: true)
+            navigationController.popViewController(animated: true)
         }
     }
 }

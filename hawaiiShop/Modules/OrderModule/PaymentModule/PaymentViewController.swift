@@ -54,7 +54,7 @@ class PaymentViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        let leftBarItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(menuBarButtonDidTapped))
+        let leftBarItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(menuBackBarButtonDidTapped))
         navigationItem.leftBarButtonItem = leftBarItem
         navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
         
@@ -81,7 +81,7 @@ class PaymentViewController: UIViewController {
     
     //MARK: - Buttons Action
     
-    @objc private func menuBarButtonDidTapped() {
+    @objc private func menuBackBarButtonDidTapped() {
         print("Bar Button Did Tapped")
     }
 }
