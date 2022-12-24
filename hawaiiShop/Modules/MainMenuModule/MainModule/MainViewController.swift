@@ -8,6 +8,17 @@
 import Foundation
 import UIKit
 
+
+//MARK: - MainViewProtocol
+
+protocol MainViewProtocol: AnyObject {
+    func success()
+    func failure(error: Error)
+}
+
+
+//MARK: - MainViewImpl
+
 class MainViewController: UIViewController {
     
     var presenter: MainPresenterProtocol!
@@ -89,7 +100,6 @@ extension MainViewController: MainViewProtocol {
     func failure(error: Error) {
         print(error.localizedDescription)
     }
-    
 }
 
 
@@ -111,6 +121,14 @@ extension MainViewController: UICollectionViewDataSource {
         guard let label = presenter.mainMenuCards?[indexPath.item].label else { return  MainMenuCardCell() }
         cell.configureCell(with: image, and: label)
         return cell
+    }
+}
+
+//MARK: Main Menu CV Delegate Extension
+
+extension MainViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.cardDidTapped()
     }
 }
 

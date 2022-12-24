@@ -8,36 +8,55 @@
 import Foundation
 import UIKit
 
-class MainRouter: RouterProtocol {
+//MARK: - MainRouter Protocol
+
+protocol MainRouterProtocol: Router {
+    func initialView()
+    func showMenuViewController()
+    func showMenuDetailViewController(_ menuDetailCard: MenuDetailCard?)
+    func goBack()
+}
+
+
+//MARK: - MainRouterImpl
+
+class MainRouter: MainRouterProtocol {
     
     //MARK: - Variables
     
     var navigationController: UINavigationController?
-    var moduleBuilder       : ModuleBuilderProtocol?
+    var moduleBuilder       : MainModuleBuilderProtocol?
+    
+    
+//MARK: - Init
+    
+    required init(navigationController: UINavigationController?, moduleBuilder: MainModuleBuilderProtocol?) {
+        self.navigationController = navigationController
+        self.moduleBuilder = moduleBuilder
+    }
     
     
 //MARK: - Methods
     
     func initialView() {
-        if let navigationController = navigationController {
-            let mainViewController  = MainViewController()
-            navigationController.present(mainViewController, animated: true)
+        if let navigationController = navigationController, let moduleBuilder = moduleBuilder {
+            let mainViewController  = moduleBuilder.buildMainViewController(router: self)
+            navigationController.viewControllers = [mainViewController]
         }
     }
     
-    func showMenuViewController(_ menuCardItems: [MenuCard]?) {
+    func showMenuViewController() {
         if let navigationController = navigationController, let moduleBuilder = moduleBuilder {
-            guard let menuCardItems = menuCardItems else { return }
-            let menuViewController  = moduleBuilder.buildMenuViewController(router: self, menuCardItems: menuCardItems)
+            let menuViewController  = moduleBuilder.buildMenuViewController(router: self)
             navigationController.pushViewController(menuViewController, animated: true)
         }
     }
     
     func showMenuDetailViewController(_ menuDetailCard: MenuDetailCard?) {
-        if let navigationController = navigationController, let moduleBuilder = moduleBuilder {
+        if let navigationController  = navigationController, let moduleBuilder = moduleBuilder {
             guard let menuDetailCard = menuDetailCard else { return }
-            let menuViewController  = moduleBuilder.buildMenuDetailViewController(router: self, menuDetailCard: menuDetailCard)
-            navigationController.pushViewController(menuViewController, animated: true)
+            let menuViewController   = moduleBuilder.buildMenuDetailViewController(router: self, menuDetailCard: menuDetailCard)
+            navigationController.present(menuViewController, animated: true)
         }
     }
     
@@ -46,6 +65,4 @@ class MainRouter: RouterProtocol {
             navigationController.dismiss(animated: true)
         }
     }
-    
-    
 }

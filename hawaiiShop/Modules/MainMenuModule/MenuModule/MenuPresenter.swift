@@ -8,18 +8,10 @@
 import Foundation
 
 
-//MARK: - MenuViewProtocol
-
-protocol MenuViewProtocol: AnyObject {
-    func success()
-    func error(error: Error)
-}
-
-
 //MARK: - MenuPresenterProtocol
 
 protocol MenuPresenterProtocol: AnyObject {
-    init(view: MenuViewProtocol, dataManager: DataManagerProtocol, router: RouterProtocol, menuCardItems: [MenuCard]?)
+    init(view: MenuViewProtocol, dataManager: DataManagerProtocol, router: MainRouterProtocol)
     var menuCardItems: [MenuCard]? { get set }
     func getAllPositions(_ : [MenuCard]?)
 }
@@ -32,18 +24,18 @@ class MenuPresenter: MenuPresenterProtocol {
     //MARK: Variables
     
     weak var view     : MenuViewProtocol?
-    let router        : RouterProtocol?
+    let router        : MainRouterProtocol?
     let dataManager   : DataManagerProtocol?
     var menuCardItems : [MenuCard]?
     
     
     //MARK: - Init
     
-    required init(view: MenuViewProtocol, dataManager: DataManagerProtocol, router: RouterProtocol, menuCardItems: [MenuCard]?) {
+    required init(view: MenuViewProtocol, dataManager: DataManagerProtocol, router: MainRouterProtocol) {
         self.view          = view
         self.dataManager   = dataManager
         self.router        = router
-        self.menuCardItems = menuCardItems
+        
         
         getAllPositions(_ : menuCardItems)
     }
@@ -52,6 +44,12 @@ class MenuPresenter: MenuPresenterProtocol {
     //MARK: - Methods
     
     func getAllPositions(_ : [MenuCard]?) {
-        //
+        dataManager?.getData(type: .menuCards) { [weak self] data in
+            guard let self         = self else { return }
+            if let data            = data as? [MenuCard] {
+                self.menuCardItems = data
+                self.view?.success()
+            }
+        }
     }
 }

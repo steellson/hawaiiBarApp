@@ -39,8 +39,8 @@
 		3DE905652954E2870013BEA6 /* Extension+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905642954E2870013BEA6 /* Extension+UIFont.swift */; };
 		3DE9056729559E9A0013BEA6 /* Extension+UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9056629559E9A0013BEA6 /* Extension+UINavigationBar.swift */; };
 		3DE90569295600F90013BEA6 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE90568295600F90013BEA6 /* MainPresenter.swift */; };
-		3DE9056C29561C570013BEA6 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9056B29561C570013BEA6 /* RouterProtocol.swift */; };
-		3DE9056E29561D070013BEA6 /* ModuleBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9056D29561D070013BEA6 /* ModuleBuilderProtocol.swift */; };
+		3DE9056C29561C570013BEA6 /* MainRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9056B29561C570013BEA6 /* MainRouterProtocol.swift */; };
+		3DE9056E29561D070013BEA6 /* MainModuleBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9056D29561D070013BEA6 /* MainModuleBuilderProtocol.swift */; };
 		3DE9057029561E560013BEA6 /* MainModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9056F29561E560013BEA6 /* MainModuleBuilder.swift */; };
 		3DE9057229561EB20013BEA6 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9057129561EB20013BEA6 /* MainRouter.swift */; };
 		3DE9057629562CAB0013BEA6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9057529562CAB0013BEA6 /* DataManager.swift */; };
@@ -107,8 +107,8 @@
 		3DE905642954E2870013BEA6 /* Extension+UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIFont.swift"; sourceTree = "<group>"; };
 		3DE9056629559E9A0013BEA6 /* Extension+UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UINavigationBar.swift"; sourceTree = "<group>"; };
 		3DE90568295600F90013BEA6 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		3DE9056B29561C570013BEA6 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
-		3DE9056D29561D070013BEA6 /* ModuleBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilderProtocol.swift; sourceTree = "<group>"; };
+		3DE9056B29561C570013BEA6 /* MainRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterProtocol.swift; sourceTree = "<group>"; };
+		3DE9056D29561D070013BEA6 /* MainModuleBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilderProtocol.swift; sourceTree = "<group>"; };
 		3DE9056F29561E560013BEA6 /* MainModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilder.swift; sourceTree = "<group>"; };
 		3DE9057129561EB20013BEA6 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		3DE9057529562CAB0013BEA6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -257,8 +257,8 @@
 		3DE9057329562C030013BEA6 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				3DE9056B29561C570013BEA6 /* RouterProtocol.swift */,
-				3DE9056D29561D070013BEA6 /* ModuleBuilderProtocol.swift */,
+				3DE9056B29561C570013BEA6 /* MainRouterProtocol.swift */,
+				3DE9056D29561D070013BEA6 /* MainModuleBuilderProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -482,7 +482,7 @@
 				3D5C95FE2949110000342B4F /* Extension+UITextView.swift in Sources */,
 				3D3983CC293F85B9008B01BE /* MenuCardCell.swift in Sources */,
 				3DE9057629562CAB0013BEA6 /* DataManager.swift in Sources */,
-				3DE9056E29561D070013BEA6 /* ModuleBuilderProtocol.swift in Sources */,
+				3DE9056E29561D070013BEA6 /* MainModuleBuilderProtocol.swift in Sources */,
 				3DE9A00F29435D7B00F8793C /* MenuDetailCard.swift in Sources */,
 				3DF0CB1029547F510093D5C4 /* ProfileMenuCell.swift in Sources */,
 				3DE9057229561EB20013BEA6 /* MainRouter.swift in Sources */,
@@ -502,7 +502,7 @@
 				3D9F41C1294F948200CC748E /* OrdersHistoryCell.swift in Sources */,
 				3DE9057029561E560013BEA6 /* MainModuleBuilder.swift in Sources */,
 				3D17A0C62948A1F000FDDC94 /* Cart.swift in Sources */,
-				3DE9056C29561C570013BEA6 /* RouterProtocol.swift in Sources */,
+				3DE9056C29561C570013BEA6 /* MainRouterProtocol.swift in Sources */,
 				3DE94C6529426B630068D2DD /* MenuDetailViewController.swift in Sources */,
 				3D9F41BD294F8FDF00CC748E /* OrdersHistoryViewController.swift in Sources */,
 				3DE905652954E2870013BEA6 /* Extension+UIFont.swift in Sources */,

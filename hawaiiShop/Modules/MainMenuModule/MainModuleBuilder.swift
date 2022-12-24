@@ -8,9 +8,23 @@
 import Foundation
 import UIKit
 
-class MainModuleBuilder: ModuleBuilderProtocol {
+
+//MARK: - MainModuleBuilder Protocol
+
+protocol MainModuleBuilderProtocol: ModuleBuilder {
+    func buildMainViewController(router: MainRouterProtocol) -> UIViewController
+    func buildMenuViewController(router: MainRouterProtocol) -> UIViewController
+    func buildMenuDetailViewController(router: MainRouterProtocol, menuDetailCard: MenuDetailCard) -> UIViewController
+}
+
+
+//MARK: MainModuleBuilderImpl
+
+class MainModuleBuilder: MainModuleBuilderProtocol {
     
-    func buildMainViewController(router: RouterProtocol) -> UIViewController {
+    var typeOfCurrentModule: ModulesType = .main
+    
+   public func buildMainViewController(router: MainRouterProtocol) -> UIViewController {
         let view        = MainViewController()
         let dataManager = DataManager()
         let presenter   = MainPresenter(view: view, dataManager: dataManager, router: router)
@@ -18,15 +32,15 @@ class MainModuleBuilder: ModuleBuilderProtocol {
         return view
     }
     
-    func buildMenuViewController(router: RouterProtocol, menuCardItems: [MenuCard]?) -> UIViewController {
+    public func buildMenuViewController(router: MainRouterProtocol) -> UIViewController {
         let view        = MenuViewController()
         let dataManager = DataManager()
-        let presenter   = MenuPresenter(view: view, dataManager: dataManager, router: router, menuCardItems: menuCardItems)
+        let presenter   = MenuPresenter(view: view, dataManager: dataManager, router: router)
         view.presenter  = presenter
         return view
     }
     
-    func buildMenuDetailViewController(router: RouterProtocol, menuDetailCard: MenuDetailCard) -> UIViewController {
+    func buildMenuDetailViewController(router: MainRouterProtocol, menuDetailCard: MenuDetailCard) -> UIViewController {
         let view       = MenuDetailViewController()
 //        let presenter  = MenuPresenter(view: view, menuCardItem: menuCardItem)
 //        view.presenter = presenter

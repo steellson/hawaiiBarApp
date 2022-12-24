@@ -8,6 +8,16 @@
 import Foundation
 import UIKit
 
+//MARK: - MenuViewProtocol
+
+protocol MenuViewProtocol: AnyObject {
+    func success()
+    func failure(error: Error)
+}
+
+
+//MARK: - MenuViewImpl
+
 class MenuViewController: UIViewController {
     
     var presenter: MenuPresenterProtocol!
@@ -77,11 +87,11 @@ class MenuViewController: UIViewController {
 extension MenuViewController: MenuViewProtocol {
     
     func success() {
-        //
+        menuCollectionView.reloadData()
     }
     
-    func error(error: Error) {
-        //
+    func failure(error: Error) {
+        print(error.localizedDescription)
     }
         
 }
