@@ -25,7 +25,7 @@ class MainMenuModuleBuilder: MainMenuModuleBuilderProtocol {
     var typeOfCurrentModule: ModulesType = .main
     
    public func buildMainViewController(router: MainMenuRouterProtocol) -> UIViewController {
-        let view        = MainViewController()
+        let view        = MainMenuView()
         let dataManager = DataManager()
         let presenter   = MainPresenter(view: view, dataManager: dataManager, router: router)
         view.presenter  = presenter
@@ -33,17 +33,17 @@ class MainMenuModuleBuilder: MainMenuModuleBuilderProtocol {
     }
     
     public func buildMenuViewController(router: MainMenuRouterProtocol) -> UIViewController {
-        let view        = MenuViewController()
+        let view        = MenuView()
         let dataManager = DataManager()
-        let presenter   = MenuPresenter(view: view, dataManager: dataManager, router: router)
+        let presenter   = MainPresenter(view: view, dataManager: dataManager, router: router)
         view.presenter  = presenter
         return view
     }
     
     func buildMenuDetailViewController(router: MainMenuRouterProtocol) -> UIViewController {
-        let view        = MenuDetailViewController()
+        let view        = MenuDetailView()
         let dataManager = DataManager()
-        let presenter   = MenuDetailPresenter(view: view, dataManager: dataManager, router: router)
+        let presenter   = MainPresenter(view: view, dataManager: dataManager, router: router)
         view.presenter  = presenter
         return view
     }
