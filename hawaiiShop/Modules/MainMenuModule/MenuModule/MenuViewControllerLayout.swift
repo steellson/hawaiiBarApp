@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension MenuView {
+extension MenuController {
     
     override func setupLayout() {
         super.setupLayout()

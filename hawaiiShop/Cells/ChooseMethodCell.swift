@@ -5,8 +5,10 @@
 //  Created by Andrey Pochepaev on 15.12.2022.
 //
 
-import Foundation
 import UIKit
+
+
+//MARK: - ChooseMethodCell
 
 final class ChooseMethodCell: UITableViewCell {
 
@@ -30,7 +32,7 @@ final class ChooseMethodCell: UITableViewCell {
 //MARK: - Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .default, reuseIdentifier: "deliveryMethodCell")
+        super.init(style: .default, reuseIdentifier: .chooseMethodCell)
         
         setupCell()
     }

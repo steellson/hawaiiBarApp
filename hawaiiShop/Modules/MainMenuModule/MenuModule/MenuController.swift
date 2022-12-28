@@ -5,13 +5,12 @@
 //  Created by Andrey Pochepaev on 06.12.2022.
 //
 
-import Foundation
 import UIKit
 
 
-//MARK: - MenuViewImpl
+//MARK: - MenuController
 
-class MenuView: MainView {
+final class MenuController: MainController {
     
     var presenter: MainMenuPresenterProtocol!
     
@@ -28,23 +27,6 @@ class MenuView: MainView {
     }
     
     
-//MARK: - Setup Controller
-    
-    private func setupCollectionView() {
-        let flowLayout                = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection    = .vertical
-        flowLayout.minimumLineSpacing = 3
-        
-        menuCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        menuCollectionView.backgroundColor = .specialWhite
-        menuCollectionView.dataSource      = self
-        menuCollectionView.delegate        = self
-        menuCollectionView.register(MenuCardCell.self, forCellWithReuseIdentifier: "menuCell")
-
-        view.addSubview(menuCollectionView)
-    }
-    
-    
 //MARK: - NavBarButtons Actions
     
     @objc private func leftBarButtonDidTapped() {
@@ -56,9 +38,9 @@ class MenuView: MainView {
     }
 }
 
-//MARK: - MenuMethods Extension
+//MARK: - MainController Extension
 
-extension MenuView {
+extension MenuController {
     
     override func setupView() {
         super.setupView()
@@ -82,12 +64,26 @@ extension MenuView {
                                          where: .rightSide,
                                          on: self)
     }
+    
+    override func setupCollectionView() {
+        super.setupCollectionView()
+        
+        let layout = UICollectionViewFlowLayout().buildFlowLayout(.vertical)
+        
+        menuCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        menuCollectionView.backgroundColor = .specialWhite
+        menuCollectionView.dataSource      = self
+        menuCollectionView.delegate        = self
+        menuCollectionView.register(MenuCardCell.self, forCellWithReuseIdentifier: .menuCardCell)
+
+        view.addSubview(menuCollectionView)
+    }
 }
 
 
 //MARK: - MenuViewProtocol Extension
 
-extension MenuView: MainViewProtocol {
+extension MenuController: MainViewProtocol {
     
     func success() {
         if let menuCollectionView = menuCollectionView {
@@ -104,7 +100,7 @@ extension MenuView: MainViewProtocol {
 
 //MARK: - Menu CV Data Source Extension
 
-extension MenuView: UICollectionViewDataSource {
+extension MenuController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -115,7 +111,7 @@ extension MenuView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: "menuCell", for: indexPath) as! MenuCardCell
+        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: .menuCardCell, for: indexPath) as! MenuCardCell
         guard let menuCardItems = presenter.menuCardItems else { return MenuCardCell() }
         guard let image = menuCardItems[indexPath.item].image?.image else { return MenuCardCell() }
         let nameLabel   = menuCardItems[indexPath.item].label
@@ -129,7 +125,7 @@ extension MenuView: UICollectionViewDataSource {
 
 //MARK: - Menu CV Delegate Extension
 
-extension MenuView: UICollectionViewDelegate {
+extension MenuController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter.cardDidTapped()
@@ -139,7 +135,7 @@ extension MenuView: UICollectionViewDelegate {
 
 //MARK: - FlowLayout Delegate Exetnsion
 
-extension MenuView: UICollectionViewDelegateFlowLayout {
+extension MenuController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (view.bounds.width / 2) - 20, height: 275)

@@ -5,8 +5,10 @@
 //  Created by Andrey Pochepaev on 22.12.2022.
 //
 
-import Foundation
 import UIKit
+
+
+//MARK: - ProfileMenuCell
 
 final class ProfileMenuCell: UICollectionViewCell {
     
@@ -14,14 +16,13 @@ final class ProfileMenuCell: UICollectionViewCell {
     
     var sectionLabel: UILabel = {
         let label            = UILabel()
-        label.font           = UIFont(name: "Quicksand-SemiBold", size: 18)
+        label.font           = .quickSBold18
         label.textAlignment  = .left
         return label
     }()
     
     let forwardView: UIImageView = {
-        let image        = UIImage(systemName: "chevron.forward")
-        let view         = UIImageView(image: image!)
+        let view         = UIImageView(image: .forwaidImage)
         view.contentMode = .scaleAspectFit
         view.tintColor   = .black
         return view

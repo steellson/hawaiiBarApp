@@ -7,6 +7,8 @@
 
 import UIKit
 
+//MARK: - MainMenuCardCell
+
 final class MainMenuCardCell: UICollectionViewCell {
     
     //MARK: UI Elements

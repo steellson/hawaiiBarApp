@@ -11,7 +11,7 @@ import Foundation
 //MARK: - OrderModuleBuilder Protocol
 
 protocol OrderModuleBuilderProtocol: ModuleBuilder {
-    func buildOrderViewController(router: OrderRouterProtocol) -> MainView
+    func buildOrderViewController(router: OrderRouterProtocol) -> MainController
 
 }
 
@@ -22,8 +22,8 @@ final class OrderModuleBuilder: OrderModuleBuilderProtocol {
     
     var typeOfCurrentModule: ModulesType = .order
     
-   public func buildOrderViewController(router: OrderRouterProtocol) -> MainView {
-        let view        = OrderView()
+   public func buildOrderViewController(router: OrderRouterProtocol) -> MainController {
+        let view        = OrderController()
         let dataManager = DataManager()
         let presenter   = OrderPresenter(view: view, dataManager: dataManager, router: router)
         view.presenter  = presenter

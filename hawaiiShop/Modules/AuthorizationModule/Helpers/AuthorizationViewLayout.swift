@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension AuthorizationView {
+extension AuthorizationController {
     
     override func setupLayout() {
         super.setupLayout()

@@ -5,8 +5,10 @@
 //  Created by Andrey Pochepaev on 13.12.2022.
 //
 
-import Foundation
 import UIKit
+
+
+//MARK: - CartCell
 
 final class CartCell: UICollectionViewCell {
     
@@ -22,7 +24,7 @@ final class CartCell: UICollectionViewCell {
     var nameLabel: UILabel = {
         let nameLabel            = UILabel()
          nameLabel.contentMode   = .left
-         nameLabel.font          = UIFont(name: "Quicksand-SemiBold", size: 18)
+         nameLabel.font          = .quickSBold18
          return nameLabel
     }()
     

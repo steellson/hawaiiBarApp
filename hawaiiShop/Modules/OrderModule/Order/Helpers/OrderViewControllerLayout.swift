@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension OrderView {
+extension OrderController {
     
     override func setupLayout() {
         super.setupLayout()

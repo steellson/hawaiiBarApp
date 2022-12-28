@@ -9,7 +9,7 @@ import UIKit
 
 //MARK: - CartViewController Layout
 
-extension CartView {
+extension CartController {
     
     override func setupLayout() {
             super.setupLayout()
@@ -84,7 +84,7 @@ extension CartView {
 //MARK: - CartEmptyViewController Layout
 
 
-extension CartEmptyView {
+extension CartEmptyController {
     
     override func setupLayout() {
             super.setupLayout()

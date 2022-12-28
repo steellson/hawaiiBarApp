@@ -11,8 +11,8 @@ import Foundation
 //MARK: - CartModuleBuilder Protocol
 
 protocol CartModuleBuilderProtocol: ModuleBuilder {
-    func buildCartViewController(router: CartRouterProtocol) -> MainView
-    func buildVEmptyCartViewController(router: CartRouterProtocol) -> MainView
+    func buildCartViewController(router: CartRouterProtocol) -> MainController
+    func buildVEmptyCartViewController(router: CartRouterProtocol) -> MainController
 }
 
 
@@ -25,16 +25,16 @@ final class CartModuleBuilder: CartModuleBuilderProtocol {
     
 //MARK: - Methods
     
-    func buildCartViewController(router: CartRouterProtocol) -> MainView {
-        let view        = CartView()
+    func buildCartViewController(router: CartRouterProtocol) -> MainController {
+        let view        = CartController()
         let dataManager = DataManager()
         let presenter   = CartPresenter(view: view, dataManager: dataManager, router: router)
         view.presenter  = presenter
         return view
     }
     
-    func buildVEmptyCartViewController(router: CartRouterProtocol) -> MainView {
-        let view        = CartEmptyView()
+    func buildVEmptyCartViewController(router: CartRouterProtocol) -> MainController {
+        let view        = CartEmptyController()
         let dataManager = DataManager()
         let presenter   = CartPresenter(view: view, dataManager: dataManager, router: router)
         view.presenter  = presenter

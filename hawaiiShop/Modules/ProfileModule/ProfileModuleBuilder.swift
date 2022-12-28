@@ -11,7 +11,7 @@ import Foundation
 //MARK: - ProfileModuleBuilder Protocol
 
 protocol ProfileModuleBuilderProtocol: ModuleBuilder {
-    func buildOrdersView(router: ProfileRouterProtocol) -> MainView
+    func buildOrdersView(router: ProfileRouterProtocol) -> MainController
 }
 
 
@@ -21,8 +21,8 @@ final class ProfileModuleBuilder: ProfileModuleBuilderProtocol {
     
     var typeOfCurrentModule: ModulesType = .profile
     
-    public func buildOrdersView(router: ProfileRouterProtocol) -> MainView {
-        let view        = ProfileView()
+    public func buildOrdersView(router: ProfileRouterProtocol) -> MainController {
+        let view        = ProfileController()
         let dataManager = DataManager()
         let presenter   = ProfilePresenter(view: view, dataManager: dataManager, router: router)
         view.presenter  = presenter

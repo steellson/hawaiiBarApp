@@ -8,9 +8,9 @@
 import UIKit
 
 
-//MARK: - CartEmptyViewImpl
+//MARK: - CartEmptyController
 
-final class CartEmptyView: MainView {
+final class CartEmptyController: MainController {
     
     var presenter: CartPresenterProtocol!
     
@@ -18,7 +18,7 @@ final class CartEmptyView: MainView {
     
     let imageView             = UIImageView(UIImage(named: "basket"), .scaleAspectFit, false)
     let titleLabel            = UILabel(.quickBold24, .black, .center, "No orders yet")
-    let subtitleLabel         = UILabel(.quickSBold18, UIColor.specialGray, .center, "Hit the orange button down\nbelow to Create an order")
+    let subtitleLabel         = UILabel(.quickSBold18, .specialGray, .center, "Hit the orange button down\nbelow to Create an order")
     let createAnOrderButton   = UIButton("Create an order")
     
     
@@ -38,9 +38,9 @@ final class CartEmptyView: MainView {
 }
 
 
-//MARK: - MainView Extension
+//MARK: - MainController Extension
 
-extension CartEmptyView {
+extension CartEmptyController {
     
     override func setupView() {
             super.setupView()
@@ -68,7 +68,7 @@ extension CartEmptyView {
 
 //MARK: - MainViewProtocol Extension
 
-extension CartEmptyView: MainViewProtocol {
+extension CartEmptyController: MainViewProtocol {
     
     func success() {
         //

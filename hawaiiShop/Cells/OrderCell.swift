@@ -5,8 +5,9 @@
 //  Created by Andrey Pochepaev on 21.12.2022.
 //
 
-import Foundation
 import UIKit
+
+//MARK: - OrderCell
 
 final class OrderCell: UICollectionViewCell {
     

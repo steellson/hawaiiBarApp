@@ -8,9 +8,9 @@
 import UIKit
 
 
-//MARK: - MainMenuViewImpl
+//MARK: - MainMenuController
 
-final class MainMenuView: MainView {
+final class MainMenuController: MainController {
     
     var presenter: MainMenuPresenterProtocol!
     
@@ -29,25 +29,7 @@ final class MainMenuView: MainView {
     }
     
     
-//MARK: - Setup Controller
-    
-    private func setupCollectionView() {
-        let flowLayout                = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection    = .vertical
-        flowLayout.minimumLineSpacing = 3
-        
-        cardsCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        cardsCollectionView.backgroundColor = UIColor.specialWhite
-        cardsCollectionView.dataSource      = self
-        cardsCollectionView.delegate        = self
-        cardsCollectionView.showsVerticalScrollIndicator = false
-        cardsCollectionView.register(MainMenuCardCell.self, forCellWithReuseIdentifier: "cardCell")
-        
-        view.addSubview(cardsCollectionView)
-    }
-    
-    
-    //MARK: - NavBarButtons Actions
+//MARK: - NavBarButtons Actions
     
     @objc private func leftBarButtonDidTapped() {
         print("Bar Button Did Tapped")
@@ -59,9 +41,9 @@ final class MainMenuView: MainView {
 }
 
 
-//MARK: - MainMenuView Extension
+//MARK: - MainController Extension
 
-extension MainMenuView {
+extension MainMenuController {
     
     override func setupView() {
         super.setupView()
@@ -88,12 +70,27 @@ extension MainMenuView {
                                          where: .rightSide,
                                          on: self)
     }
+    
+    override func setupCollectionView() {
+        super.setupCollectionView()
+        
+        let flowLayout                      = UICollectionViewFlowLayout().buildFlowLayout(.vertical)
+
+        cardsCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        cardsCollectionView.backgroundColor = .specialWhite
+        cardsCollectionView.dataSource      = self
+        cardsCollectionView.delegate        = self
+        cardsCollectionView.showsVerticalScrollIndicator = false
+        cardsCollectionView.register(MainMenuCardCell.self, forCellWithReuseIdentifier: .mainMenuCardCell)
+        
+        view.addSubview(cardsCollectionView)
+    }
 }
 
 
 //MARK: - MainMenuViewProtocol Extension
 
-extension MainMenuView: MainViewProtocol {
+extension MainMenuController: MainViewProtocol {
     
     func success() {
         cardsCollectionView.reloadData()
@@ -107,7 +104,7 @@ extension MainMenuView: MainViewProtocol {
 
 //MARK: - Main Menu CV Data Source Extension
 
-extension MainMenuView: UICollectionViewDataSource {
+extension MainMenuController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -118,7 +115,7 @@ extension MainMenuView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! MainMenuCardCell
+        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: .mainMenuCardCell, for: indexPath) as! MainMenuCardCell
         guard let image = presenter.mainMenuCards?[indexPath.item].image?.image else { return MainMenuCardCell() }
         guard let label = presenter.mainMenuCards?[indexPath.item].label else { return  MainMenuCardCell() }
         cell.configureCell(with: image, and: label)
@@ -128,7 +125,7 @@ extension MainMenuView: UICollectionViewDataSource {
 
 //MARK: Main Menu CV Delegate Extension
 
-extension MainMenuView: UICollectionViewDelegate {
+extension MainMenuController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         presenter.cardDidTapped()
     }
@@ -137,7 +134,7 @@ extension MainMenuView: UICollectionViewDelegate {
 
 //MARK: - FlowLayout Delegate Extension
 
-extension MainMenuView: UICollectionViewDelegateFlowLayout {
+extension MainMenuController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (view.bounds.width / 2) - 20, height: 210)

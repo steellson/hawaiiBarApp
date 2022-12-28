@@ -7,17 +7,17 @@
 
 import UIKit
 
-//MARK: - OrderHistoryEmptyViewImpl
+//MARK: - OrderHistoryEmptyController
 
-final class OrdersHistoryEmptyView: MainView {
+final class OrdersHistoryEmptyController: MainController {
     
     var presenter: OrdersHistoryPresenter!
     
     //MARK: - UI Elements
     
-    let imageView             = UIImageView(UIImage(named: "search"), .scaleAspectFit, false)
+    let imageView             = UIImageView(.searchImage, .scaleAspectFit, false)
     let titleLabel            = UILabel(.quickBold24, .black, .center, "No history yet")
-    let subtitleLabel         = UILabel(.quickSBold18, UIColor.specialGray, .center, "Hit the orange button down\nbelow to Create an order")
+    let subtitleLabel         = UILabel(.quickSBold18, .specialGray, .center, "Hit the orange button down\nbelow to Create an order")
     let createAnOrderButton   = UIButton("Create an order")
     
     
@@ -38,9 +38,9 @@ final class OrdersHistoryEmptyView: MainView {
 }
 
 
-//MARK: - MainView Extension
+//MARK: - MainController Extension
 
-extension OrdersHistoryEmptyView {
+extension OrdersHistoryEmptyController {
     
     override func setupView() {
         super.setupView()
@@ -66,7 +66,7 @@ extension OrdersHistoryEmptyView {
 
 //MARK: - MainViewProtocol Extension
 
-extension OrdersHistoryEmptyView: MainViewProtocol {
+extension OrdersHistoryEmptyController: MainViewProtocol {
     func success() {
         //
     }

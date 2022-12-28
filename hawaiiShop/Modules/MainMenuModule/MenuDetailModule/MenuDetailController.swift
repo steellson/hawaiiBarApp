@@ -8,9 +8,9 @@
 import UIKit
 
 
-//MARK: MenuDetailViewImpl
+//MARK: MenuDetailController
 
-class MenuDetailView: MainView {
+final class MenuDetailController: MainController {
     
     var presenter: MainMenuPresenterProtocol!
     
@@ -37,12 +37,17 @@ class MenuDetailView: MainView {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        setupFrame()
+    }
+    
+//MARK: Setup Controller
+    
+    private func setupFrame() {
         view.frame = CGRect(x: 0, y: UIScreen.main.bounds.height / 6 * 1.5,
                             width: self.view.bounds.width, height: UIScreen.main.bounds.height / 5 * 5)
         view.layer.cornerRadius  = 40
         view.layer.masksToBounds = true
     }
-    
     
     
     //MARK: - AddButton Action
@@ -53,9 +58,9 @@ class MenuDetailView: MainView {
 }
 
 
-//MARK: - MainMenuView Extension
+//MARK: - MainController Extension
 
-extension MenuDetailView {
+extension MenuDetailController {
     
     override func setupView() {
         super.setupView()
@@ -78,7 +83,7 @@ extension MenuDetailView {
 
 //MARK: - MainViewProtocol Extension
 
-extension MenuDetailView: MainViewProtocol {
+extension MenuDetailController: MainViewProtocol {
     
     func success() {
         DispatchQueue.main.async { [weak self] in

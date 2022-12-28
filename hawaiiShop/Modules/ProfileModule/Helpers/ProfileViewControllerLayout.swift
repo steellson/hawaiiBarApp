@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-extension ProfileView {
+extension ProfileController {
     
     override func setupLayout() {
             super.setupLayout()

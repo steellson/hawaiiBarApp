@@ -8,9 +8,9 @@
 import UIKit
 
 
-//MARK: CartViewImpl
+//MARK: CartController
 
-final class CartView: MainView {
+final class CartController: MainController {
     
     var presenter: CartPresenterProtocol!
     
@@ -18,7 +18,7 @@ final class CartView: MainView {
     
     var cartCollectionView    : UICollectionView!
     let totalPriceTextLabel   = UILabel(.quickBold24, .black, .left, "Total price")
-    let priceMoneyLabel       = UILabel(.quickBold24, UIColor.specialOrange, .right, "52 $")
+    let priceMoneyLabel       = UILabel(.quickBold24, .specialOrange, .right, "52 $")
     let commentTextView       = UITextView().buildCartCommentTextView()
     let completeOrderButton   = UIButton("Complete order")
     
@@ -30,35 +30,18 @@ final class CartView: MainView {
         
     }
     
-    
-//MARK: - Setup Controller
-    
-    private func setupCollectionView() {
-        let flowLayout                    = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection        = .vertical
-        
-        cartCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        cartCollectionView.backgroundColor = .none
-        cartCollectionView.dataSource      = self
-        cartCollectionView.delegate        = self
-        cartCollectionView.register(CartCell.self, forCellWithReuseIdentifier: "cartCell")
 
-        view.addSubview(cartCollectionView)
-    }
-    
-    
-    //MARK: - NavBarButtons Actions
+//MARK: - NavBarButtons Actions
     
     @objc private func leftBarButtonDidTapped() {
-        print("Bar Button Did Tapped")
-    }
 
+    }
 }
 
 
-//MARK: - MainView Extension
+//MARK: - MainController Extension
 
-extension CartView {
+extension CartController {
     
     override func setupView() {
         super.setupView()
@@ -82,12 +65,26 @@ extension CartView {
                                              where: .leftSide,
                                              on: self)
     }
+    
+    override func setupCollectionView() {
+        super.setupCollectionView()
+        
+        let layout = UICollectionViewFlowLayout().buildFlowLayout(.vertical)
+        
+        cartCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cartCollectionView.backgroundColor = .none
+        cartCollectionView.dataSource      = self
+        cartCollectionView.delegate        = self
+        cartCollectionView.register(CartCell.self, forCellWithReuseIdentifier: .cartCell)
+
+        view.addSubview(cartCollectionView)
+    }
 }
 
 
 //MARK: - CartViewProtocol Extension
 
-extension CartView: MainViewProtocol {
+extension CartController: MainViewProtocol {
     
     func success() {
 
@@ -101,7 +98,7 @@ extension CartView: MainViewProtocol {
 
 //MARK: - Data Source Extension
 
-extension CartView: UICollectionViewDataSource {
+extension CartController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.cartItems?.count ?? 1
@@ -110,7 +107,7 @@ extension CartView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cartItems = presenter.cartItems else { return CartCell() }
-        let cell            = collectionView.dequeueReusableCell(withReuseIdentifier: "cartCell", for: indexPath) as! CartCell
+        let cell            = collectionView.dequeueReusableCell(withReuseIdentifier: .cartCell, for: indexPath) as! CartCell
         guard let image     = cartItems[indexPath.item].imageView?.image else { return CartCell() }
         let nameLabel       = cartItems[indexPath.item].nameLabel
         let priceLabel      = cartItems[indexPath.item].priceLabel
@@ -124,7 +121,7 @@ extension CartView: UICollectionViewDataSource {
 
 //MARK: - FlowLayout Delegate Extension
 
-extension CartView: UICollectionViewDelegateFlowLayout {
+extension CartController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width - 30, height: 85)

@@ -7,9 +7,9 @@
 
 import UIKit
 
-//MARK: - OrdersHistoryViewImpl
+//MARK: - OrdersHistoryController
 
-final class OrdersHistoryView: MainView {
+final class OrdersHistoryController: MainController {
     
     var presenter: OrdersHistoryPresenterProtocol!
     
@@ -26,25 +26,8 @@ final class OrdersHistoryView: MainView {
         setupCollectionView()
     }
     
-    
-//MARK: - Setup Controller
-    
-    private func setupCollectionView() {
-        let flowLayout             = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .vertical
-        
-        ordersCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        ordersCollectionView.backgroundColor = .none
-        ordersCollectionView.dataSource      = self
-        ordersCollectionView.delegate        = self
-        ordersCollectionView.register(OrdersHistoryCell.self, forCellWithReuseIdentifier: "historyCell")
 
-        view.addSubview(ordersCollectionView)
-    }
-    
-   
-    
-    //MARK: - NavBarButtons Actions
+//MARK: - NavBarButtons Actions
     
     @objc private func leftBarButtonDidTapped() {
 
@@ -53,9 +36,9 @@ final class OrdersHistoryView: MainView {
 }
 
 
-//MARK: MainView Extension
+//MARK: MainController Extension
 
-extension OrdersHistoryView {
+extension OrdersHistoryController {
     
     override func setupNavBar() {
         super.setupNavBar()
@@ -68,12 +51,26 @@ extension OrdersHistoryView {
                                              where: .leftSide,
                                              on: self)
     }
+    
+    override func setupCollectionView() {
+        super.setupCollectionView()
+        
+        let layout = UICollectionViewFlowLayout().buildFlowLayout(.vertical)
+        
+        ordersCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        ordersCollectionView.backgroundColor = .none
+        ordersCollectionView.dataSource      = self
+        ordersCollectionView.delegate        = self
+        ordersCollectionView.register(OrdersHistoryCell.self, forCellWithReuseIdentifier: .ordersHistoryCell)
+
+        view.addSubview(ordersCollectionView)
+    }
 }
 
 
 //MARK: - MainViewProtocol Extension
 
-extension OrdersHistoryView: MainViewProtocol {
+extension OrdersHistoryController: MainViewProtocol {
     
     func success() {
         //
@@ -89,14 +86,14 @@ extension OrdersHistoryView: MainViewProtocol {
 
 //MARK: - OrdersCollectionView DataSource Extension
 
-extension OrdersHistoryView: UICollectionViewDataSource {
+extension OrdersHistoryController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.ordersData?.count ?? 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let orderCell             = collectionView.dequeueReusableCell(withReuseIdentifier: "historyCell", for: indexPath) as! OrdersHistoryCell
+        let orderCell             = collectionView.dequeueReusableCell(withReuseIdentifier: .ordersHistoryCell, for: indexPath) as! OrdersHistoryCell
         guard let ordersData      = presenter.ordersData, !ordersData.isEmpty else { return orderCell }
         guard let idLabelText     = presenter.ordersData?[indexPath.item].id else { return orderCell }
         guard let statusLabelText = presenter.ordersData?[indexPath.item].status else { return orderCell }
@@ -114,7 +111,7 @@ extension OrdersHistoryView: UICollectionViewDataSource {
 
 //MARK: - OrdersCollectionView FlowLayoutDelegate Extension
 
-extension OrdersHistoryView: UICollectionViewDelegateFlowLayout {
+extension OrdersHistoryController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width - 30, height: 125)

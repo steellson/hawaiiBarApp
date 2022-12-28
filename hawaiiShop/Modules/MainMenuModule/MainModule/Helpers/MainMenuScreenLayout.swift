@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension MainMenuView {
+extension MainMenuController {
     
     override func setupLayout() {
         super.setupLayout()

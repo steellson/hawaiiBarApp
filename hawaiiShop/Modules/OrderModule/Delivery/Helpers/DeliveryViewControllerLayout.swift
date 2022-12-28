@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension DeliveryView {
+extension DeliveryController {
     
     override func setupLayout() {
         super.setupLayout()

@@ -11,7 +11,7 @@ import Foundation
 //MARK: - OrdersHistoryModuleBuilder Protocol
 
 protocol OrdersHistoryModuleBuilderProtocol: ModuleBuilder {
-    func buildOrdersHistoryViewController(router: OrdersHistoryRouterProtocol) -> MainView
+    func buildOrdersHistoryViewController(router: OrdersHistoryRouterProtocol) -> MainController
 
 }
 
@@ -22,8 +22,8 @@ final class OrdersHistoryModuleBuilder: OrdersHistoryModuleBuilderProtocol {
     
     var typeOfCurrentModule: ModulesType = .ordersHistory
     
-   public func buildOrdersHistoryViewController(router: OrdersHistoryRouterProtocol) -> MainView {
-        let view        = OrdersHistoryView()
+   public func buildOrdersHistoryViewController(router: OrdersHistoryRouterProtocol) -> MainController {
+        let view        = OrdersHistoryController()
         let dataManager = DataManager()
         let presenter   = OrdersHistoryPresenter(view: view, dataManager: dataManager, router: router)
         view.presenter  = presenter

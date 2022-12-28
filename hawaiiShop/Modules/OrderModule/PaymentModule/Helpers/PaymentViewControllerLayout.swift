@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension PaymentView {
+extension PaymentController {
     
     override func setupLayout() {
         super.setupLayout()

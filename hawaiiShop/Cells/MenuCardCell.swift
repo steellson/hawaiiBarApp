@@ -5,8 +5,10 @@
 //  Created by Andrey Pochepaev on 06.12.2022.
 //
 
-import Foundation
 import UIKit
+
+
+//MARK: - MenuCardCell
 
 final class MenuCardCell: UICollectionViewCell {
     

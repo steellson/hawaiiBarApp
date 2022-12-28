@@ -7,9 +7,9 @@
 
 import UIKit
 
-//MARK: AuthorizationViewImpl
+//MARK: AuthorizationController
 
-final class AuthorizationView: MainView {
+final class AuthorizationController: MainController {
     
     var presenter: AuthorizationPresenterProtocol!
     
@@ -24,7 +24,7 @@ final class AuthorizationView: MainView {
         segment.backgroundColor = .white
         segment.isMomentary     = false
         segment.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.quickSBold18,
-                                        NSAttributedString.Key.foregroundColor: UIColor.specialOrange], for: .normal)
+                                        NSAttributedString.Key.foregroundColor: UIColor.specialOrange.cgColor], for: .normal)
         return segment
     }()
     
@@ -45,9 +45,9 @@ final class AuthorizationView: MainView {
 }
 
 
-//MARK: MainView Extension
+//MARK: MainController Extension
 
-extension AuthorizationView {
+extension AuthorizationController {
     
     override func setupView() {
         super.setupView()
@@ -66,7 +66,7 @@ extension AuthorizationView {
 
 //MARK: MainViewProtocol Extension
 
-extension AuthorizationView: MainViewProtocol {
+extension AuthorizationController: MainViewProtocol {
     
     func success() {
         //

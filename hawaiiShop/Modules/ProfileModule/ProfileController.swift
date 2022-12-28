@@ -8,9 +8,9 @@
 import UIKit
 
 
-//MARK: - ProfileViewImpl
+//MARK: - ProfileController
 
-final class ProfileView: MainView {
+final class ProfileController: MainController {
     
     var presenter: ProfilePresenterProtocol!
     
@@ -31,22 +31,7 @@ final class ProfileView: MainView {
     }
     
     
-//MARK: - Setup Controller
-
-    private func setupCollectionView() {
-        let flowLayout              = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection  = .vertical
-        
-        profileCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        profileCollectionView.backgroundColor = .none
-        profileCollectionView.dataSource      = self
-        profileCollectionView.delegate        = self
-        profileCollectionView.register(ProfileMenuCell.self, forCellWithReuseIdentifier: "profileMenuCell")
-        
-        view.addSubview(profileCollectionView)
-    }
-    
-    //MARK: - NavBarButtons Actions
+//MARK: - NavBarButtons Actions
     
     @objc private func leftBarButtonDidTapped() {
 
@@ -54,9 +39,9 @@ final class ProfileView: MainView {
 }
 
 
-//MARK: - MainView Extension
+//MARK: - MainController Extension
 
-extension ProfileView {
+extension ProfileController {
     
     override func setupView() {
         super.setupView()
@@ -80,12 +65,26 @@ extension ProfileView {
                                          where: .leftSide,
                                          on: self)
     }
+    
+    override func setupCollectionView() {
+        super.setupCollectionView()
+        
+        let layout = UICollectionViewFlowLayout().buildFlowLayout(.vertical)
+        
+        profileCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        profileCollectionView.backgroundColor = .none
+        profileCollectionView.dataSource      = self
+        profileCollectionView.delegate        = self
+        profileCollectionView.register(ProfileMenuCell.self, forCellWithReuseIdentifier: .profileMenuCell)
+        
+        view.addSubview(profileCollectionView)
+    }
 }
 
 
 //MARK: MainView Extension
 
-extension ProfileView: MainViewProtocol {
+extension ProfileController: MainViewProtocol {
     
     func success() {
         //
@@ -100,14 +99,14 @@ extension ProfileView: MainViewProtocol {
 
 //MARK: - ProfileCollectionView DS Extension
 
-extension ProfileView: UICollectionViewDataSource {
+extension ProfileController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter?.menuItems.count ?? 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell            = collectionView.dequeueReusableCell(withReuseIdentifier: "profileMenuCell", for: indexPath) as! ProfileMenuCell
+        let cell            = collectionView.dequeueReusableCell(withReuseIdentifier: .profileMenuCell, for: indexPath) as! ProfileMenuCell
         let sectionLabel    = presenter?.menuItems[indexPath.item] ?? "No data"
         cell.configureCell(sectionLabel: sectionLabel)
         return cell
@@ -120,7 +119,7 @@ extension ProfileView: UICollectionViewDataSource {
 
 //MARK: - ProfileCollectionViewFlowLayoutDelegte Extension
 
-extension ProfileView: UICollectionViewDelegateFlowLayout {
+extension ProfileController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width - 30, height: collectionView.frame.height / 4 - 25)

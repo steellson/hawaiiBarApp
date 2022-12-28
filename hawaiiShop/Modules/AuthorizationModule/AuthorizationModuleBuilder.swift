@@ -11,7 +11,7 @@ import Foundation
 //MARK: - AuthorizationModuleBuilder Protocol
 
 protocol AuthorizationModuleBuilderProtocol: ModuleBuilder {
-    func buildAuthorizationViewController(router: AuthorizationRouterProtocol) -> MainView
+    func buildAuthorizationViewController(router: AuthorizationRouterProtocol) -> MainController
     
 }
 
@@ -22,8 +22,8 @@ final class AuthorizationModuleBuilder: AuthorizationModuleBuilderProtocol {
     
     var typeOfCurrentModule: ModulesType = .authorization
     
-   public func buildAuthorizationViewController(router: AuthorizationRouterProtocol) -> MainView {
-        let view        = AuthorizationView()
+   public func buildAuthorizationViewController(router: AuthorizationRouterProtocol) -> MainController {
+        let view        = AuthorizationController()
         let dataManager = DataManager()
         let presenter   = AuthorizationPresenter(view: view, dataManager: dataManager, router: router)
         view.presenter  = presenter

@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension MenuDetailView {
+extension MenuDetailController {
     
     override func setupLayout() {
         super.setupLayout()

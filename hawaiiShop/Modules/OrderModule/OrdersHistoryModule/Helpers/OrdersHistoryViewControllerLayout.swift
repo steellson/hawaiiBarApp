@@ -10,7 +10,7 @@ import UIKit
 
 //MARK: - OrdersHistoryViewControllerLayout Extension //////////
 
-extension OrdersHistoryView {
+extension OrdersHistoryController {
     
     override func setupLayout() {
         super.setupLayout()
@@ -36,7 +36,7 @@ extension OrdersHistoryView {
 
 //MARK: - OrdersHistoryEmptyViewControllerLayout Extension //////////
 
-extension OrdersHistoryEmptyView {
+extension OrdersHistoryEmptyController {
     
     override func setupLayout() {
         super.setupLayout()

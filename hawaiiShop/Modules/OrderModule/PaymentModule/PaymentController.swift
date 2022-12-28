@@ -8,9 +8,9 @@
 import UIKit
 
 
-//MARK: - Payment View Controller
+//MARK: - PaymentController
 
-class PaymentView: MainView {
+final class PaymentController: MainController {
     
     var presenter: PaymentPresenterProtocol!
     
@@ -19,7 +19,7 @@ class PaymentView: MainView {
     let paymentMethodTextLabel    = UILabel(.quickBold20, .black, .left, "Payment method")
     var paymentMethodPickerTable  : UITableView!
     let totalPriceTextLabel       = UILabel(.quickBold24, .black, .left, "Total price")
-    let moneyPriceLabel           = UILabel(.quickBold24, UIColor.specialOrange, .right, "52 $")
+    let moneyPriceLabel           = UILabel(.quickBold24, .specialOrange, .right, "52 $")
     let completeButton            = UIButton("Complete payment")
     
     
@@ -43,7 +43,7 @@ class PaymentView: MainView {
         paymentMethodPickerTable.layer.cornerRadius   = 18
         paymentMethodPickerTable.delegate             = self
         paymentMethodPickerTable.dataSource           = self
-        paymentMethodPickerTable.register(ChooseMethodCell.self, forCellReuseIdentifier: "paymentMethodCell")
+        paymentMethodPickerTable.register(ChooseMethodCell.self, forCellReuseIdentifier: .paymentMethodCell)
 
         view.addSubview(paymentMethodPickerTable)
     }
@@ -57,9 +57,9 @@ class PaymentView: MainView {
     }
 }
 
-//MARK: - MainView Extension
+//MARK: - MainController Extension
 
-extension PaymentView {
+extension PaymentController {
     
     override func setupView() {
         super.setupView()
@@ -88,7 +88,7 @@ extension PaymentView {
 
 //MARK: - MainViewProtocol Extension
 
-extension PaymentView: MainViewProtocol {
+extension PaymentController: MainViewProtocol {
     
     func success() {
         //
@@ -102,14 +102,14 @@ extension PaymentView: MainViewProtocol {
 
 //MARK: - PaymentMethodPickerTable DS Extension
 
-extension PaymentView: UITableViewDataSource {
+extension PaymentController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return PaymentMethods.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let methodCell        = tableView.dequeueReusableCell(withIdentifier: "paymentMethodCell", for: indexPath) as! ChooseMethodCell
+        let methodCell        = tableView.dequeueReusableCell(withIdentifier: .paymentMethodCell, for: indexPath) as! ChooseMethodCell
         guard let pickerImage = UIImage(systemName: "circle") else { return methodCell }
         let text              = PaymentMethods.allCases[indexPath.row].rawValue
         methodCell.configureCell(image: pickerImage, text: text)
@@ -122,7 +122,7 @@ extension PaymentView: UITableViewDataSource {
 
 //MARK: - PaymentMethodPickerTable Delegate Extension
 
-extension PaymentView: UITableViewDelegate {
+extension PaymentController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let methodCell = tableView.cellForRow(at: indexPath) as? ChooseMethodCell else { return }

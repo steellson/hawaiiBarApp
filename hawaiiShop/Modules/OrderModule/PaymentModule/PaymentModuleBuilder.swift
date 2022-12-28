@@ -11,7 +11,7 @@ import Foundation
 //MARK: - PaymentModuleBuilder Protocol
 
 protocol PaymentModuleBuilderProtocol: ModuleBuilder {
-    func buildPaymentViewController(router: PaymentRouterProtocol) -> MainView
+    func buildPaymentViewController(router: PaymentRouterProtocol) -> MainController
   
 }
 
@@ -22,8 +22,8 @@ final class PaymentModuleBuilder: PaymentModuleBuilderProtocol {
     
     var typeOfCurrentModule: ModulesType = .payment
     
-   public func buildPaymentViewController(router: PaymentRouterProtocol) -> MainView {
-        let view        = PaymentView()
+   public func buildPaymentViewController(router: PaymentRouterProtocol) -> MainController {
+        let view        = PaymentController()
         let dataManager = DataManager()
         let presenter   = PaymentPresenter(view: view, dataManager: dataManager, router: router)
         view.presenter  = presenter

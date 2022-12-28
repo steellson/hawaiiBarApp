@@ -11,7 +11,7 @@ import Foundation
 //MARK: - DeliveryModuleBuilder Protocol
 
 protocol DeliveryModuleBuilderProtocol: ModuleBuilder {
-    func buildDeliveryViewController(router: DeliveryRouterProtocol) -> MainView
+    func buildDeliveryViewController(router: DeliveryRouterProtocol) -> MainController
    
 }
 
@@ -22,8 +22,8 @@ final class DeliveryModuleBuilder: DeliveryModuleBuilderProtocol {
     
     var typeOfCurrentModule: ModulesType = .delivery
     
-   public func buildDeliveryViewController(router: DeliveryRouterProtocol) -> MainView {
-        let view        = DeliveryView()
+   public func buildDeliveryViewController(router: DeliveryRouterProtocol) -> MainController {
+        let view        = DeliveryController()
         let dataManager = DataManager()
         let presenter   = DeliveryPresenter(view: view, dataManager: dataManager, router: router)
         view.presenter  = presenter

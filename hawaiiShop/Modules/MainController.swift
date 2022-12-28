@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  MainController.swift
 //  hawaiiShop
 //
 //  Created by Andrey Pochepaev on 27.12.2022.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-//MARK: - MainView
+//MARK: - MainController
 
-class MainView: UIViewController {
+class MainController: UIViewController {
     
     
     //MARK: - Lifecycle
@@ -19,14 +19,15 @@ class MainView: UIViewController {
         
         setupView()
         setupNavBar()
+        setupCollectionView()
         setupLayout()
     }
     
 }
 
-//MARK: MainView Methods Extension
+//MARK: MainController Methods Extension
 
-@objc extension MainView {
+@objc extension MainController {
     
      func setupView() {
          
@@ -35,6 +36,8 @@ class MainView: UIViewController {
     }
     
      func setupNavBar() { }
+    
+     func setupCollectionView() { }
 
      func setupLayout() { }
 }

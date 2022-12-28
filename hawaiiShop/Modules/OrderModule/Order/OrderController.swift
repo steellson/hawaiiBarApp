@@ -8,9 +8,9 @@
 import UIKit
 
 
-//MARK: - OrderViewImpl
+//MARK: - OrderController
 
-final class OrderView: MainView {
+final class OrderController: MainController {
     
     var presenter: OrderPresenter!
     
@@ -19,7 +19,7 @@ final class OrderView: MainView {
     var infoStack             : UIStackView!
     var orderCollectionView   : UICollectionView!
     let totalPriceTextLabel   = UILabel(.quickBold24, .black, .left, "Total price")
-    let moneyPriceleLabel     = UILabel(.quickBold28, UIColor.specialOrange, .right, "52 $")
+    let moneyPriceleLabel     = UILabel(.quickBold28, .specialOrange, .right, "52 $")
     let repeatOrderButton     = UIButton("Repeat order")
     
     
@@ -32,17 +32,6 @@ final class OrderView: MainView {
     
     
 //MARK: - Setup Controller
-    
-    private func setupController() {
-
-        view.addSubview(totalPriceTextLabel)
-        view.addSubview(moneyPriceleLabel)
-        view.addSubview(repeatOrderButton)
-        
-        setupInfoStack()
-        setupCollectionView()
-    }
-
     
     private func setupInfoStack() {
         infoStack              = UIStackView()
@@ -62,22 +51,7 @@ final class OrderView: MainView {
 
         view.addSubview(infoStack)
     }
-    
-    private func setupCollectionView() {
-        let flowLayout                      = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection          = .vertical
-        
-        orderCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        orderCollectionView.backgroundColor = .none
-        orderCollectionView.delegate        = self
-        orderCollectionView.dataSource      = self
-        orderCollectionView.register(OrderCell.self, forCellWithReuseIdentifier: "cellOrder")
-        
-        
-        view.addSubview(orderCollectionView)
-    }
-    
-        
+
     
     //MARK: - NavBarButtons Actions
     
@@ -88,14 +62,19 @@ final class OrderView: MainView {
 }
 
 
-//MARK: MainView Extension
+//MARK: MainController Extension
 
-extension OrderView {
+extension OrderController {
     
     override func setupView() {
         super.setupView()
         
-    
+        view.addSubview(totalPriceTextLabel)
+        view.addSubview(moneyPriceleLabel)
+        view.addSubview(repeatOrderButton)
+        
+        setupInfoStack()
+        setupCollectionView()
     }
     
     override func setupNavBar() {
@@ -109,12 +88,27 @@ extension OrderView {
                                              where: .leftSide,
                                              on: self)
     }
+    
+    override func setupCollectionView() {
+        super.setupCollectionView()
+        
+        let layout = UICollectionViewFlowLayout().buildFlowLayout(.vertical)
+        
+        orderCollectionView                 = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        orderCollectionView.backgroundColor = .none
+        orderCollectionView.delegate        = self
+        orderCollectionView.dataSource      = self
+        orderCollectionView.register(OrderCell.self, forCellWithReuseIdentifier: .orderCell)
+        
+        
+        view.addSubview(orderCollectionView)
+    }
 }
 
 
 //MARK: - MainViewProtocol Extension
 
-extension OrderView: MainViewProtocol {
+extension OrderController: MainViewProtocol {
     func success() {
         //
     }
@@ -130,14 +124,14 @@ extension OrderView: MainViewProtocol {
 
 //MARK: - OrdersCollectionView DS Extension
 
-extension OrderView: UICollectionViewDataSource {
+extension OrderController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.items?.count ?? 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: "cellOrder", for: indexPath) as! OrderCell
+        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: .orderCell, for: indexPath) as! OrderCell
         guard let image = presenter.items?[indexPath.item].image else { return cell }
         guard let title = presenter.items?[indexPath.item].title else { return cell }
         guard let counter  = presenter.items?[indexPath.item].count else { return cell }
@@ -152,7 +146,7 @@ extension OrderView: UICollectionViewDataSource {
 
 //MARK: - UICollectionViewFlowLayout Delegate Extension
 
-extension OrderView: UICollectionViewDelegateFlowLayout {
+extension OrderController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width - 30, height: 80)

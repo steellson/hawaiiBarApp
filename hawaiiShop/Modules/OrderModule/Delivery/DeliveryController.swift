@@ -8,9 +8,9 @@
 import UIKit
 
 
-//MARK: - DeliveryViewImpl
+//MARK: - DeliveryController
 
-class DeliveryView: MainView {
+final class DeliveryController: MainController {
     
     var presenter: DeliveryPresenterProtocol!
     
@@ -48,7 +48,7 @@ class DeliveryView: MainView {
         deliveryMethodPickerTable.layer.cornerRadius   = 18
         deliveryMethodPickerTable.delegate             = self
         deliveryMethodPickerTable.dataSource           = self
-        deliveryMethodPickerTable.register(ChooseMethodCell.self, forCellReuseIdentifier: "deliveryMethodCell")
+        deliveryMethodPickerTable.register(ChooseMethodCell.self, forCellReuseIdentifier: .deliveryMethodCell)
 
         view.addSubview(deliveryMethodPickerTable)
     }
@@ -63,9 +63,9 @@ class DeliveryView: MainView {
 }
 
 
-//MARK: - MainView Extension
+//MARK: - MainController Extension
 
-extension DeliveryView {
+extension DeliveryController {
     
     override func setupView() {
         super.setupView()
@@ -91,7 +91,7 @@ extension DeliveryView {
 
 //MARK: - MainViewProtocol Extension
 
-extension DeliveryView: MainViewProtocol {
+extension DeliveryController: MainViewProtocol {
     
     func success() {
         //
@@ -107,14 +107,14 @@ extension DeliveryView: MainViewProtocol {
 
 //MARK: - DeliveryMethodPickerTable DS Extension
 
-extension DeliveryView: UITableViewDataSource {
+extension DeliveryController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DeliveryType.allCases.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let methodCell        = tableView.dequeueReusableCell(withIdentifier: "deliveryMethodCell", for: indexPath) as! ChooseMethodCell
+        let methodCell        = tableView.dequeueReusableCell(withIdentifier: .deliveryMethodCell, for: indexPath) as! ChooseMethodCell
         guard let pickerImage = UIImage(systemName: "circle") else { return ChooseMethodCell() }
         let text              = deliveryTypes[indexPath.row].rawValue
         methodCell.configureCell(image: pickerImage, text: text)
@@ -127,7 +127,7 @@ extension DeliveryView: UITableViewDataSource {
 
 //MARK: - DeliveryMethodPickerTable Delegate Extension
 
-extension DeliveryView: UITableViewDelegate {
+extension DeliveryController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let methodCell = tableView.cellForRow(at: indexPath) as? ChooseMethodCell else { return }

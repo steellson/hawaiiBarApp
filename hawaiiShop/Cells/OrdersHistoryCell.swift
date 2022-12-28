@@ -5,8 +5,10 @@
 //  Created by Andrey Pochepaev on 18.12.2022.
 //
 
-import Foundation
 import UIKit
+
+
+//MARK: - OrdersHistoryCell
 
 final class OrdersHistoryCell: UICollectionViewCell {
     
@@ -14,14 +16,14 @@ final class OrdersHistoryCell: UICollectionViewCell {
     
     var idLabel: UILabel = {
         let label            = UILabel()
-        label.font           = UIFont(name: "Quicksand-SemiBold", size: 18)
+        label.font           = .quickSBold18
         label.textAlignment  = .left
         return label
     }()
     
     var statusLabel: UILabel = {
         let label                = UILabel()
-        label.font               = UIFont(name: "Quicksand-Regular", size: 12)
+        label.font               = .quickReg12
         label.textAlignment      = .center
         label.textColor          = .white
         label.contentMode        = .center
@@ -33,25 +35,23 @@ final class OrdersHistoryCell: UICollectionViewCell {
     
     var orderTimeLabel: UILabel = {
         let label            = UILabel()
-        label.font           = UIFont(name: "Quicksand-Regular", size: 16)
+        label.font           = .quickReg16
         label.textAlignment  = .left
         return label
     }()
     
     var imagesStackView: UIStackView = {
         let stack            = UIStackView()
-        stack.axis           = .horizontal
         stack.contentMode    = .scaleAspectFit
         stack.distribution   = .fillEqually
         stack.clipsToBounds  = false
         return stack
     }()
     
-    var moneyPriceLabel = UILabel(.quickBold28, UIColor.specialOrange, .right, "52 $")
+    var moneyPriceLabel = UILabel(.quickBold28, .specialOrange, .right, "52 $")
     
     let forwardView: UIImageView = {
-        let image        = UIImage(systemName: "chevron.forward")
-        let view         = UIImageView(image: image!)
+        let view         = UIImageView(image: .forwaidImage)
         view.contentMode = .scaleAspectFit
         view.tintColor   = .black
         return view
