@@ -5,20 +5,14 @@
 //  Created by Andrey Pochepaev on 18.12.2022.
 //
 
-import Foundation
 import UIKit
-
-//MARK: - Payment Methods Enum
-
-enum PaymentMethods: String, CaseIterable {
-    case Card
-    case Cash
-}
 
 
 //MARK: - Payment View Controller
 
-class PaymentViewController: UIViewController {
+class PaymentView: MainView {
+    
+    var presenter: PaymentPresenterProtocol!
     
     //MARK: - UI Elements
     
@@ -34,33 +28,10 @@ class PaymentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupController()
     }
     
     
 //MARK: - Setup Controller
-    
-    private func setupController() {
-        view.backgroundColor = .specialWhite
-        
-        view.addSubview(paymentMethodTextLabel)
-        view.addSubview(totalPriceTextLabel)
-        view.addSubview(moneyPriceLabel)
-        view.addSubview(completeButton)
-        
-        setupNavigationBar()
-        setupPaymentMethodPickerTable()
-        setupLayout()
-    }
-    
-    private func setupNavigationBar() {
-        let leftBarItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(menuBackBarButtonDidTapped))
-        navigationItem.leftBarButtonItem = leftBarItem
-        navigationItem.leftBarButtonItem?.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
-        
-        navigationItem.title = "Payment"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.quickBold20]
-    }
     
     private func setupPaymentMethodPickerTable() {
         paymentMethodPickerTable                      = UITableView(frame: .zero, style: .plain)
@@ -79,21 +50,59 @@ class PaymentViewController: UIViewController {
     
    
     
-    //MARK: - Buttons Action
+    //MARK: - NavBarButtons Actions
     
-    @objc private func menuBackBarButtonDidTapped() {
-        print("Bar Button Did Tapped")
+    @objc private func leftBarButtonDidTapped() {
+
+    }
+}
+
+//MARK: - MainView Extension
+
+extension PaymentView {
+    
+    override func setupView() {
+        super.setupView()
+        
+        view.addSubview(paymentMethodTextLabel)
+        view.addSubview(totalPriceTextLabel)
+        view.addSubview(moneyPriceLabel)
+        view.addSubview(completeButton)
+        
+        setupPaymentMethodPickerTable()
+    }
+    
+    override func setupNavBar() {
+        super.setupNavBar()
+        
+        guard let nc = self.navigationController else { return }
+        nc.navigationBar.setupNavigationBar(with: "Payment", on: self)
+        nc.navigationBar.addNavBarButton(with: .navBarBackImage!,
+                                         target: self,
+                                         action: #selector(leftBarButtonDidTapped),
+                                         where: .leftSide,
+                                         on: self)
     }
 }
 
 
-//MARK: - Protocol Extension
+//MARK: - MainViewProtocol Extension
 
+extension PaymentView: MainViewProtocol {
+    
+    func success() {
+        //
+    }
+    
+    func failure(error: Error) {
+        print(error.localizedDescription)
+    }
+}
 
 
 //MARK: - PaymentMethodPickerTable DS Extension
 
-extension PaymentViewController: UITableViewDataSource {
+extension PaymentView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return PaymentMethods.allCases.count
@@ -113,7 +122,7 @@ extension PaymentViewController: UITableViewDataSource {
 
 //MARK: - PaymentMethodPickerTable Delegate Extension
 
-extension PaymentViewController: UITableViewDelegate {
+extension PaymentView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let methodCell = tableView.cellForRow(at: indexPath) as? ChooseMethodCell else { return }

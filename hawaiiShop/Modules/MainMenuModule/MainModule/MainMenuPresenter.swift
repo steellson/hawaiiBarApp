@@ -1,5 +1,5 @@
 //
-//  MainPresenter.swift
+//  MainManuPresenter.swift
 //  hawaiiShop
 //
 //  Created by Andrey Pochepaev on 23.12.2022.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-//MARK: - MainPresenterProtocol
+//MARK: - MainMenuPresenterProtocol
 
-protocol MainPresenterProtocol: AnyObject {
+protocol MainMenuPresenterProtocol: AnyObject {
     init(view: MainViewProtocol, dataManager: DataManagerProtocol, router: MainMenuRouterProtocol)
     
     var mainMenuCards: [MainMenuCard]? { get set }
@@ -33,7 +33,7 @@ protocol MainPresenterProtocol: AnyObject {
 
 //MARK: - MainPresenter
 
-class MainPresenter: MainPresenterProtocol {
+final class MainMenuPresenter: MainMenuPresenterProtocol {
     
     //MARK: Variables
     

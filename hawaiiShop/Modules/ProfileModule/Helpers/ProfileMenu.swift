@@ -9,11 +9,4 @@ import Foundation
 
 struct ProfileMenu {
     
-    static var profileMenuItems = [
-        "Orders History",
-        "Settings",
-        "FAQ",
-        "Help"
-    ]
-    
 }

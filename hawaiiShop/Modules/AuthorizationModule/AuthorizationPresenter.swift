@@ -7,30 +7,36 @@
 
 import Foundation
 
-//MARK: - Protocols
-
-protocol AuthorizationViewProtocol: AnyObject {
-    func showCurrent()
-}
+//MARK: - AuthorizationPresenterProtocol
 
 protocol AuthorizationPresenterProtocol: AnyObject {
-    init(view: AuthorizationViewProtocol)
-    func presentCurrent()
+    init(view: MainViewProtocol, dataManager: DataManagerProtocol, router: AuthorizationRouterProtocol)
+    
 }
 
-//MARK: - Main Presenter
 
-class AuthorizationPresenter: AuthorizationPresenterProtocol {
+//MARK: - AuthorizationPresenterImpl
+
+final class AuthorizationPresenter: AuthorizationPresenterProtocol {
     
-    weak var view: AuthorizationViewProtocol!
+    //MARK: Variables
     
-    required init(view: AuthorizationViewProtocol) {
-        self.view = view
+    weak var view     : MainViewProtocol?
+    let router        : AuthorizationRouterProtocol?
+    let dataManager   : DataManagerProtocol?
+ 
+    
+    //MARK: - Init
+    
+    required init(view: MainViewProtocol, dataManager: DataManagerProtocol, router: AuthorizationRouterProtocol) {
+        self.view        = view
+        self.dataManager = dataManager
+        self.router      = router
+
     }
     
-    func presentCurrent() {
-        //
-    }
     
+    //MARK: - Methods
     
+   
 }

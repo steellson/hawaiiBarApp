@@ -5,12 +5,13 @@
 //  Created by Andrey Pochepaev on 18.12.2022.
 //
 
-import Foundation
 import UIKit
 
-extension PaymentViewController {
+extension PaymentView {
     
-    func setupLayout() {
+    override func setupLayout() {
+        super.setupLayout()
+        
         paymentMethodTextLabelLayout()
         paymentMethodPickerTableLayout()
         totalPriceTextLabelLayout()

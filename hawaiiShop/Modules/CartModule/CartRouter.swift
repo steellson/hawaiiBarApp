@@ -5,7 +5,6 @@
 //  Created by Andrey Pochepaev on 24.12.2022.
 //
 
-import Foundation
 import UIKit
 
 //MARK: - CartRouter Protocol
@@ -20,7 +19,7 @@ protocol CartRouterProtocol: Router {
 
 //MARK: - CartRouterImpl
 
-class CartRouter: CartRouterProtocol {
+final class CartRouter: CartRouterProtocol {
 
     //MARK: - Variables
     
@@ -56,15 +55,15 @@ extension CartRouterProtocol {
     
     fileprivate func initialCart() {
         if let navigationController = navigationController, let moduleBuilder = moduleBuilder {
-            let mainViewController  = moduleBuilder.buildCartViewController(router: self)
-            navigationController.viewControllers = [mainViewController]
+            let cartViewController  = moduleBuilder.buildCartViewController(router: self)
+            navigationController.viewControllers = [cartViewController]
         }
     }
     
     fileprivate func initialEmptyCart() {
         if let navigationController = navigationController, let moduleBuilder = moduleBuilder {
-            let mainViewController  = moduleBuilder.buildVEmptyCartViewController(router: self)
-            navigationController.viewControllers = [mainViewController]
+            let cartViewController  = moduleBuilder.buildVEmptyCartViewController(router: self)
+            navigationController.viewControllers = [cartViewController]
         }
     }
 }

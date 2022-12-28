@@ -5,20 +5,12 @@
 //  Created by Andrey Pochepaev on 13.12.2022.
 //
 
-import Foundation
 import UIKit
-
-//MARK: - CartView Protocol
-
-protocol CartViewProtocol: AnyObject {
-    func success()
-    func failure(error: Error)
-}
 
 
 //MARK: CartViewImpl
 
-class CartViewController: UIViewController {
+final class CartView: MainView {
     
     var presenter: CartPresenterProtocol!
     
@@ -36,28 +28,10 @@ class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupController()
     }
     
     
 //MARK: - Setup Controller
-    
-    private func setupController() {
-        view.backgroundColor = .specialWhite
-        
-        view.addSubview(totalPriceTextLabel)
-        view.addSubview(priceMoneyLabel)
-        view.addSubview(commentTextView)
-        view.addSubview(completeOrderButton)
-
-        setupNavigationBar()
-        setupCollectionView()
-        setupLayout()
-    }
-    
-    private func setupNavigationBar() {
-       // navigationController?.navigationBar.setupNavigationBar(self, "Basket")
-    }
     
     private func setupCollectionView() {
         let flowLayout                    = UICollectionViewFlowLayout()
@@ -73,38 +47,64 @@ class CartViewController: UIViewController {
     }
     
     
-    //MARK: - Buttons Action
+    //MARK: - NavBarButtons Actions
     
-    @objc private func menuBarButtonDidTapped() {
+    @objc private func leftBarButtonDidTapped() {
         print("Bar Button Did Tapped")
+    }
+
+}
+
+
+//MARK: - MainView Extension
+
+extension CartView {
+    
+    override func setupView() {
+        super.setupView()
+       
+        view.addSubview(totalPriceTextLabel)
+        view.addSubview(priceMoneyLabel)
+        view.addSubview(commentTextView)
+        view.addSubview(completeOrderButton)
+        
+        setupCollectionView()
+    }
+    
+    override func setupNavBar() {
+        super.setupNavBar()
+       
+        guard let nc = self.navigationController else { return }
+        nc.navigationBar.setupNavigationBar(with: "Basket", on: self)
+        nc.navigationBar.addNavBarButton(with: .navBarBackImage!,
+                                             target: self,
+                                             action: #selector(leftBarButtonDidTapped),
+                                             where: .leftSide,
+                                             on: self)
     }
 }
 
 
-//MARK: - Protocol Extension
+//MARK: - CartViewProtocol Extension
 
-extension CartViewController: CartViewProtocol {
+extension CartView: MainViewProtocol {
     
     func success() {
-        if let cartCollectionView = cartCollectionView {
-            cartCollectionView.reloadData()
-        }
+
     }
     
     func failure(error: Error) {
         print(error.localizedDescription)
     }
-    
-    
 }
 
 
 //MARK: - Data Source Extension
 
-extension CartViewController: UICollectionViewDataSource {
+extension CartView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.cartItems?.count ?? 0
+        return presenter.cartItems?.count ?? 1
         
     }
     
@@ -124,7 +124,7 @@ extension CartViewController: UICollectionViewDataSource {
 
 //MARK: - FlowLayout Delegate Extension
 
-extension CartViewController: UICollectionViewDelegateFlowLayout {
+extension CartView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width - 30, height: 85)

@@ -7,7 +7,9 @@
 
 import UIKit
 
-class AuthorizationViewController: UIViewController {
+//MARK: AuthorizationViewImpl
+
+final class AuthorizationView: MainView {
     
     var presenter: AuthorizationPresenterProtocol!
     
@@ -38,14 +40,17 @@ class AuthorizationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupController()
     }
     
+}
+
+
+//MARK: MainView Extension
+
+extension AuthorizationView {
     
-//MARK: - Setup Controller
-    
-    private func setupController() {
-        view.backgroundColor = .specialWhite
+    override func setupView() {
+        super.setupView()
         
         view.addSubview(authorizationLabel)
         view.addSubview(authView)
@@ -55,17 +60,21 @@ class AuthorizationViewController: UIViewController {
         view.addSubview(enterButton)
         view.addSubview(helpButton)
         view.addSubview(bottomOrangeView)
-        
-        setupLayout()
     }
     
 }
 
+//MARK: MainViewProtocol Extension
 
-//MARK: Protocol Extension
-
-extension AuthorizationViewController: AuthorizationViewProtocol {
-    func showCurrent() {
+extension AuthorizationView: MainViewProtocol {
+    
+    func success() {
         //
     }
+    
+    func failure(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+ 
 }

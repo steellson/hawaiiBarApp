@@ -12,7 +12,7 @@ import UIKit
 
 final class MainMenuView: MainView {
     
-    var presenter: MainPresenterProtocol!
+    var presenter: MainMenuPresenterProtocol!
     
     //MARK: - UI Elements
     
@@ -57,6 +57,7 @@ final class MainMenuView: MainView {
         presenter.cartDidTapped()
     }
 }
+
 
 //MARK: - MainMenuView Extension
 

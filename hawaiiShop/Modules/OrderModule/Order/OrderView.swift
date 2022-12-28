@@ -5,10 +5,14 @@
 //  Created by Andrey Pochepaev on 21.12.2022.
 //
 
-import Foundation
 import UIKit
 
-class OrderViewController: UIViewController {
+
+//MARK: - OrderViewImpl
+
+final class OrderView: MainView {
+    
+    var presenter: OrderPresenter!
     
     //MARK: - UI Elements
     
@@ -17,36 +21,28 @@ class OrderViewController: UIViewController {
     let totalPriceTextLabel   = UILabel(.quickBold24, .black, .left, "Total price")
     let moneyPriceleLabel     = UILabel(.quickBold28, UIColor.specialOrange, .right, "52 $")
     let repeatOrderButton     = UIButton("Repeat order")
-    var items                 = OrderData.items
+    
     
 //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupController()
     }
     
     
 //MARK: - Setup Controller
     
     private func setupController() {
-        view.backgroundColor = .specialWhite
 
         view.addSubview(totalPriceTextLabel)
         view.addSubview(moneyPriceleLabel)
         view.addSubview(repeatOrderButton)
         
-        setupNavigationBar()
         setupInfoStack()
         setupCollectionView()
-        setupLayout()
     }
-    
-    
-    private func setupNavigationBar() {
-       // navigationController?.navigationBar.setupNavigationBar(self, "Order #227165")
-    }
+
     
     private func setupInfoStack() {
         infoStack              = UIStackView()
@@ -57,7 +53,7 @@ class OrderViewController: UIViewController {
         let timeLabel     = UILabel(.quickReg16, .black, .left, "Order time: 2022.03.16 12:00")
         let addressLabel  = UILabel(.quickReg16, .black, .left, "Address: Berlin, Hauptbahnhof, Europaplatz 1.")
         let paymentLabel  = UILabel(.quickReg16, .black, .left, "Payment:" + " " + PaymentMethods.Card.rawValue)
-        let statusLabel   = UILabel(.quickReg16, .black, .left, "Status:" + " " + OrderStatus.Completed.rawValue)
+        let statusLabel   = UILabel(.quickReg16, .black, .left, "Status:" + " " + Order.OrderStatus.Completed.rawValue)
         
         infoStack.addArrangedSubview(timeLabel)
         infoStack.addArrangedSubview(addressLabel)
@@ -83,34 +79,69 @@ class OrderViewController: UIViewController {
     
         
     
-    //MARK: - Buttons Action
+    //MARK: - NavBarButtons Actions
     
-    @objc private func menuBarButtonDidTapped() {
-        print("Bar Button Did Tapped")
+    @objc private func leftBarButtonDidTapped() {
+
     }
     
 }
 
 
-//MARK: - Protocol Extension
+//MARK: MainView Extension
 
+extension OrderView {
+    
+    override func setupView() {
+        super.setupView()
+        
+    
+    }
+    
+    override func setupNavBar() {
+        super.setupNavBar()
+       
+        guard let nc = self.navigationController else { return }
+        nc.navigationBar.setupNavigationBar(with: "Order #274594", on: self)
+        nc.navigationBar.addNavBarButton(with: .navBarBackImage!,
+                                             target: self,
+                                             action: #selector(leftBarButtonDidTapped),
+                                             where: .leftSide,
+                                             on: self)
+    }
+}
+
+
+//MARK: - MainViewProtocol Extension
+
+extension OrderView: MainViewProtocol {
+    func success() {
+        //
+    }
+    
+    func failure(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    
+}
 
 
 
 //MARK: - OrdersCollectionView DS Extension
 
-extension OrderViewController: UICollectionViewDataSource {
+extension OrderView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return presenter.items?.count ?? 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: "cellOrder", for: indexPath) as! OrderCell
-        guard let image = items[indexPath.item].image else { return cell }
-        let title       = items[indexPath.item].title
-        let counter     = items[indexPath.item].count
-        let price       = items[indexPath.item].price
+        guard let image = presenter.items?[indexPath.item].image else { return cell }
+        guard let title = presenter.items?[indexPath.item].title else { return cell }
+        guard let counter  = presenter.items?[indexPath.item].count else { return cell }
+        guard let price = presenter.items?[indexPath.item].price else { return cell }
         cell.configureCell(image: image, nameLabel: title, counter: counter, priceLabel: price)
         return cell
     }
@@ -121,7 +152,7 @@ extension OrderViewController: UICollectionViewDataSource {
 
 //MARK: - UICollectionViewFlowLayout Delegate Extension
 
-extension OrderViewController: UICollectionViewDelegateFlowLayout {
+extension OrderView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width - 30, height: 80)

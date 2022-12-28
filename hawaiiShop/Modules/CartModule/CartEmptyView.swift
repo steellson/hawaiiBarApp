@@ -1,22 +1,23 @@
 //
-//  OrdersHistoryEmptyViewController.swift
+//  CartEmptyViewController.swift
 //  hawaiiShop
 //
-//  Created by Andrey Pochepaev on 19.12.2022.
+//  Created by Andrey Pochepaev on 13.12.2022.
 //
 
 import UIKit
 
-//MARK: - OrderHistoryEmptyViewImpl
 
-final class OrdersHistoryEmptyView: MainView {
+//MARK: - CartEmptyViewImpl
+
+final class CartEmptyView: MainView {
     
-    var presenter: OrdersHistoryPresenter!
+    var presenter: CartPresenterProtocol!
     
     //MARK: - UI Elements
     
-    let imageView             = UIImageView(UIImage(named: "search"), .scaleAspectFit, false)
-    let titleLabel            = UILabel(.quickBold24, .black, .center, "No history yet")
+    let imageView             = UIImageView(UIImage(named: "basket"), .scaleAspectFit, false)
+    let titleLabel            = UILabel(.quickBold24, .black, .center, "No orders yet")
     let subtitleLabel         = UILabel(.quickSBold18, UIColor.specialGray, .center, "Hit the orange button down\nbelow to Create an order")
     let createAnOrderButton   = UIButton("Create an order")
     
@@ -28,22 +29,21 @@ final class OrdersHistoryEmptyView: MainView {
         
     }
     
-
+    
     //MARK: - NavBarButtons Actions
     
     @objc private func leftBarButtonDidTapped() {
 
     }
-
 }
 
 
 //MARK: - MainView Extension
 
-extension OrdersHistoryEmptyView {
+extension CartEmptyView {
     
     override func setupView() {
-        super.setupView()
+            super.setupView()
         
         view.addSubview(imageView)
         view.addSubview(titleLabel)
@@ -53,20 +53,23 @@ extension OrdersHistoryEmptyView {
     
     override func setupNavBar() {
         super.setupNavBar()
-       
+        
         guard let nc = self.navigationController else { return }
-        nc.navigationBar.setupNavigationBar(with: "Orders History", on: self)
+        nc.navigationBar.setupNavigationBar(with: "Basket", on: self)
         nc.navigationBar.addNavBarButton(with: .navBarBackImage!,
                                              target: self,
                                              action: #selector(leftBarButtonDidTapped),
                                              where: .leftSide,
                                              on: self)
     }
+    
 }
+
 
 //MARK: - MainViewProtocol Extension
 
-extension OrdersHistoryEmptyView: MainViewProtocol {
+extension CartEmptyView: MainViewProtocol {
+    
     func success() {
         //
     }
@@ -74,7 +77,4 @@ extension OrdersHistoryEmptyView: MainViewProtocol {
     func failure(error: Error) {
         print(error.localizedDescription)
     }
-    
 }
-
-

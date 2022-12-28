@@ -13,7 +13,7 @@ import UIKit
 
 class MenuView: MainView {
     
-    var presenter: MainPresenterProtocol!
+    var presenter: MainMenuPresenterProtocol!
     
     //MARK: - UI Elements
     

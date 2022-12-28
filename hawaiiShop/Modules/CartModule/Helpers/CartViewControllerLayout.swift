@@ -5,14 +5,14 @@
 //  Created by Andrey Pochepaev on 13.12.2022.
 //
 
-import Foundation
 import UIKit
 
 //MARK: - CartViewController Layout
 
-extension CartViewController {
+extension CartView {
     
-    func setupLayout() {
+    override func setupLayout() {
+            super.setupLayout()
         
         cartCollectionViewLayout()
         totalPriceTextLabelLayout()
@@ -84,9 +84,10 @@ extension CartViewController {
 //MARK: - CartEmptyViewController Layout
 
 
-extension CartEmptyViewController {
+extension CartEmptyView {
     
-    func setupLayout() {
+    override func setupLayout() {
+            super.setupLayout()
         
         imageViewLayout()
         titleLabelLayout()

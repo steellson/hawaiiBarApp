@@ -5,12 +5,13 @@
 //  Created by Andrey Pochepaev on 15.12.2022.
 //
 
-import Foundation
 import UIKit
 
-extension DeliveryViewController {
+extension DeliveryView {
     
-    func setupLayout() {
+    override func setupLayout() {
+        super.setupLayout()
+        
         adressDetailTextLabelLayout()
         changeButtonLayout()
         addressViewLayout()

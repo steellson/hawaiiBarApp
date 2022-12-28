@@ -3,8 +3,9 @@
 //
 
 
-import Foundation
 import UIKit
+
+//MARK: - DeliveryAdressView
 
 final class DeliveryAddressView: UIView {
     
@@ -26,6 +27,7 @@ final class DeliveryAddressView: UIView {
                       phoneLabel    : "+9986314518")
     }
     
+//MARK: - Setup View
     
     func configureView(nameLabel: String, addressLabel: String, phoneLabel: String) {
         self.nameLabel.text    = nameLabel
@@ -34,9 +36,9 @@ final class DeliveryAddressView: UIView {
     }
     
     private func setupView() {
-        nameLabel.font    = UIFont(name: "Quicksand-SemiBold", size: 18)
-        addressLabel.font = UIFont(name: "Quicksand-Regular", size: 16)
-        phoneLabel.font   = UIFont(name: "Quicksand-Regular", size: 16)
+        nameLabel.font    = .quickSBold18
+        addressLabel.font = .quickReg16
+        phoneLabel.font   = .quickReg16
 
         backgroundColor    = .white
         layer.cornerRadius = 18

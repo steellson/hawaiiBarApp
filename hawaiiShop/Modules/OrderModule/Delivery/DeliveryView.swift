@@ -5,10 +5,14 @@
 //  Created by Andrey Pochepaev on 15.12.2022.
 //
 
-import Foundation
 import UIKit
 
-class DeliveryViewController: UIViewController {
+
+//MARK: - DeliveryViewImpl
+
+class DeliveryView: MainView {
+    
+    var presenter: DeliveryPresenterProtocol!
     
     //MARK: - UI Elements
     
@@ -18,7 +22,7 @@ class DeliveryViewController: UIViewController {
     let deliveryMethodLabel          = UILabel(.quickBold20, .black, .left, "Delivery method")
     var deliveryMethodPickerTable    : UITableView?
     let totalPriceTextLabel          = UILabel(.quickBold24, .black, .left, "Total price")
-    let moneyPriceLabel              = UILabel(.quickBold24, UIColor.specialOrange, .right, "52 $")
+    let moneyPriceLabel              = UILabel(.quickBold24, .specialOrange, .right, "52 $")
     let proceedToPaymentButton       = UIButton("Proceed to payment")
     
     var deliveryTypes                 = DeliveryType.allCases
@@ -29,32 +33,11 @@ class DeliveryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupController()
     }
     
     
 //MARK: - Setup Controller
-    
-    private func setupController() {
-        view.backgroundColor = .specialWhite
-        
-        view.addSubview(addressDetailTextLabel)
-        view.addSubview(changeButton)
-        view.addSubview(addressView)
-        view.addSubview(deliveryMethodLabel)
-        view.addSubview(totalPriceTextLabel)
-        view.addSubview(moneyPriceLabel)
-        view.addSubview(proceedToPaymentButton)
-        
-        setupNavigationBar()
-        setupDeliveryMethodPickerTable()
-        setupLayout()
-    }
-    
-    private func setupNavigationBar() {
-      //  navigationController?.navigationBar.setupNavigationBar(self, "Delivery")
-    }
-    
+
     private func setupDeliveryMethodPickerTable() {
         deliveryMethodPickerTable                      = UITableView(frame: .zero, style: .plain)
         
@@ -72,21 +55,59 @@ class DeliveryViewController: UIViewController {
     
    
     
-    //MARK: - Buttons Action
+    //MARK: - NavBarButtons Actions
     
-    @objc private func menuBarButtonDidTapped() {
-        print("Bar Button Did Tapped")
+    @objc private func leftBarButtonDidTapped() {
+
     }
 }
 
 
-//MARK: - Protocol Extension
+//MARK: - MainView Extension
 
+extension DeliveryView {
+    
+    override func setupView() {
+        super.setupView()
+        
+        view.addSubview(addressDetailTextLabel)
+        view.addSubview(changeButton)
+        view.addSubview(addressView)
+        view.addSubview(deliveryMethodLabel)
+        view.addSubview(totalPriceTextLabel)
+        view.addSubview(moneyPriceLabel)
+        view.addSubview(proceedToPaymentButton)
+        
+        setupDeliveryMethodPickerTable()
+    }
+    
+    override func setupNavBar() {
+        super.setupNavBar()
+        
+        
+    }
+}
+
+
+//MARK: - MainViewProtocol Extension
+
+extension DeliveryView: MainViewProtocol {
+    
+    func success() {
+        //
+    }
+    
+    func failure(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    
+}
 
 
 //MARK: - DeliveryMethodPickerTable DS Extension
 
-extension DeliveryViewController: UITableViewDataSource {
+extension DeliveryView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DeliveryType.allCases.count
@@ -106,7 +127,7 @@ extension DeliveryViewController: UITableViewDataSource {
 
 //MARK: - DeliveryMethodPickerTable Delegate Extension
 
-extension DeliveryViewController: UITableViewDelegate {
+extension DeliveryView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let methodCell = tableView.cellForRow(at: indexPath) as? ChooseMethodCell else { return }

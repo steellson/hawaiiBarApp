@@ -20,8 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let router                  = MainMenuRouter(navigationController: navController, moduleBuilder: moduleBuilder)
         
         router.initialView()
-        window.rootViewController   = navController
         window.makeKeyAndVisible()
+        window.rootViewController   = navController
         self.window                 = window
     }
 

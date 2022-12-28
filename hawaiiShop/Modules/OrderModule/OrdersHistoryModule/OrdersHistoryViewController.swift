@@ -5,16 +5,17 @@
 //  Created by Andrey Pochepaev on 18.12.2022.
 //
 
-import Foundation
 import UIKit
 
-class OrdersHistoryViewController: UIViewController {
+//MARK: - OrdersHistoryViewImpl
+
+final class OrdersHistoryView: MainView {
+    
+    var presenter: OrdersHistoryPresenterProtocol!
     
     //MARK: - UI Elements
     
     var ordersCollectionView: UICollectionView!
-    
-    var ordersData          = OrdersHistoryData.items
     
     
 //MARK: - Lifecycle
@@ -22,27 +23,13 @@ class OrdersHistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupController()
+        setupCollectionView()
     }
-    
     
     
 //MARK: - Setup Controller
     
-    private func setupController() {
-        view.backgroundColor = .specialWhite
-        
-        
-        setupNavigationBar()
-        setupOrdersCollectionView()
-        setupLayout()
-    }
-    
-    private func setupNavigationBar() {
-       // navigationController?.navigationBar.setupNavigationBar(self, "Orders History")
-    }
-    
-    private func setupOrdersCollectionView() {
+    private func setupCollectionView() {
         let flowLayout             = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
         
@@ -57,37 +44,66 @@ class OrdersHistoryViewController: UIViewController {
     
    
     
-    //MARK: - Buttons Action
+    //MARK: - NavBarButtons Actions
     
-    @objc private func menuBarButtonDidTapped() {
-        print("Bar Button Did Tapped")
+    @objc private func leftBarButtonDidTapped() {
+
     }
 
 }
 
 
-//MARK: - Protocol Extension
+//MARK: MainView Extension
+
+extension OrdersHistoryView {
+    
+    override func setupNavBar() {
+        super.setupNavBar()
+       
+        guard let nc = self.navigationController else { return }
+        nc.navigationBar.setupNavigationBar(with: "Orders History", on: self)
+        nc.navigationBar.addNavBarButton(with: .navBarBackImage!,
+                                             target: self,
+                                             action: #selector(leftBarButtonDidTapped),
+                                             where: .leftSide,
+                                             on: self)
+    }
+}
 
 
+//MARK: - MainViewProtocol Extension
 
+extension OrdersHistoryView: MainViewProtocol {
+    
+    func success() {
+        //
+    }
+    
+    func failure(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    
+}
 
 
 //MARK: - OrdersCollectionView DataSource Extension
 
-extension OrdersHistoryViewController: UICollectionViewDataSource {
+extension OrdersHistoryView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ordersData.count
+        return presenter.ordersData?.count ?? 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let orderCell       = collectionView.dequeueReusableCell(withReuseIdentifier: "historyCell", for: indexPath) as! OrdersHistoryCell
-        let idLabelText     = ordersData[indexPath.item].id
-        let statusLabelText = ordersData[indexPath.item].status
-        let timeLabelText   = ordersData[indexPath.item].time
-        let image           = ordersData[indexPath.item].image
+        let orderCell             = collectionView.dequeueReusableCell(withReuseIdentifier: "historyCell", for: indexPath) as! OrdersHistoryCell
+        guard let ordersData      = presenter.ordersData, !ordersData.isEmpty else { return orderCell }
+        guard let idLabelText     = presenter.ordersData?[indexPath.item].id else { return orderCell }
+        guard let statusLabelText = presenter.ordersData?[indexPath.item].status else { return orderCell }
+        guard let timeLabelText   = presenter.ordersData?[indexPath.item].time else { return orderCell }
+        guard let image           = presenter.ordersData?[indexPath.item].image else { return orderCell }
         orderCell.configureCell(idLabel: idLabelText, statusLabel: statusLabelText.rawValue, timeLabel: timeLabelText)
-        for _ in 0..<ordersData.count {
+        for _ in 0..<presenter.ordersData!.count {
             orderCell.configureCelImageStackView(image: image)
         }
         return orderCell
@@ -96,10 +112,9 @@ extension OrdersHistoryViewController: UICollectionViewDataSource {
 }
 
 
-
 //MARK: - OrdersCollectionView FlowLayoutDelegate Extension
 
-extension OrdersHistoryViewController: UICollectionViewDelegateFlowLayout {
+extension OrdersHistoryView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width - 30, height: 125)

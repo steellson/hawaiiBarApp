@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 
 //MARK: - ModulesType Enum
@@ -16,6 +15,9 @@ enum ModulesType {
     case main
     case cart
     case order
+    case ordersHistory
+    case delivery
+    case payment
     case profile
 }
 

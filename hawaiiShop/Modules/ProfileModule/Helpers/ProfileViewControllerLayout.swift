@@ -9,9 +9,11 @@ import Foundation
 import UIKit
 
 
-extension ProfileViewController {
+extension ProfileView {
     
-    func setupLayout() {
+    override func setupLayout() {
+            super.setupLayout()
+        
         personalDetailsTextLabelLayout()
         changeButtonLayout()
         profileViewLayout()

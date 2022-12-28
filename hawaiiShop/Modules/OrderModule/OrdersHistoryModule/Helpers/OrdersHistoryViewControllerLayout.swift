@@ -5,16 +5,15 @@
 //  Created by Andrey Pochepaev on 18.12.2022.
 //
 
-import Foundation
 import UIKit
 
 
 //MARK: - OrdersHistoryViewControllerLayout Extension //////////
 
-
-extension OrdersHistoryViewController {
+extension OrdersHistoryView {
     
-    func setupLayout() {
+    override func setupLayout() {
+        super.setupLayout()
         
         ordersCollectionViewLayout()
     }
@@ -37,10 +36,10 @@ extension OrdersHistoryViewController {
 
 //MARK: - OrdersHistoryEmptyViewControllerLayout Extension //////////
 
-
-extension OrdersHistoryEmptyViewController {
+extension OrdersHistoryEmptyView {
     
-    func setupLayout() {
+    override func setupLayout() {
+        super.setupLayout()
         
         imageViewLayout()
         titleLabelLayout()

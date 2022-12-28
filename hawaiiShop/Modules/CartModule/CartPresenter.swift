@@ -7,23 +7,24 @@
 
 import Foundation
 
+
 //MARK: - CartPresenterProtocol
 
 protocol CartPresenterProtocol: AnyObject {
-    init(view: CartViewProtocol, dataManager: DataManagerProtocol, router: CartRouterProtocol)
+    init(view: MainViewProtocol, dataManager: DataManagerProtocol, router: CartRouterProtocol)
     var cartItems: [CartItem]? { get set }
     func getCartData()
     func cartButtonPressed()
 }
 
 
-//MARK: - CartPresenter
+//MARK: - CartPresenterImpl
 
-class CartPresenter: CartPresenterProtocol {
+final class CartPresenter: CartPresenterProtocol {
     
     //MARK: Variables
     
-    weak var view     : CartViewProtocol?
+    weak var view     : MainViewProtocol?
     let router        : CartRouterProtocol?
     let dataManager   : DataManagerProtocol?
     var cartItems     : [CartItem]?
@@ -31,7 +32,7 @@ class CartPresenter: CartPresenterProtocol {
     
     //MARK: - Init
     
-    required init(view: CartViewProtocol, dataManager: DataManagerProtocol, router: CartRouterProtocol) {
+    required init(view: MainViewProtocol, dataManager: DataManagerProtocol, router: CartRouterProtocol) {
         self.view        = view
         self.dataManager = dataManager
         self.router      = router

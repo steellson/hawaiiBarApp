@@ -8,9 +8,11 @@
 import Foundation
 import UIKit
 
-extension OrderViewController {
+extension OrderView {
     
-    func setupLayout() {
+    override func setupLayout() {
+        super.setupLayout()
+        
         infoStackLayout()
         orderCollectionViewLayout()
         repeatOrderButtonLayout()

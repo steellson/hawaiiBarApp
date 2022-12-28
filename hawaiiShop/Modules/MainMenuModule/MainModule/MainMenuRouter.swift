@@ -1,11 +1,10 @@
 //
-//  MainRouter.swift
+//  MaiMenuRouter.swift
 //  hawaiiShop
 //
 //  Created by Andrey Pochepaev on 23.12.2022.
 //
 
-import Foundation
 import UIKit
 
 //MARK: - MainRouter Protocol
@@ -24,7 +23,7 @@ protocol MainMenuRouterProtocol: Router {
 
 //MARK: - MainRouterImpl
 
-class MainMenuRouter: MainMenuRouterProtocol {
+final class MainMenuRouter: MainMenuRouterProtocol {
     
     //MARK: - Variables
     
