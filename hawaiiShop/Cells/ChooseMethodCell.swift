@@ -32,7 +32,7 @@ final class ChooseMethodCell: UITableViewCell {
 //MARK: - Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .default, reuseIdentifier: .chooseMethodCell)
+        super.init(style: .default, reuseIdentifier: Resources.Identifiers.chooseMethodCell.rawValue)
         
         setupCell()
     }

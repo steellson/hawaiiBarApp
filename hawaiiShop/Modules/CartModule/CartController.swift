@@ -75,7 +75,7 @@ extension CartController {
         cartCollectionView.backgroundColor = .none
         cartCollectionView.dataSource      = self
         cartCollectionView.delegate        = self
-        cartCollectionView.register(CartCell.self, forCellWithReuseIdentifier: .cartCell)
+        cartCollectionView.register(CartCell.self, forCellWithReuseIdentifier: Resources.Identifiers.cartCell.rawValue)
 
         view.addSubview(cartCollectionView)
     }
@@ -107,7 +107,8 @@ extension CartController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cartItems = presenter.cartItems else { return CartCell() }
-        let cell            = collectionView.dequeueReusableCell(withReuseIdentifier: .cartCell, for: indexPath) as! CartCell
+        let cell            = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.Identifiers.cartCell.rawValue,
+                                                                 for: indexPath) as! CartCell
         guard let image     = cartItems[indexPath.item].imageView?.image else { return CartCell() }
         let nameLabel       = cartItems[indexPath.item].nameLabel
         let priceLabel      = cartItems[indexPath.item].priceLabel

@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navController           = UINavigationController()
         let router                  = MainMenuRouter(navigationController: navController, moduleBuilder: moduleBuilder)
         
-        router.initialView()
+        router.showMenuDetailViewController()
         window.makeKeyAndVisible()
         window.rootViewController   = navController
         self.window                 = window

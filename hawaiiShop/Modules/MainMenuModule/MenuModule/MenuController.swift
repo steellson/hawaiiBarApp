@@ -74,7 +74,7 @@ extension MenuController {
         menuCollectionView.backgroundColor = .specialWhite
         menuCollectionView.dataSource      = self
         menuCollectionView.delegate        = self
-        menuCollectionView.register(MenuCardCell.self, forCellWithReuseIdentifier: .menuCardCell)
+        menuCollectionView.register(MenuCardCell.self, forCellWithReuseIdentifier: Resources.Identifiers.menuCardCell.rawValue)
 
         view.addSubview(menuCollectionView)
     }
@@ -111,7 +111,8 @@ extension MenuController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: .menuCardCell, for: indexPath) as! MenuCardCell
+        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.Identifiers.menuCardCell.rawValue,
+                                                             for: indexPath) as! MenuCardCell
         guard let menuCardItems = presenter.menuCardItems else { return MenuCardCell() }
         guard let image = menuCardItems[indexPath.item].image?.image else { return MenuCardCell() }
         let nameLabel   = menuCardItems[indexPath.item].label

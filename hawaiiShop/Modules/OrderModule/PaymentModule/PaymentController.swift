@@ -43,7 +43,7 @@ final class PaymentController: MainController {
         paymentMethodPickerTable.layer.cornerRadius   = 18
         paymentMethodPickerTable.delegate             = self
         paymentMethodPickerTable.dataSource           = self
-        paymentMethodPickerTable.register(ChooseMethodCell.self, forCellReuseIdentifier: .paymentMethodCell)
+        paymentMethodPickerTable.register(ChooseMethodCell.self, forCellReuseIdentifier: Resources.Identifiers.paymentMethodCell.rawValue)
 
         view.addSubview(paymentMethodPickerTable)
     }
@@ -109,7 +109,8 @@ extension PaymentController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let methodCell        = tableView.dequeueReusableCell(withIdentifier: .paymentMethodCell, for: indexPath) as! ChooseMethodCell
+        let methodCell        = tableView.dequeueReusableCell(withIdentifier: Resources.Identifiers.paymentMethodCell.rawValue,
+                                                              for: indexPath) as! ChooseMethodCell
         guard let pickerImage = UIImage(systemName: "circle") else { return methodCell }
         let text              = PaymentMethods.allCases[indexPath.row].rawValue
         methodCell.configureCell(image: pickerImage, text: text)

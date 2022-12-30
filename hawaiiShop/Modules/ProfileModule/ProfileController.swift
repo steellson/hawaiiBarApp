@@ -75,7 +75,7 @@ extension ProfileController {
         profileCollectionView.backgroundColor = .none
         profileCollectionView.dataSource      = self
         profileCollectionView.delegate        = self
-        profileCollectionView.register(ProfileMenuCell.self, forCellWithReuseIdentifier: .profileMenuCell)
+        profileCollectionView.register(ProfileMenuCell.self, forCellWithReuseIdentifier: Resources.Identifiers.profileMenuCell.rawValue)
         
         view.addSubview(profileCollectionView)
     }
@@ -106,7 +106,8 @@ extension ProfileController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell            = collectionView.dequeueReusableCell(withReuseIdentifier: .profileMenuCell, for: indexPath) as! ProfileMenuCell
+        let cell            = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.Identifiers.profileMenuCell.rawValue,
+                                                                 for: indexPath) as! ProfileMenuCell
         let sectionLabel    = presenter?.menuItems[indexPath.item] ?? "No data"
         cell.configureCell(sectionLabel: sectionLabel)
         return cell

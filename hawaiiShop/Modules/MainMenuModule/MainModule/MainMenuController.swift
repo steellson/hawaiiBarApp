@@ -81,7 +81,7 @@ extension MainMenuController {
         cardsCollectionView.dataSource      = self
         cardsCollectionView.delegate        = self
         cardsCollectionView.showsVerticalScrollIndicator = false
-        cardsCollectionView.register(MainMenuCardCell.self, forCellWithReuseIdentifier: .mainMenuCardCell)
+        cardsCollectionView.register(MainMenuCardCell.self, forCellWithReuseIdentifier: Resources.Identifiers.mainMenuCardCell.rawValue)
         
         view.addSubview(cardsCollectionView)
     }
@@ -115,10 +115,11 @@ extension MainMenuController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: .mainMenuCardCell, for: indexPath) as! MainMenuCardCell
-        guard let image = presenter.mainMenuCards?[indexPath.item].image?.image else { return MainMenuCardCell() }
-        guard let label = presenter.mainMenuCards?[indexPath.item].label else { return  MainMenuCardCell() }
-        cell.configureCell(with: image, and: label)
+        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.Identifiers.mainMenuCardCell.rawValue,
+                                                             for: indexPath) as! MainMenuCardCell
+//        guard let image = presenter.mainMenuCards?[indexPath.item].image?.image else { fatalError(); return MainMenuCardCell() } //
+//        guard let label = presenter.mainMenuCards?[indexPath.item].label else { fatalError(); return  MainMenuCardCell() } //
+//        cell.configureCell(with: image, and: label)
         return cell
     }
 }

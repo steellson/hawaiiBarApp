@@ -48,7 +48,7 @@ final class DeliveryController: MainController {
         deliveryMethodPickerTable.layer.cornerRadius   = 18
         deliveryMethodPickerTable.delegate             = self
         deliveryMethodPickerTable.dataSource           = self
-        deliveryMethodPickerTable.register(ChooseMethodCell.self, forCellReuseIdentifier: .deliveryMethodCell)
+        deliveryMethodPickerTable.register(ChooseMethodCell.self, forCellReuseIdentifier: Resources.Identifiers.deliveryMethodCell.rawValue)
 
         view.addSubview(deliveryMethodPickerTable)
     }
@@ -114,7 +114,8 @@ extension DeliveryController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let methodCell        = tableView.dequeueReusableCell(withIdentifier: .deliveryMethodCell, for: indexPath) as! ChooseMethodCell
+        let methodCell        = tableView.dequeueReusableCell(withIdentifier: Resources.Identifiers.deliveryMethodCell.rawValue,
+                                                              for: indexPath) as! ChooseMethodCell
         guard let pickerImage = UIImage(systemName: "circle") else { return ChooseMethodCell() }
         let text              = deliveryTypes[indexPath.row].rawValue
         methodCell.configureCell(image: pickerImage, text: text)

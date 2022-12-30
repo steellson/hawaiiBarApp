@@ -98,7 +98,7 @@ extension OrderController {
         orderCollectionView.backgroundColor = .none
         orderCollectionView.delegate        = self
         orderCollectionView.dataSource      = self
-        orderCollectionView.register(OrderCell.self, forCellWithReuseIdentifier: .orderCell)
+        orderCollectionView.register(OrderCell.self, forCellWithReuseIdentifier: Resources.Identifiers.orderCell.rawValue)
         
         
         view.addSubview(orderCollectionView)
@@ -131,7 +131,8 @@ extension OrderController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: .orderCell, for: indexPath) as! OrderCell
+        let cell        = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.Identifiers.orderCell.rawValue,
+                                                             for: indexPath) as! OrderCell
         guard let image = presenter.items?[indexPath.item].image else { return cell }
         guard let title = presenter.items?[indexPath.item].title else { return cell }
         guard let counter  = presenter.items?[indexPath.item].count else { return cell }

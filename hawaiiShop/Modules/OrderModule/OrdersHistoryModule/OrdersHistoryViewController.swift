@@ -61,7 +61,7 @@ extension OrdersHistoryController {
         ordersCollectionView.backgroundColor = .none
         ordersCollectionView.dataSource      = self
         ordersCollectionView.delegate        = self
-        ordersCollectionView.register(OrdersHistoryCell.self, forCellWithReuseIdentifier: .ordersHistoryCell)
+        ordersCollectionView.register(OrdersHistoryCell.self, forCellWithReuseIdentifier: Resources.Identifiers.ordersHistoryCell.rawValue)
 
         view.addSubview(ordersCollectionView)
     }
@@ -93,7 +93,8 @@ extension OrdersHistoryController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let orderCell             = collectionView.dequeueReusableCell(withReuseIdentifier: .ordersHistoryCell, for: indexPath) as! OrdersHistoryCell
+        let orderCell             = collectionView.dequeueReusableCell(withReuseIdentifier: Resources.Identifiers.ordersHistoryCell.rawValue,
+                                                                       for: indexPath) as! OrdersHistoryCell
         guard let ordersData      = presenter.ordersData, !ordersData.isEmpty else { return orderCell }
         guard let idLabelText     = presenter.ordersData?[indexPath.item].id else { return orderCell }
         guard let statusLabelText = presenter.ordersData?[indexPath.item].status else { return orderCell }
