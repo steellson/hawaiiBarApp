@@ -71,7 +71,7 @@
 		3DE905D2295CA3990013BEA6 /* PaymentModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905D1295CA3990013BEA6 /* PaymentModuleBuilder.swift */; };
 		3DE905D4295CA41F0013BEA6 /* PaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905D3295CA41F0013BEA6 /* PaymentRouter.swift */; };
 		3DE905D8295CD1520013BEA6 /* UICVFlowLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905D7295CD1520013BEA6 /* UICVFlowLayout+Extension.swift */; };
-		3DE905E4295ED0AD0013BEA6 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905E3295ED0AD0013BEA6 /* Resources.swift */; };
+		3DE905E6295ED5E90013BEA6 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905E5295ED5E90013BEA6 /* Resources.swift */; };
 		3DE94C6529426B630068D2DD /* MenuDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6429426B630068D2DD /* MenuDetailController.swift */; };
 		3DE94C6729426CA80068D2DD /* MenuDetailViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */; };
 		3DE9A00D29434DBF00F8793C /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9A00C29434DBF00F8793C /* UIImageView+Extension.swift */; };
@@ -165,7 +165,7 @@
 		3DE905D1295CA3990013BEA6 /* PaymentModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModuleBuilder.swift; sourceTree = "<group>"; };
 		3DE905D3295CA41F0013BEA6 /* PaymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRouter.swift; sourceTree = "<group>"; };
 		3DE905D7295CD1520013BEA6 /* UICVFlowLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICVFlowLayout+Extension.swift"; sourceTree = "<group>"; };
-		3DE905E3295ED0AD0013BEA6 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Resources.swift; path = ../../../../../.Trash/hawaiiBarApp/hawaiiShop/Protocols/Resources.swift; sourceTree = "<group>"; };
+		3DE905E5295ED5E90013BEA6 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		3DE94C6429426B630068D2DD /* MenuDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailController.swift; sourceTree = "<group>"; };
 		3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DE9A00C29434DBF00F8793C /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -453,7 +453,7 @@
 		3DE905E2295ED0590013BEA6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3DE905E3295ED0AD0013BEA6 /* Resources.swift */,
+				3DE905E5295ED5E90013BEA6 /* Resources.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -639,7 +639,6 @@
 				3DE9A00D29434DBF00F8793C /* UIImageView+Extension.swift in Sources */,
 				3DFBDE8E2930EF9E005EEAFD /* UIView+Extension.swift in Sources */,
 				3DF0CB0D295381EE0093D5C4 /* ProfileViewControllerLayout.swift in Sources */,
-				3DE905E4295ED0AD0013BEA6 /* Resources.swift in Sources */,
 				3DFBDE6D292E46D3005EEAFD /* AuthorizationController.swift in Sources */,
 				3D3983C8293F76F1008B01BE /* MenuViewControllerLayout.swift in Sources */,
 				3D3983C6293F76C8008B01BE /* MenuController.swift in Sources */,
@@ -674,6 +673,7 @@
 				3D3983CA293F77E8008B01BE /* MenuCard.swift in Sources */,
 				3DFBDE69292E46D3005EEAFD /* AppDelegate.swift in Sources */,
 				3D17A0C82948A47400FDDC94 /* CartController.swift in Sources */,
+				3DE905E6295ED5E90013BEA6 /* Resources.swift in Sources */,
 				3DD10C4D294B1AF30075233E /* DeliveryType.swift in Sources */,
 				3DF0CB0229533DD40093D5C4 /* OrderCell.swift in Sources */,
 				3D9F41C5294F9C3F00CC748E /* OrdersHistoryItem.swift in Sources */,
