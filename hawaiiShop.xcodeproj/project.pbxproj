@@ -72,6 +72,7 @@
 		3DE905D4295CA41F0013BEA6 /* PaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905D3295CA41F0013BEA6 /* PaymentRouter.swift */; };
 		3DE905D8295CD1520013BEA6 /* UICVFlowLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905D7295CD1520013BEA6 /* UICVFlowLayout+Extension.swift */; };
 		3DE905E6295ED5E90013BEA6 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905E5295ED5E90013BEA6 /* Resources.swift */; };
+		3DE905E8295EE8B20013BEA6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905E7295EE8B20013BEA6 /* MainView.swift */; };
 		3DE94C6529426B630068D2DD /* MenuDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6429426B630068D2DD /* MenuDetailController.swift */; };
 		3DE94C6729426CA80068D2DD /* MenuDetailViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */; };
 		3DE9A00D29434DBF00F8793C /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9A00C29434DBF00F8793C /* UIImageView+Extension.swift */; };
@@ -166,6 +167,7 @@
 		3DE905D3295CA41F0013BEA6 /* PaymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRouter.swift; sourceTree = "<group>"; };
 		3DE905D7295CD1520013BEA6 /* UICVFlowLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICVFlowLayout+Extension.swift"; sourceTree = "<group>"; };
 		3DE905E5295ED5E90013BEA6 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		3DE905E7295EE8B20013BEA6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		3DE94C6429426B630068D2DD /* MenuDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailController.swift; sourceTree = "<group>"; };
 		3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DE9A00C29434DBF00F8793C /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 		3DE9056A29561A740013BEA6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3DE905E7295EE8B20013BEA6 /* MainView.swift */,
 				3DE905A0295B7ED70013BEA6 /* MainController.swift */,
 				3DFBDE7C292EAA48005EEAFD /* AuthorizationModule */,
 				3DFBDE912931237D005EEAFD /* MainMenuModule */,
@@ -631,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE905D2295CA3990013BEA6 /* PaymentModuleBuilder.swift in Sources */,
+				3DE905E8295EE8B20013BEA6 /* MainView.swift in Sources */,
 				3DE905B1295C7A660013BEA6 /* ProfileRouter.swift in Sources */,
 				3DE905BE295C8E910013BEA6 /* OrderRouter.swift in Sources */,
 				3DE905CA295C9DDC0013BEA6 /* DeliveryPresenter.swift in Sources */,

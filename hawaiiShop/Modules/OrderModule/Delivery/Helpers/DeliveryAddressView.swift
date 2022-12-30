@@ -7,7 +7,7 @@ import UIKit
 
 //MARK: - DeliveryAdressView
 
-final class DeliveryAddressView: UIView {
+final class DeliveryAddressView: MainView {
     
     //MARK - UI Elements
     
@@ -21,10 +21,14 @@ final class DeliveryAddressView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupView()
         configureView(nameLabel     : "Bob Rassel",
                       addressLabel  : "Berlin, Hauptbahnhof, Europaplatz 1.",
                       phoneLabel    : "+9986314518")
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 //MARK: - Setup View
@@ -35,7 +39,16 @@ final class DeliveryAddressView: UIView {
         self.phoneLabel.text   = phoneLabel
     }
     
-    private func setupView() {
+}
+
+
+//MARK: - MainView Extension
+
+extension DeliveryAddressView {
+    
+    override func setupView() {
+        super.setupView()
+        
         nameLabel.font    = .quickSBold18
         addressLabel.font = .quickReg16
         phoneLabel.font   = .quickReg16
@@ -46,27 +59,21 @@ final class DeliveryAddressView: UIView {
         addSubview(nameLabel)
         addSubview(addressLabel)
         addSubview(phoneLabel)
+    }
+    
+    override func setupLayout() {
+        super.setupLayout()
         
-        setupLayout()
-    }
-    
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-
-
-//MARK: Layout Extension
-
-extension DeliveryAddressView {
-    
-    private func setupLayout() {
         nameLabelLayout()
         addressLabelLayout()
         phoneLabelLayout()
     }
+    
+}
+
+//MARK: Layout Extension
+
+extension DeliveryAddressView {
     
     private func nameLabelLayout() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -100,5 +107,14 @@ extension DeliveryAddressView {
             phoneLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 20)
         ])
     }
+    
+}
+
+
+extension DeliveryAddressView: MainViewDelegate {
+    func viewDidLoaded() {
+        <#code#>
+    }
+    
     
 }
