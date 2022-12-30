@@ -10,7 +10,7 @@ import UIKit
 //MARK: - MainViewDelegate Protocol
 
 protocol MainViewDelegate: AnyObject {
-    func viewDidLoaded() 
+    
 }
 
 //MARK: - MainView

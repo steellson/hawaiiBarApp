@@ -36,9 +36,7 @@ final class CartCell: UICollectionViewCell {
         return priceLabel
     }()
     
-    var plusItemButton  : UIButton!
-    var counter         = UILabel(.quickSBold18, .black, .center, "1")
-    var minusItemButton : UIButton!
+    var itemPicker = ItemPicker()
     
     
 //MARK: - Init
@@ -47,6 +45,10 @@ final class CartCell: UICollectionViewCell {
         super.init(frame: frame)
         
         setupCell()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
 
@@ -66,29 +68,12 @@ final class CartCell: UICollectionViewCell {
         contentView.addSubview(imageView)
         contentView.addSubview(nameLabel)
         contentView.addSubview(priceLabel)
-        contentView.addSubview(counter)
+        contentView.addSubview(itemPicker)
 
         
-        setupItemChangeButtons()
         setupShadow()
         setupCellLayout()
     }
-    
-    private func setupItemChangeButtons() {
-        plusItemButton  = UIButton().buildMenuDetailItemsButton(with: "plus")
-        minusItemButton = UIButton().buildMenuDetailItemsButton(with: "minus")
-        
-        plusItemButton.backgroundColor = .specialOrange
-
-        contentView.addSubview(plusItemButton)
-        contentView.addSubview(minusItemButton)
-    }
-
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
 }
 
 //MARK: - Layout Extension
@@ -99,9 +84,7 @@ extension CartCell {
         imageViewLayout()
         nameLabelLayout()
         priceLabelLayout()
-        plusButtonLayout()
-        counterLabelLayout()
-        minusButtonLayout()
+        itemPickerLayout()
     }
     
     
@@ -136,36 +119,15 @@ extension CartCell {
         ])
     }
     
-    private func plusButtonLayout() {
-        plusItemButton.translatesAutoresizingMaskIntoConstraints = false
+    private func itemPickerLayout() {
+        itemPicker.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            plusItemButton.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -30),
-            plusItemButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            plusItemButton.heightAnchor.constraint(equalToConstant: 20),
-            plusItemButton.widthAnchor.constraint(equalToConstant: 20)
+            itemPicker.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -30),
+            itemPicker.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            itemPicker.heightAnchor.constraint(equalToConstant: 20),
+            itemPicker.widthAnchor.constraint(equalToConstant: 20)
         ])
     }
     
-    private func counterLabelLayout() {
-        counter.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            counter.rightAnchor.constraint(equalTo: plusItemButton.leftAnchor, constant: -7),
-            counter.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            counter.heightAnchor.constraint(equalToConstant: 20),
-            counter.widthAnchor.constraint(equalToConstant: 20)
-        ])
-    }
-    
-    private func minusButtonLayout() {
-        minusItemButton.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            minusItemButton.rightAnchor.constraint(equalTo: counter.leftAnchor, constant: -7),
-            minusItemButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            minusItemButton.heightAnchor.constraint(equalToConstant: 20),
-            minusItemButton.widthAnchor.constraint(equalToConstant: 20)
-        ])
-    }
 }

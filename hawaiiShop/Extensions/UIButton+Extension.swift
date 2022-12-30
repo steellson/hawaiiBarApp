@@ -35,16 +35,6 @@ extension UIButton {
         button.titleLabel?.font = UIFont(name: "Quicksand-SemiBold", size: 18)
         return button
     }
-    
-    public func buildMenuDetailItemsButton(with systemImageName: String) -> UIButton {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: systemImageName), for: .normal)
-        button.tintColor = .black
-        button.layer.cornerRadius = 2
-        button.backgroundColor = isSelected ? UIColor(red: 253/255, green: 201/255, blue: 9/255, alpha: 1) :
-                                             UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        return button
-    }
 
     public func buildChangeButton() -> UIButton {
         let button = UIButton()

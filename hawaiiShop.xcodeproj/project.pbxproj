@@ -73,6 +73,7 @@
 		3DE905D8295CD1520013BEA6 /* UICVFlowLayout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905D7295CD1520013BEA6 /* UICVFlowLayout+Extension.swift */; };
 		3DE905E6295ED5E90013BEA6 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905E5295ED5E90013BEA6 /* Resources.swift */; };
 		3DE905E8295EE8B20013BEA6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905E7295EE8B20013BEA6 /* MainView.swift */; };
+		3DE905EE295EF90C0013BEA6 /* ItemPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE905ED295EF90C0013BEA6 /* ItemPicker.swift */; };
 		3DE94C6529426B630068D2DD /* MenuDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6429426B630068D2DD /* MenuDetailController.swift */; };
 		3DE94C6729426CA80068D2DD /* MenuDetailViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */; };
 		3DE9A00D29434DBF00F8793C /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE9A00C29434DBF00F8793C /* UIImageView+Extension.swift */; };
@@ -168,6 +169,7 @@
 		3DE905D7295CD1520013BEA6 /* UICVFlowLayout+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICVFlowLayout+Extension.swift"; sourceTree = "<group>"; };
 		3DE905E5295ED5E90013BEA6 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		3DE905E7295EE8B20013BEA6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3DE905ED295EF90C0013BEA6 /* ItemPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPicker.swift; sourceTree = "<group>"; };
 		3DE94C6429426B630068D2DD /* MenuDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailController.swift; sourceTree = "<group>"; };
 		3DE94C6629426CA80068D2DD /* MenuDetailViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewControllerLayout.swift; sourceTree = "<group>"; };
 		3DE9A00C29434DBF00F8793C /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -337,9 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				3DE905A2295B80180013BEA6 /* MainMenuController.swift */,
-				3DE90568295600F90013BEA6 /* MainMenuPresenter.swift */,
-				3DE9056F29561E560013BEA6 /* MainMenuModuleBuilder.swift */,
-				3DE9057129561EB20013BEA6 /* MainMenuRouter.swift */,
 				3DE905AD295C75C90013BEA6 /* Helpers */,
 			);
 			path = MainModule;
@@ -350,6 +349,7 @@
 			children = (
 				3D17A0C92948AE8D00FDDC94 /* CartViewControllerLayout.swift */,
 				3D17A0C52948A1F000FDDC94 /* Cart.swift */,
+				3DE905ED295EF90C0013BEA6 /* ItemPicker.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -550,6 +550,9 @@
 		3DFBDE912931237D005EEAFD /* MainMenuModule */ = {
 			isa = PBXGroup;
 			children = (
+				3DE90568295600F90013BEA6 /* MainMenuPresenter.swift */,
+				3DE9056F29561E560013BEA6 /* MainMenuModuleBuilder.swift */,
+				3DE9057129561EB20013BEA6 /* MainMenuRouter.swift */,
 				3DE905792956FD230013BEA6 /* MainModule */,
 				3D3983C4293F75C8008B01BE /* MenuModule */,
 				3DE94C6329426ADB0068D2DD /* MenuDetailModule */,
@@ -684,6 +687,7 @@
 				3DFBDE6B292E46D3005EEAFD /* SceneDelegate.swift in Sources */,
 				3D9F41C1294F948200CC748E /* OrdersHistoryCell.swift in Sources */,
 				3DE9057029561E560013BEA6 /* MainMenuModuleBuilder.swift in Sources */,
+				3DE905EE295EF90C0013BEA6 /* ItemPicker.swift in Sources */,
 				3D17A0C62948A1F000FDDC94 /* Cart.swift in Sources */,
 				3DE905A5295B83BD0013BEA6 /* MainViewProtocol.swift in Sources */,
 				3DE9056C29561C570013BEA6 /* MainRouterProtocol.swift in Sources */,

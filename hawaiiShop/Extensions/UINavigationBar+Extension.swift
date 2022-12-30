@@ -26,7 +26,7 @@ extension UINavigationBar {
         
         let rightBarItem = UIBarButtonItem(image: image, style: .plain, target: target, action: action)
         vc.navigationItem.rightBarButtonItem = rightBarItem
-        //vc.navigationItem.leftBarButtonItem?.tintColor = .navBarIcons
+        vc.navigationItem.leftBarButtonItem?.tintColor = .navBarIcons
     }
     
 }

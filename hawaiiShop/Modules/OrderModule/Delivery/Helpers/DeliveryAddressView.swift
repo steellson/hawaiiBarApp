@@ -71,6 +71,13 @@ extension DeliveryAddressView {
     
 }
 
+//MARK: - MainViewDelegate Extension
+
+extension DeliveryAddressView: MainViewDelegate {
+    
+}
+
+
 //MARK: Layout Extension
 
 extension DeliveryAddressView {
@@ -110,11 +117,3 @@ extension DeliveryAddressView {
     
 }
 
-
-extension DeliveryAddressView: MainViewDelegate {
-    func viewDidLoaded() {
-        <#code#>
-    }
-    
-    
-}

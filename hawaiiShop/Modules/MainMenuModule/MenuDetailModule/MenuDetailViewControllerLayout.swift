@@ -17,9 +17,7 @@ extension MenuDetailController {
         menuDetailDescriptionLabelLayout()
         menuDetailWeightLabelLayout()
         menuDetailPriceLabelLayout()
-        menuDetailPlusButtonLayout()
-        menuDetailItemsLabelLayout()
-        menuDetailMinusButtonLayout()
+        itemPickerLayout()
         menuDetailAddButtonLayout()
     }
     
@@ -78,35 +76,14 @@ extension MenuDetailController {
         ])
     }
     
-    private func menuDetailPlusButtonLayout() {
-        menuDetailPlusButton.translatesAutoresizingMaskIntoConstraints = false
+    private func itemPickerLayout() {
+        itemPicker.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            menuDetailPlusButton.widthAnchor.constraint(equalToConstant: 30),
-            menuDetailPlusButton.heightAnchor.constraint(equalToConstant: 30),
-            menuDetailPlusButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            menuDetailPlusButton.centerYAnchor.constraint(equalTo: menuDetailPriceLabel.centerYAnchor)
-        ])
-    }
-    
-    private func menuDetailItemsLabelLayout() {
-        menuDetailItemsLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            menuDetailItemsLabel.widthAnchor.constraint(equalToConstant: 30),
-            menuDetailItemsLabel.heightAnchor.constraint(equalToConstant: 30),
-            menuDetailItemsLabel.rightAnchor.constraint(equalTo: menuDetailPlusButton.leftAnchor, constant: -5),
-            menuDetailItemsLabel.centerYAnchor.constraint(equalTo: menuDetailPriceLabel.centerYAnchor)
-        ])
-    }
-    
-    private func menuDetailMinusButtonLayout() {
-        menuDetailMinusButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            menuDetailMinusButton.widthAnchor.constraint(equalToConstant: 30),
-            menuDetailMinusButton.heightAnchor.constraint(equalToConstant: 30),
-            menuDetailMinusButton.rightAnchor.constraint(equalTo: menuDetailItemsLabel.leftAnchor, constant: -5),
-            menuDetailMinusButton.centerYAnchor.constraint(equalTo: menuDetailPriceLabel.centerYAnchor)
+            itemPicker.widthAnchor.constraint(equalToConstant: 30),
+            itemPicker.heightAnchor.constraint(equalToConstant: 30),
+            itemPicker.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            itemPicker.centerYAnchor.constraint(equalTo: menuDetailPriceLabel.centerYAnchor)
         ])
     }
     

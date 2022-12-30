@@ -21,9 +21,7 @@ final class MenuDetailController: MainController {
     var menuDetailDescriptionLabel   = UILabel(.quick18, .black, .left)
     var menuDetailWeightLabel        = UILabel(.quickSBold18, UIColor.specialGray, .left)
     let menuDetailPriceLabel         = UILabel(.quickSBold28, UIColor.specialOrange, .left)
-    let menuDetailPlusButton         = UIButton().buildMenuDetailItemsButton(with: "plus")
-    let menuDetailItemsLabel         = UILabel(.quickBold24, .black, .center)
-    let menuDetailMinusButton        = UIButton().buildMenuDetailItemsButton(with: "minus")
+    let itemPicker                   = ItemPicker()
     let menuDetailAddButton          = UIButton("Add")
     
     
@@ -64,20 +62,17 @@ extension MenuDetailController {
     
     override func setupView() {
         super.setupView()
-        
-        menuDetailItemsLabel.text = "1"
-        menuDetailPlusButton.backgroundColor = .specialOrange
-        
+                
         view.addSubview(menuDetailTitleLabel)
         view.addSubview(menuDetailImageView)
         view.addSubview(menuDetailDescriptionLabel)
         view.addSubview(menuDetailWeightLabel)
         view.addSubview(menuDetailPriceLabel)
-        view.addSubview(menuDetailPlusButton)
-        view.addSubview(menuDetailItemsLabel)
-        view.addSubview(menuDetailMinusButton)
+        view.addSubview(itemPicker)
         view.addSubview(menuDetailAddButton)
     }
+    
+    
 }
 
 
