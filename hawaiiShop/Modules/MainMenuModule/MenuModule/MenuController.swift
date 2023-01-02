@@ -56,12 +56,12 @@ extension MenuController {
         nc.navigationBar.addNavBarButton(with: .navBarBackImage!,
                                              target: self,
                                              action: #selector(leftBarButtonDidTapped),
-                                             where: .leftSide,
+                                             side: .leftSide,
                                              on: self)
         nc.navigationBar.addNavBarButton(with: .cartNavBarImage!,
                                          target: self,
                                          action: #selector(rightBarButtonDidTapped),
-                                         where: .rightSide,
+                                         side: .rightSide,
                                          on: self)
     }
     

@@ -56,19 +56,21 @@ extension MainMenuController {
     
     override func setupNavBar() {
         super.setupNavBar()
+        
+        
        
-//        guard let nc = self.navigationController else { return }
-//        nc.navigationBar.setupNavigationBar(with: "Hawaii Bar", on: self)
-//        nc.navigationBar.addNavBarButton(with: .profileNavBarImage!,
-//                                             target: self,
-//                                         action: #selector(self.leftBarButtonDidTapped),
-//                                             where: .leftSide,
-//                                             on: self)
-//        nc.navigationBar.addNavBarButton(with: .cartNavBarImage!,
-//                                         target: self,
-//                                         action: #selector(self.rightBarButtonDidTapped),
-//                                         where: .rightSide,
-//                                         on: self)
+        guard let nc = self.navigationController else { return }
+        nc.navigationBar.setupNavigationBar(with: "Hawaii Bar", on: self)
+        nc.navigationBar.addNavBarButton(with: .profileNavBarImage!,
+                                             target: self,
+                                         action: #selector(self.leftBarButtonDidTapped),
+                                             side: .leftSide,
+                                             on: self)
+        nc.navigationBar.addNavBarButton(with: .cartNavBarImage!,
+                                         target: self,
+                                         action: #selector(self.rightBarButtonDidTapped),
+                                         side: .rightSide,
+                                         on: self)
     }
     
     override func setupCollectionView() {

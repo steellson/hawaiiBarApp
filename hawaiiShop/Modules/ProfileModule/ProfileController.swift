@@ -62,7 +62,7 @@ extension ProfileController {
         nc.navigationBar.addNavBarButton(with: .navBarBackImage!,
                                          target: self,
                                          action: #selector(leftBarButtonDidTapped),
-                                         where: .leftSide,
+                                         side: .leftSide,
                                          on: self)
     }
     
